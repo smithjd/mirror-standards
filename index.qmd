@@ -1,0 +1,29 @@
+---
+title: "Bristlecone"
+image: bristlecone.jpg
+image-alt: "The oldest living species of tree, the bristlecone pine, in the White Mountains of California."
+about: # https://quarto.org/docs/websites/website-about.html
+  template: trestles
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/smithjd/bristlecone
+    - icon: bluesky
+      text: Bluesky
+      href: https://bsky.app/profile/smithjd.bsky.social
+---
+
+Background
+
+## History
+
+5 year effort to look at the community and organization to describe how it's evolved.  
+
+## Opportunity
+
+People who have felt harmed or have criticizms of the community, the organization or leadership have gathered on [Reddit](http://reddit/r/ShambhalaBuddhism). Their conversations are preserved there but have largely been ignored as a toxic space. The opportunity is to look at the conversations and see if there are patterns that can be described and understood.
+
+## Links
+
+- Shambhala Societal Mirror: [https://mirror.shambhala.org](https://mirror.shambhala.org)
+- Personal website: [https://Learningalliances.net](https://learningalliances.net)

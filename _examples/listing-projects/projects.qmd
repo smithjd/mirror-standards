@@ -1,0 +1,10 @@
+---
+title: Projects
+listing:
+  contents: projects
+  type: grid
+  grid-columns: 2
+  categories: true
+  filter-ui: false
+  sort-ui: false
+---

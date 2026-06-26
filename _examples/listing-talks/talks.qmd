@@ -1,0 +1,8 @@
+---
+title: Talks
+listing:
+  contents: talks.yml
+  type: table
+  filter-ui: false
+  sort-ui: false
+---

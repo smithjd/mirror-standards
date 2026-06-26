@@ -1,0 +1,19 @@
+color:
+  foreground: "#333333"
+  background: "#ffffff"
+  primary: "#333333"
+  secondary: "#c5396b"
+
+typography:
+  fonts:
+    - family: Open Sans
+      source: bunny
+    - family: Roboto Slab
+      source: bunny
+  base:
+    family: Open Sans
+  headings:
+    family: Roboto Slab
+    color: secondary
+  link:
+    decoration: underline

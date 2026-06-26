@@ -1,0 +1,14 @@
+---
+title: "Forest Canopy Mapping"
+description: "Estimating canopy cover and forest health from satellite imagery with a reproducible geospatial pipeline."
+image: images/photo-1530563937443-1f02f662fa5c.jpg
+categories: [Geospatial, Machine Learning, Remote Sensing]
+---
+
+## Overview
+
+Placeholder content. This project classifies multispectral imagery to map canopy
+density and flag early signs of stress, packaged as a reproducible pipeline that
+re-runs as new imagery lands.
+
+Photo by [Dale Nibbe](https://unsplash.com/@dalenmt) on [Unsplash](https://unsplash.com/photos/6mU7uCAO64I).

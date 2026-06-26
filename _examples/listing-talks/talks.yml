@@ -1,0 +1,17 @@
+- date: 2025-03-12
+  title: "From Notebook to Production: Deploying ML Models with Confidence"
+  description: "A practical walkthrough of taking a model out of a Jupyter notebook and into a reproducible, monitored production pipeline—covering containers, CI/CD, and drift detection."
+  venue: "PyData Seattle"
+  path: "https://example.com/talks/notebook-to-production"
+
+- date: 2024-11-08
+  title: "The Art of the Reproducible Report"
+  description: "Why your analysis should run end-to-end with a single command, and how literate programming tools like Quarto make stakeholder-ready reports painless."
+  venue: "posit::conf"
+  path: "https://example.com/talks/reproducible-report"
+
+- date: 2024-06-04
+  title: "Causal Inference for the Skeptical Analyst"
+  description: "Correlation isn't causation, but we can do better than throwing up our hands. An accessible tour of difference-in-differences, propensity scores, and when to trust them."
+  venue: "useR! Conference"
+  path: "https://example.com/talks/causal-inference-skeptical-analyst"

@@ -1,0 +1,28 @@
+color:
+  foreground: "#333333"
+  background: "#ffffff"
+  primary: "#333333"
+  secondary: "#c5396b"
+
+typography:
+  fonts:
+    - family: Open Sans
+      source: bunny
+    - family: Roboto Slab
+      source: bunny
+    - family: Fira Code
+      source: bunny
+  base:
+    family: Open Sans
+  headings:
+    family: Roboto Slab
+    color: secondary
+  link:
+    decoration: underline
+  monospace:
+    family: Fira Code
+  monospace-inline:
+    color: "#6b21a8"
+    background-color: background # as defined under color
+  monospace-block:
+    background-color: "#eaf2fb"

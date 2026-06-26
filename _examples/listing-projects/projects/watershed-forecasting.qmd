@@ -1,0 +1,14 @@
+---
+title: "Watershed Flow Forecasting"
+description: "Predicting seasonal streamflow across the Cascades to support water management and flood planning."
+image: images/photo-1534260574464-1974fc1e6727.jpg
+categories: [Machine Learning, Time Series, Forecasting]
+---
+
+## Overview
+
+Placeholder content. A forecasting model blends snowpack, precipitation, and
+historical gauge data to project streamflow weeks ahead, with uncertainty bands
+that planners can actually act on.
+
+Photo by [Cristofer Maximilian](https://unsplash.com/@cristofer) on [Unsplash](https://unsplash.com/photos/V1YPvfNzvtw).

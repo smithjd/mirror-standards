@@ -1,0 +1,14 @@
+---
+title: "Coastal Sensor Network"
+description: "Real-time monitoring of water quality along the Oregon coast using a fleet of low-cost IoT sensors."
+image: images/photo-1601698832159-665cbefd11da.jpg
+categories: [IoT, Time Series, Dashboards]
+---
+
+## Overview
+
+Placeholder content. This project deploys a network of sensors that stream
+temperature, salinity, and turbidity readings into a central pipeline, surfaced
+through a live dashboard for researchers and the public.
+
+Photo by [Karsten Winegeart](https://unsplash.com/@_karsten) on [Unsplash](https://unsplash.com/photos/_m-Xjo9R_y4).
