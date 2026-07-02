@@ -27,3 +27,4 @@ People who have felt harmed or have criticizms of the community, the organizatio
 
 - Shambhala Societal Mirror: [https://mirror.shambhala.org](https://mirror.shambhala.org)
 - Personal website: [https://Learningalliances.net](https://learningalliances.net)
+- Talks: [talks](talks.html)

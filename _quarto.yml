@@ -18,5 +18,3 @@ website:
 format:
   html:
     theme: [styles.scss, brand]
-    axe:
-      output: document
