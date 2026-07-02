@@ -28,13 +28,6 @@
     "text": "Links\n\nShambhala Societal Mirror: https://mirror.shambhala.org\nPersonal website: https://Learningalliances.net\nTalks: talks"
   },
   {
-    "objectID": "listing-talks/talks.html",
-    "href": "listing-talks/talks.html",
-    "title": "Talks",
-    "section": "",
-    "text": "Date\n\n\n\nTitle\n\n\n\nDescription\n\n\n\nvenue\n\n\n\n\n\n\n\n\nMar 12, 2025\n\n\nFrom Notebook to Production: Deploying ML Models with Confidence\n\n\nA practical walkthrough of taking a model out of a Jupyter notebook and into a reproducible, monitored production pipeline—covering containers, CI/CD, and drift detection.\n\n\nPyData Seattle\n\n\n\n\n\n\nNov 8, 2024\n\n\nThe Art of the Reproducible Report\n\n\nWhy your analysis should run end-to-end with a single command, and how literate programming tools like Quarto make stakeholder-ready reports painless.\n\n\nposit::conf\n\n\n\n\n\n\nJun 4, 2024\n\n\nCausal Inference for the Skeptical Analyst\n\n\nCorrelation isn’t causation, but we can do better than throwing up our hands. An accessible tour of difference-in-differences, propensity scores, and when to trust them.\n\n\nuseR! Conference\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "talks.html",
     "href": "talks.html",
     "title": "Talks",

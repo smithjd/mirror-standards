@@ -1,5 +1,5 @@
 ---
-title: "Bristlecone"
+title: "Shambhala Mirror standars"
 image: bristlecone.jpg
 image-alt: "The oldest living species of tree, the bristlecone pine, in the White Mountains of California."
 about: # https://quarto.org/docs/websites/website-about.html
@@ -7,7 +7,7 @@ about: # https://quarto.org/docs/websites/website-about.html
   links:
     - icon: github
       text: Github
-      href: https://github.com/smithjd/bristlecone
+      href: https://github.com/smithjd/mirror-standards
     - icon: bluesky
       text: Bluesky
       href: https://bsky.app/profile/smithjd.bsky.social
