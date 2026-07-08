@@ -1,4 +1,7 @@
-# 02 — Chart Types
+---
+title: "Chart Types"
+format: html
+---
 
 Chart selection starts from the **analytical function** of the message. This document
 adopts the Financial Times Visual Vocabulary's nine functions as the normative taxonomy
@@ -36,7 +39,7 @@ Use for surplus/deficit, above/below target, positive/negative sentiment.
 
 **CT-5 (MUST)** Diverging charts MUST place the reference value (usually zero) as a
 visible, aligned axis line. Encode sign with the diverging palette
-([03-color-palettes.md](03-color-palettes.md), CO-6) only when the difference is
+([03-color-palettes.qmd](03-color-palettes.qmd), CO-6) only when the difference is
 meaningful — The Economist: differentiate positive/negative by color "only where there
 is a meaningful difference, i.e. imports/exports."
 

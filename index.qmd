@@ -1,5 +1,5 @@
 ---
-title: "Shambhala Mirror standars"
+title: "Shambhala Mirror standards"
 image: bristlecone.jpg
 image-alt: "The oldest living species of tree, the bristlecone pine, in the White Mountains of California."
 about: # https://quarto.org/docs/websites/website-about.html
@@ -8,9 +8,6 @@ about: # https://quarto.org/docs/websites/website-about.html
     - icon: github
       text: Github
       href: https://github.com/smithjd/mirror-standards
-    - icon: bluesky
-      text: Bluesky
-      href: https://bsky.app/profile/smithjd.bsky.social
 ---
 
 Background
@@ -21,10 +18,4 @@ A 5 year effort to look at the community and organization to describe how it's e
 
 ## Opportunity
 
-People who have felt harmed or have criticizms of the community, the organization or leadership have gathered on [Reddit](http://reddit/r/ShambhalaBuddhism). Their conversations are preserved there but have largely been ignored as a toxic space. The opportunity is to look at the conversations and see if there are patterns that can be described and understood.
-
-## Links
-
-- Shambhala Societal Mirror: [https://mirror.shambhala.org](https://mirror.shambhala.org)
-- Personal website: [https://Learningalliances.net](https://learningalliances.net)
-- Talks: [talks](talks.html)
+The [https://mirror.shambhala.org](Shambhala Societal Mirror) has evolved incrementally over the years.  This standards site is an opportunity to look at its  current state and describe it in a way that accelerates the next phase of development.  The goal is to create a set of standards that can be used to guide the next phase of development.

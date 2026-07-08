@@ -1,7 +1,10 @@
-# 07 — Sources
+---
+title: "Sources"
+format: html
+---
 
 Annotated bibliography. All sources were consulted directly in July 2026 except where
-noted. Hex codes in [03-color-palettes.md](03-color-palettes.md) trace to the starred
+noted. Hex codes in [03-color-palettes.qmd](03-color-palettes.qmd) trace to the starred
 (★) primary sources.
 
 ## The three newsrooms
@@ -10,7 +13,7 @@ noted. Hex codes in [03-color-palettes.md](03-color-palettes.md) trace to the st
 
 - ★ **Visual Vocabulary** — Financial-Times/chart-doctor, `visual-vocabulary/`,
   <https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary>.
-  The normative chart-type taxonomy in [02-chart-types.md](02-chart-types.md): nine
+  The normative chart-type taxonomy in [02-chart-types.qmd](02-chart-types.qmd): nine
   analytical functions (deviation, correlation, ranking, distribution, change over
   time, magnitude, part-to-whole, spatial, flow) with per-chart usage notes.
   Interactive version: <https://ft-interactive.github.io/visual-vocabulary/>.

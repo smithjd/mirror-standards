@@ -5,7 +5,7 @@ website:
   title: "Shambhala Mirror Standards"
   search: false
   open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
-  page-footer: "Made with ❤️ and Quarto"
+  page-footer: "This is a DRAFT"
   navbar:
     right:
       - text: Home
@@ -14,6 +14,26 @@ website:
       - icon: github
         text: Github
         href: https://github.com
+  sidebar:
+    contents:
+      - section: "Newsroom Data Reporting Standards"
+        contents:
+          - text: Newsroom Standards
+            href: newsroom-data-reporting-standards/newsroom-standards.qmd
+          - text: Principles
+            href: newsroom-data-reporting-standards/01-principles.qmd
+          - text: Chart Types
+            href: newsroom-data-reporting-standards/02-chart-types.qmd
+          - text: Color Palettes
+            href: newsroom-data-reporting-standards/03-color-palettes.qmd
+          - text: Typography Annotation
+            href: newsroom-data-reporting-standards/04-typography-annotation.qmd
+          - text: Accessibility
+            href: newsroom-data-reporting-standards/05-accessibility.qmd
+          - text: Implementation R
+            href: newsroom-data-reporting-standards/06-implementation-r.qmd
+          - text: Sources
+            href: newsroom-data-reporting-standards/07-sources.qmd
 
 format:
   html:

@@ -1,4 +1,7 @@
-# 06 — Implementation: R / ggplot2 / Quarto (non-normative appendix)
+---
+title: "Implementation: R / ggplot2 / Quarto"
+format: html
+---
 
 Maps the standard onto a ggplot2 (≥ 4.0) + Quarto stack. The normative rules live in
 documents 01–05; this file shows one conforming implementation. Patterned on the BBC's
@@ -6,33 +9,51 @@ documents 01–05; this file shows one conforming implementation. Patterned on t
 
 ## Palettes as constants
 
-```r
-# 03-color-palettes.md — categorical default (UK Analysis Function order)
+```{r}
+library(ggplot2)
+
+# 03-color-palettes.qmd — categorical default (UK Analysis Function order)
 palette_categorical <- c(
-  "#12436D", "#28A197", "#801650", "#F46A25", "#3D3D3D", "#A285D1"
+  "#12436D",
+  "#28A197",
+  "#801650",
+  "#F46A25",
+  "#3D3D3D",
+  "#A285D1"
 )
 
 # Okabe–Ito alternative (also available as grDevices::palette.colors(palette = "Okabe-Ito"))
 palette_okabe_ito <- c(
-  "#000000", "#E69F00", "#56B4E9", "#009E73",
-  "#F0E442", "#0072B2", "#D55E00", "#CC79A7"
+  "#000000",
+  "#E69F00",
+  "#56B4E9",
+  "#009E73",
+  "#F0E442",
+  "#0072B2",
+  "#D55E00",
+  "#CC79A7"
 )
 
 palette_sequential <- c(
-  "#F2F2F2", "#ADD1F1", "#6BACE6", "#2073BC", "#12436D", "#092135"
+  "#F2F2F2",
+  "#ADD1F1",
+  "#6BACE6",
+  "#2073BC",
+  "#12436D",
+  "#092135"
 )
 
 palette_highlight <- c(highlight = "#12436D", context = "#BFBFBF")
 
-color_text      <- "#333333"
+color_text <- "#333333"
 color_text_soft <- "#555555"
-color_gridline  <- "#CBCBCB"
-color_baseline  <- "#333333"
+color_gridline <- "#CBCBCB"
+color_baseline <- "#333333"
 ```
 
 ## Theme (P-4, TY-2/3/7/8)
 
-```r
+```{r}
 theme_report <- function(base_size = 12) {
   ggplot2::theme_minimal(base_size = base_size) +
     ggplot2::theme(
@@ -46,7 +67,7 @@ theme_report <- function(base_size = 12) {
       panel.grid.major.x = ggplot2::element_blank(),
       panel.grid.minor = ggplot2::element_blank(),
       panel.grid.major.y = ggplot2::element_line(color = color_gridline),
-      axis.title = ggplot2::element_blank(),   # units go in the subtitle (TY-11)
+      axis.title = ggplot2::element_blank(), # units go in the subtitle (TY-11)
       axis.text = ggplot2::element_text(color = color_text),
       # legend top, no title; prefer direct labels anyway (TY-6)
       legend.position = "top",
@@ -58,7 +79,7 @@ theme_report <- function(base_size = 12) {
 
 ## Scales
 
-```r
+```{r}
 scale_color_report <- function(...) {
   ggplot2::scale_color_manual(values = palette_categorical, ...)
 }
@@ -73,18 +94,25 @@ scale_fill_report <- function(...) {
 
 ## A conforming chart
 
-```r
-library(ggplot2)
+```{r}
+# Use economics dataset and compute a rate-like variable for demonstration
+inflation <- data.frame(
+  date = economics$date[economics$date >= as.Date("2000-01-01")],
+  rate = (economics$pce[economics$date >= as.Date("2000-01-01")] /
+    lag(economics$pce[economics$date >= as.Date("2000-01-01")], 12) -
+    1) *
+    100
+)
 
 plot_inflation <- inflation |>
   ggplot(aes(date, rate)) +
-  geom_hline(yintercept = 0, linewidth = 1, color = color_baseline) +  # TY-8
-  geom_line(linewidth = 1, color = palette_categorical[[1]]) +          # AX-11
+  geom_hline(yintercept = 0, linewidth = 1, color = color_baseline) + # TY-8
+  geom_line(linewidth = 1, color = palette_categorical[[1]]) + # AX-11
   scale_y_continuous(labels = scales::label_percent(scale = 1)) +
   labs(
-    title = "Inflation has returned to target",              # P-2: the finding
-    subtitle = "UK CPI, % change on a year earlier",         # TY-1: measure + unit
-    caption = "Source: ONS"                                  # P-7 / TY-15
+    title = "Inflation has returned to target", # P-2: the finding
+    subtitle = "UK CPI, % change on a year earlier", # TY-1: measure + unit
+    caption = "Source: ONS" # P-7 / TY-15
   ) +
   theme_report()
 ```
@@ -100,14 +128,12 @@ documented reason requires `scales = "free_y"`.
 
 - **Alt text (AX-6/7)** — every figure chunk sets `fig-alt`:
 
-  ````markdown
+  
   ```{r}
-  #| fig-alt: >
-  #|   Line chart showing UK inflation falling from 11% in 2022
-  #|   to 2% by mid-2024.
+  #| fig-alt: "Line chart"
   plot_inflation
   ```
-  ````
+  
 
 - **HTML-native titles (TY-5, AX-8)** — for web output, prefer the page's heading and
   lead paragraph to carry title/context, and emit SVG: `knitr: opts_chunk: dev: "svglite"`.
@@ -121,7 +147,7 @@ documented reason requires `scales = "free_y"`.
 
 Contrast checking (AX-1/2) without leaving R:
 
-```r
+```{r}
 contrast_ratio <- function(fg, bg = "#FFFFFF") {
   lum <- function(hex) {
     rgb <- grDevices::col2rgb(hex)[, 1] / 255
@@ -132,7 +158,7 @@ contrast_ratio <- function(fg, bg = "#FFFFFF") {
   (l[[1]] + 0.05) / (l[[2]] + 0.05)
 }
 
-palette_categorical |> purrr::map_dbl(contrast_ratio)  # all >= 3
+palette_categorical |> purrr::map_dbl(contrast_ratio) # all >= 3
 ```
 
 Colorblind simulation: `colorblindr::cvd_grid(plot_inflation)` or

@@ -1,4 +1,7 @@
-# 05 — Accessibility
+---
+title: "Accessibility"
+format: html
+---
 
 Charts published on the web are subject to WCAG 2.2 Level AA. These rules make that
 concrete for data graphics. IDs: `AX-*`.
@@ -7,7 +10,7 @@ concrete for data graphics. IDs: `AX-*`.
 
 - **AX-1 (MUST)** Text on and around charts meets **4.5:1** contrast against its
   background (WCAG 1.4.3); large text (≥24px, or ≥18.66px bold) may drop to 3:1.
-  The neutral text colors in [03-color-palettes.md](03-color-palettes.md) comply on
+  The neutral text colors in [03-color-palettes.qmd](03-color-palettes.qmd) comply on
   white (`#333333` = 12.6:1, `#555555` = 7.5:1).
 - **AX-2 (MUST)** Essential graphical elements — bars, lines, points that the reader
   must distinguish to understand the chart — meet **3:1** against adjacent colors

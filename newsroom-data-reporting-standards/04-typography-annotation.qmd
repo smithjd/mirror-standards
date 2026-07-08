@@ -1,4 +1,7 @@
-# 04 — Typography & Annotation
+---
+title: "Typography & Annotation"
+format: html
+---
 
 Text is how a chart explains itself. These rules cover the text hierarchy, axis and
 data labeling, number formatting, and the source line.

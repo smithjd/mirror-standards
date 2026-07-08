@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Talks – Shambhala Mirror Standards</title>
+<title>Typography &amp; Annotation – Shambhala Mirror Standards</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,25 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -60,78 +58,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-description','listing-venue',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-description","listing-venue"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Talks – Shambhala Mirror Standards">
+<meta property="og:title" content="Typography &amp; Annotation – Shambhala Mirror Standards">
+<meta property="og:description" content="">
 <meta property="og:site_name" content="Shambhala Mirror Standards">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar floating nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Shambhala Mirror Standards</span>
     </a>
   </div>
@@ -141,7 +82,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
 </ul>
@@ -151,18 +92,94 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../newsroom-data-reporting-standards/newsroom-standards.html">Newsroom Data Reporting Standards</a></li><li class="breadcrumb-item"><a href="../newsroom-data-reporting-standards/04-typography-annotation.html">Typography Annotation</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Newsroom Data Reporting Standards</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../newsroom-data-reporting-standards/newsroom-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Newsroom Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../newsroom-data-reporting-standards/01-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Principles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../newsroom-data-reporting-standards/02-chart-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chart Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../newsroom-data-reporting-standards/03-color-palettes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Color Palettes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../newsroom-data-reporting-standards/04-typography-annotation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Typography Annotation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../newsroom-data-reporting-standards/05-accessibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessibility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../newsroom-data-reporting-standards/06-implementation-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Implementation R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../newsroom-data-reporting-standards/07-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../newsroom-data-reporting-standards/newsroom-standards.html">Newsroom Data Reporting Standards</a></li><li class="breadcrumb-item"><a href="../newsroom-data-reporting-standards/04-typography-annotation.html">Typography Annotation</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Talks</h1>
+<h1 class="title">Typography &amp; Annotation</h1>
 </div>
 
 
@@ -179,87 +196,61 @@ window.Quarto = {
 </header>
 
 
+<p>Text is how a chart explains itself. These rules cover the text hierarchy, axis and data labeling, number formatting, and the source line.</p>
+<section id="text-hierarchy" class="level2">
+<h2 class="anchored" data-anchor-id="text-hierarchy">Text hierarchy</h2>
+<ul>
+<li><strong>TY-1 (MUST)</strong> Every chart carries, in order: <strong>title</strong> (the finding, P-2), <strong>subtitle</strong> (measure, unit, geography, period), and <strong>source line</strong> (P-7). Optional between subtitle and source: axis labels, annotations, footnotes.</li>
+<li><strong>TY-2 (MUST)</strong> Title and subtitle are left-aligned at the chart’s left edge (BBC <code>finalise_plot()</code> convention; Economist and FT practice). Units live in the subtitle (“GDP, % change on a year earlier”), not repeated on every axis tick.</li>
+<li><strong>TY-3 (MUST)</strong> Chart text uses a single sans-serif family at web sizes that stay legible on phones. Reference scale (Urban Institute web values): title ~20px bold, subtitle ~16px, axis and data labels ~12px, legend ~14px, source/notes ~11px. Sentence case for all chart text; never all-caps for data labels.</li>
+<li><strong>TY-4 (MUST)</strong> All text is horizontal — no vertical or diagonal axis labels (UK Analysis Function). If category labels don’t fit horizontally, flip to horizontal bars (CT-14).</li>
+</ul>
+</section>
+<section id="titles-and-subtitles-on-the-web-accessibility-interaction" class="level2">
+<h2 class="anchored" data-anchor-id="titles-and-subtitles-on-the-web-accessibility-interaction">Titles and subtitles on the web (accessibility interaction)</h2>
+<ul>
+<li><strong>TY-5 (SHOULD)</strong> On web pages, render title, subtitle, and source as HTML text adjacent to the graphic rather than baking them into the image — screen readers and reflow then get them for free (UK Analysis Function 1.4.5 guidance).</li>
+</ul>
+</section>
+<section id="legends-vs-direct-labels" class="level2">
+<h2 class="anchored" data-anchor-id="legends-vs-direct-labels">Legends vs direct labels</h2>
+<ul>
+<li><strong>TY-6 (SHOULD)</strong> Label series directly at the line end or on the bar whenever space allows; use a legend only when direct labels genuinely don’t fit (UK AF: “don’t use legends if direct labeling is possible”; Economist: where linking lines get crowded, “key the labels with small colour block”). If a legend is used, order it to match the visual order of the series and place it above the plot (BBC default: legend at top, no legend title).</li>
+</ul>
+</section>
+<section id="axes-gridlines-ticks" class="level2">
+<h2 class="anchored" data-anchor-id="axes-gridlines-ticks">Axes, gridlines, ticks</h2>
+<ul>
+<li><strong>TY-7 (MUST)</strong> Value axis: right-align numeric tick labels; use thousands separators (“121,576”); at most ~10 light-grey gridlines; label the final tick when space permits (UK AF).</li>
+<li><strong>TY-8 (MUST)</strong> Draw one strong baseline at zero (or the reference value) — BBC style <code>#333333</code> — heavier than gridlines. Other chart borders and axis lines are omitted.</li>
+<li><strong>TY-9 (SHOULD)</strong> Abbreviate time axes after first mention the way newsrooms do: “1994 96 98 2000 02 …” (Economist practice); don’t repeat the century on every tick.</li>
+</ul>
+</section>
+<section id="numbers" class="level2">
+<h2 class="anchored" data-anchor-id="numbers">Numbers</h2>
+<ul>
+<li><strong>TY-10 (MUST)</strong> Round to the precision the story needs — no false precision (write 4.5, not 4.5271). Keep decimal places consistent within a series.</li>
+<li><strong>TY-11 (MUST)</strong> State units once, in the subtitle or axis header: %, $bn, per 100,000 population. Symbols (%, $) don’t repeat on every tick if stated in the subtitle.</li>
+<li><strong>TY-12 (SHOULD)</strong> For scale words follow one convention: bn/m/trn abbreviations or full words, publication-wide.</li>
+</ul>
+</section>
+<section id="annotation" class="level2">
+<h2 class="anchored" data-anchor-id="annotation">Annotation</h2>
+<ul>
+<li><strong>TY-13 (SHOULD)</strong> Annotate the chart where the story happens: short labels with a thin pointer at the event (“Privatisation begins” — Economist example), placed near the relevant data in dark grey/black (UK AF). An annotated chart beats a caption paragraph.</li>
+<li><strong>TY-14 (MUST)</strong> Footnote markers (<code>*</code>, <code>†</code>, <code>‡</code>) attach caveats to specific values; the note text sits with the source line (“*To June 30th”).</li>
+</ul>
+</section>
+<section id="source-and-credit-line" class="level2">
+<h2 class="anchored" data-anchor-id="source-and-credit-line">Source and credit line</h2>
+<ul>
+<li><strong>TY-15 (MUST)</strong> Bottom-left: <code>Source:</code> / <code>Sources:</code> naming the data provider(s), separated by semicolons (“Sources: Thomson Reuters; IMF”). Bottom-right MAY carry the publication credit or logo (BBC <code>finalise_plot()</code> places the logo bottom-right).</li>
+</ul>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-
-<th>
-Date
-</th>
-
-<th>
-Title
-</th>
-
-<th>
-Description
-</th>
-
-<th>
-venue
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-date-sort="1741762800000" data-listing-title-sort="From Notebook to Production: Deploying ML Models with Confidence">
-<td>
-<span class="listing-date">Mar 12, 2025</span>
-</td>
-<td>
-<a href="https://example.com/talks/notebook-to-production" class="title listing-title">From Notebook to Production: Deploying ML Models with Confidence</a>
-</td>
-<td>
-<span class="listing-description">A practical walkthrough of taking a model out of a Jupyter notebook and into a reproducible, monitored production pipeline—covering containers, CI/CD, and drift detection.</span>
-</td>
-<td>
-<span class="listing-venue">PyData Seattle</span>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-date-sort="1731052800000" data-listing-title-sort="The Art of the Reproducible Report">
-<td>
-<span class="listing-date">Nov 8, 2024</span>
-</td>
-<td>
-<a href="https://example.com/talks/reproducible-report" class="title listing-title">The Art of the Reproducible Report</a>
-</td>
-<td>
-<span class="listing-description">Why your analysis should run end-to-end with a single command, and how literate programming tools like Quarto make stakeholder-ready reports painless.</span>
-</td>
-<td>
-<span class="listing-venue">posit::conf</span>
-</td>
-
-</tr>
-
-<tr data-index="2" data-listing-date-sort="1717484400000" data-listing-title-sort="Causal Inference for the Skeptical Analyst">
-<td>
-<span class="listing-date">Jun 4, 2024</span>
-</td>
-<td>
-<a href="https://example.com/talks/causal-inference-skeptical-analyst" class="title listing-title">Causal Inference for the Skeptical Analyst</a>
-</td>
-<td>
-<span class="listing-description">Correlation isn’t causation, but we can do better than throwing up our hands. An accessible tour of difference-in-differences, propensity scores, and when to trust them.</span>
-</td>
-<td>
-<span class="listing-venue">useR! Conference</span>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -667,7 +658,7 @@ venue
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Made with ❤️ and Quarto</p>
+<p>This is a DRAFT</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

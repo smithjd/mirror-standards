@@ -1,9 +1,12 @@
-# 03 — Color Palettes
+---
+title: "Color Palettes"
+format: html
+---
 
 Color in a chart is an encoding, not a decoration. Every color on a published chart
 belongs to one of five roles, each with its own palette. Hex codes below are taken
 verbatim from the cited sources; contrast ratios were computed against WCAG 2.x
-relative-luminance formulas (see [05-accessibility.md](05-accessibility.md)).
+relative-luminance formulas (see [05-accessibility.qmd](05-accessibility.qmd)).
 
 ## Roles and rules
 
