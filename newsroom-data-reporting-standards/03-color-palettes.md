@@ -50,12 +50,12 @@ our sources where **every color meets WCAG 1.4.11's 3:1 contrast against white**
 
 | Order | Name | Hex | Contrast vs white |
 |---|---|---|---|
-| 1 | Dark blue | `#12436D` | 10.25:1 |
-| 2 | Turquoise | `#28A197` | 3.17:1 |
-| 3 | Dark pink | `#801650` | 9.77:1 |
-| 4 | Orange | `#F46A25` | 3.03:1 |
-| 5 | Dark grey | `#3D3D3D` | 10.86:1 |
-| 6 | Light purple | `#A285D1` | 3.08:1 |
+| 1 | Dark blue | <span style="background-color: #12436D; color: white; padding: 2px 6px; border-radius: 3px;">`#12436D`</span> | 10.25:1 |
+| 2 | Turquoise | <span style="background-color: #28A197; color: white; padding: 2px 6px; border-radius: 3px;">`#28A197`</span> | 3.17:1 |
+| 3 | Dark pink | <span style="background-color: #801650; color: white; padding: 2px 6px; border-radius: 3px;">`#801650`</span> | 9.77:1 |
+| 4 | Orange | <span style="background-color: #F46A25; color: white; padding: 2px 6px; border-radius: 3px;">`#F46A25`</span> | 3.03:1 |
+| 5 | Dark grey | <span style="background-color: #3D3D3D; color: white; padding: 2px 6px; border-radius: 3px;">`#3D3D3D`</span> | 10.86:1 |
+| 6 | Light purple | <span style="background-color: #A285D1; color: white; padding: 2px 6px; border-radius: 3px;">`#A285D1`</span> | 3.08:1 |
 
 ### Categorical alternative — Okabe–Ito (colorblind-safe)
 
@@ -67,14 +67,14 @@ Analysis Function palette for thin lines.
 
 | Name | Hex | RGB |
 |---|---|---|
-| Black | `#000000` | 0, 0, 0 |
-| Orange | `#E69F00` | 230, 159, 0 |
-| Sky blue | `#56B4E9` | 86, 180, 233 |
-| Bluish green | `#009E73` | 0, 158, 115 |
-| Yellow | `#F0E442` | 240, 228, 66 |
-| Blue | `#0072B2` | 0, 114, 178 |
-| Vermilion | `#D55E00` | 213, 94, 0 |
-| Reddish purple | `#CC79A7` | 204, 121, 167 |
+| Black | <span style="background-color: #000000; color: white; padding: 2px 6px; border-radius: 3px;">`#000000`</span> | 0, 0, 0 |
+| Orange | <span style="background-color: #E69F00; color: black; padding: 2px 6px; border-radius: 3px;">`#E69F00`</span> | 230, 159, 0 |
+| Sky blue | <span style="background-color: #56B4E9; color: black; padding: 2px 6px; border-radius: 3px;">`#56B4E9`</span> | 86, 180, 233 |
+| Bluish green | <span style="background-color: #009E73; color: white; padding: 2px 6px; border-radius: 3px;">`#009E73`</span> | 0, 158, 115 |
+| Yellow | <span style="background-color: #F0E442; color: black; padding: 2px 6px; border-radius: 3px;">`#F0E442`</span> | 240, 228, 66 |
+| Blue | <span style="background-color: #0072B2; color: white; padding: 2px 6px; border-radius: 3px;">`#0072B2`</span> | 0, 114, 178 |
+| Vermilion | <span style="background-color: #D55E00; color: white; padding: 2px 6px; border-radius: 3px;">`#D55E00`</span> | 213, 94, 0 |
+| Reddish purple | <span style="background-color: #CC79A7; color: black; padding: 2px 6px; border-radius: 3px;">`#CC79A7`</span> | 204, 121, 167 |
 
 (Okabe–Ito also recommends vermilion over pure red for protanope visibility.)
 
@@ -82,7 +82,7 @@ Analysis Function palette for thin lines.
 
 Single-hue blue ramp (UK Analysis Function), light → dark:
 
-`#F2F2F2` → `#ADD1F1` → `#6BACE6` → `#2073BC` → `#12436D` → `#092135`
+<span style="background-color: #F2F2F2; color: black; padding: 2px 6px; border-radius: 3px;">`#F2F2F2`</span> → <span style="background-color: #ADD1F1; color: black; padding: 2px 6px; border-radius: 3px;">`#ADD1F1`</span> → <span style="background-color: #6BACE6; color: black; padding: 2px 6px; border-radius: 3px;">`#6BACE6`</span> → <span style="background-color: #2073BC; color: white; padding: 2px 6px; border-radius: 3px;">`#2073BC`</span> → <span style="background-color: #12436D; color: white; padding: 2px 6px; border-radius: 3px;">`#12436D`</span> → <span style="background-color: #092135; color: white; padding: 2px 6px; border-radius: 3px;">`#092135`</span>
 
 Use as many steps as the data need, keeping ends far apart in lightness (Datawrapper:
 cover a wide lightness range, ideally 60+ percentage points). For continuous scales in
@@ -94,7 +94,7 @@ alternative format (UK AF).
 ### Diverging default
 
 Build from the two endpoint hues of the categorical palette around a pale neutral
-midpoint, e.g. dark blue `#12436D` ↔ pale grey `#F2F2F2` ↔ dark pink `#801650`;
+midpoint, e.g. dark blue <span style="background-color: #12436D; color: white; padding: 2px 6px; border-radius: 3px;">`#12436D`</span> ↔ pale grey <span style="background-color: #F2F2F2; color: black; padding: 2px 6px; border-radius: 3px;">`#F2F2F2`</span> ↔ dark pink <span style="background-color: #801650; color: white; padding: 2px 6px; border-radius: 3px;">`#801650`</span>;
 or ColorBrewer's tested diverging schemes (e.g. RdBu). Prefer blue/red or blue/orange
 pairs over green/red (colorblind-hostile).
 
@@ -102,8 +102,8 @@ pairs over green/red (colorblind-hostile).
 
 One featured series + greyed context (UK AF "focus" palette):
 
-- Highlight: `#12436D` (or the publication's brand accent)
-- Context: `#BFBFBF`
+- Highlight: <span style="background-color: #12436D; color: white; padding: 2px 6px; border-radius: 3px;">`#12436D`</span> (or the publication's brand accent)
+- Context: <span style="background-color: #BFBFBF; color: black; padding: 2px 6px; border-radius: 3px;">`#BFBFBF`</span>
 
 ### Neutrals (non-data ink)
 
@@ -111,12 +111,12 @@ Following BBC `bbplot` values, which sit comfortably on white:
 
 | Element | Hex | Note |
 |---|---|---|
-| Chart text / annotations | `#222222`–`#333333` | 12.6:1 on white at `#333333` |
-| Secondary text | `#555555` | 7.5:1 on white |
-| Baseline / zero line | `#333333` | strong single anchor line |
-| Gridlines | `#CBCBCB` | light grey, y-axis only by default |
-| De-emphasized data | `#DDDDDD` | |
-| Background | `#FFFFFF` | white only (UK AF) unless a brand paper color is a documented house choice |
+| Chart text / annotations | <span style="background-color: #222222; color: white; padding: 2px 6px; border-radius: 3px;">`#222222`</span>–<span style="background-color: #333333; color: white; padding: 2px 6px; border-radius: 3px;">`#333333`</span> | 12.6:1 on white at `#333333` |
+| Secondary text | <span style="background-color: #555555; color: white; padding: 2px 6px; border-radius: 3px;">`#555555`</span> | 7.5:1 on white |
+| Baseline / zero line | <span style="background-color: #333333; color: white; padding: 2px 6px; border-radius: 3px;">`#333333`</span> | strong single anchor line |
+| Gridlines | <span style="background-color: #CBCBCB; color: black; padding: 2px 6px; border-radius: 3px;">`#CBCBCB`</span> | light grey, y-axis only by default |
+| De-emphasized data | <span style="background-color: #DDDDDD; color: black; padding: 2px 6px; border-radius: 3px;">`#DDDDDD`</span> | |
+| Background | <span style="background-color: #FFFFFF; color: black; padding: 2px 6px; border: 1px solid #ccc; border-radius: 3px;">`#FFFFFF`</span> | white only (UK AF) unless a brand paper color is a documented house choice |
 
 ---
 
@@ -127,28 +127,28 @@ those publications' brands.
 
 ### The Economist — web chart palette (visual style guide, 2017)
 
-Main order: Econ red `#E3120B`, red `#DB444B`, blue `#006BA2`, cyan `#3EBCD2`, green
-`#379A8B`, yellow `#EBB434`, olive `#B4BA39`, purple `#9A607F`, gold `#D1B07C`, grey
-`#758D99`. Black `#0C0C0C`; chart text `#3F5661`; boxes/nav background `#E9EDF0`.
+Main order: Econ red <span style="background-color: #E3120B; color: white; padding: 2px 6px; border-radius: 3px;">`#E3120B`</span>, red <span style="background-color: #DB444B; color: white; padding: 2px 6px; border-radius: 3px;">`#DB444B`</span>, blue <span style="background-color: #006BA2; color: white; padding: 2px 6px; border-radius: 3px;">`#006BA2`</span>, cyan <span style="background-color: #3EBCD2; color: black; padding: 2px 6px; border-radius: 3px;">`#3EBCD2`</span>, green
+<span style="background-color: #379A8B; color: white; padding: 2px 6px; border-radius: 3px;">`#379A8B`</span>, yellow <span style="background-color: #EBB434; color: black; padding: 2px 6px; border-radius: 3px;">`#EBB434`</span>, olive <span style="background-color: #B4BA39; color: black; padding: 2px 6px; border-radius: 3px;">`#B4BA39`</span>, purple <span style="background-color: #9A607F; color: white; padding: 2px 6px; border-radius: 3px;">`#9A607F`</span>, gold <span style="background-color: #D1B07C; color: black; padding: 2px 6px; border-radius: 3px;">`#D1B07C`</span>, grey
+<span style="background-color: #758D99; color: white; padding: 2px 6px; border-radius: 3px;">`#758D99`</span>. Black <span style="background-color: #0C0C0C; color: white; padding: 2px 6px; border-radius: 3px;">`#0C0C0C`</span>; chart text <span style="background-color: #3F5661; color: white; padding: 2px 6px; border-radius: 3px;">`#3F5661`</span>; boxes/nav background <span style="background-color: #E9EDF0; color: black; padding: 2px 6px; border-radius: 3px;">`#E9EDF0`</span>.
 The guide also defines **equal-lightness color scales** under each main hue (e.g.
-blue `#00588D → #1270A8 → #3D89C3 → #5DA4DF → #7BBFFC → #98DAFF`) so any hue can serve
+blue <span style="background-color: #00588D; color: white; padding: 2px 6px; border-radius: 3px;">`#00588D`</span> → <span style="background-color: #1270A8; color: white; padding: 2px 6px; border-radius: 3px;">`#1270A8`</span> → <span style="background-color: #3D89C3; color: white; padding: 2px 6px; border-radius: 3px;">`#3D89C3`</span> → <span style="background-color: #5DA4DF; color: black; padding: 2px 6px; border-radius: 3px;">`#5DA4DF`</span> → <span style="background-color: #7BBFFC; color: black; padding: 2px 6px; border-radius: 3px;">`#7BBFFC`</span> → <span style="background-color: #98DAFF; color: black; padding: 2px 6px; border-radius: 3px;">`#98DAFF`</span>) so any hue can serve
 as a sequential ramp at consistent lightness steps. Note the severe hue discipline —
 mostly reds/blues plus grey — which Datawrapper credits for their instant brand
 recognition.
 
 ### BBC — bbplot working colors (Visual & Data Journalism cookbook)
 
-Data hues used in the cookbook: blue `#1380A1`, gold `#FAAB18`, dark red `#990000`,
-green `#588300`. Neutrals as tabulated above (`#333333` baseline, `#CBCBCB` gridlines,
-`#DDDDDD` de-emphasis). Legends top or removed in favor of direct labels; y-gridlines
+Data hues used in the cookbook: blue <span style="background-color: #1380A1; color: white; padding: 2px 6px; border-radius: 3px;">`#1380A1`</span>, gold <span style="background-color: #FAAB18; color: black; padding: 2px 6px; border-radius: 3px;">`#FAAB18`</span>, dark red <span style="background-color: #990000; color: white; padding: 2px 6px; border-radius: 3px;">`#990000`</span>,
+green <span style="background-color: #588300; color: white; padding: 2px 6px; border-radius: 3px;">`#588300`</span>. Neutrals as tabulated above (<span style="background-color: #333333; color: white; padding: 2px 6px; border-radius: 3px;">`#333333`</span> baseline, <span style="background-color: #CBCBCB; color: black; padding: 2px 6px; border-radius: 3px;">`#CBCBCB`</span> gridlines,
+<span style="background-color: #DDDDDD; color: black; padding: 2px 6px; border-radius: 3px;">`#DDDDDD`</span> de-emphasis). Legends top or removed in favor of direct labels; y-gridlines
 only.
 
 ### Financial Times — chart colors (g-chartcolour / Origami)
 
-Backgrounds: web "paper" `#FFF1E5`, video `#333`/`#335`, clean white `#FFF`. Web line
-palette: `#0F5499`, `#EB5E8D`, `#70DCE6`, `#9DBF57`, `#208FCE`, `#7F062E`, `#C2B7AF`.
-Diverging: `#B31147` ↔ `#1162B3` (through a warm neutral `#CEC6B9`). Sequential multi:
-`#F3DEC8 → #0F5499`. Fixed political colors (e.g. US Democrat `#238FCE`, Republican
-`#E5262D`) illustrate CO-3's "fixed public association" override. The FT's pink paper
+Backgrounds: web "paper" <span style="background-color: #FFF1E5; color: black; padding: 2px 6px; border-radius: 3px;">`#FFF1E5`</span>, video <span style="background-color: #333333; color: white; padding: 2px 6px; border-radius: 3px;">`#333`</span>/<span style="background-color: #333355; color: white; padding: 2px 6px; border-radius: 3px;">`#335`</span>, clean white <span style="background-color: #FFFFFF; color: black; padding: 2px 6px; border: 1px solid #ccc; border-radius: 3px;">`#FFF`</span>. Web line
+palette: <span style="background-color: #0F5499; color: white; padding: 2px 6px; border-radius: 3px;">`#0F5499`</span>, <span style="background-color: #EB5E8D; color: white; padding: 2px 6px; border-radius: 3px;">`#EB5E8D`</span>, <span style="background-color: #70DCE6; color: black; padding: 2px 6px; border-radius: 3px;">`#70DCE6`</span>, <span style="background-color: #9DBF57; color: black; padding: 2px 6px; border-radius: 3px;">`#9DBF57`</span>, <span style="background-color: #208FCE; color: white; padding: 2px 6px; border-radius: 3px;">`#208FCE`</span>, <span style="background-color: #7F062E; color: white; padding: 2px 6px; border-radius: 3px;">`#7F062E`</span>, <span style="background-color: #C2B7AF; color: black; padding: 2px 6px; border-radius: 3px;">`#C2B7AF`</span>.
+Diverging: <span style="background-color: #B31147; color: white; padding: 2px 6px; border-radius: 3px;">`#B31147`</span> ↔ <span style="background-color: #1162B3; color: white; padding: 2px 6px; border-radius: 3px;">`#1162B3`</span> (through a warm neutral <span style="background-color: #CEC6B9; color: black; padding: 2px 6px; border-radius: 3px;">`#CEC6B9`</span>). Sequential multi:
+<span style="background-color: #F3DEC8; color: black; padding: 2px 6px; border-radius: 3px;">`#F3DEC8`</span> → <span style="background-color: #0F5499; color: white; padding: 2px 6px; border-radius: 3px;">`#0F5499`</span>. Fixed political colors (e.g. US Democrat <span style="background-color: #238FCE; color: white; padding: 2px 6px; border-radius: 3px;">`#238FCE`</span>, Republican
+<span style="background-color: #E5262D; color: white; padding: 2px 6px; border-radius: 3px;">`#E5262D`</span>) illustrate CO-3's "fixed public association" override. The FT's pink paper
 deliberately narrows the usable lightness range — a reminder that background choice
 constrains the whole palette (Datawrapper).
