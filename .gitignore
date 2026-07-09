@@ -8,4 +8,5 @@
 /.quarto/
 **/*.quarto_ipynb
 _specs
-R
+_site
+R/_site/
