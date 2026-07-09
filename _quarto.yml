@@ -1,19 +1,43 @@
 project:
   type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "!draft_pages/"
+    - "!back-end/"
+    - "!_hold/"
+    - "!_studies/"
+#  pre-render: rm -f *\ *.html
+  
+format:
+  html:
+    theme: 
+      light: [cosmo, theme.scss]
+    mainfont: gandisans
+    toc-location: right
+    css: styles.css
+    date: ""
+    number-sections: true
 
 website:
   title: "Shambhala Mirror Standards"
-  search: false
-  open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
-  page-footer: "This is a DRAFT"
+  description: "A set of standards for data reporting in the Shambhala Mirror."
+  llms-txt: true
+  favicon: "/images/SI-sunburst.ico"
+#  site-url: "https://ourmirror.netlify.app"
   navbar:
-    right:
-      - text: Home
+    logo: "images/SI-sunburst.png"
+    pinned: false
+    left:
+      - text: "Home"
         href: index.qmd
+      - text: "Shambhala"
+        href: "https://shambhala.org"
     tools: 
       - icon: github
         text: Github
         href: https://github.com
+  page-navigation: true
   sidebar:
     contents:
       - section: "Newsroom Data Reporting Standards"
@@ -34,7 +58,3 @@ website:
             href: newsroom-data-reporting-standards/06-implementation-r.qmd
           - text: Sources
             href: newsroom-data-reporting-standards/07-sources.qmd
-
-format:
-  html:
-    theme: [styles.scss, brand]

@@ -29,6 +29,13 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../newsroom-data-reporting-standards/02-chart-types.html" rel="next">
+<link href="../newsroom-data-reporting-standards/newsroom-standards.html" rel="prev">
+<link href="..//images/SI-sunburst.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -40,10 +47,22 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a46f7dda4e12ad5f0853473d2999dce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a46f7dda4e12ad5f0853473d2999dce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a46f7dda4e12ad5f0853473d2999dce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -60,30 +79,37 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Core Principles – Shambhala Mirror Standards">
-<meta property="og:description" content="">
-<meta property="og:site_name" content="Shambhala Mirror Standards">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/SI-sunburst.png" alt="" class="navbar-logo light-content">
+    <img src="../images/SI-sunburst.png" alt="" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Shambhala Mirror Standards</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://shambhala.org"> 
+<span class="menu-text">Shambhala</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -173,7 +199,9 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -197,16 +225,16 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>These principles govern every chart. The detailed rules in the other documents are applications of them; when a situation is not covered by a specific rule, decide by these.</p>
-<section id="p-1-the-message-comes-first-must" class="level2">
-<h2 class="anchored" data-anchor-id="p-1-the-message-comes-first-must">P-1 The message comes first (MUST)</h2>
+<section id="p-1-the-message-comes-first-must" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="p-1-the-message-comes-first-must"><span class="header-section-number">1</span> P-1 The message comes first (MUST)</h2>
 <p>Every chart MUST have a single, stateable message. If you cannot complete the sentence “this chart shows that …”, the chart is not ready. The Financial Times’ Visual Vocabulary makes this operational: chart choice starts from the <em>analytical function</em> of the message — deviation, correlation, ranking, distribution, change over time, magnitude, part-to-whole, spatial, or flow — not from a preferred chart form.</p>
 </section>
-<section id="p-2-titles-state-the-finding-should" class="level2">
-<h2 class="anchored" data-anchor-id="p-2-titles-state-the-finding-should">P-2 Titles state the finding (SHOULD)</h2>
+<section id="p-2-titles-state-the-finding-should" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="p-2-titles-state-the-finding-should"><span class="header-section-number">2</span> P-2 Titles state the finding (SHOULD)</h2>
 <p>The main title SHOULD be an assertive headline stating what the chart shows (“Vaccination halved infections”), not a variable listing (“Infections by vaccination status, 2020–24”). The descriptive part — measure, unit, geography, period — belongs in the subtitle. This is the consistent practice of the BBC, FT, and The Economist, and the UK Analysis Function formalizes it as “headline title plus statistical subtitle.”</p>
 </section>
-<section id="p-3-show-the-data-honestly-must" class="level2">
-<h2 class="anchored" data-anchor-id="p-3-show-the-data-honestly-must">P-3 Show the data honestly (MUST)</h2>
+<section id="p-3-show-the-data-honestly-must" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="p-3-show-the-data-honestly-must"><span class="header-section-number">3</span> P-3 Show the data honestly (MUST)</h2>
 <ul>
 <li>Bar and column charts encode value in length, so their value axis MUST start at zero and MUST NOT be broken. (Economist style guide; UK Analysis Function; Urban Institute.)</li>
 <li>Line charts MAY use a non-zero baseline when the level is not the story, but the axis MUST NOT be broken silently, and the range MUST NOT be chosen to manufacture drama.</li>
@@ -214,8 +242,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Areas MUST scale with the values they represent: no 3-D effects, no perspective, no pictograms sliced to represent fractions (“do not slice off an arm to represent a decimal” — FT Visual Vocabulary).</li>
 </ul>
 </section>
-<section id="p-4-maximize-data-minimize-decoration-should" class="level2">
-<h2 class="anchored" data-anchor-id="p-4-maximize-data-minimize-decoration-should">P-4 Maximize data, minimize decoration (SHOULD)</h2>
+<section id="p-4-maximize-data-minimize-decoration-should" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="p-4-maximize-data-minimize-decoration-should"><span class="header-section-number">4</span> P-4 Maximize data, minimize decoration (SHOULD)</h2>
 <p>Every non-data element must earn its place. Defaults that follow from this:</p>
 <ul>
 <li>Gridlines: light grey, one axis only where possible, never more than about 10 (UK Analysis Function). The BBC’s default theme draws horizontal gridlines only.</li>
@@ -224,20 +252,20 @@ ul.task-list li input[type="checkbox"] {
 <li>Prefer direct labels over legends (<a href="../newsroom-data-reporting-standards/04-typography-annotation.html">04-typography-annotation.qmd</a>, TY-6).</li>
 </ul>
 </section>
-<section id="p-5-less-but-comparable-should" class="level2">
-<h2 class="anchored" data-anchor-id="p-5-less-but-comparable-should">P-5 Less, but comparable (SHOULD)</h2>
+<section id="p-5-less-but-comparable-should" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="p-5-less-but-comparable-should"><span class="header-section-number">5</span> P-5 Less, but comparable (SHOULD)</h2>
 <p>Fewer well-chosen series beat exhaustive ones. Working limits used throughout this standard: at most <strong>4 lines</strong> on one line chart, at most <strong>4 bars</strong> per cluster, at most <strong>6–7 categories</strong> per chart (UK Analysis Function; Urban Institute; The Economist’s tooling plots at most 6 colors). When the data exceed these limits, use small multiples — repeat the same chart per category with shared scales — rather than cramming one panel.</p>
 </section>
-<section id="p-6-consistency-across-the-publication-must" class="level2">
-<h2 class="anchored" data-anchor-id="p-6-consistency-across-the-publication-must">P-6 Consistency across the publication (MUST)</h2>
+<section id="p-6-consistency-across-the-publication-must" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="p-6-consistency-across-the-publication-must"><span class="header-section-number">6</span> P-6 Consistency across the publication (MUST)</h2>
 <p>The same entity MUST keep the same color, the same measure the same format, and the same chart family the same conventions across a page or report. Readers learn your encoding once; do not make them relearn it per chart.</p>
 </section>
-<section id="p-7-every-chart-cites-its-source-must" class="level2">
-<h2 class="anchored" data-anchor-id="p-7-every-chart-cites-its-source-must">P-7 Every chart cites its source (MUST)</h2>
+<section id="p-7-every-chart-cites-its-source-must" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="p-7-every-chart-cites-its-source-must"><span class="header-section-number">7</span> P-7 Every chart cites its source (MUST)</h2>
 <p>A source line (“Source: …”, or “Sources: …”) MUST appear on or directly beneath every chart, bottom-left, naming the data provider — not the file, not the analyst. Footnote markers (<code>*</code>, <code>†</code>) qualify individual figures. This is uniform BBC, FT, and Economist practice; the BBC’s <code>finalise_plot()</code> makes the source line a required argument.</p>
 </section>
-<section id="p-8-design-for-the-reader-you-dont-control-must" class="level2">
-<h2 class="anchored" data-anchor-id="p-8-design-for-the-reader-you-dont-control-must">P-8 Design for the reader you don’t control (MUST)</h2>
+<section id="p-8-design-for-the-reader-you-dont-control-must" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="p-8-design-for-the-reader-you-dont-control-must"><span class="header-section-number">8</span> P-8 Design for the reader you don’t control (MUST)</h2>
 <p>The chart will be read on a phone, projected, printed in greyscale, or read aloud by a screen reader. It MUST survive all four:</p>
 <ul>
 <li>Meaning MUST NOT be carried by color alone (WCAG 1.4.1) — see <a href="../newsroom-data-reporting-standards/05-accessibility.html">05-accessibility.qmd</a>.</li>
@@ -649,20 +677,19 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-</div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>This is a DRAFT</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../newsroom-data-reporting-standards/newsroom-standards.html" class="pagination-link" aria-label="Newsroom Standards">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Newsroom Standards</span>
+      </a>          
   </div>
-</footer>
+  <div class="nav-page nav-page-next">
+      <a href="../newsroom-data-reporting-standards/02-chart-types.html" class="pagination-link" aria-label="Chart Types">
+        <span class="nav-page-text">Chart Types</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
 
 
 

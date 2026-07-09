@@ -29,6 +29,13 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../newsroom-data-reporting-standards/03-color-palettes.html" rel="next">
+<link href="../newsroom-data-reporting-standards/01-principles.html" rel="prev">
+<link href="..//images/SI-sunburst.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -40,10 +47,22 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a46f7dda4e12ad5f0853473d2999dce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a46f7dda4e12ad5f0853473d2999dce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a46f7dda4e12ad5f0853473d2999dce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -60,30 +79,37 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Chart Types – Shambhala Mirror Standards">
-<meta property="og:description" content="">
-<meta property="og:site_name" content="Shambhala Mirror Standards">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/SI-sunburst.png" alt="" class="navbar-logo light-content">
+    <img src="../images/SI-sunburst.png" alt="" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Shambhala Mirror Standards</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://shambhala.org"> 
+<span class="menu-text">Shambhala</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -173,7 +199,9 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -197,8 +225,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Chart selection starts from the <strong>analytical function</strong> of the message. This document adopts the Financial Times Visual Vocabulary’s nine functions as the normative taxonomy (Financial-Times/chart-doctor, <code>visual-vocabulary</code>), annotated with selection rules drawn from the BBC, The Economist, the UK Government Analysis Function, and the Urban Institute.</p>
-<section id="selection-rules" class="level2">
-<h2 class="anchored" data-anchor-id="selection-rules">Selection rules</h2>
+<section id="selection-rules" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="selection-rules"><span class="header-section-number">1</span> Selection rules</h2>
 <ul>
 <li><strong>CT-1 (MUST)</strong> Choose the chart by asking what relationship the message expresses — one of the nine functions below — and pick from that function’s list. A message can serve two functions (e.g.&nbsp;a ranked magnitude); pick the function the title asserts.</li>
 <li><strong>CT-2 (MUST)</strong> When in doubt, use the boring chart. Bar, line, and scatter cover the large majority of published messages; exotic forms need to pay for the learning cost they impose on readers.</li>
@@ -207,8 +235,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <hr>
 </section>
-<section id="deviation-variation-from-a-fixed-reference-point" class="level2">
-<h2 class="anchored" data-anchor-id="deviation-variation-from-a-fixed-reference-point">1. Deviation — variation from a fixed reference point</h2>
+<section id="deviation-variation-from-a-fixed-reference-point" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="deviation-variation-from-a-fixed-reference-point"><span class="header-section-number">2</span> 1. Deviation — variation from a fixed reference point</h2>
 <p>Use for surplus/deficit, above/below target, positive/negative sentiment.</p>
 <table class="caption-top table">
 <colgroup>
@@ -242,8 +270,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p><strong>CT-5 (MUST)</strong> Diverging charts MUST place the reference value (usually zero) as a visible, aligned axis line. Encode sign with the diverging palette (<a href="../newsroom-data-reporting-standards/03-color-palettes.html">03-color-palettes.qmd</a>, CO-6) only when the difference is meaningful — The Economist: differentiate positive/negative by color “only where there is a meaningful difference, i.e.&nbsp;imports/exports.”</p>
 </section>
-<section id="correlation-relationship-between-variables" class="level2">
-<h2 class="anchored" data-anchor-id="correlation-relationship-between-variables">2. Correlation — relationship between variables</h2>
+<section id="correlation-relationship-between-variables" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="correlation-relationship-between-variables"><span class="header-section-number">3</span> 2. Correlation — relationship between variables</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -280,8 +308,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p><strong>CT-6 (SHOULD)</strong> State correlation ≠ causation in the surrounding prose, not the chart. <strong>CT-7 (MUST)</strong> Bubble sizes MUST scale by area, never by radius.</p>
 </section>
-<section id="ranking-position-in-an-ordered-list-is-the-story" class="level2">
-<h2 class="anchored" data-anchor-id="ranking-position-in-an-ordered-list-is-the-story">3. Ranking — position in an ordered list is the story</h2>
+<section id="ranking-position-in-an-ordered-list-is-the-story" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="ranking-position-in-an-ordered-list-is-the-story"><span class="header-section-number">4</span> 3. Ranking — position in an ordered list is the story</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -318,8 +346,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p><strong>CT-8 (MUST)</strong> Sort by value, not alphabetically, unless the reader will look up a specific row (then alphabetical is a lookup table, and consider an actual table).</p>
 </section>
-<section id="distribution-values-and-their-frequency" class="level2">
-<h2 class="anchored" data-anchor-id="distribution-values-and-their-frequency">4. Distribution — values and their frequency</h2>
+<section id="distribution-values-and-their-frequency" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="distribution-values-and-their-frequency"><span class="header-section-number">5</span> 4. Distribution — values and their frequency</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -364,8 +392,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p><strong>CT-9 (SHOULD)</strong> Prefer showing the distribution over reporting a lone mean whenever spread or skew affects the conclusion.</p>
 </section>
-<section id="change-over-time-trends" class="level2">
-<h2 class="anchored" data-anchor-id="change-over-time-trends">5. Change over time — trends</h2>
+<section id="change-over-time-trends" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="change-over-time-trends"><span class="header-section-number">6</span> 5. Change over time — trends</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -418,8 +446,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p><strong>CT-10 (MUST)</strong> Time runs left to right. <strong>CT-11 (SHOULD NOT)</strong> More than 4 lines per panel (UK Analysis Function); grey the context lines and color only the featured ones, or facet. <strong>CT-12 (MUST)</strong> Stacked area charts MUST NOT be used when the message is about an individual component’s trend — only the bottom band and the total read accurately.</p>
 </section>
-<section id="magnitude-size-comparisons" class="level2">
-<h2 class="anchored" data-anchor-id="magnitude-size-comparisons">6. Magnitude — size comparisons</h2>
+<section id="magnitude-size-comparisons" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="magnitude-size-comparisons"><span class="header-section-number">7</span> 6. Magnitude — size comparisons</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -460,8 +488,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p><strong>CT-13 (MUST)</strong> Zero baseline, no broken axis, no 3-D (P-3). <strong>CT-14 (SHOULD)</strong> Horizontal bars when category labels are long — labels stay horizontal (TY-4).</p>
 </section>
-<section id="part-to-whole-composition" class="level2">
-<h2 class="anchored" data-anchor-id="part-to-whole-composition">7. Part-to-whole — composition</h2>
+<section id="part-to-whole-composition" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="part-to-whole-composition"><span class="header-section-number">8</span> 7. Part-to-whole — composition</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -510,8 +538,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p><strong>CT-15 (SHOULD NOT / MUST NOT)</strong> Pies SHOULD NOT be used at all when segments are similar in size, and MUST NOT exceed <strong>4–5 segments</strong> — The Economist: pie/doughnut “should probably be abandoned in favour of stacked bar if over 4 categories”; UK Analysis Function caps pies at 5; Urban Institute flags 5+ slices as an absolute. When used: start the first sector at 12 o’clock, order segments by size, label directly.</p>
 </section>
-<section id="spatial-location-or-geographic-pattern-is-the-point" class="level2">
-<h2 class="anchored" data-anchor-id="spatial-location-or-geographic-pattern-is-the-point">8. Spatial — location or geographic pattern is the point</h2>
+<section id="spatial-location-or-geographic-pattern-is-the-point" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="spatial-location-or-geographic-pattern-is-the-point"><span class="header-section-number">9</span> 8. Spatial — location or geographic pattern is the point</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -552,8 +580,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p><strong>CT-16 (MUST)</strong> Use a map only when <em>where</em> is the story (“only when precise locations or geographical patterns in data are more important than anything else” — FT). A bar chart of regions usually communicates values better than a choropleth. <strong>CT-17 (MUST)</strong> Choropleths encode rates; totals go on symbol maps.</p>
 </section>
-<section id="flow-movement-between-states" class="level2">
-<h2 class="anchored" data-anchor-id="flow-movement-between-states">9. Flow — movement between states</h2>
+<section id="flow-movement-between-states" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="flow-movement-between-states"><span class="header-section-number">10</span> 9. Flow — movement between states</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -587,8 +615,8 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>CT-18 (SHOULD)</strong> Flow diagrams need aggressive simplification: merge minor flows into “other” before publishing.</p>
 <hr>
 </section>
-<section id="named-anti-patterns" class="level2">
-<h2 class="anchored" data-anchor-id="named-anti-patterns">Named anti-patterns</h2>
+<section id="named-anti-patterns" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="named-anti-patterns"><span class="header-section-number">11</span> Named anti-patterns</h2>
 <p>Reviewers cite these directly.</p>
 <table class="caption-top table">
 <colgroup>
@@ -1085,20 +1113,19 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-</div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>This is a DRAFT</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../newsroom-data-reporting-standards/01-principles.html" class="pagination-link" aria-label="Principles">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Principles</span>
+      </a>          
   </div>
-</footer>
+  <div class="nav-page nav-page-next">
+      <a href="../newsroom-data-reporting-standards/03-color-palettes.html" class="pagination-link" aria-label="Color Palettes">
+        <span class="nav-page-text">Color Palettes</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
 
 
 

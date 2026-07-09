@@ -29,6 +29,13 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../newsroom-data-reporting-standards/04-typography-annotation.html" rel="next">
+<link href="../newsroom-data-reporting-standards/02-chart-types.html" rel="prev">
+<link href="..//images/SI-sunburst.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -40,10 +47,22 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a46f7dda4e12ad5f0853473d2999dce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a46f7dda4e12ad5f0853473d2999dce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a46f7dda4e12ad5f0853473d2999dce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -60,30 +79,37 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Color Palettes – Shambhala Mirror Standards">
-<meta property="og:description" content="">
-<meta property="og:site_name" content="Shambhala Mirror Standards">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/SI-sunburst.png" alt="" class="navbar-logo light-content">
+    <img src="../images/SI-sunburst.png" alt="" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Shambhala Mirror Standards</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://shambhala.org"> 
+<span class="menu-text">Shambhala</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -173,7 +199,9 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -197,8 +225,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Color in a chart is an encoding, not a decoration. Every color on a published chart belongs to one of five roles, each with its own palette. Hex codes below are taken verbatim from the cited sources; contrast ratios were computed against WCAG 2.x relative-luminance formulas (see <a href="../newsroom-data-reporting-standards/05-accessibility.html">05-accessibility.qmd</a>).</p>
-<section id="roles-and-rules" class="level2">
-<h2 class="anchored" data-anchor-id="roles-and-rules">Roles and rules</h2>
+<section id="roles-and-rules" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="roles-and-rules"><span class="header-section-number">1</span> Roles and rules</h2>
 <ul>
 <li><strong>CO-1 (MUST)</strong> Use only colors defined in this document (or a project palette derived under CO-10). No ad-hoc colors.</li>
 <li><strong>CO-2 (MUST)</strong> Pick the palette by data type: <strong>categorical</strong> for unordered groups, <strong>sequential</strong> for ordered/continuous values, <strong>diverging</strong> for values around a meaningful midpoint, <strong>highlight</strong> for featuring one series, <strong>neutral</strong> for everything that is not data.</li>
@@ -213,10 +241,10 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <hr>
 </section>
-<section id="default-palettes-normative" class="level2">
-<h2 class="anchored" data-anchor-id="default-palettes-normative">Default palettes (normative)</h2>
-<section id="categorical-default-uk-analysis-function-palette" class="level3">
-<h3 class="anchored" data-anchor-id="categorical-default-uk-analysis-function-palette">Categorical default — UK Analysis Function palette</h3>
+<section id="default-palettes-normative" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="default-palettes-normative"><span class="header-section-number">2</span> Default palettes (normative)</h2>
+<section id="categorical-default-uk-analysis-function-palette" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="categorical-default-uk-analysis-function-palette"><span class="header-section-number">2.1</span> Categorical default — UK Analysis Function palette</h3>
 <p>Chosen as the default because it is the only published newsroom/government palette in our sources where <strong>every color meets WCAG 1.4.11’s 3:1 contrast against white</strong> (verified: 3.03–10.86:1). Use in this order:</p>
 <table class="caption-top table">
 <colgroup>
@@ -273,8 +301,8 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="categorical-alternative-okabeito-colorblind-safe" class="level3">
-<h3 class="anchored" data-anchor-id="categorical-alternative-okabeito-colorblind-safe">Categorical alternative — Okabe–Ito (colorblind-safe)</h3>
+<section id="categorical-alternative-okabeito-colorblind-safe" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="categorical-alternative-okabeito-colorblind-safe"><span class="header-section-number">2.2</span> Categorical alternative — Okabe–Ito (colorblind-safe)</h3>
 <p>The reference palette for color-vision-deficiency safety (Okabe &amp; Ito 2008). Its distinctions survive protanopia/deuteranopia, but note three of its colors fall below 3:1 contrast on white (yellow 1.32:1, orange 2.25:1, sky blue 2.31:1) — on white backgrounds pair them with direct labels and adequate mark weight, or prefer the Analysis Function palette for thin lines.</p>
 <table class="caption-top table">
 <colgroup>
@@ -334,26 +362,26 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p>(Okabe–Ito also recommends vermilion over pure red for protanope visibility.)</p>
 </section>
-<section id="sequential-default" class="level3">
-<h3 class="anchored" data-anchor-id="sequential-default">Sequential default</h3>
+<section id="sequential-default" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="sequential-default"><span class="header-section-number">2.3</span> Sequential default</h3>
 <p>Single-hue blue ramp (UK Analysis Function), light → dark:</p>
 <p><span style="background-color: #F2F2F2; color: black; padding: 2px 6px; border-radius: 3px;"><code>#F2F2F2</code></span> → <span style="background-color: #ADD1F1; color: black; padding: 2px 6px; border-radius: 3px;"><code>#ADD1F1</code></span> → <span style="background-color: #6BACE6; color: black; padding: 2px 6px; border-radius: 3px;"><code>#6BACE6</code></span> → <span style="background-color: #2073BC; color: white; padding: 2px 6px; border-radius: 3px;"><code>#2073BC</code></span> → <span style="background-color: #12436D; color: white; padding: 2px 6px; border-radius: 3px;"><code>#12436D</code></span> → <span style="background-color: #092135; color: white; padding: 2px 6px; border-radius: 3px;"><code>#092135</code></span></p>
 <p>Use as many steps as the data need, keeping ends far apart in lightness (Datawrapper: cover a wide lightness range, ideally 60+ percentage points). For continuous scales in software, <strong>viridis</strong> family scales are an acceptable perceptually-uniform, colorblind-safe substitute. Adjacent steps of any sequential ramp rarely meet 3:1 contrast — so a sequential-colored graphic MUST also be readable via labels or an alternative format (UK AF).</p>
 </section>
-<section id="diverging-default" class="level3">
-<h3 class="anchored" data-anchor-id="diverging-default">Diverging default</h3>
+<section id="diverging-default" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="diverging-default"><span class="header-section-number">2.4</span> Diverging default</h3>
 <p>Build from the two endpoint hues of the categorical palette around a pale neutral midpoint, e.g.&nbsp;dark blue <span style="background-color: #12436D; color: white; padding: 2px 6px; border-radius: 3px;"><code>#12436D</code></span> ↔︎ pale grey <span style="background-color: #F2F2F2; color: black; padding: 2px 6px; border-radius: 3px;"><code>#F2F2F2</code></span> ↔︎ dark pink <span style="background-color: #801650; color: white; padding: 2px 6px; border-radius: 3px;"><code>#801650</code></span>; or ColorBrewer’s tested diverging schemes (e.g.&nbsp;RdBu). Prefer blue/red or blue/orange pairs over green/red (colorblind-hostile).</p>
 </section>
-<section id="highlightfocus-pair" class="level3">
-<h3 class="anchored" data-anchor-id="highlightfocus-pair">Highlight/focus pair</h3>
+<section id="highlightfocus-pair" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="highlightfocus-pair"><span class="header-section-number">2.5</span> Highlight/focus pair</h3>
 <p>One featured series + greyed context (UK AF “focus” palette):</p>
 <ul>
 <li>Highlight: <span style="background-color: #12436D; color: white; padding: 2px 6px; border-radius: 3px;"><code>#12436D</code></span> (or the publication’s brand accent)</li>
 <li>Context: <span style="background-color: #BFBFBF; color: black; padding: 2px 6px; border-radius: 3px;"><code>#BFBFBF</code></span></li>
 </ul>
 </section>
-<section id="neutrals-non-data-ink" class="level3">
-<h3 class="anchored" data-anchor-id="neutrals-non-data-ink">Neutrals (non-data ink)</h3>
+<section id="neutrals-non-data-ink" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="neutrals-non-data-ink"><span class="header-section-number">2.6</span> Neutrals (non-data ink)</h3>
 <p>Following BBC <code>bbplot</code> values, which sit comfortably on white:</p>
 <table class="caption-top table">
 <colgroup>
@@ -404,19 +432,19 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 </section>
 </section>
-<section id="house-palettes-from-the-three-newsrooms-informative" class="level2">
-<h2 class="anchored" data-anchor-id="house-palettes-from-the-three-newsrooms-informative">House palettes from the three newsrooms (informative)</h2>
+<section id="house-palettes-from-the-three-newsrooms-informative" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="house-palettes-from-the-three-newsrooms-informative"><span class="header-section-number">3</span> House palettes from the three newsrooms (informative)</h2>
 <p>Documented as worked examples of the rules above — not for direct reuse, since they are those publications’ brands.</p>
-<section id="the-economist-web-chart-palette-visual-style-guide-2017" class="level3">
-<h3 class="anchored" data-anchor-id="the-economist-web-chart-palette-visual-style-guide-2017">The Economist — web chart palette (visual style guide, 2017)</h3>
+<section id="the-economist-web-chart-palette-visual-style-guide-2017" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="the-economist-web-chart-palette-visual-style-guide-2017"><span class="header-section-number">3.1</span> The Economist — web chart palette (visual style guide, 2017)</h3>
 <p>Main order: Econ red <span style="background-color: #E3120B; color: white; padding: 2px 6px; border-radius: 3px;"><code>#E3120B</code></span>, red <span style="background-color: #DB444B; color: white; padding: 2px 6px; border-radius: 3px;"><code>#DB444B</code></span>, blue <span style="background-color: #006BA2; color: white; padding: 2px 6px; border-radius: 3px;"><code>#006BA2</code></span>, cyan <span style="background-color: #3EBCD2; color: black; padding: 2px 6px; border-radius: 3px;"><code>#3EBCD2</code></span>, green <span style="background-color: #379A8B; color: white; padding: 2px 6px; border-radius: 3px;"><code>#379A8B</code></span>, yellow <span style="background-color: #EBB434; color: black; padding: 2px 6px; border-radius: 3px;"><code>#EBB434</code></span>, olive <span style="background-color: #B4BA39; color: black; padding: 2px 6px; border-radius: 3px;"><code>#B4BA39</code></span>, purple <span style="background-color: #9A607F; color: white; padding: 2px 6px; border-radius: 3px;"><code>#9A607F</code></span>, gold <span style="background-color: #D1B07C; color: black; padding: 2px 6px; border-radius: 3px;"><code>#D1B07C</code></span>, grey <span style="background-color: #758D99; color: white; padding: 2px 6px; border-radius: 3px;"><code>#758D99</code></span>. Black <span style="background-color: #0C0C0C; color: white; padding: 2px 6px; border-radius: 3px;"><code>#0C0C0C</code></span>; chart text <span style="background-color: #3F5661; color: white; padding: 2px 6px; border-radius: 3px;"><code>#3F5661</code></span>; boxes/nav background <span style="background-color: #E9EDF0; color: black; padding: 2px 6px; border-radius: 3px;"><code>#E9EDF0</code></span>. The guide also defines <strong>equal-lightness color scales</strong> under each main hue (e.g. blue <span style="background-color: #00588D; color: white; padding: 2px 6px; border-radius: 3px;"><code>#00588D</code></span> → <span style="background-color: #1270A8; color: white; padding: 2px 6px; border-radius: 3px;"><code>#1270A8</code></span> → <span style="background-color: #3D89C3; color: white; padding: 2px 6px; border-radius: 3px;"><code>#3D89C3</code></span> → <span style="background-color: #5DA4DF; color: black; padding: 2px 6px; border-radius: 3px;"><code>#5DA4DF</code></span> → <span style="background-color: #7BBFFC; color: black; padding: 2px 6px; border-radius: 3px;"><code>#7BBFFC</code></span> → <span style="background-color: #98DAFF; color: black; padding: 2px 6px; border-radius: 3px;"><code>#98DAFF</code></span>) so any hue can serve as a sequential ramp at consistent lightness steps. Note the severe hue discipline — mostly reds/blues plus grey — which Datawrapper credits for their instant brand recognition.</p>
 </section>
-<section id="bbc-bbplot-working-colors-visual-data-journalism-cookbook" class="level3">
-<h3 class="anchored" data-anchor-id="bbc-bbplot-working-colors-visual-data-journalism-cookbook">BBC — bbplot working colors (Visual &amp; Data Journalism cookbook)</h3>
+<section id="bbc-bbplot-working-colors-visual-data-journalism-cookbook" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="bbc-bbplot-working-colors-visual-data-journalism-cookbook"><span class="header-section-number">3.2</span> BBC — bbplot working colors (Visual &amp; Data Journalism cookbook)</h3>
 <p>Data hues used in the cookbook: blue <span style="background-color: #1380A1; color: white; padding: 2px 6px; border-radius: 3px;"><code>#1380A1</code></span>, gold <span style="background-color: #FAAB18; color: black; padding: 2px 6px; border-radius: 3px;"><code>#FAAB18</code></span>, dark red <span style="background-color: #990000; color: white; padding: 2px 6px; border-radius: 3px;"><code>#990000</code></span>, green <span style="background-color: #588300; color: white; padding: 2px 6px; border-radius: 3px;"><code>#588300</code></span>. Neutrals as tabulated above (<span style="background-color: #333333; color: white; padding: 2px 6px; border-radius: 3px;"><code>#333333</code></span> baseline, <span style="background-color: #CBCBCB; color: black; padding: 2px 6px; border-radius: 3px;"><code>#CBCBCB</code></span> gridlines, <span style="background-color: #DDDDDD; color: black; padding: 2px 6px; border-radius: 3px;"><code>#DDDDDD</code></span> de-emphasis). Legends top or removed in favor of direct labels; y-gridlines only.</p>
 </section>
-<section id="financial-times-chart-colors-g-chartcolour-origami" class="level3">
-<h3 class="anchored" data-anchor-id="financial-times-chart-colors-g-chartcolour-origami">Financial Times — chart colors (g-chartcolour / Origami)</h3>
+<section id="financial-times-chart-colors-g-chartcolour-origami" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="financial-times-chart-colors-g-chartcolour-origami"><span class="header-section-number">3.3</span> Financial Times — chart colors (g-chartcolour / Origami)</h3>
 <p>Backgrounds: web “paper” <span style="background-color: #FFF1E5; color: black; padding: 2px 6px; border-radius: 3px;"><code>#FFF1E5</code></span>, video <span style="background-color: #333333; color: white; padding: 2px 6px; border-radius: 3px;"><code>#333</code></span>/<span style="background-color: #333355; color: white; padding: 2px 6px; border-radius: 3px;"><code>#335</code></span>, clean white <span style="background-color: #FFFFFF; color: black; padding: 2px 6px; border: 1px solid #ccc; border-radius: 3px;"><code>#FFF</code></span>. Web line palette: <span style="background-color: #0F5499; color: white; padding: 2px 6px; border-radius: 3px;"><code>#0F5499</code></span>, <span style="background-color: #EB5E8D; color: white; padding: 2px 6px; border-radius: 3px;"><code>#EB5E8D</code></span>, <span style="background-color: #70DCE6; color: black; padding: 2px 6px; border-radius: 3px;"><code>#70DCE6</code></span>, <span style="background-color: #9DBF57; color: black; padding: 2px 6px; border-radius: 3px;"><code>#9DBF57</code></span>, <span style="background-color: #208FCE; color: white; padding: 2px 6px; border-radius: 3px;"><code>#208FCE</code></span>, <span style="background-color: #7F062E; color: white; padding: 2px 6px; border-radius: 3px;"><code>#7F062E</code></span>, <span style="background-color: #C2B7AF; color: black; padding: 2px 6px; border-radius: 3px;"><code>#C2B7AF</code></span>. Diverging: <span style="background-color: #B31147; color: white; padding: 2px 6px; border-radius: 3px;"><code>#B31147</code></span> ↔︎ <span style="background-color: #1162B3; color: white; padding: 2px 6px; border-radius: 3px;"><code>#1162B3</code></span> (through a warm neutral <span style="background-color: #CEC6B9; color: black; padding: 2px 6px; border-radius: 3px;"><code>#CEC6B9</code></span>). Sequential multi: <span style="background-color: #F3DEC8; color: black; padding: 2px 6px; border-radius: 3px;"><code>#F3DEC8</code></span> → <span style="background-color: #0F5499; color: white; padding: 2px 6px; border-radius: 3px;"><code>#0F5499</code></span>. Fixed political colors (e.g.&nbsp;US Democrat <span style="background-color: #238FCE; color: white; padding: 2px 6px; border-radius: 3px;"><code>#238FCE</code></span>, Republican <span style="background-color: #E5262D; color: white; padding: 2px 6px; border-radius: 3px;"><code>#E5262D</code></span>) illustrate CO-3’s “fixed public association” override. The FT’s pink paper deliberately narrows the usable lightness range — a reminder that background choice constrains the whole palette (Datawrapper).</p>
 
 
@@ -824,20 +852,19 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-</div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>This is a DRAFT</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../newsroom-data-reporting-standards/02-chart-types.html" class="pagination-link" aria-label="Chart Types">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Chart Types</span>
+      </a>          
   </div>
-</footer>
+  <div class="nav-page nav-page-next">
+      <a href="../newsroom-data-reporting-standards/04-typography-annotation.html" class="pagination-link" aria-label="Typography Annotation">
+        <span class="nav-page-text">Typography Annotation</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
 
 
 

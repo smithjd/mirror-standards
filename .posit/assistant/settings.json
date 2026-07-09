@@ -3,6 +3,9 @@
     "edit": {
       "*.qmd": "allow",
       "*.yml": "allow"
+    },
+    "bash": {
+      "quarto *": "allow"
     }
   }
 }

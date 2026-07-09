@@ -29,6 +29,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../newsroom-data-reporting-standards/01-principles.html" rel="next">
+<link href="..//images/SI-sunburst.ico" rel="icon">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -40,10 +46,22 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-14e16ccdc7357c2d8922d4fb96c8d2d6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a46f7dda4e12ad5f0853473d2999dce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a46f7dda4e12ad5f0853473d2999dce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a46f7dda4e12ad5f0853473d2999dce0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -60,30 +78,37 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Newsroom Web Standard for Data Reporting – Shambhala Mirror Standards">
-<meta property="og:description" content="">
-<meta property="og:site_name" content="Shambhala Mirror Standards">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent quarto-light">
+<body class="nav-sidebar floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/SI-sunburst.png" alt="" class="navbar-logo light-content">
+    <img src="../images/SI-sunburst.png" alt="" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Shambhala Mirror Standards</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://shambhala.org"> 
+<span class="menu-text">Shambhala</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -173,7 +198,9 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -198,8 +225,8 @@ ul.task-list li input[type="checkbox"] {
 
 <p>A house standard for publishing charts and data-driven reporting on the web. It defines which chart types to use for which analytical task, which color palettes to use, and the typography, annotation, and accessibility rules that hold the two together.</p>
 <p>The standard is distilled from the published practice of three newsrooms with mature data-visualization operations — the <strong>BBC</strong> (Visual &amp; Data Journalism cookbook and <code>bbplot</code>), the <strong>Financial Times</strong> (Visual Vocabulary and chart color tokens), and <strong>The Economist</strong> (visual style guide) — cross-checked against non-newsroom authorities: the UK Government Analysis Function, the Urban Institute, Datawrapper, the Okabe–Ito colorblind-safe palette, and WCAG 2.2. Every hex code and rule traces to a published source; see <a href="../newsroom-data-reporting-standards/07-sources.html">07-sources.qmd</a>.</p>
-<section id="conformance-language" class="level2">
-<h2 class="anchored" data-anchor-id="conformance-language">Conformance language</h2>
+<section id="conformance-language" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="conformance-language"><span class="header-section-number">1</span> Conformance language</h2>
 <p>The key words <strong>MUST</strong>, <strong>MUST NOT</strong>, <strong>SHOULD</strong>, <strong>SHOULD NOT</strong>, and <strong>MAY</strong> are used as described in <a href="https://www.rfc-editor.org/rfc/rfc2119">RFC 2119</a>:</p>
 <ul>
 <li><strong>MUST / MUST NOT</strong> — an absolute requirement. A chart violating it fails review.</li>
@@ -208,8 +235,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Rules carry stable IDs (e.g.&nbsp;<code>CT-3</code>, <code>CO-7</code>) so reviews can cite them.</p>
 </section>
-<section id="documents" class="level2">
-<h2 class="anchored" data-anchor-id="documents">Documents</h2>
+<section id="documents" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="documents"><span class="header-section-number">2</span> Documents</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -249,8 +276,8 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="how-to-use-this-standard" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-use-this-standard">How to use this standard</h2>
+<section id="how-to-use-this-standard" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="how-to-use-this-standard"><span class="header-section-number">3</span> How to use this standard</h2>
 <ol type="1">
 <li><strong>Choosing a chart</strong> — start from the analytical function of the message (<a href="../newsroom-data-reporting-standards/02-chart-types.html">02-chart-types.qmd</a>), not from a chart you like.</li>
 <li><strong>Coloring it</strong> — pick the palette role (categorical, sequential, diverging, highlight) in <a href="../newsroom-data-reporting-standards/03-color-palettes.html">03-color-palettes.qmd</a>; never invent ad-hoc colors.</li>
@@ -258,8 +285,8 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Reviewing</strong> — a reviewer should be able to pass/fail any published chart against the numbered rules alone.</li>
 </ol>
 </section>
-<section id="scope" class="level2">
-<h2 class="anchored" data-anchor-id="scope">Scope</h2>
+<section id="scope" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="scope"><span class="header-section-number">4</span> Scope</h2>
 <p>Applies to any chart published on the web: static images, SVG, and interactive graphics embedded in articles, dashboards, or reports. The core standard is technology-agnostic; <a href="../newsroom-data-reporting-standards/06-implementation-r.html">06-implementation-r.qmd</a> maps it to an R/ggplot2/Quarto stack but any charting library can conform.</p>
 
 
@@ -666,20 +693,16 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-</div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>This is a DRAFT</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
   </div>
-</footer>
+  <div class="nav-page nav-page-next">
+      <a href="../newsroom-data-reporting-standards/01-principles.html" class="pagination-link" aria-label="Principles">
+        <span class="nav-page-text">Principles</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
 
 
 

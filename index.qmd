@@ -1,13 +1,8 @@
 ---
 title: "Shambhala Mirror standards"
-image: bristlecone.jpg
-image-alt: "The oldest living species of tree, the bristlecone pine, in the White Mountains of California."
-about: # https://quarto.org/docs/websites/website-about.html
-  template: trestles
-  links:
-    - icon: github
-      text: Github
-      href: https://github.com/smithjd/mirror-standards
+# image: bristlecone.jpg
+# image-alt: "The oldest living species of tree, the bristlecone pine, in the White Mountains of California."
+# about: # https://quarto.org/docs/websites/website-about.html
 ---
 
 Background
