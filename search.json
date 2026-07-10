@@ -921,6 +921,54 @@
     ]
   },
   {
+    "objectID": "editing_history.html",
+    "href": "editing_history.html",
+    "title": "Page Edit History Analysis",
+    "section": "",
+    "text": "The data on this page comes from the commit history of the Quarto files in Societal Mirror repository. The analysis focuses on the editing activity for each page, including the number of commits, the time span of edits, and temporal patterns of page development.",
+    "crumbs": [
+      "Home",
+      "2026 Data",
+      "Page edit history"
+    ]
+  },
+  {
+    "objectID": "editing_history.html#editing-activity-by-page-name",
+    "href": "editing_history.html#editing-activity-by-page-name",
+    "title": "Page Edit History Analysis",
+    "section": "1 Editing Activity by Page Name",
+    "text": "1 Editing Activity by Page Name\n\n\n\n\n\n\n\n\nFigure 1: Editing activity over time for each file, sorted by total editing span. Numbers at right show total commit count.\n\n\n\n\n\nEach file was set up early in the process, but the editing activity varies widely. Work on some files began immediately, and other waited for a while. The boxplots show the distribution of editing days for each file, with jittered points representing individual commits.\nThe files are sorted by their editing span (max days from first commit), with commit counts displayed on the right. enrollment_overview has been the most actively maintained page with the longest editing history (157 days) and the most commits (45), followed by centre_profile (33 commits over 157 days) and study_activities (25 commits over 153 days). The newer pages at the bottom like centre_connections, centre_participation, and centre_resources have shorter histories (under 10 days) and fewer commits (2-4).\nInterestingly, data_collection_and_analysis was created early but only recently received its 7 commits around day 140, showing a different pattern of intermittent maintenance.",
+    "crumbs": [
+      "Home",
+      "2026 Data",
+      "Page edit history"
+    ]
+  },
+  {
+    "objectID": "editing_history.html#post-creation-maintenance-pattern",
+    "href": "editing_history.html#post-creation-maintenance-pattern",
+    "title": "Page Edit History Analysis",
+    "section": "2 Post-Creation Maintenance Pattern",
+    "text": "2 Post-Creation Maintenance Pattern\n\n\n\n\n\n\n\n\nFigure 2: Editing activity from the 2nd commit onward, excluding initial creation commit\n\n\n\n\n\nThis view focuses on ongoing maintenance patterns by excluding the initial creation commit. The commit counts are reduced by 1 for each file, showing only post-creation edits. Some files like centre_size_experience only have 1 commit after creation, indicating they’ve been relatively stable since their initial setup.",
+    "crumbs": [
+      "Home",
+      "2026 Data",
+      "Page edit history"
+    ]
+  },
+  {
+    "objectID": "editing_history.html#temporal-editing-patterns",
+    "href": "editing_history.html#temporal-editing-patterns",
+    "title": "Page Edit History Analysis",
+    "section": "3 Temporal Editing Patterns",
+    "text": "3 Temporal Editing Patterns\n\n\n\n\n\n\n\n\nFigure 3: Weekly editing activity heatmap showing when each file received edits\n\n\n\n\n\nThe heatmap reveals distinct editing patterns across time:\n\nenrollment_overview and centre_profile show the most sustained activity, with edits spread throughout January-June\nSeveral files had concentrated bursts of activity in specific periods (e.g., study_activities in mid-April, leadership_and_service_roles in January-February)\nMost newer files at the bottom only appear in the June timeframe\nSome weeks saw intensive editing across multiple files, particularly in late May/early June\ndata_collection_and_analysis shows a gap from creation until recent activity in May-June",
+    "crumbs": [
+      "Home",
+      "2026 Data",
+      "Page edit history"
+    ]
+  },
+  {
     "objectID": "newsroom-data-reporting-standards/01-principles.html",
     "href": "newsroom-data-reporting-standards/01-principles.html",
     "title": "Core Principles",

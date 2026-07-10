@@ -12,6 +12,7 @@
 - [Chart Types](https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/02-chart-types.llms.md)
 - [Shambhala Mirror standards](https://smithjd.github.io/mirror-standards/index.llms.md)
 - [Admin Page Standards](https://smithjd.github.io/mirror-standards/admin-page-standards.llms.md)
+- [Page Edit History Analysis](https://smithjd.github.io/mirror-standards/editing_history.llms.md)
 - [Core Principles](https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/01-principles.llms.md)
 - [Color Palettes](https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/03-color-palettes.llms.md)
 - [Accessibility](https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/05-accessibility.llms.md)
