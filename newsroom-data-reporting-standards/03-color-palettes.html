@@ -138,12 +138,47 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Newsroom Data Reporting Standards</span></a>
+ <span class="menu-text">Societal Mirror Site Standards</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../survey-page-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Survey Page Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../quarto-file-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto File Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../admin-page-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Admin Page Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-data-pipeline-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Data Pipeline Review</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Newsroom Data Reporting Standards</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../newsroom-data-reporting-standards/newsroom-standards.html" class="sidebar-item-text sidebar-link">
@@ -224,11 +259,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Color in a chart is an encoding, not a decoration. Every color on a published chart belongs to one of five roles, each with its own palette. Hex codes below are taken verbatim from the cited sources; contrast ratios were computed against WCAG 2.x relative-luminance formulas (see <a href="../newsroom-data-reporting-standards/05-accessibility.html">05-accessibility.qmd</a>).</p>
+<p><strong><em>Color in a chart is an encoding, not a decoration.</em></strong> Every color on a published chart belongs to one of five roles, each with its own palette. Hex codes below are taken verbatim from the cited sources; contrast ratios were computed against WCAG 2.x relative-luminance formulas (see <a href="../newsroom-data-reporting-standards/05-accessibility.html">05-accessibility.qmd</a>).</p>
 <section id="roles-and-rules" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="roles-and-rules"><span class="header-section-number">1</span> Roles and rules</h2>
 <ul>
-<li><strong>CO-1 (MUST)</strong> Use only colors defined in this document (or a project palette derived under CO-10). No ad-hoc colors.</li>
+<li><strong>CO-1 (MUST)</strong> Use only colors defined in this document (or a project palette derived under CO-10). <strong>No ad-hoc colors.</strong></li>
 <li><strong>CO-2 (MUST)</strong> Pick the palette by data type: <strong>categorical</strong> for unordered groups, <strong>sequential</strong> for ordered/continuous values, <strong>diverging</strong> for values around a meaningful midpoint, <strong>highlight</strong> for featuring one series, <strong>neutral</strong> for everything that is not data.</li>
 <li><strong>CO-3 (MUST)</strong> Assign categorical colors in the palette’s stated order, starting from the first. Exceptions (The Economist’s “colour overrides”): chronological categories take a light-to-dark sequential scale; semantically grouped categories take colors that reinforce the grouping; categories with fixed public associations (political parties, “don’t know” = grey) keep them.</li>
 <li><strong>CO-4 (SHOULD NOT)</strong> More than <strong>6</strong> categorical colors on one chart (The Economist’s tooling maxes at 6; UK AF recommends ≤4). Beyond that: group into “other”, or facet.</li>
@@ -434,7 +469,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="house-palettes-from-the-three-newsrooms-informative" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="house-palettes-from-the-three-newsrooms-informative"><span class="header-section-number">3</span> House palettes from the three newsrooms (informative)</h2>
-<p>Documented as worked examples of the rules above — not for direct reuse, since they are those publications’ brands.</p>
+<p>These are documented <strong>as worked examples</strong> of the rules above — not for direct reuse, since they are those publications’ brands.</p>
 <section id="the-economist-web-chart-palette-visual-style-guide-2017" class="level3" data-number="3.1">
 <h3 data-number="3.1" class="anchored" data-anchor-id="the-economist-web-chart-palette-visual-style-guide-2017"><span class="header-section-number">3.1</span> The Economist — web chart palette (visual style guide, 2017)</h3>
 <p>Main order: Econ red <span style="background-color: #E3120B; color: white; padding: 2px 6px; border-radius: 3px;"><code>#E3120B</code></span>, red <span style="background-color: #DB444B; color: white; padding: 2px 6px; border-radius: 3px;"><code>#DB444B</code></span>, blue <span style="background-color: #006BA2; color: white; padding: 2px 6px; border-radius: 3px;"><code>#006BA2</code></span>, cyan <span style="background-color: #3EBCD2; color: black; padding: 2px 6px; border-radius: 3px;"><code>#3EBCD2</code></span>, green <span style="background-color: #379A8B; color: white; padding: 2px 6px; border-radius: 3px;"><code>#379A8B</code></span>, yellow <span style="background-color: #EBB434; color: black; padding: 2px 6px; border-radius: 3px;"><code>#EBB434</code></span>, olive <span style="background-color: #B4BA39; color: black; padding: 2px 6px; border-radius: 3px;"><code>#B4BA39</code></span>, purple <span style="background-color: #9A607F; color: white; padding: 2px 6px; border-radius: 3px;"><code>#9A607F</code></span>, gold <span style="background-color: #D1B07C; color: black; padding: 2px 6px; border-radius: 3px;"><code>#D1B07C</code></span>, grey <span style="background-color: #758D99; color: white; padding: 2px 6px; border-radius: 3px;"><code>#758D99</code></span>. Black <span style="background-color: #0C0C0C; color: white; padding: 2px 6px; border-radius: 3px;"><code>#0C0C0C</code></span>; chart text <span style="background-color: #3F5661; color: white; padding: 2px 6px; border-radius: 3px;"><code>#3F5661</code></span>; boxes/nav background <span style="background-color: #E9EDF0; color: black; padding: 2px 6px; border-radius: 3px;"><code>#E9EDF0</code></span>. The guide also defines <strong>equal-lightness color scales</strong> under each main hue (e.g. blue <span style="background-color: #00588D; color: white; padding: 2px 6px; border-radius: 3px;"><code>#00588D</code></span> → <span style="background-color: #1270A8; color: white; padding: 2px 6px; border-radius: 3px;"><code>#1270A8</code></span> → <span style="background-color: #3D89C3; color: white; padding: 2px 6px; border-radius: 3px;"><code>#3D89C3</code></span> → <span style="background-color: #5DA4DF; color: black; padding: 2px 6px; border-radius: 3px;"><code>#5DA4DF</code></span> → <span style="background-color: #7BBFFC; color: black; padding: 2px 6px; border-radius: 3px;"><code>#7BBFFC</code></span> → <span style="background-color: #98DAFF; color: black; padding: 2px 6px; border-radius: 3px;"><code>#98DAFF</code></span>) so any hue can serve as a sequential ramp at consistent lightness steps. Note the severe hue discipline — mostly reds/blues plus grey — which Datawrapper credits for their instant brand recognition.</p>
@@ -525,7 +560,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/smithjd\.github\.io\/mirror-standards\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Newsroom Web Standard for Data Reporting – Shambhala Mirror Standards</title>
+<title>quarto-file-standards – Shambhala Mirror Standards</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,33 +23,68 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../newsroom-data-reporting-standards/01-principles.html" rel="next">
-<link href="../r-data-pipeline-review.html" rel="prev">
-<link href="..//images/SI-sunburst.ico" rel="icon">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-57758b9ba48459415fc3f2b2d5d93747.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-57758b9ba48459415fc3f2b2d5d93747.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-57758b9ba48459415fc3f2b2d5d93747.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./admin-page-standards.html" rel="next">
+<link href="./survey-page-standards.html" rel="prev">
+<link href=".//images/SI-sunburst.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-57758b9ba48459415fc3f2b2d5d93747.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-57758b9ba48459415fc3f2b2d5d93747.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-57758b9ba48459415fc3f2b2d5d93747.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,7 +114,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -89,11 +124,11 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/SI-sunburst.png" alt="" class="navbar-logo light-content">
-    <img src="../images/SI-sunburst.png" alt="" class="navbar-logo dark-content">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/SI-sunburst.png" alt="" class="navbar-logo light-content">
+    <img src="./images/SI-sunburst.png" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Shambhala Mirror Standards</span>
     </a>
   </div>
@@ -104,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -123,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../newsroom-data-reporting-standards/newsroom-standards.html">Newsroom Data Reporting Standards</a></li><li class="breadcrumb-item"><a href="../newsroom-data-reporting-standards/newsroom-standards.html">Newsroom Standards</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./survey-page-standards.html">Societal Mirror Site Standards</a></li><li class="breadcrumb-item"><a href="./quarto-file-standards.html">Quarto File Standards</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -146,25 +181,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../survey-page-standards.html" class="sidebar-item-text sidebar-link">
+  <a href="./survey-page-standards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Survey Page Standards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../quarto-file-standards.html" class="sidebar-item-text sidebar-link">
+  <a href="./quarto-file-standards.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Quarto File Standards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../admin-page-standards.html" class="sidebar-item-text sidebar-link">
+  <a href="./admin-page-standards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Admin Page Standards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r-data-pipeline-review.html" class="sidebar-item-text sidebar-link">
+  <a href="./r-data-pipeline-review.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Data Pipeline Review</span></a>
   </div>
 </li>
@@ -181,49 +216,49 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../newsroom-data-reporting-standards/newsroom-standards.html" class="sidebar-item-text sidebar-link active">
+  <a href="./newsroom-data-reporting-standards/newsroom-standards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Newsroom Standards</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../newsroom-data-reporting-standards/01-principles.html" class="sidebar-item-text sidebar-link">
+  <a href="./newsroom-data-reporting-standards/01-principles.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Principles</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../newsroom-data-reporting-standards/02-chart-types.html" class="sidebar-item-text sidebar-link">
+  <a href="./newsroom-data-reporting-standards/02-chart-types.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Chart Types</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../newsroom-data-reporting-standards/03-color-palettes.html" class="sidebar-item-text sidebar-link">
+  <a href="./newsroom-data-reporting-standards/03-color-palettes.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Color Palettes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../newsroom-data-reporting-standards/04-typography-annotation.html" class="sidebar-item-text sidebar-link">
+  <a href="./newsroom-data-reporting-standards/04-typography-annotation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Typography Annotation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../newsroom-data-reporting-standards/05-accessibility.html" class="sidebar-item-text sidebar-link">
+  <a href="./newsroom-data-reporting-standards/05-accessibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accessibility</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../newsroom-data-reporting-standards/06-implementation-r.html" class="sidebar-item-text sidebar-link">
+  <a href="./newsroom-data-reporting-standards/06-implementation-r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Implementation R</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../newsroom-data-reporting-standards/07-sources.html" class="sidebar-item-text sidebar-link">
+  <a href="./newsroom-data-reporting-standards/07-sources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Sources</span></a>
   </div>
 </li>
@@ -240,9 +275,10 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../newsroom-data-reporting-standards/newsroom-standards.html">Newsroom Data Reporting Standards</a></li><li class="breadcrumb-item"><a href="../newsroom-data-reporting-standards/newsroom-standards.html">Newsroom Standards</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./survey-page-standards.html">Societal Mirror Site Standards</a></li><li class="breadcrumb-item"><a href="./quarto-file-standards.html">Quarto File Standards</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Newsroom Web Standard for Data Reporting</h1>
+<h1 class="title">quarto-file-standards</h1>
+<p class="subtitle lead">Standards derived from the <code>quarto-file-standards</code> skill</p>
 </div>
 
 
@@ -259,73 +295,182 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a synthesis of house standards for publishing charts and data-driven reporting on the web. It defines which chart types to use for which analytical task, which color palettes to use, and the typography, annotation, and accessibility rules that hold the two together.</p>
-<p>The standard is distilled from the published practice of three newsrooms with mature data-visualization operations — the <strong>BBC</strong> (Visual &amp; Data Journalism cookbook and <code>bbplot</code>), the <strong>Financial Times</strong> (Visual Vocabulary and chart color tokens), and <strong>The Economist</strong> (visual style guide) — cross-checked against non-newsroom authorities: the UK Government Analysis Function, the Urban Institute, Datawrapper, the Okabe–Ito colorblind-safe palette, and WCAG 2.2. Every hex code and rule traces to a published source; see <a href="../newsroom-data-reporting-standards/07-sources.html">07-sources.qmd</a>.</p>
-<section id="conformance-language" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="conformance-language"><span class="header-section-number">1</span> Conformance language</h2>
-<p>The key words <strong>MUST</strong>, <strong>MUST NOT</strong>, <strong>SHOULD</strong>, <strong>SHOULD NOT</strong>, and <strong>MAY</strong> are used as described in <a href="https://www.rfc-editor.org/rfc/rfc2119">RFC 2119</a>:</p>
-<ul>
-<li><strong>MUST / MUST NOT</strong> — an absolute requirement. A chart violating it fails review.</li>
-<li><strong>SHOULD / SHOULD NOT</strong> — the default. Deviating requires a documented reason.</li>
-<li><strong>MAY</strong> — genuinely optional.</li>
-</ul>
-<p>Rules carry stable IDs (e.g.&nbsp;<code>CT-3</code>, <code>CO-7</code>) so reviews can cite them.</p>
+<section id="purpose" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">0.1</span> Purpose</h2>
+<p>Use this skill when authoring, reviewing, or refactoring any <code>.qmd</code> page in The Societal Mirror project. Captures the house style for Quarto file structure, chunk organization, helper-function placement, theme/palette compliance, and <code>.llms.md</code> export behavior. Triggers on requests like “review this page”, “refactor this qmd”, “why is this file so long”, “make this page consistent”, or whenever new pages are drafted.</p>
 </section>
-<section id="documents" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="documents"><span class="header-section-number">2</span> Documents</h2>
+<section id="standard" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="standard"><span class="header-section-number">0.2</span> Standard</h2>
+</section>
+<section id="quarto-file-standards" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Quarto File Standards</h1>
+<p>These standards come from comparing a well-structured page (<code>leadership_and_service_roles.qmd</code>, ~950 lines, 17 chunks) against an anti-pattern page. Follow the good pattern; don’t replicate the bad one.</p>
+<section id="the-shape-of-a-good-page" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="the-shape-of-a-good-page"><span class="header-section-number">1.1</span> The Shape of a Good Page</h2>
+<p>A <code>.qmd</code> page should look like <strong>one thin helper library at the top, then short consumer chunks that call it</strong>.</p>
+<pre><code>┌─ YAML header
+├─ Setup chunk (echo=FALSE, include=FALSE)
+│    source(shared_code_26.R, shared_functions_26.R, shared_sdb_code_26.R)
+├─ Helper chunk  (define plot_* / table_* / calc_* once, with roxygen docs)
+├─ Narrative markdown
+├─ Chunk: data prep + call plot_xxx(q_var)
+├─ Narrative markdown
+├─ Chunk: data prep + call plot_xxx(other_var)
+└─ ...</code></pre>
+<p>One question → one short chunk. Each chunk does <strong>prep + call helper</strong>, not prep + helper-definition + call.</p>
+</section>
+<section id="core-rules" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="core-rules"><span class="header-section-number">1.2</span> Core Rules</h2>
+<section id="always-source-the-shared-scripts-never-inline-their-contents" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="always-source-the-shared-scripts-never-inline-their-contents"><span class="header-section-number">1.2.1</span> 1. Always source the shared scripts, never inline their contents</h3>
+<pre><code>#| include: false
+mirror_year &lt;- 26
+source(here("back-end", paste0("shared_code_",      mirror_year, ".R")))
+source(here("back-end", paste0("shared_functions_", mirror_year, ".R")))
+source(here("back-end", paste0("shared_sdb_code_",  mirror_year, ".R")))</code></pre>
+<p>Don’t redefine utilities that already live in <code>shared_functions_26.R</code>.</p>
+</section>
+<section id="always-use-ourmirrormirror_theme-never-theme_set-or-custom-themes" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="always-use-ourmirrormirror_theme-never-theme_set-or-custom-themes"><span class="header-section-number">1.2.2</span> 2. Always use <code>ourmirror::mirror_theme()</code> — never <code>theme_set()</code> or custom themes</h3>
+<p>Project CLAUDE.md requires this. If you want a background tint, <code>mirror_theme()</code> + <code>theme(plot.background=…)</code> on top — don’t replace it.</p>
+</section>
+<section id="always-use-shambhala_palette_function-never-hardcoded-hex-colors" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="always-use-shambhala_palette_function-never-hardcoded-hex-colors"><span class="header-section-number">1.2.3</span> 3. Always use <code>shambhala_palette_function()</code> — never hardcoded hex colors</h3>
+<p>No <code>"#2E8B57"</code>, <code>"#C62828"</code>, <code>"#F9A825"</code> sprinkled through chunks. Colors come from the palette function or named constants (<code>dark_bar_green</code>, <code>member_background_tint</code>, <code>leader_background_tint</code>, <code>sdb_background_tint</code>) that already exist in <code>shared_code_26.R</code>.</p>
+</section>
+<section id="define-helpers-once-in-one-helper-chunk-with-roxygen-docs" class="level3" data-number="1.2.4">
+<h3 data-number="1.2.4" class="anchored" data-anchor-id="define-helpers-once-in-one-helper-chunk-with-roxygen-docs"><span class="header-section-number">1.2.4</span> 4. Define helpers <strong>once</strong>, in one helper chunk, with roxygen docs</h3>
+<pre><code>#| label: helpers
+#| include: false
+
+#' Plot a one-level summary of a categorical question
+#'
+#' @param .data  tibble filtered to respondents answering this question
+#' @param q_var  bare column name of the question
+#' @param title  chart title
+plot_1_level &lt;- function(.data, q_var, title) { ... }</code></pre>
+<p>If you catch yourself writing <code>html_safe &lt;- function(...)</code> or <code>apply_named_recode &lt;- function(...)</code> in a second chunk, stop: move it to the helper chunk.</p>
+</section>
+<section id="use-quarto-semantic-divs-not-custom-html-or-flat-h1-stacks" class="level3" data-number="1.2.5">
+<h3 data-number="1.2.5" class="anchored" data-anchor-id="use-quarto-semantic-divs-not-custom-html-or-flat-h1-stacks"><span class="header-section-number">1.2.5</span> 5. Use Quarto semantic divs, not custom HTML or flat H1 stacks</h3>
+<ul>
+<li><code>::: panel-tabset</code> to group related views of the same question</li>
+<li><code>::: {.callout-note icon=false appearance="simple"}</code> for quotes and side notes</li>
+<li><code>::: column-screen-inset</code> for wide charts</li>
+<li><code>##</code>/<code>###</code> headers for hierarchy — avoid a chain of 20+ flat <code>#</code> headers</li>
+</ul>
+</section>
+<section id="use-quarto-cross-reference-labels" class="level3" data-number="1.2.6">
+<h3 data-number="1.2.6" class="anchored" data-anchor-id="use-quarto-cross-reference-labels"><span class="header-section-number">1.2.6</span> 6. Use Quarto cross-reference labels</h3>
+<pre><code>#| label: fig-belonging-by-generation
+#| fig-cap: "Sense of belonging by generation"
+
+#| label: tbl-capacity-counts
+#| tbl-cap: "Capacity counts by role"</code></pre>
+<p><code>fig-…</code> and <code>tbl-…</code> prefixes enable <code>@fig-belonging-by-generation</code> cross-refs and produce proper “Figure 1” numbering.</p>
+</section>
+<section id="suppress-chunk-output-globally-opt-in-explicitly" class="level3" data-number="1.2.7">
+<h3 data-number="1.2.7" class="anchored" data-anchor-id="suppress-chunk-output-globally-opt-in-explicitly"><span class="header-section-number">1.2.7</span> 7. Suppress chunk output globally, opt in explicitly</h3>
+<p>At the top of every page:</p>
+<pre><code>knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)</code></pre>
+<p>Don’t repeat <code>echo=FALSE, message=FALSE, warning=FALSE</code> on every chunk.</p>
+</section>
+<section id="every-charts-subtitle-carries-n" class="level3" data-number="1.2.8">
+<h3 data-number="1.2.8" class="anchored" data-anchor-id="every-charts-subtitle-carries-n"><span class="header-section-number">1.2.8</span> 8. Every chart’s subtitle carries N</h3>
+<pre><code>labs(subtitle = str_glue("N = {scales::number(n, big_mark = ',')}"))</code></pre>
+</section>
+<section id="tidyverse-idioms-from-project-claude.md" class="level3" data-number="1.2.9">
+<h3 data-number="1.2.9" class="anchored" data-anchor-id="tidyverse-idioms-from-project-claude.md"><span class="header-section-number">1.2.9</span> 9. Tidyverse idioms (from project CLAUDE.md)</h3>
+<ul>
+<li>Native pipe <code>|&gt;</code> — never <code>%&gt;%</code></li>
+<li><code>.by =</code> grouping — never <code>group_by() |&gt; ungroup()</code></li>
+<li><code>join_by()</code> — never <code>by = c("a" = "b")</code></li>
+<li><code>map() |&gt; list_rbind()</code> — never <code>map_dfr()</code></li>
+<li><code>stringr</code> — never <code>grepl</code>/<code>gsub</code>/<code>substr</code>/<code>nchar</code>/<code>tolower</code>/<code>paste0</code></li>
+<li><code>to_factor()</code> from labelled — prefer over <code>haven::as_factor(.x, levels="labels") |&gt; as.character()</code> chains</li>
+</ul>
+</section>
+<section id="prefer-static-ggplot-mirror_theme-over-raw-girafe-widgets-by-default" class="level3" data-number="1.2.10">
+<h3 data-number="1.2.10" class="anchored" data-anchor-id="prefer-static-ggplot-mirror_theme-over-raw-girafe-widgets-by-default"><span class="header-section-number">1.2.10</span> 10. Prefer static <code>ggplot</code> + <code>mirror_theme()</code> over raw <code>girafe</code> widgets by default</h3>
+<p>Interactive charts have a real cost: they bloat HTML, and every <code>girafe()</code> widget <strong>vanishes</strong> from the <code>.llms.md</code> export that screen readers and LLMs consume. Use <code>ggiraph</code> intentionally when tooltips add value, not reflexively for every chart.</p>
+</section>
+</section>
+<section id="anti-patterns-to-refuse" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="anti-patterns-to-refuse"><span class="header-section-number">1.3</span> Anti-Patterns to Refuse</h2>
+<p>When reviewing or refactoring, flag any of these — they are the signature of the <code>centre_survey.qmd</code> anti-pattern:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>File</th>
-<th>Scope</th>
+<th>Smell</th>
+<th>Why it’s bad</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="../newsroom-data-reporting-standards/01-principles.html">01-principles.qmd</a></td>
-<td>Core principles: clarity, integrity, titling, sourcing (rules <code>P-*</code>)</td>
+<td>Same helper function defined in 10+ chunks</td>
+<td>Copy-paste drift; every edit has to be applied N times</td>
 </tr>
 <tr class="even">
-<td><a href="../newsroom-data-reporting-standards/02-chart-types.html">02-chart-types.qmd</a></td>
-<td>Chart-type selection by analytical function; anti-patterns (rules <code>CT-*</code>)</td>
+<td>Banner comments like <code># ---------------------</code> every 20 lines</td>
+<td>Signals the chunk is trying to be its own file; break it up instead</td>
 </tr>
 <tr class="odd">
-<td><a href="../newsroom-data-reporting-standards/03-color-palettes.html">03-color-palettes.qmd</a></td>
-<td>Palettes with hex codes; color usage rules (rules <code>CO-*</code>)</td>
+<td><code>dir.create("images", ...)</code> with no PNG write downstream</td>
+<td>Dead code</td>
 </tr>
 <tr class="even">
-<td><a href="../newsroom-data-reporting-standards/04-typography-annotation.html">04-typography-annotation.qmd</a></td>
-<td>Titles, labels, legends, number formatting, source lines (rules <code>TY-*</code>)</td>
+<td>Hardcoded hex colors in chart code</td>
+<td>Breaks palette cohesion and dark-mode-ready theming</td>
 </tr>
 <tr class="odd">
-<td><a href="../newsroom-data-reporting-standards/05-accessibility.html">05-accessibility.qmd</a></td>
-<td>Contrast, alt text, color-independence (rules <code>AX-*</code>)</td>
+<td>Custom <code>theme_set(...)</code> at file top</td>
+<td>Overrides <code>mirror_theme()</code> silently</td>
 </tr>
 <tr class="even">
-<td><a href="../newsroom-data-reporting-standards/06-implementation-r.html">06-implementation-r.qmd</a></td>
-<td>Non-normative appendix: applying the standard in ggplot2/Quarto</td>
+<td>Flat sequence of 20+ <code>#</code> headers</td>
+<td>Should be <code>##</code> under a few <code>#</code> sections, or tabsets</td>
 </tr>
 <tr class="odd">
-<td><a href="../newsroom-data-reporting-standards/07-sources.html">07-sources.qmd</a></td>
-<td>Annotated bibliography</td>
+<td><code>haven::as_factor(.x, levels = "labels") \|&gt; as.character()</code></td>
+<td>Use <code>to_factor()</code> / <code>to_character()</code> from <code>labelled</code></td>
+</tr>
+<tr class="even">
+<td>Every question rendered as a <code>girafe()</code> widget</td>
+<td>HTML balloons; <code>.llms.md</code> loses the charts entirely</td>
+</tr>
+<tr class="odd">
+<td><code># USER SETTINGS</code> / <code># HELPER FUNCTIONS</code> blocks inside every chunk</td>
+<td>That’s a script template, not a Quarto page; hoist to the helper chunk</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="how-to-use-this-standard" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="how-to-use-this-standard"><span class="header-section-number">3</span> How to use this standard</h2>
-<ol type="1">
-<li><strong>Choosing a chart</strong> — start from the analytical function of the message (<a href="../newsroom-data-reporting-standards/02-chart-types.html">02-chart-types.qmd</a>), not from a chart you like.</li>
-<li><strong>Coloring it</strong> — pick the palette role (categorical, sequential, diverging, highlight) in <a href="../newsroom-data-reporting-standards/03-color-palettes.html">03-color-palettes.qmd</a>; never invent ad-hoc colors.</li>
-<li><strong>Finishing it</strong> — apply the titling, labeling, and sourcing rules (<a href="../newsroom-data-reporting-standards/04-typography-annotation.html">04-typography-annotation.qmd</a>) and the accessibility checklist (<a href="../newsroom-data-reporting-standards/05-accessibility.html">05-accessibility.qmd</a>).</li>
-<li><strong>Reviewing</strong> — a reviewer should be able to pass/fail any published chart against the numbered rules alone.</li>
-</ol>
+<section id="quick-diagnostic" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="quick-diagnostic"><span class="header-section-number">1.4</span> Quick Diagnostic</h2>
+<p>If you’re unsure whether a page follows the standard, grep it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Should be 0 or very small:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"^html_safe &lt;- function"</span>         page.qmd   <span class="co"># helper redefinitions</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"^apply_named_recode &lt;- function"</span> page.qmd</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"^# -----"</span>                        page.qmd   <span class="co"># banner dividers</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-cE</span> <span class="st">'#[0-9A-Fa-f]{6}'</span>                page.qmd   <span class="co"># hardcoded hex colors</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Should be &gt; 0:</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"mirror_theme()"</span>                  page.qmd</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"shambhala_palette_function"</span>      page.qmd</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-cE</span> <span class="st">"(panel-tabset|callout-note)"</span>    page.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A page with zero <code>mirror_theme()</code> calls and dozens of helper redefinitions is not conforming to project standards, regardless of whether it renders.</p>
 </section>
-<section id="scope" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="scope"><span class="header-section-number">4</span> Scope</h2>
-<p>Applies to any chart published on the web: static images, SVG, and interactive graphics embedded in articles, dashboards, or reports. The core standard is technology-agnostic; <a href="../newsroom-data-reporting-standards/06-implementation-r.html">06-implementation-r.qmd</a> maps it to an R/ggplot2/Quarto stack but any charting library can conform.</p>
+<section id="when-refactoring-an-offending-page" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="when-refactoring-an-offending-page"><span class="header-section-number">1.5</span> When Refactoring an Offending Page</h2>
+<p>The refactor path is usually: 1. Extract the repeated helpers into one helper chunk (or, if reusable across pages, into <code>back-end/shared_functions_26.R</code>). 2. Replace every <code>girafe</code>/custom theme block with a call to one parametric plot function that uses <code>mirror_theme()</code> + <code>shambhala_palette_function()</code>. 3. Collapse per-question USER SETTINGS blocks into rows of a <code>tribble()</code> that drives the helpers. 4. Replace flat <code>#</code> header stacks with <code>##</code> + <code>::: panel-tabset</code>. 5. Delete dead <code>dir.create()</code> calls and unused imports.</p>
+<p>Expect a well-run refactor to reduce line count by roughly 4× and bring the page into theme/palette compliance as a side effect.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -731,13 +876,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../r-data-pipeline-review.html" class="pagination-link" aria-label="R Data Pipeline Review">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">R Data Pipeline Review</span>
+      <a href="./survey-page-standards.html" class="pagination-link" aria-label="Survey Page Standards">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Survey Page Standards</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../newsroom-data-reporting-standards/01-principles.html" class="pagination-link" aria-label="Principles">
-        <span class="nav-page-text">Principles</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./admin-page-standards.html" class="pagination-link" aria-label="Admin Page Standards">
+        <span class="nav-page-text">Admin Page Standards</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

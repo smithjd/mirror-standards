@@ -1,10 +1,10 @@
 # Color Palettes
 
-Color in a chart is an encoding, not a decoration. Every color on a published chart belongs to one of five roles, each with its own palette. Hex codes below are taken verbatim from the cited sources; contrast ratios were computed against WCAG 2.x relative-luminance formulas (see [05-accessibility.qmd](../newsroom-data-reporting-standards/05-accessibility.llms.md)).
+***Color in a chart is an encoding, not a decoration.*** Every color on a published chart belongs to one of five roles, each with its own palette. Hex codes below are taken verbatim from the cited sources; contrast ratios were computed against WCAG 2.x relative-luminance formulas (see [05-accessibility.qmd](../newsroom-data-reporting-standards/05-accessibility.llms.md)).
 
 ## 1 Roles and rules
 
-- **CO-1 (MUST)** Use only colors defined in this document (or a project palette derived under CO-10). No ad-hoc colors.
+- **CO-1 (MUST)** Use only colors defined in this document (or a project palette derived under CO-10). **No ad-hoc colors.**
 - **CO-2 (MUST)** Pick the palette by data type: **categorical** for unordered groups, **sequential** for ordered/continuous values, **diverging** for values around a meaningful midpoint, **highlight** for featuring one series, **neutral** for everything that is not data.
 - **CO-3 (MUST)** Assign categorical colors in the palette’s stated order, starting from the first. Exceptions (The Economist’s “colour overrides”): chronological categories take a light-to-dark sequential scale; semantically grouped categories take colors that reinforce the grouping; categories with fixed public associations (political parties, “don’t know” = grey) keep them.
 - **CO-4 (SHOULD NOT)** More than **6** categorical colors on one chart (The Economist’s tooling maxes at 6; UK AF recommends ≤4). Beyond that: group into “other”, or facet.
@@ -85,7 +85,7 @@ Following BBC `bbplot` values, which sit comfortably on white:
 
 ## 3 House palettes from the three newsrooms (informative)
 
-Documented as worked examples of the rules above — not for direct reuse, since they are those publications’ brands.
+These are documented **as worked examples** of the rules above — not for direct reuse, since they are those publications’ brands.
 
 ### 3.1 The Economist — web chart palette (visual style guide, 2017)
 

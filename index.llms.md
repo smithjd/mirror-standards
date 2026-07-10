@@ -4,7 +4,7 @@ Background
 
 ## 1 History
 
-A 5 year effort to look at the community and organization to describe how it’s evolved.
+The Societal Mirror is a 5-year effort to support the Shambhala Community’s ability to look at itself – as a community and an organization.
 
 ## 2 Opportunity
 

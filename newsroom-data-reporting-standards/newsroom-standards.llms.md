@@ -1,6 +1,6 @@
 # Newsroom Web Standard for Data Reporting
 
-A house standard for publishing charts and data-driven reporting on the web. It defines which chart types to use for which analytical task, which color palettes to use, and the typography, annotation, and accessibility rules that hold the two together.
+This is a synthesis of house standards for publishing charts and data-driven reporting on the web. It defines which chart types to use for which analytical task, which color palettes to use, and the typography, annotation, and accessibility rules that hold the two together.
 
 The standard is distilled from the published practice of three newsrooms with mature data-visualization operations — the **BBC** (Visual & Data Journalism cookbook and `bbplot`), the **Financial Times** (Visual Vocabulary and chart color tokens), and **The Economist** (visual style guide) — cross-checked against non-newsroom authorities: the UK Government Analysis Function, the Urban Institute, Datawrapper, the Okabe–Ito colorblind-safe palette, and WCAG 2.2. Every hex code and rule traces to a published source; see [07-sources.qmd](../newsroom-data-reporting-standards/07-sources.llms.md).
 

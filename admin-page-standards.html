@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Admin Page Standards – Shambhala Mirror Standards</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./r-data-pipeline-review.html" rel="next">
+<link href="./quarto-file-standards.html" rel="prev">
+<link href=".//images/SI-sunburst.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-57758b9ba48459415fc3f2b2d5d93747.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-57758b9ba48459415fc3f2b2d5d93747.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-57758b9ba48459415fc3f2b2d5d93747.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/SI-sunburst.png" alt="" class="navbar-logo light-content">
+    <img src="./images/SI-sunburst.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Shambhala Mirror Standards</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://shambhala.org"> 
+<span class="menu-text">Shambhala</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./survey-page-standards.html">Societal Mirror Site Standards</a></li><li class="breadcrumb-item"><a href="./admin-page-standards.html">Admin Page Standards</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Societal Mirror Site Standards</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./survey-page-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Survey Page Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto-file-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quarto File Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./admin-page-standards.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Admin Page Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./r-data-pipeline-review.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Data Pipeline Review</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Newsroom Data Reporting Standards</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./newsroom-data-reporting-standards/newsroom-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Newsroom Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./newsroom-data-reporting-standards/01-principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Principles</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./newsroom-data-reporting-standards/02-chart-types.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Chart Types</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./newsroom-data-reporting-standards/03-color-palettes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Color Palettes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./newsroom-data-reporting-standards/04-typography-annotation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Typography Annotation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./newsroom-data-reporting-standards/05-accessibility.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Accessibility</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./newsroom-data-reporting-standards/06-implementation-r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Implementation R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./newsroom-data-reporting-standards/07-sources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./survey-page-standards.html">Societal Mirror Site Standards</a></li><li class="breadcrumb-item"><a href="./admin-page-standards.html">Admin Page Standards</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Admin Page Standards</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="purpose" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">0.1</span> Purpose</h2>
+<p>Use this skill when working on admin (SDB/administrative records) pages in The Societal Mirror project. Triggers when user asks to add a chart, table, or section to pages like membership.qmd, centre_profile.qmd, or any page working with member_base_data, center data, enrollment data, or GCC constellation/region analysis from the Shambhala Database (SDB).</p>
+</section>
+<section id="standard" class="level2" data-number="0.2">
+<h2 data-number="0.2" class="anchored" data-anchor-id="standard"><span class="header-section-number">0.2</span> Standard</h2>
+</section>
+<section id="admin-page-conventions" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Admin Page Conventions</h1>
+<p>Admin pages draw from the Shambhala Database (SDB) — not survey responses. They use <code>member_base_data</code>, <code>base_center_data</code>, <code>center_member_count_class</code>, <code>membership_changes_year_detail</code>, and related datasets loaded by <code>shared_sdb_code_26.R</code>.</p>
+<section id="visual-identity-sdb_background_tint" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="visual-identity-sdb_background_tint"><span class="header-section-number">1.1</span> Visual Identity: sdb_background_tint</h2>
+<p>Every admin plot MUST carry the SDB tint in both <code>plot.background</code> and <code>panel.background</code>. This visually distinguishes admin pages from survey pages.</p>
+<pre><code>theme(
+  plot.background  = element_rect(fill = sdb_background_tint),  # "#F4F4F4"
+  panel.background = element_rect(fill = sdb_background_tint)
+)</code></pre>
+<ul>
+<li>Survey (member) pages use <code>member_background_tint</code> (#FEF7F4)</li>
+<li>Survey (leader) pages use <code>leader_background_tint</code> (#F4FFF5)</li>
+<li>Admin/SDB pages use <code>sdb_background_tint</code> (#F4F4F4)</li>
+</ul>
+</section>
+<section id="mirror_theme-explicit-vs-implicit" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="mirror_theme-explicit-vs-implicit"><span class="header-section-number">1.2</span> mirror_theme(): Explicit vs Implicit</h2>
+<p><code>shared_code_26.R</code> calls <code>theme_set(mirror_theme())</code>, so the theme is already the global default. Two valid styles appear across pages:</p>
+<pre><code># Implicit (centre_profile.qmd style) — theme already set globally
+ggplot(...) + geom_col() + theme(panel.grid.major.x = element_blank(), ...)
+
+# Explicit (membership.qmd style) — redundant but harmless
+ggplot(...) + geom_col() + mirror_theme() + theme(panel.grid.major.x = element_blank(), ...)</code></pre>
+<p>Both work. Be consistent within a page.</p>
+</section>
+<section id="color-constants" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="color-constants"><span class="header-section-number">1.3</span> Color Constants</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constant</th>
+<th>Hex</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>dark_bar_green</code></td>
+<td>#488460</td>
+<td>Primary bar/area fill (single series)</td>
+</tr>
+<tr class="even">
+<td><code>sdb_background_tint</code></td>
+<td>#F4F4F4</td>
+<td>Plot/panel background</td>
+</tr>
+<tr class="odd">
+<td><code>size_palette</code> (4 colors)</td>
+<td>greens</td>
+<td>Fill when colored by center size group</td>
+</tr>
+<tr class="even">
+<td><code>size_palette</code> (2 colors)</td>
+<td>light + dark green</td>
+<td>Fill for year-comparison (last yr / this yr)</td>
+</tr>
+<tr class="odd">
+<td><code>membership_colors[2:3]</code></td>
+<td>#86BD9C / #7994B8</td>
+<td>Member vs Friend two-series fills</td>
+</tr>
+</tbody>
+</table>
+<section id="size_palette-two-variants" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="size_palette-two-variants"><span class="header-section-number">1.3.1</span> size_palette — Two Variants</h3>
+<pre><code># 4-color (stacked by size group) — defined globally in shared_sdb_code_26.R
+size_palette &lt;- c("#B1CEBD", "#7CA98E", "#488460", "#346046")
+
+# 2-color (year comparison) — redefine locally in the chunk
+size_palette &lt;- c("#B1CEBD", "#488460")   # light = last year, dark = current year</code></pre>
+</section>
+<section id="memberfriend-color-constants" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="memberfriend-color-constants"><span class="header-section-number">1.3.2</span> Member/Friend Color Constants</h3>
+<pre><code>membership_colors &lt;- c("#F4D786", "#86BD9C", "#7994B8")
+names(membership_colors) &lt;- c("Non member", "Member", "Past member")
+
+member_friends_colors &lt;- membership_colors[2:3]
+names(member_friends_colors) &lt;- c("Members", "Friends")
+
+scale_fill_manual(values = member_friends_colors)</code></pre>
+<p>Use <code>fct_recode()</code> to align factor levels with color names:</p>
+<pre><code>mutate(membertype = fct_recode(membertype,
+  Members = "current_members",
+  Friends = "current_friends"
+))</code></pre>
+</section>
+</section>
+<section id="key-pre-built-objects-from-shared_sdb_code_26.r" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="key-pre-built-objects-from-shared_sdb_code_26.r"><span class="header-section-number">1.4</span> Key Pre-built Objects (from shared_sdb_code_26.R)</h2>
+<p>Do not recompute these — they are already loaded:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Object</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>center_member_count_class</code></td>
+<td>One row per center: <code>center</code>, <code>active_members</code>, <code>size_group</code>, <code>gcc_region</code>, <code>societal_mirror_label</code>, <code>iscenter</code>, <code>center_visible</code>, <code>location_type</code>, <code>Year</code></td>
+</tr>
+<tr class="even">
+<td><code>center_member_count_class_last_year</code></td>
+<td>Same structure, prior year</td>
+</tr>
+<tr class="odd">
+<td><code>center_size_member_count</code></td>
+<td>Centers by <code>societal_mirror_label</code> × <code>size_group</code> (current year, urban active only)</td>
+</tr>
+<tr class="even">
+<td><code>center_size_member_count_last_year</code></td>
+<td>Same, prior year</td>
+</tr>
+<tr class="odd">
+<td><code>center_size_comparison</code></td>
+<td><code>bind_rows</code> of last + current year with factor-ordered <code>societal_mirror_label</code></td>
+</tr>
+<tr class="even">
+<td><code>gcc_order</code></td>
+<td>Character vector of <code>societal_mirror_label</code> ordered by <code>gcc_region</code> — use with <code>fct_relevel()</code></td>
+</tr>
+<tr class="odd">
+<td><code>enrollment_location</code></td>
+<td><code>location</code>, <code>calendar_year</code>, <code>enrollment_at_location</code>, <code>enrollment_from_location</code>, <code>net_enrollment</code></td>
+</tr>
+<tr class="even">
+<td><code>statistiques</code></td>
+<td>Historical member counts (POSIXct <code>created</code>, integer <code>members</code>)</td>
+</tr>
+<tr class="odd">
+<td><code>change_tracking</code></td>
+<td>Derived from <code>membership_changes_year_detail</code>: member/friend gains and losses by center × year</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="key-data-pipelines" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="key-data-pipelines"><span class="header-section-number">1.5</span> Key Data Pipelines</h2>
+<section id="members-friends-snapshot" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="members-friends-snapshot"><span class="header-section-number">1.5.1</span> Members / Friends snapshot</h3>
+<pre><code>member_base_data |&gt;
+  filter(membertype == "Member")           # or "Friend of Shambhala"
+  # or filter(membertype != "Non-member")  # members + friends combined</code></pre>
+</section>
+<section id="by-generation" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="by-generation"><span class="header-section-number">1.5.2</span> By generation</h3>
+<pre><code>member_base_data |&gt;
+  filter(membertype == "Member") |&gt;
+  count(imputed_generation, name = "count") |&gt;
+  mutate(
+    pct   = count / sum(count) * 100,
+    label = paste0(round(pct, 0), "%"),
+    imputed_generation = fct_rev(imputed_generation)
+  )</code></pre>
+</section>
+<section id="by-center-size" class="level3" data-number="1.5.3">
+<h3 data-number="1.5.3" class="anchored" data-anchor-id="by-center-size"><span class="header-section-number">1.5.3</span> By center size</h3>
+<pre><code>center_member_count_class |&gt;
+  filter_out(center %in% c(5, 68)) |&gt;
+  filter(str_detect(location_type, "Meditation"), center_visible == 1) |&gt;
+  count(size_group, wt = active_members, name = "active_members") |&gt;
+  filter(!is.na(size_group)) |&gt;
+  mutate(size_group = fct_rev(size_group))</code></pre>
+</section>
+<section id="by-gcc-constellation-region" class="level3" data-number="1.5.4">
+<h3 data-number="1.5.4" class="anchored" data-anchor-id="by-gcc-constellation-region"><span class="header-section-number">1.5.4</span> By GCC constellation / region</h3>
+<pre><code>center_member_count_class |&gt;
+  filter(Year == filter_year, center_visible == 1) |&gt;
+  count(gcc_region, societal_mirror_label, wt = active_members, name = "active_members") |&gt;
+  mutate(societal_mirror_label = fct_reorder(societal_mirror_label, gcc_region)) |&gt;
+  filter(!is.na(societal_mirror_label))
+# Axis: scale_x_discrete(labels = scales::label_wrap(30))</code></pre>
+</section>
+<section id="year-to-year-comparison-pipeline" class="level3" data-number="1.5.5">
+<h3 data-number="1.5.5" class="anchored" data-anchor-id="year-to-year-comparison-pipeline"><span class="header-section-number">1.5.5</span> Year-to-year comparison pipeline</h3>
+<pre><code># Build current + prior year separately, then bind
+current_yr &lt;- center_member_count_class |&gt;
+  filter_out(center %in% c(5, 68)) |&gt;
+  filter(str_detect(location_type, "Meditation"), center_visible == 1) |&gt;
+  count(size_group, name = "active_centers") |&gt;    # or wt = active_members
+  filter(!is.na(size_group)) |&gt;
+  mutate(Year = as.character(filter_year))
+
+last_yr &lt;- center_member_count_class_last_year |&gt;
+  filter_out(center %in% c(5, 68)) |&gt;
+  filter(str_detect(location_type, "Meditation"), center_visible == 1) |&gt;
+  count(size_group, name = "active_centers") |&gt;
+  mutate(Year = as.character(filter_year - 1))
+
+combined &lt;- bind_rows(last_yr, current_yr) |&gt;    # last year first = legend order
+  filter(!is.na(size_group))
+
+# For GCC region (no urban filter):
+bind_rows(last_yr, current_yr) |&gt;
+  mutate(
+    societal_mirror_label = fct_relevel(societal_mirror_label, gcc_order),
+    societal_mirror_label = fct_rev(societal_mirror_label)
+  )</code></pre>
+</section>
+<section id="membership-changes-gains-losses-since-2020" class="level3" data-number="1.5.6">
+<h3 data-number="1.5.6" class="anchored" data-anchor-id="membership-changes-gains-losses-since-2020"><span class="header-section-number">1.5.6</span> Membership changes / gains-losses (since 2020)</h3>
+<pre><code>change_tracking |&gt;
+  filter(change_year &gt;= "2020-01-01") |&gt;
+  count(change_year, wt = new_members, name = "new_members")</code></pre>
+</section>
+<section id="enrollment-activity-offering-vs-participating" class="level3" data-number="1.5.7">
+<h3 data-number="1.5.7" class="anchored" data-anchor-id="enrollment-activity-offering-vs-participating"><span class="header-section-number">1.5.7</span> Enrollment activity (offering vs participating)</h3>
+<pre><code>cutoff &lt;- 3
+
+enrollment_location |&gt;
+  filter(calendar_year %in% c(2020, 2025)) |&gt;
+  select(-net_enrollment) |&gt;
+  pivot_longer(
+    cols = c(enrollment_at_location, enrollment_from_location),
+    names_to = "where", values_to = "enrollment"
+  ) |&gt;
+  mutate(where = case_when(
+    where == "enrollment_at_location"   ~ "Offering",
+    where == "enrollment_from_location" ~ "Participating"
+  )) |&gt;
+  left_join(center_member_count_class, by = c("location" = "center")) |&gt;
+  filter(enrollment &gt; cutoff, !is.na(size_group)) |&gt;
+  summarise(centers = n_distinct(location),
+            .by = c(where, size_group, calendar_year))</code></pre>
+</section>
+<section id="joins-to-center-metadata" class="level3" data-number="1.5.8">
+<h3 data-number="1.5.8" class="anchored" data-anchor-id="joins-to-center-metadata"><span class="header-section-number">1.5.8</span> Joins to center metadata</h3>
+<pre><code>left_join(
+  center_member_count_class |&gt;
+    filter_out(center %in% c(5, 68)) |&gt;
+    filter(str_detect(location_type, "Meditation"), center_visible == 1) |&gt;
+    select(center, size_group, gcc_region, societal_mirror_label),
+  by = "center"
+)</code></pre>
+</section>
+</section>
+<section id="standard-exclusions" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="standard-exclusions"><span class="header-section-number">1.6</span> Standard Exclusions</h2>
+<ul>
+<li><strong><code>filter_out(center %in% c(5, 68))</code></strong> — exclude Shambhala Online (5) and Shambhala Global (68)</li>
+<li><strong><code>filter(center_visible == 1)</code></strong> — active centers only</li>
+<li><strong><code>filter(str_detect(location_type, "Meditation"))</code></strong> — urban centres/groups only</li>
+<li><strong><code>filter(change_year &gt;= "2020-01-01")</code></strong> — “since 2020” analyses</li>
+</ul>
+</section>
+<section id="ggplot-templates" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="ggplot-templates"><span class="header-section-number">1.7</span> ggplot Templates</h2>
+<section id="horizontal-bar-most-common" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="horizontal-bar-most-common"><span class="header-section-number">1.7.1</span> Horizontal Bar (most common)</h3>
+<pre><code>data |&gt;
+  mutate(category = fct_rev(category)) |&gt;
+  ggplot(aes(category, count)) +
+  geom_col(fill = dark_bar_green, width = 0.7) +
+  geom_text(aes(label = scales::comma(count)),
+            position = position_stack(vjust = 0.5),
+            color = "white", fontface = "bold") +
+  coord_flip() +
+  scale_y_continuous(labels = scales::comma, limits = c(0, &lt;max&gt;)) +
+  labs(title = "...", subtitle = "...", x = NULL, y = NULL, caption = "...") +
+  mirror_theme() +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint)
+  )</code></pre>
+</section>
+<section id="vertical-bar-time-series-bar" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="vertical-bar-time-series-bar"><span class="header-section-number">1.7.2</span> Vertical Bar / Time Series Bar</h3>
+<pre><code>data |&gt;
+  ggplot(aes(year_col, count)) +
+  geom_col(fill = dark_bar_green) +
+  geom_text(aes(label = count),
+            position = position_stack(vjust = 0.5),
+            color = "white", fontface = "bold") +
+  labs(title = "...", x = NULL, y = NULL) +
+  mirror_theme() +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint)
+  )</code></pre>
+</section>
+<section id="dodged-bar-year-comparison-vertical" class="level3" data-number="1.7.3">
+<h3 data-number="1.7.3" class="anchored" data-anchor-id="dodged-bar-year-comparison-vertical"><span class="header-section-number">1.7.3</span> Dodged Bar (year comparison, vertical)</h3>
+<pre><code>dodge_width &lt;- 1    # or 0.9 for narrower gaps
+
+combined |&gt;
+  ggplot(aes(x = size_group, y = active_centers, fill = Year, group = Year)) +
+  geom_col(position = position_dodge(width = dodge_width)) +
+  geom_text(
+    aes(y = active_centers,
+        label = scales::number(active_centers, accuracy = 1, big.mark = ",")),
+    position = position_dodge(width = dodge_width),
+    vjust = -0.5                             # labels above bars
+  ) +
+  scale_fill_manual(values = size_palette) +
+  scale_x_discrete(labels = scales::label_wrap(12)) +
+  scale_y_continuous(limits = c(0, &lt;max&gt;)) +
+  labs(title = "...", x = NULL, y = NULL, fill = "Year") +
+  theme(
+    legend.position    = "bottom",
+    panel.grid.major.x = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint)
+  )</code></pre>
+</section>
+<section id="dodged-bar-with-coord_flip-gcc-region-year-comparison" class="level3" data-number="1.7.4">
+<h3 data-number="1.7.4" class="anchored" data-anchor-id="dodged-bar-with-coord_flip-gcc-region-year-comparison"><span class="header-section-number">1.7.4</span> Dodged Bar with coord_flip (GCC region year comparison)</h3>
+<pre><code>#| fig-height: 12
+
+combined |&gt;
+  filter(!is.na(societal_mirror_label)) |&gt;
+  ggplot(aes(x = societal_mirror_label, y = active_centers, fill = Year, group = Year)) +
+  geom_col(position = position_dodge(width = dodge_width)) +
+  geom_text(
+    aes(y = active_centers + 0.5, label = scales::number(active_centers)),
+    position = position_dodge(width = dodge_width)
+  ) +
+  coord_flip() +
+  scale_fill_manual(values = size_palette) +
+  scale_x_discrete(labels = scales::label_wrap(30)) +
+  labs(title = "...", x = NULL, y = NULL, fill = "Year") +
+  theme(
+    legend.position    = "bottom",
+    panel.grid.major.x = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint)
+  )</code></pre>
+</section>
+<section id="stacked-bar-by-size-within-gcc-region" class="level3" data-number="1.7.5">
+<h3 data-number="1.7.5" class="anchored" data-anchor-id="stacked-bar-by-size-within-gcc-region"><span class="header-section-number">1.7.5</span> Stacked Bar by Size within GCC Region</h3>
+<pre><code>#| fig-height: 12
+
+center_size_member_count |&gt;
+  ggplot(aes(x = societal_mirror_label, y = active_centers, fill = size_group)) +
+  geom_col(position = "stack") +
+  geom_text(aes(label = active_centers),
+            position = position_stack(vjust = 0.5),
+            color = "white") +
+  coord_flip() +
+  scale_fill_manual(values = size_palette) +       # 4-color palette
+  scale_x_discrete(labels = scales::label_wrap(30)) +
+  labs(title = "...", x = NULL, y = NULL, fill = NULL) +
+  theme(
+    legend.position   = "bottom",
+    legend.box.just   = "left",
+    legend.margin     = margin(0, 0, 0, 0),
+    legend.box.margin = margin(0, 0, 0, -150),     # align legend with bars
+    panel.grid.major.x = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint)
+  )</code></pre>
+</section>
+<section id="faceted-stacked-bar" class="level3" data-number="1.7.6">
+<h3 data-number="1.7.6" class="anchored" data-anchor-id="faceted-stacked-bar"><span class="header-section-number">1.7.6</span> Faceted Stacked Bar</h3>
+<pre><code>data |&gt;
+  ggplot(aes(x_var, y_var, fill = size_group)) +
+  geom_col() +
+  geom_text(aes(label = y_var),
+            position = position_stack(vjust = 0.5),
+            color = "white", fontface = "bold", size = 3.5) +
+  geom_text(                                        # totals above bars
+    data = data |&gt; summarise(total = sum(y_var), .by = c(x_var, facet_var)),
+    aes(y = total, label = total, fill = NULL),
+    vjust = -0.5, fontface = "bold"
+  ) +
+  facet_wrap(~ facet_var) +
+  scale_fill_manual(values = ...) +
+  scale_y_continuous(limits = c(0, &lt;max&gt;)) +
+  guides(fill = guide_legend(nrow = 2)) +
+  theme(
+    legend.position    = "top",
+    panel.grid.major.x = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint),
+    strip.background   = element_rect(fill = sdb_background_tint),  # required for facets
+    strip.text         = element_text(hjust = 0.5)
+  )</code></pre>
+</section>
+<section id="time-series-area-chart" class="level3" data-number="1.7.7">
+<h3 data-number="1.7.7" class="anchored" data-anchor-id="time-series-area-chart"><span class="header-section-number">1.7.7</span> Time Series Area Chart</h3>
+<pre><code>data |&gt;
+  ggplot(aes(x = date_col, y = count)) +
+  geom_area(fill = membership_colors[2]) +
+  scale_y_continuous(
+    labels = scales::label_comma(),
+    breaks = seq(0, 12000, 2000),
+    expansion(mult = c(0, .05)),
+    limits = c(0, 12000)
+  ) +
+  scale_x_datetime(date_breaks = "2 years", date_labels = "%Y") +
+  # or: scale_x_date(date_breaks = "1 year", date_labels = "%Y") for Date columns
+  labs(y = NULL, x = NULL, title = "...") +
+  mirror_theme() +
+  theme(
+    panel.grid.major.x = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint)
+  )</code></pre>
+<p>To annotate specific data points (odd years, max):</p>
+<pre><code>highlights &lt;- data |&gt;
+  filter(
+    (month(date_col) == 1 &amp; day(date_col) == 1 &amp; year(date_col) %% 2 == 1) |
+    date_col == max(date_col) | date_col == min(date_col)
+  )
+max_point &lt;- data |&gt; filter(count == max(count))
+
+# Add to ggplot:
+geom_point(data = highlights, size = 2, shape = 25, fill = "black",
+           position = position_nudge(y = 200)) +
+geom_text(data = highlights, aes(label = scales::comma(count)),
+          vjust = -2, size = 3) +
+geom_point(data = max_point, size = 2, shape = 25, fill = "red",
+           position = position_nudge(y = 200)) +
+geom_text(data = max_point,
+          aes(label = paste0("Max: ", scales::comma(count), "\n", as.Date(date_col))),
+          vjust = -0.8, size = 3, color = "red")</code></pre>
+</section>
+<section id="diverging-bar-gains-and-losses" class="level3" data-number="1.7.8">
+<h3 data-number="1.7.8" class="anchored" data-anchor-id="diverging-bar-gains-and-losses"><span class="header-section-number">1.7.8</span> Diverging Bar (gains and losses)</h3>
+<pre><code>data |&gt;
+  ggplot(aes(x = year_col, y = count, fill = type)) +
+  geom_col(width = 0.7) +
+  geom_hline(yintercept = 0, color = "black", linewidth = 1) +
+  geom_text(aes(label = abs(count)),
+            position = position_stack(vjust = 0.5),
+            color = "white", fontface = "bold", size = 4) +
+  scale_fill_manual(
+    values = c("gains" = dark_bar_green, "losses" = "gray60"),
+    labels = c("gains" = "Gains", "losses" = "Losses")
+  ) +
+  scale_y_continuous(
+    breaks = seq(-800, 400, 100),
+    labels = function(x) scales::comma(abs(x)),    # show absolute values
+    limits = c(-800, 400)
+  ) +
+  labs(title = "...", x = NULL, y = NULL, fill = NULL) +
+  mirror_theme() +
+  theme(
+    legend.position    = "top",
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor   = element_blank()
+  )</code></pre>
+</section>
+</section>
+<section id="grid-line-rules" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="grid-line-rules"><span class="header-section-number">1.8</span> Grid Line Rules</h2>
+<ul>
+<li><strong>Horizontal bars</strong> (<code>coord_flip()</code>): blank <code>panel.grid.major.y</code> and <code>.minor.y</code></li>
+<li><strong>Vertical bars / time series</strong>: blank <code>panel.grid.major.x</code></li>
+<li><strong>Faceted charts</strong>: also add <code>strip.background = element_rect(fill = sdb_background_tint)</code></li>
+</ul>
+</section>
+<section id="scale_y_continuous-expansion-for-headroom" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="scale_y_continuous-expansion-for-headroom"><span class="header-section-number">1.9</span> scale_y_continuous: expansion() for Headroom</h2>
+<pre><code>scale_y_continuous(
+  labels = scales::comma,
+  breaks = seq(0, 12000, 2000),
+  expansion(mult = c(0, .05)),    # 0 padding at bottom, 5% at top
+  limits = c(0, 12000)
+)</code></pre>
+</section>
+<section id="gt-tables" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="gt-tables"><span class="header-section-number">1.10</span> gt Tables</h2>
+<section id="basic-template" class="level3" data-number="1.10.1">
+<h3 data-number="1.10.1" class="anchored" data-anchor-id="basic-template"><span class="header-section-number">1.10.1</span> Basic template</h3>
+<pre><code>data |&gt;
+  gt() |&gt;
+  cols_label(col1 = md("Line 1&lt;br&gt;Line 2"), col2 = "Label") |&gt;
+  fmt_number(columns = where(is.numeric), decimals = 0, use_seps = TRUE) |&gt;
+  fmt_percent(columns = pct_col, decimals = 0) |&gt;
+  grand_summary_rows(
+    columns = where(is.numeric),
+    fns = list("Total" = ~ sum(., na.rm = TRUE)),
+    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))
+  ) |&gt;
+  mrr_gt_theme()</code></pre>
+</section>
+<section id="grouped-rows-with-group-grand-summaries" class="level3" data-number="1.10.2">
+<h3 data-number="1.10.2" class="anchored" data-anchor-id="grouped-rows-with-group-grand-summaries"><span class="header-section-number">1.10.2</span> Grouped rows with group + grand summaries</h3>
+<pre><code>data |&gt;
+  group_by(group_col) |&gt;
+  gt(groupname_col = "group_col") |&gt;
+  fmt_number(columns = c("col1", "col2"), decimals = 0, use_seps = TRUE) |&gt;
+  fmt_percent(columns = pct_col, decimals = 0) |&gt;
+  cols_label(...) |&gt;
+  cols_width(1 ~ px(300), 2:5 ~ px(100)) |&gt;
+  summary_rows(                               # subtotal per row group
+    columns = c("col1", "col2"),
+    fns = list("Total" = ~ sum(., na.rm = TRUE)),
+    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))
+  ) |&gt;
+  grand_summary_rows(                         # overall total
+    columns = c("col1", "col2"),
+    fns = list("Grand Total" = ~ sum(., na.rm = TRUE)),
+    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))
+  ) |&gt;
+  mrr_gt_theme() |&gt;
+  tab_options(stub_row_group.border.width = px(10)) |&gt;
+  as_raw_html()                               # prevents render issues for complex grouped tables</code></pre>
+<p><strong><code>summary_rows()</code></strong> — one subtotal per row group. <strong><code>grand_summary_rows()</code></strong> — one total at table bottom. Both can appear together; call separately per column set when formatting differs.</p>
+</section>
+<section id="spanner-columns-year-metric" class="level3" data-number="1.10.3">
+<h3 data-number="1.10.3" class="anchored" data-anchor-id="spanner-columns-year-metric"><span class="header-section-number">1.10.3</span> Spanner columns (year × metric)</h3>
+<pre><code>data |&gt;
+  pivot_wider(values_from = metric, names_from = c(category, year)) |&gt;
+  gt() |&gt;
+  cols_label(
+    Offering_2020 = "Offering", Participating_2020 = "Participating",
+    Offering_2025 = "Offering", Participating_2025 = "Participating"
+  ) |&gt;
+  tab_spanner(label = md("2020"), columns = c(Offering_2020, Participating_2020)) |&gt;
+  tab_spanner(label = md("2025"), columns = c(Offering_2025, Participating_2025)) |&gt;
+  # Nested spanners — apply widest first:
+  tab_spanner(label = md("Year-end&lt;br&gt;Count"),         columns = 2:3) |&gt;
+  tab_spanner(label = md("Change from&lt;br&gt;prior year"), columns = 4:7) |&gt;
+  grand_summary_rows(
+    columns = where(is.numeric),
+    fns = list("Total" = ~ sum(., na.rm = TRUE)),
+    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))
+  ) |&gt;
+  mrr_gt_theme()</code></pre>
+</section>
+</section>
+<section id="page-structure" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="page-structure"><span class="header-section-number">1.11</span> Page Structure</h2>
+<p>Every admin section follows the Graph + Table panel-tabset pattern:</p>
+<pre><code>## Section Title
+
+;;;; {.panel-tabset}
+
+### Graph
+
+::: {.cell}
+
+```{.r .cell-code}
+# ggplot code</code></pre>
+<p>:::</p>
+<section id="table" class="level3" data-number="1.11.1">
+<h3 data-number="1.11.1" class="anchored" data-anchor-id="table"><span class="header-section-number">1.11.1</span> Table</h3>
+<pre><code>#| label: tbl-descriptive-name
+# gt() |&gt; mrr_gt_theme() code</code></pre>
+<p>;;;;</p>
+<pre><code>
+- `knitr::knit_exit()` in a chunk stops rendering — use to hide unfinished sections during development
+- `{=html} &lt;!-- ... --&gt;` blocks for editorial comments hidden from output
+- `#| eval: false` on exploratory or upload chunks not ready to render
+- Section inventory in an `eval: false` chunk at top is a useful tracking pattern
+
+## Chunk Options
+</code></pre>
+<p>#| label: fig-descriptive-name # fig- prefix for plots, tbl- for tables #| echo: false #| message: false #| warning: false #| fig-height: 12 # always use for GCC region charts (18+ rows) ```</p>
+<p>All chunks suppress output by default via the setup chunk.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/smithjd\.github\.io\/mirror-standards\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./quarto-file-standards.html" class="pagination-link" aria-label="Quarto File Standards">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Quarto File Standards</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./r-data-pipeline-review.html" class="pagination-link" aria-label="R Data Pipeline Review">
+        <span class="nav-page-text">R Data Pipeline Review</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

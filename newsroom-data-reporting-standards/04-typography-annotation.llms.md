@@ -6,7 +6,13 @@ Text is how a chart explains itself. These rules cover the text hierarchy, axis 
 
 - **TY-1 (MUST)** Every chart carries, in order: **title** (the finding, P-2), **subtitle** (measure, unit, geography, period), and **source line** (P-7). Optional between subtitle and source: axis labels, annotations, footnotes.
 - **TY-2 (MUST)** Title and subtitle are left-aligned at the chart’s left edge (BBC `finalise_plot()` convention; Economist and FT practice). Units live in the subtitle (“GDP, % change on a year earlier”), not repeated on every axis tick.
-- **TY-3 (MUST)** Chart text uses a single sans-serif family at web sizes that stay legible on phones. Reference scale (Urban Institute web values): title ~20px bold, subtitle ~16px, axis and data labels ~12px, legend ~14px, source/notes ~11px. Sentence case for all chart text; never all-caps for data labels.
+- **TY-3 (MUST)** Chart text uses a single sans-serif family at web sizes that stay legible on phones. Reference scale (Urban Institute web values):
+  - title ~20px bold,
+  - subtitle ~16px,
+  - axis and data labels ~12px,
+  - legend ~14px,
+  - source/notes ~11px.
+  - Sentence case for all chart text; never all-caps for data labels.
 - **TY-4 (MUST)** All text is horizontal — no vertical or diagonal axis labels (UK Analysis Function). If category labels don’t fit horizontally, flip to horizontal bars (CT-14).
 
 ## 2 Titles and subtitles on the web (accessibility interaction)

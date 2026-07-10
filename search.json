@@ -1,300 +1,591 @@
 [
   {
-    "objectID": "newsroom-data-reporting-standards/07-sources.html",
-    "href": "newsroom-data-reporting-standards/07-sources.html",
-    "title": "Sources",
+    "objectID": "survey-page-standards.html",
+    "href": "survey-page-standards.html",
+    "title": "survey-page-conventions",
     "section": "",
-    "text": "Annotated bibliography. All sources were consulted directly in July 2026 except where noted. Hex codes in 03-color-palettes.qmd trace to the starred (★) primary sources.",
+    "text": "#| label: setup\n\n#| include: false\n#| message: false\n#| error: false",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Sources"
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/07-sources.html#the-three-newsrooms",
-    "href": "newsroom-data-reporting-standards/07-sources.html#the-three-newsrooms",
-    "title": "Sources",
-    "section": "1 The three newsrooms",
-    "text": "1 The three newsrooms\n\n1.1 Financial Times\n\n★ Visual Vocabulary — Financial-Times/chart-doctor, visual-vocabulary/, https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary. The normative chart-type taxonomy in 02-chart-types.qmd: nine analytical functions (deviation, correlation, ranking, distribution, change over time, magnitude, part-to-whole, spatial, flow) with per-chart usage notes. Interactive version: https://ft-interactive.github.io/visual-vocabulary/.\n★ g-chartcolour — ft-interactive, https://github.com/ft-interactive/g-chartcolour, docs https://ft-interactive.github.io/g-chartcolour/. FT chart color tokens: paper #FFF1E5, web line palette, sequential/diverging ramps, political palettes.\nOrigami o-colors — https://github.com/Financial-Times/o-colors (archived; now in https://github.com/Financial-Times/origami). Brand palette Sass tokens.\n\n\n\n1.2 BBC\n\n★ BBC Visual & Data Journalism cookbook for R graphics — https://bbc.github.io/rcookbook/ (source: https://github.com/bbc/rcookbook). Working hex codes (#1380A1, #FAAB18, #990000, #588300; neutrals #333333, #CBCBCB, #DDDDDD), gridline/legend/baseline rules, chart types demonstrated, annotation conventions.\n★ bbplot — https://github.com/bbc/bbplot. bbc_style() theme and finalise_plot(): left-aligned title block, source bottom-left, logo bottom-right, 640×450 px default export.\n\n\n\n1.3 The Economist\n\n★ The Economist visual styleguide (chart style guide PDF, 2017-05-05). Mirror consulted: https://sa.ipaa.org.au/wp-content/uploads/2026/02/Economist-CHARTstyleguide_20170505.pdf. Web chart palette (Econ red #E3120B, blue #006BA2, cyan #3EBCD2, …; black #0C0C0C, text #3F5661), equal-lightness color scales, standard color order and overrides, pie limit (“abandoned in favour of stacked bar if over 4 categories”), double-scale rules (no broken scales, aligned zero lines, no disparate measures; else panels or indexing).\n“Mistakes, we’ve drawn a few” — Sarah Leo, The Economist (Medium, 2019), https://medium.economist.com/mistakes-weve-drawn-a-few-8cdd8a42d368. Self-audit of misleading practices (truncated axes, forced dual-scale correlations). Not fetchable at time of writing; cited from the styleguide’s matching rules.",
+    "objectID": "survey-page-standards.html#purpose",
+    "href": "survey-page-standards.html#purpose",
+    "title": "survey-page-conventions",
+    "section": "0.1 Purpose",
+    "text": "0.1 Purpose\nThis standard clarifies good practice as it applies to societal mirror pages that present data from Survey Monkey.",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Sources"
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/07-sources.html#corroborating-authorities",
-    "href": "newsroom-data-reporting-standards/07-sources.html#corroborating-authorities",
-    "title": "Sources",
-    "section": "2 Corroborating authorities",
-    "text": "2 Corroborating authorities\n\n★ UK Government Analysis Function — Data visualisation: charts, https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/, and Data visualisation: colours, https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/. Accessible categorical palette (#12436D, #28A197, #801650, #F46A25, #3D3D3D, #A285D1 — all ≥3:1 on white), sequential blues, focus palette (#12436D + #BFBFBF), and the do/don’t list (≤4 lines, ≤4 bars per cluster, never break bar axes, horizontal text, direct labels, ≤10 gridlines, pie rules, SVG output). Implementations: afcharts (R), py_af_colours (Python).\n★ Okabe, M. & Ito, K. — Color Universal Design: How to make figures and presentations that are friendly to colorblind people, https://jfly.uni-koeln.de/color/. The 8-color colorblind-safe palette and the redundancy principles (shape/line-type pairing, vermilion over red). Also shipped in R as grDevices::palette.colors(palette = \"Okabe-Ito\").\n★ Urban Institute Data Visualization Style Guide — https://urbaninstitute.github.io/graphics-styleguide/. Typography scale, palette structure, the “absolutes” (no dual axes, zero baselines for bars, pie ≤5 slices, ≤7 categories, no 3-D), alt-text practice (~160 characters).\nDatawrapper — Lisa Charlotte Muth, A detailed guide to colors in data vis style guides, https://www.datawrapper.de/blog/colors-for-data-vis-style-guides. Palette-construction guidance: data vs non-data greys, lightness range (60+ points), semantic category colors, size-dependent saturation, brand-color discipline, and the newsroom comparisons cited in 03.\nW3C, WCAG 2.2 — https://www.w3.org/TR/WCAG22/. Criteria applied: 1.1.1 (non-text content), 1.4.1 (use of color), 1.4.3 (text contrast 4.5:1), 1.4.5 (images of text), 1.4.11 (non-text contrast 3:1).\nColorBrewer — Cynthia Brewer, https://colorbrewer2.org/. Tested sequential and diverging schemes referenced for diverging defaults.\nviridis — perceptually uniform, colorblind-safe continuous scales; in ggplot2 as scale_*_viridis_*(). https://sjmgarnier.github.io/viridis/.",
+    "objectID": "survey-page-standards.html#standard",
+    "href": "survey-page-standards.html#standard",
+    "title": "survey-page-conventions",
+    "section": "0.2 Standard",
+    "text": "0.2 Standard",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Sources"
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/07-sources.html#verification-notes",
-    "href": "newsroom-data-reporting-standards/07-sources.html#verification-notes",
-    "title": "Sources",
-    "section": "3 Verification notes",
-    "text": "3 Verification notes\n\nContrast ratios quoted in 03 and 05 were computed from the cited hex codes with the WCAG 2.x relative-luminance formula (not copied from the sources): Analysis Function categorical palette 3.03–10.86:1 vs white; Okabe–Ito yellow 1.32:1, orange 2.25:1, sky blue 2.31:1 vs white (hence the caveat in 03); BBC #333333 text 12.63:1.\nThe Economist hex values were extracted from the styleguide PDF’s own text layer; where third-party summaries disagreed with the PDF, the PDF was used.",
+    "objectID": "survey-page-standards.html#data-dictionary",
+    "href": "survey-page-standards.html#data-dictionary",
+    "title": "survey-page-conventions",
+    "section": "1.1 Data Dictionary",
+    "text": "1.1 Data Dictionary\nWhen constructing pipelines or graphs, use ./back-end/dd_m26.json as a reference data dictionary describing the m26 survey.\nWhen constructing pipelines or graphs, use ./back-end/dd_C26.json as a reference data dictionary describing the C26 survey.",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Sources"
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/05-accessibility.html",
-    "href": "newsroom-data-reporting-standards/05-accessibility.html",
-    "title": "Accessibility",
+    "objectID": "survey-page-standards.html#visual-identity-background-tints",
+    "href": "survey-page-standards.html#visual-identity-background-tints",
+    "title": "survey-page-conventions",
+    "section": "1.2 Visual Identity: Background Tints",
+    "text": "1.2 Visual Identity: Background Tints\n\n\n\n\n\n\n\n\n\nSurvey\nConstant\nHex\nUse\n\n\n\n\nMember (m26, m25, m24)\nmember_background_tint\n#FEF7F4\nwarm pinkish\n\n\nLeader (C26,L25, L24)\nleader_background_tint\n#F4FFF5\ncool greenish\n\n\nAdmin/SDB\nsdb_background_tint\n#F4F4F4\nneutral grey\n\n\n\nEvery survey ggplot must carry its tint in both backgrounds:\n\ntheme(\n  plot.background = element_rect(fill = member_background_tint),\n  panel.background = element_rect(fill = member_background_tint)\n)",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#ggplot-template-horizontal-bar-percentages",
+    "href": "survey-page-standards.html#ggplot-template-horizontal-bar-percentages",
+    "title": "survey-page-conventions",
+    "section": "1.3 ggplot Template: Horizontal Bar (percentages)",
+    "text": "1.3 ggplot Template: Horizontal Bar (percentages)\nThe dominant pattern — categories sorted by pct, labels inside bars:\n\ndata |&gt;\n  mutate(\n    category = str_wrap(category, width = 30),\n    category = fct_reorder(category, pct)\n  ) |&gt;\n  ggplot(aes(category, pct)) +\n  geom_col(fill = dark_bar_green) +\n  geom_text(\n    aes(label = scales::percent(pct, accuracy = 1)),\n    y = pct / 2, # center in bar\n    color = \"white\",\n    fontface = \"bold\"\n  ) +\n  scale_y_continuous(\n    labels = scales::percent_format(), # data is 0–1 proportions\n    limits = c(0, 0.8)\n  ) +\n  labs(title = str_wrap(\"Question text here\", width = 40), x = NULL, y = NULL) +\n  coord_flip() +\n  mirror_theme() +\n  theme(\n    panel.grid.major.y = element_blank(),\n    plot.background = element_rect(fill = member_background_tint),\n    panel.background = element_rect(fill = member_background_tint)\n  )\nScale note: Survey percentages are often stored as 0–1 proportions — use scales::percent_format() and scales::percent(pct, accuracy = 1). If stored as 0–100 (e.g., after * 100), use scales::percent_format(scale = 1) and scales::percent(pct, accuracy = 1, scale = 1).",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#ggplot-template-stacked-bar-multi-response-fill",
+    "href": "survey-page-standards.html#ggplot-template-stacked-bar-multi-response-fill",
+    "title": "survey-page-conventions",
+    "section": "1.4 ggplot Template: Stacked Bar (multi-response fill)",
+    "text": "1.4 ggplot Template: Stacked Bar (multi-response fill)\nFor yes/maybe/no or ordered response categories:\n\ndata |&gt;\n  mutate(\n    response = to_factor(response),\n    response = fct_rev(response),\n    var_label = fct_reorder(var_label, pct, .fun = sum)\n  ) |&gt;\n  ggplot(aes(var_label, pct, fill = response)) +\n  geom_col() +\n  geom_text(\n    aes(label = scales::percent(pct, accuracy = 1, scale = 1)),\n    color = \"white\",\n    fontface = \"bold\",\n    position = position_stack(vjust = 0.5)\n  ) +\n  scale_fill_manual(values = c(\"Yes\" = \"#247467ff\", \"Maybe\" = \"#63bba9ff\")) +\n  scale_y_continuous(\n    labels = scales::percent_format(scale = 1),\n    limits = c(0, 80)\n  ) +\n  labs(title = str_wrap(\"...\", 40), x = NULL, y = NULL, fill = NULL) +\n  coord_flip() +\n  mirror_theme() +\n  theme(\n    legend.position = \"top\",\n    panel.grid.major.y = element_blank(),\n    plot.background = element_rect(fill = member_background_tint),\n    panel.background = element_rect(fill = member_background_tint)\n  )",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#key-utility-functions-shared_functions_26.r",
+    "href": "survey-page-standards.html#key-utility-functions-shared_functions_26.r",
+    "title": "survey-page-conventions",
+    "section": "1.5 Key Utility Functions (shared_functions_26.R)",
+    "text": "1.5 Key Utility Functions (shared_functions_26.R)\n\n1.5.1 role_subset() — filter by role flag, get counts\n\nq &lt;- role_subset(\n  data = m26_relate_to_a_center,\n  title_flag_var = q0035, # unquoted; rows where == 1 kept\n  subject_vars = c(\"q0036\", sprintf(\"q0037_%04d\", 1:5)),\n  comment_var = q0037_other\n)\n# Returns list: q$df, q$counts (named list of tibbles), q$comments\n# e.g. q$counts$n_q0036 is a count tibble for q0036\n\n\n1.5.2 count_yes_str() — count binary Yes (==1) across role vars\n\nrole_counts &lt;- map(role_vars, \\(v) count_yes_str(m26_relate_to_a_center, v)) |&gt;\n  bind_rows() |&gt;\n  mutate(pct = round(n / n_total * 100))\n# Returns: n, label (var_label), var_name\n\n\n1.5.3 calc_pct_selected() — % selecting follow-up items among role-holders\n\ncalc_pct_selected(\n  data = m26_relate_to_a_center,\n  root_var = \"q0035\", # character string\n  filter_value = \"Yes\",\n  list_vars = sprintf(\"q0042_%04d\", 1:5)\n)\n# Returns: root_var, var_label, var_value, choice_label, have_the_job, n, pct\n\n\n1.5.4 calc_val_labels() — build long-format count df for multi-item series\n\n# Requires q$counts to exist in environment\ncount_all &lt;- calc_val_labels(\"q0037\", n_levels = 5)\n# Returns long-format tibble: n, name, value (factor), choice_label\n\n\n1.5.5 plot_1_level() — quick horizontal bar for a single categorical var\n\nplot_1_level(q$counts$n_q0036) # auto-extracts var_label as title\nplot_1_level(q$counts$n_q0036, pct_max = 100)\n\n\n1.5.6 plot_interest() — horizontal bar for interest/support items\n\nplot_interest(teacher_interest_counts, gtitle = \"Are you interested in...?\")\n\n\n1.5.7 count_all_that_apply() — multiple-select (“check all that apply”) questions\n\ncount_all_that_apply(m26, \"q0015\")\n# Returns: value, n, percent — denominator is all respondents who answered\n\n\n1.5.8 Counting Yes (==1) across non-contiguous named variables\nWhen variables share no common prefix, name them explicitly with any_of() and pivot long:\n\nactivity_vars &lt;- c(\"q0001\", \"q0003\", \"q0009\", \"q0011\", \"q0013\")\nn_total &lt;- 1335 # set denominator explicitly\n\nactivity_counts &lt;- m26 |&gt;\n  select(RespondentID, any_of(activity_vars)) |&gt;\n  pivot_longer(-RespondentID, names_to = \"variable\", values_to = \"value\") |&gt;\n  filter(value == 1) |&gt;\n  count(variable, name = \"n_yes\") |&gt;\n  mutate(pct = n_yes / n_total)\n\n\n1.5.9 Extracting joinable variable labels for a named set of columns\nWhen you need var_label() as a data frame to join onto counts:\n\nvar_labels &lt;- m26 |&gt;\n  select(any_of(activity_vars)) |&gt;\n  var_label() |&gt;\n  as_tibble_row() |&gt;\n  pivot_longer(everything(), names_to = \"variable\", values_to = \"label\") |&gt;\n  mutate(label = as.character(label))\n\nactivity_counts &lt;- activity_counts |&gt;\n  left_join(var_labels, by = join_by(variable))\n\n\n1.5.10 Deriving a short_label from verbose SPSS variable label text\nVariable labels often share a common preamble (e.g., “In the past 12 months, did you …?”). Extract just the differentiating fragment with a lookbehind/lookahead regex, then recode to human-friendly labels. Use replace_values() when you only need to fix a few labels and want all other values to pass through unchanged:\n\nmutate(\n  short_label = str_extract(label, \"(?&lt;=did you ).*?(?=\\\\?)\"),\n  short_label = str_to_sentence(short_label),\n  short_label = replace_values(\n    short_label,\n    \"Donate financially or pay dues to shambhala\" ~ \"Any donation or dues payment\",\n    \"Participate in group meditation practice\" ~ \"Participate in group meditation\"\n    # unspecified values are left as-is automatically\n  )\n)\nUse case_match() instead when building an entirely new vector and enumerating all cases (any omitted value becomes NA unless .default is set):\n\nshort_label &lt;- case_match(\n  short_label,\n  \"Donate financially or pay dues to shambhala\" ~ \"Any donation or dues payment\",\n  .default = short_label # required — omitting makes unmatched values NA\n)\nRule of thumb: partial update → replace_values(); full recode → case_match().\nAdjust the lookbehind string to match the preamble in your question series. Note: dplyr::recode() is deprecated — use replace_values() or case_match() instead.\n\n\n1.5.11 disp_var_prep() — select a variable group by prefix\n\ndisp_var_prep(m26, \"q0015\")\n# Returns: RespondentID + all cols starting with \"q0015\", drops character cols\n\n\n1.5.12 pivot_df() — pivot to long format with within-variable percentages\n\ndisp_var_prep(m26, \"q0015\") |&gt; pivot_df()\n# Returns: var_name, value, n, pct (pct is within-var, sums to 1 per var_name)",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#labelled-package-patterns",
+    "href": "survey-page-standards.html#labelled-package-patterns",
+    "title": "survey-page-conventions",
+    "section": "1.6 labelled Package Patterns",
+    "text": "1.6 labelled Package Patterns\nSurvey data is SPSS-style labelled. Always handle labels explicitly:\n\n# Get variable label (question text) — use as plot title\nvar_label(m26$q0035)\nvar_label(df) |&gt; pluck(1) # from single-column df\n\n# Convert value labels to factor for plotting\ndf |&gt; to_factor() # converts all labelled cols\ndf |&gt; mutate(q0035 = to_factor(q0035)) # single col\n\n# Convert to character (for counting, joining)\ndf |&gt; to_character()\n\n# Inspect what variables exist\nm26 |&gt; look_for(\"keyword\")\nmakedd() # creates m26dd, m25dd, L25dd, m24dd, L24dd in global env\n\n# ggplot2 4.0+ picks up var_label automatically on bare column names:\nggplot(m26, aes(q0035, q0036)) + geom_point() # axis labels auto-filled\n# For bulk override: labs(dictionary = unlist(var_label(df)))",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#variable-specific-transformations",
+    "href": "survey-page-standards.html#variable-specific-transformations",
+    "title": "survey-page-conventions",
+    "section": "1.7 Variable-Specific Transformations",
+    "text": "1.7 Variable-Specific Transformations\n\n1.7.1 q0080 — Decade first joined (always collapse)\nWhenever q0080 is used, immediately follow to_factor() with this collapse to reduce the 7-level decade variable to 4 meaningful groups:\n\nto_factor() |&gt;\n  mutate(\n    q0080 = fct_collapse(\n      q0080,\n      \"70's-80's\" = c(\"1970s\", \"1980s\"),\n      \"90's-2007\" = c(\"1990s\", \"2000-2007\"),\n      \"2008-2017\" = c(\"2008-2012\", \"2013-2017\")\n    )\n  ) |&gt;\nThe four resulting levels are: \"70's-80's\", \"90's-2007\", \"2008-2017\", \"2018-2025\".\n\n\n1.7.2 q0032 — Relates to a centre (strip parenthetical label)\nq0032 value labels for “No” and “Not sure” contain a long parenthetical that must be stripped before plotting or factoring:\n\nmutate(\n  q0032 = str_remove_all(\n    as.character(q0032),\n    \"\\\\s*\\\\(you will automatically skip to the next set of questions\\\\)\"\n  ),\n  q0032 = str_trim(q0032),\n  q0032 = factor(q0032, levels = c(\"Yes\", \"Not sure\", \"No\"))\n)\nApply this after to_character() or as.character() — do not apply to the raw labelled column.\n\n\n1.7.3 q0034 — Primary membership identity (filter to centre-affiliates)\nq0034 asks respondents to identify as centre member, global member, friend, donor, etc. It is only meaningful for those who relate to a centre. Always filter to q0032 == 1 before using q0034:\n\nm26 |&gt;\n  filter(q0032 == 1) |&gt;\n  select(q0080, q0034) |&gt;\n  ...\nq0034 has 6 long value labels — always apply str_wrap(as.character(q0034), width = 30) after to_factor() to keep legends readable. Use fct_inorder() afterward to preserve label order:\n\nmutate(\n  q0034 = str_wrap(as.character(q0034), width = 30),\n  q0034 = fct_inorder(q0034)\n)",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#color-palette-when-to-use-scale_fill_brewer",
+    "href": "survey-page-standards.html#color-palette-when-to-use-scale_fill_brewer",
+    "title": "survey-page-conventions",
+    "section": "1.8 Color Palette — When to Use scale_fill_brewer",
+    "text": "1.8 Color Palette — When to Use scale_fill_brewer\nThe standard green_step_2[3:1] fill works for 3-level outcomes. For variables with 4+ unordered categories (e.g., q0034 with 6 levels), use:\n\nscale_fill_brewer(palette = \"Dark2\")\nFor ordered/sequential outcomes (low → high), continue using green_step_2[3:1] (3 levels) or green_step_5 (5 levels).",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#variable-naming-conventions",
+    "href": "survey-page-standards.html#variable-naming-conventions",
+    "title": "survey-page-conventions",
+    "section": "1.9 Variable Naming Conventions",
+    "text": "1.9 Variable Naming Conventions\n\nSingle items: q0035, q0038, q0062\nMulti-part items: q0037_0001 through q0037_0005 — generate with sprintf(\"q0037_%04d\", 1:5)\nBinary flags (role held): coded 1 = Yes\nOpen-ended text companions: q0037_other (character class — excluded by disp_var_prep)\nSub-population filter: q0032 == 1 for centre-affiliated respondents",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#standard-sub-population-filters",
+    "href": "survey-page-standards.html#standard-sub-population-filters",
+    "title": "survey-page-conventions",
+    "section": "1.10 Standard Sub-population Filters",
+    "text": "1.10 Standard Sub-population Filters\n\n# Set once at top of page, then use throughout\nm26_relate_to_a_center &lt;- m26 |&gt; filter(q0032 == 1)\nn_relate_to_local_center &lt;- nrow(m26_relate_to_a_center)\n\n# Always report n in table source notes:\ntab_source_note(source_note = paste0(\"n = \", n_relate_to_local_center, \" ...\"))",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#gt-table-template-survey",
+    "href": "survey-page-standards.html#gt-table-template-survey",
+    "title": "survey-page-conventions",
+    "section": "1.11 gt Table Template (survey)",
+    "text": "1.11 gt Table Template (survey)\n\ndata |&gt;\n  gt() |&gt;\n  cols_label(var = \"Label\", pct = \"% of Total\") |&gt;\n  fmt_percent(is.numeric, decimals = 0) |&gt;\n  tab_header(title = md(\"Title&lt;br&gt;Subtitle\")) |&gt;\n  tab_source_note(source_note = paste0(\"n = \", n, \" respondents\")) |&gt;\n  mrr_gt_theme(col_label_size = 18) # note: survey tables often use 18\nFor grouped tables with row group headers:\n\ngt() |&gt;\n  tab_style(\n    style = cell_text(weight = \"bold\"),\n    locations = cells_row_groups()\n  ) |&gt;\n  mrr_gt_theme()",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#page-structure",
+    "href": "survey-page-standards.html#page-structure",
+    "title": "survey-page-conventions",
+    "section": "1.12 Page Structure",
+    "text": "1.12 Page Structure\nSurvey sections follow the Capacity + Interest + Table tabset pattern:",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#role-name",
+    "href": "survey-page-standards.html#role-name",
+    "title": "survey-page-conventions",
+    "section": "1.13 Role Name",
+    "text": "1.13 Role Name\n\n(the following three colons are deliberatly spaced to avoid being interpreted as a YAML front matter block)\n\n: : panel-tabset",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#capacity",
+    "href": "survey-page-standards.html#capacity",
+    "title": "survey-page-conventions",
+    "section": "1.14 Capacity",
+    "text": "1.14 Capacity\n\n#| label: img-role_capacity\nq &lt;- role_subset(\n  m26_relate_to_a_center,\n  q00XX,\n  c(\"q00YY\", sprintf(\"q00ZZ_%04d\", 1:N))\n)\nplot_1_level(q$counts$n_q00YY)",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#interest-in-support",
+    "href": "survey-page-standards.html#interest-in-support",
+    "title": "survey-page-conventions",
+    "section": "1.15 Interest in support",
+    "text": "1.15 Interest in support\n\n#| label: img-role_interest_in_support\ninterest_counts &lt;- all_pct_selected |&gt;\n  filter(var_label == \"Role Label\", str_detect(var_value, \"Yes, I would\"))\nplot_interest(interest_counts, gtitle)",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#interest-in-support-table",
+    "href": "survey-page-standards.html#interest-in-support-table",
+    "title": "survey-page-conventions",
+    "section": "1.16 Interest in support table",
+    "text": "1.16 Interest in support table\n\n#| label: tbl-role_interest_table\ngt_table_interest(interest_counts_full, gtitle)\n: : :\nCollapsible tables use raw HTML:\n&lt;details&gt;&lt;summary&gt;Click to show all responses in a table&lt;/summary&gt;",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#chunk-label-prefixes",
+    "href": "survey-page-standards.html#chunk-label-prefixes",
+    "title": "survey-page-conventions",
+    "section": "2.1 Chunk Label Prefixes",
+    "text": "2.1 Chunk Label Prefixes\n\nfig- for figures\ntbl- for tables\nDescriptive snake_case after the prefix",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "survey-page-standards.html#show_open_endeds-flag",
+    "href": "survey-page-standards.html#show_open_endeds-flag",
+    "title": "survey-page-conventions",
+    "section": "2.2 show_open_endeds Flag",
+    "text": "2.2 show_open_endeds Flag\nSet at top of page:\n\nshow_open_endeds &lt;- FALSE\nUse #| eval: !expr show_open_endeds on chunks with open-ended text.",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Survey Page Standards"
+    ]
+  },
+  {
+    "objectID": "quarto-file-standards.html",
+    "href": "quarto-file-standards.html",
+    "title": "quarto-file-standards",
     "section": "",
-    "text": "Charts published on the web are subject to WCAG 2.2 Level AA. These rules make that concrete for data graphics. IDs: AX-*.",
+    "text": "Use this skill when authoring, reviewing, or refactoring any .qmd page in The Societal Mirror project. Captures the house style for Quarto file structure, chunk organization, helper-function placement, theme/palette compliance, and .llms.md export behavior. Triggers on requests like “review this page”, “refactor this qmd”, “why is this file so long”, “make this page consistent”, or whenever new pages are drafted.",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Accessibility"
+      "Societal Mirror Site Standards",
+      "Quarto File Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/05-accessibility.html#contrast",
-    "href": "newsroom-data-reporting-standards/05-accessibility.html#contrast",
-    "title": "Accessibility",
-    "section": "1 Contrast",
-    "text": "1 Contrast\n\nAX-1 (MUST) Text on and around charts meets 4.5:1 contrast against its background (WCAG 1.4.3); large text (≥24px, or ≥18.66px bold) may drop to 3:1. The neutral text colors in 03-color-palettes.qmd comply on white (#333333 = 12.6:1, #555555 = 7.5:1).\nAX-2 (MUST) Essential graphical elements — bars, lines, points that the reader must distinguish to understand the chart — meet 3:1 against adjacent colors (WCAG 1.4.11). The default categorical palette was chosen to satisfy this against white (verified 3.03–10.86:1).\nAX-3 (SHOULD) Sequential ramps cannot keep 3:1 between adjacent steps; when a chart depends on fine sequential distinctions, provide the values as labels or an accompanying table (UK Analysis Function requirement). Note also Datawrapper’s caution that mechanically applying WCAG ratios to gradients can reduce discriminability — satisfy the intent (readable data) and document exceptions.",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Accessibility"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/05-accessibility.html#color-independence",
-    "href": "newsroom-data-reporting-standards/05-accessibility.html#color-independence",
-    "title": "Accessibility",
-    "section": "2 Color independence",
-    "text": "2 Color independence\n\nAX-4 (MUST) Color is never the only carrier of meaning (WCAG 1.4.1). Pair it with direct labels (TY-6), position, marker shape, or line type. Okabe & Ito: “use not only different colors but also a combination of different shapes, positions, line types.”\nAX-5 (MUST) Test every published palette combination with a color-vision simulator (e.g. Sim Daltonism, Viz Palette) and in greyscale; adjacent categories must differ in lightness, not hue alone. Avoid red/green pairs; prefer blue/orange or blue/red; use vermilion rather than pure red where red is required (Okabe–Ito).",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Accessibility"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/05-accessibility.html#text-alternatives",
-    "href": "newsroom-data-reporting-standards/05-accessibility.html#text-alternatives",
-    "title": "Accessibility",
-    "section": "3 Text alternatives",
-    "text": "3 Text alternatives\n\nAX-6 (MUST) Every chart has a text alternative serving the equivalent purpose (WCAG 1.1.1): alt text on the image, plus either an accessible data table or descriptive prose for complex charts (UK Analysis Function).\nAX-7 (MUST) Alt text states the chart type, the variables, and the finding — content and function, not appearance. Keep it roughly a sentence (~160 characters, Urban Institute); put the full data elsewhere. No “image of”, no “chart of” prefix beyond the type. Example: “Line chart showing UK inflation falling from 11% in 2022 to 2% by mid-2024.”\nAX-8 (SHOULD) Render titles, subtitles, and sources as HTML text, not pixels (TY-5), and publish charts as SVG where feasible (UK AF) so text scales and high-contrast modes work.\nAX-9 (SHOULD) Offer the underlying data for download with unique, descriptive link text (UK AF).",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Accessibility"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/05-accessibility.html#legibility-floor",
-    "href": "newsroom-data-reporting-standards/05-accessibility.html#legibility-floor",
-    "title": "Accessibility",
-    "section": "4 Legibility floor",
-    "text": "4 Legibility floor\n\nAX-10 (MUST) Minimum rendered text size on the web: ~11–12px for source notes, 12px for axis labels (Urban Institute scale, TY-3); verify at the smallest responsive breakpoint, not the desktop layout.\nAX-11 (SHOULD) Lines carrying data are thick enough to show their color (roughly ≥2px); increase mark weight rather than saturating color to rescue a thin mark (Okabe–Ito: bold fonts, thicker lines for color-coded objects).",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Accessibility"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/05-accessibility.html#review-checklist",
-    "href": "newsroom-data-reporting-standards/05-accessibility.html#review-checklist",
-    "title": "Accessibility",
-    "section": "5 Review checklist",
-    "text": "5 Review checklist\n\nTitle states the finding; subtitle has measure/unit/period. (P-2, TY-1)\nCorrect chart family for the analytical function. (CT-1)\nZero baselines where length encodes value; no broken axes. (P-3)\nPalette role correct; colors in palette order; ≤6 categories. (CO-2/3/4)\nSurvives greyscale and colorblind simulation. (AX-5)\nNo meaning by color alone; direct labels present. (AX-4, TY-6)\nText contrast 4.5:1; graphical contrast 3:1 or mitigated. (AX-1/2/3)\nAlt text + table/prose alternative. (AX-6/7)\nSource line present and correct. (P-7, TY-15)\nReadable at mobile width. (AX-10)",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Accessibility"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/03-color-palettes.html",
-    "href": "newsroom-data-reporting-standards/03-color-palettes.html",
-    "title": "Color Palettes",
+    "objectID": "quarto-file-standards.html#purpose",
+    "href": "quarto-file-standards.html#purpose",
+    "title": "quarto-file-standards",
     "section": "",
-    "text": "Color in a chart is an encoding, not a decoration. Every color on a published chart belongs to one of five roles, each with its own palette. Hex codes below are taken verbatim from the cited sources; contrast ratios were computed against WCAG 2.x relative-luminance formulas (see 05-accessibility.qmd).",
+    "text": "Use this skill when authoring, reviewing, or refactoring any .qmd page in The Societal Mirror project. Captures the house style for Quarto file structure, chunk organization, helper-function placement, theme/palette compliance, and .llms.md export behavior. Triggers on requests like “review this page”, “refactor this qmd”, “why is this file so long”, “make this page consistent”, or whenever new pages are drafted.",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Color Palettes"
+      "Societal Mirror Site Standards",
+      "Quarto File Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/03-color-palettes.html#roles-and-rules",
-    "href": "newsroom-data-reporting-standards/03-color-palettes.html#roles-and-rules",
-    "title": "Color Palettes",
-    "section": "1 Roles and rules",
-    "text": "1 Roles and rules\n\nCO-1 (MUST) Use only colors defined in this document (or a project palette derived under CO-10). No ad-hoc colors.\nCO-2 (MUST) Pick the palette by data type: categorical for unordered groups, sequential for ordered/continuous values, diverging for values around a meaningful midpoint, highlight for featuring one series, neutral for everything that is not data.\nCO-3 (MUST) Assign categorical colors in the palette’s stated order, starting from the first. Exceptions (The Economist’s “colour overrides”): chronological categories take a light-to-dark sequential scale; semantically grouped categories take colors that reinforce the grouping; categories with fixed public associations (political parties, “don’t know” = grey) keep them.\nCO-4 (SHOULD NOT) More than 6 categorical colors on one chart (The Economist’s tooling maxes at 6; UK AF recommends ≤4). Beyond that: group into “other”, or facet.\nCO-5 (MUST) Grey is a data color. Context series, de-emphasized data, and “don’t know” categories take grey; emphasis takes one saturated highlight color. Datawrapper: “Gray is the most important color in data visualization.”\nCO-6 (MUST) Diverging palettes MUST place their neutral midpoint at the meaningful zero/midpoint of the data, and MUST NOT be used on data without one.\nCO-7 (MUST) Meaning MUST NOT be carried by color alone (WCAG 1.4.1): pair color with direct labels, position, or line style. See AX-2.\nCO-8 (MUST) Semantic consistency: the same entity keeps the same color across every chart in a publication (P-6). Reserve sign conventions (e.g. red = negative) and do not reuse those hues for arbitrary categories nearby.\nCO-9 (SHOULD) Check every palette use in a colorblind simulator and in greyscale before publishing; distinguish adjacent categorical colors by lightness, not hue alone (Datawrapper: aim for a wide lightness range; UK AF: check adjacent colors).\nCO-10 (MAY) A project MAY define a brand palette, but it inherits all rules above; brand color is best spent on the single most important series (Datawrapper’s brand-integration guidance), not sprayed across all categories.",
+    "objectID": "quarto-file-standards.html#standard",
+    "href": "quarto-file-standards.html#standard",
+    "title": "quarto-file-standards",
+    "section": "0.2 Standard",
+    "text": "0.2 Standard",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Color Palettes"
+      "Societal Mirror Site Standards",
+      "Quarto File Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/03-color-palettes.html#default-palettes-normative",
-    "href": "newsroom-data-reporting-standards/03-color-palettes.html#default-palettes-normative",
-    "title": "Color Palettes",
-    "section": "2 Default palettes (normative)",
-    "text": "2 Default palettes (normative)\n\n2.1 Categorical default — UK Analysis Function palette\nChosen as the default because it is the only published newsroom/government palette in our sources where every color meets WCAG 1.4.11’s 3:1 contrast against white (verified: 3.03–10.86:1). Use in this order:\n\n\n\n\n\n\n\n\n\nOrder\nName\nHex\nContrast vs white\n\n\n\n\n1\nDark blue\n#12436D\n10.25:1\n\n\n2\nTurquoise\n#28A197\n3.17:1\n\n\n3\nDark pink\n#801650\n9.77:1\n\n\n4\nOrange\n#F46A25\n3.03:1\n\n\n5\nDark grey\n#3D3D3D\n10.86:1\n\n\n6\nLight purple\n#A285D1\n3.08:1\n\n\n\n\n\n2.2 Categorical alternative — Okabe–Ito (colorblind-safe)\nThe reference palette for color-vision-deficiency safety (Okabe & Ito 2008). Its distinctions survive protanopia/deuteranopia, but note three of its colors fall below 3:1 contrast on white (yellow 1.32:1, orange 2.25:1, sky blue 2.31:1) — on white backgrounds pair them with direct labels and adequate mark weight, or prefer the Analysis Function palette for thin lines.\n\n\n\n\n\n\n\n\nName\nHex\nRGB\n\n\n\n\nBlack\n#000000\n0, 0, 0\n\n\nOrange\n#E69F00\n230, 159, 0\n\n\nSky blue\n#56B4E9\n86, 180, 233\n\n\nBluish green\n#009E73\n0, 158, 115\n\n\nYellow\n#F0E442\n240, 228, 66\n\n\nBlue\n#0072B2\n0, 114, 178\n\n\nVermilion\n#D55E00\n213, 94, 0\n\n\nReddish purple\n#CC79A7\n204, 121, 167\n\n\n\n(Okabe–Ito also recommends vermilion over pure red for protanope visibility.)\n\n\n2.3 Sequential default\nSingle-hue blue ramp (UK Analysis Function), light → dark:\n#F2F2F2 → #ADD1F1 → #6BACE6 → #2073BC → #12436D → #092135\nUse as many steps as the data need, keeping ends far apart in lightness (Datawrapper: cover a wide lightness range, ideally 60+ percentage points). For continuous scales in software, viridis family scales are an acceptable perceptually-uniform, colorblind-safe substitute. Adjacent steps of any sequential ramp rarely meet 3:1 contrast — so a sequential-colored graphic MUST also be readable via labels or an alternative format (UK AF).\n\n\n2.4 Diverging default\nBuild from the two endpoint hues of the categorical palette around a pale neutral midpoint, e.g. dark blue #12436D ↔︎ pale grey #F2F2F2 ↔︎ dark pink #801650; or ColorBrewer’s tested diverging schemes (e.g. RdBu). Prefer blue/red or blue/orange pairs over green/red (colorblind-hostile).\n\n\n2.5 Highlight/focus pair\nOne featured series + greyed context (UK AF “focus” palette):\n\nHighlight: #12436D (or the publication’s brand accent)\nContext: #BFBFBF\n\n\n\n2.6 Neutrals (non-data ink)\nFollowing BBC bbplot values, which sit comfortably on white:\n\n\n\n\n\n\n\n\nElement\nHex\nNote\n\n\n\n\nChart text / annotations\n#222222–#333333\n12.6:1 on white at #333333\n\n\nSecondary text\n#555555\n7.5:1 on white\n\n\nBaseline / zero line\n#333333\nstrong single anchor line\n\n\nGridlines\n#CBCBCB\nlight grey, y-axis only by default\n\n\nDe-emphasized data\n#DDDDDD\n\n\n\nBackground\n#FFFFFF\nwhite only (UK AF) unless a brand paper color is a documented house choice",
+    "objectID": "quarto-file-standards.html#the-shape-of-a-good-page",
+    "href": "quarto-file-standards.html#the-shape-of-a-good-page",
+    "title": "quarto-file-standards",
+    "section": "1.1 The Shape of a Good Page",
+    "text": "1.1 The Shape of a Good Page\nA .qmd page should look like one thin helper library at the top, then short consumer chunks that call it.\n┌─ YAML header\n├─ Setup chunk (echo=FALSE, include=FALSE)\n│    source(shared_code_26.R, shared_functions_26.R, shared_sdb_code_26.R)\n├─ Helper chunk  (define plot_* / table_* / calc_* once, with roxygen docs)\n├─ Narrative markdown\n├─ Chunk: data prep + call plot_xxx(q_var)\n├─ Narrative markdown\n├─ Chunk: data prep + call plot_xxx(other_var)\n└─ ...\nOne question → one short chunk. Each chunk does prep + call helper, not prep + helper-definition + call.",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Color Palettes"
+      "Societal Mirror Site Standards",
+      "Quarto File Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/03-color-palettes.html#house-palettes-from-the-three-newsrooms-informative",
-    "href": "newsroom-data-reporting-standards/03-color-palettes.html#house-palettes-from-the-three-newsrooms-informative",
-    "title": "Color Palettes",
-    "section": "3 House palettes from the three newsrooms (informative)",
-    "text": "3 House palettes from the three newsrooms (informative)\nDocumented as worked examples of the rules above — not for direct reuse, since they are those publications’ brands.\n\n3.1 The Economist — web chart palette (visual style guide, 2017)\nMain order: Econ red #E3120B, red #DB444B, blue #006BA2, cyan #3EBCD2, green #379A8B, yellow #EBB434, olive #B4BA39, purple #9A607F, gold #D1B07C, grey #758D99. Black #0C0C0C; chart text #3F5661; boxes/nav background #E9EDF0. The guide also defines equal-lightness color scales under each main hue (e.g. blue #00588D → #1270A8 → #3D89C3 → #5DA4DF → #7BBFFC → #98DAFF) so any hue can serve as a sequential ramp at consistent lightness steps. Note the severe hue discipline — mostly reds/blues plus grey — which Datawrapper credits for their instant brand recognition.\n\n\n3.2 BBC — bbplot working colors (Visual & Data Journalism cookbook)\nData hues used in the cookbook: blue #1380A1, gold #FAAB18, dark red #990000, green #588300. Neutrals as tabulated above (#333333 baseline, #CBCBCB gridlines, #DDDDDD de-emphasis). Legends top or removed in favor of direct labels; y-gridlines only.\n\n\n3.3 Financial Times — chart colors (g-chartcolour / Origami)\nBackgrounds: web “paper” #FFF1E5, video #333/#335, clean white #FFF. Web line palette: #0F5499, #EB5E8D, #70DCE6, #9DBF57, #208FCE, #7F062E, #C2B7AF. Diverging: #B31147 ↔︎ #1162B3 (through a warm neutral #CEC6B9). Sequential multi: #F3DEC8 → #0F5499. Fixed political colors (e.g. US Democrat #238FCE, Republican #E5262D) illustrate CO-3’s “fixed public association” override. The FT’s pink paper deliberately narrows the usable lightness range — a reminder that background choice constrains the whole palette (Datawrapper).",
+    "objectID": "quarto-file-standards.html#core-rules",
+    "href": "quarto-file-standards.html#core-rules",
+    "title": "quarto-file-standards",
+    "section": "1.2 Core Rules",
+    "text": "1.2 Core Rules\n\n1.2.1 1. Always source the shared scripts, never inline their contents\n#| include: false\nmirror_year &lt;- 26\nsource(here(\"back-end\", paste0(\"shared_code_\",      mirror_year, \".R\")))\nsource(here(\"back-end\", paste0(\"shared_functions_\", mirror_year, \".R\")))\nsource(here(\"back-end\", paste0(\"shared_sdb_code_\",  mirror_year, \".R\")))\nDon’t redefine utilities that already live in shared_functions_26.R.\n\n\n1.2.2 2. Always use ourmirror::mirror_theme() — never theme_set() or custom themes\nProject CLAUDE.md requires this. If you want a background tint, mirror_theme() + theme(plot.background=…) on top — don’t replace it.\n\n\n1.2.3 3. Always use shambhala_palette_function() — never hardcoded hex colors\nNo \"#2E8B57\", \"#C62828\", \"#F9A825\" sprinkled through chunks. Colors come from the palette function or named constants (dark_bar_green, member_background_tint, leader_background_tint, sdb_background_tint) that already exist in shared_code_26.R.\n\n\n1.2.4 4. Define helpers once, in one helper chunk, with roxygen docs\n#| label: helpers\n#| include: false\n\n#' Plot a one-level summary of a categorical question\n#'\n#' @param .data  tibble filtered to respondents answering this question\n#' @param q_var  bare column name of the question\n#' @param title  chart title\nplot_1_level &lt;- function(.data, q_var, title) { ... }\nIf you catch yourself writing html_safe &lt;- function(...) or apply_named_recode &lt;- function(...) in a second chunk, stop: move it to the helper chunk.\n\n\n1.2.5 5. Use Quarto semantic divs, not custom HTML or flat H1 stacks\n\n::: panel-tabset to group related views of the same question\n::: {.callout-note icon=false appearance=\"simple\"} for quotes and side notes\n::: column-screen-inset for wide charts\n##/### headers for hierarchy — avoid a chain of 20+ flat # headers\n\n\n\n1.2.6 6. Use Quarto cross-reference labels\n#| label: fig-belonging-by-generation\n#| fig-cap: \"Sense of belonging by generation\"\n\n#| label: tbl-capacity-counts\n#| tbl-cap: \"Capacity counts by role\"\nfig-… and tbl-… prefixes enable @fig-belonging-by-generation cross-refs and produce proper “Figure 1” numbering.\n\n\n1.2.7 7. Suppress chunk output globally, opt in explicitly\nAt the top of every page:\nknitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)\nDon’t repeat echo=FALSE, message=FALSE, warning=FALSE on every chunk.\n\n\n1.2.8 8. Every chart’s subtitle carries N\nlabs(subtitle = str_glue(\"N = {scales::number(n, big_mark = ',')}\"))\n\n\n1.2.9 9. Tidyverse idioms (from project CLAUDE.md)\n\nNative pipe |&gt; — never %&gt;%\n.by = grouping — never group_by() |&gt; ungroup()\njoin_by() — never by = c(\"a\" = \"b\")\nmap() |&gt; list_rbind() — never map_dfr()\nstringr — never grepl/gsub/substr/nchar/tolower/paste0\nto_factor() from labelled — prefer over haven::as_factor(.x, levels=\"labels\") |&gt; as.character() chains\n\n\n\n1.2.10 10. Prefer static ggplot + mirror_theme() over raw girafe widgets by default\nInteractive charts have a real cost: they bloat HTML, and every girafe() widget vanishes from the .llms.md export that screen readers and LLMs consume. Use ggiraph intentionally when tooltips add value, not reflexively for every chart.",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Color Palettes"
+      "Societal Mirror Site Standards",
+      "Quarto File Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/01-principles.html",
-    "href": "newsroom-data-reporting-standards/01-principles.html",
-    "title": "Core Principles",
+    "objectID": "quarto-file-standards.html#anti-patterns-to-refuse",
+    "href": "quarto-file-standards.html#anti-patterns-to-refuse",
+    "title": "quarto-file-standards",
+    "section": "1.3 Anti-Patterns to Refuse",
+    "text": "1.3 Anti-Patterns to Refuse\nWhen reviewing or refactoring, flag any of these — they are the signature of the centre_survey.qmd anti-pattern:\n\n\n\n\n\n\n\nSmell\nWhy it’s bad\n\n\n\n\nSame helper function defined in 10+ chunks\nCopy-paste drift; every edit has to be applied N times\n\n\nBanner comments like # --------------------- every 20 lines\nSignals the chunk is trying to be its own file; break it up instead\n\n\ndir.create(\"images\", ...) with no PNG write downstream\nDead code\n\n\nHardcoded hex colors in chart code\nBreaks palette cohesion and dark-mode-ready theming\n\n\nCustom theme_set(...) at file top\nOverrides mirror_theme() silently\n\n\nFlat sequence of 20+ # headers\nShould be ## under a few # sections, or tabsets\n\n\nhaven::as_factor(.x, levels = \"labels\") \\|&gt; as.character()\nUse to_factor() / to_character() from labelled\n\n\nEvery question rendered as a girafe() widget\nHTML balloons; .llms.md loses the charts entirely\n\n\n# USER SETTINGS / # HELPER FUNCTIONS blocks inside every chunk\nThat’s a script template, not a Quarto page; hoist to the helper chunk",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Quarto File Standards"
+    ]
+  },
+  {
+    "objectID": "quarto-file-standards.html#quick-diagnostic",
+    "href": "quarto-file-standards.html#quick-diagnostic",
+    "title": "quarto-file-standards",
+    "section": "1.4 Quick Diagnostic",
+    "text": "1.4 Quick Diagnostic\nIf you’re unsure whether a page follows the standard, grep it:\n# Should be 0 or very small:\ngrep -c \"^html_safe &lt;- function\"         page.qmd   # helper redefinitions\ngrep -c \"^apply_named_recode &lt;- function\" page.qmd\ngrep -c \"^# -----\"                        page.qmd   # banner dividers\ngrep -cE '#[0-9A-Fa-f]{6}'                page.qmd   # hardcoded hex colors\n\n# Should be &gt; 0:\ngrep -c \"mirror_theme()\"                  page.qmd\ngrep -c \"shambhala_palette_function\"      page.qmd\ngrep -cE \"(panel-tabset|callout-note)\"    page.qmd\nA page with zero mirror_theme() calls and dozens of helper redefinitions is not conforming to project standards, regardless of whether it renders.",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Quarto File Standards"
+    ]
+  },
+  {
+    "objectID": "quarto-file-standards.html#when-refactoring-an-offending-page",
+    "href": "quarto-file-standards.html#when-refactoring-an-offending-page",
+    "title": "quarto-file-standards",
+    "section": "1.5 When Refactoring an Offending Page",
+    "text": "1.5 When Refactoring an Offending Page\nThe refactor path is usually: 1. Extract the repeated helpers into one helper chunk (or, if reusable across pages, into back-end/shared_functions_26.R). 2. Replace every girafe/custom theme block with a call to one parametric plot function that uses mirror_theme() + shambhala_palette_function(). 3. Collapse per-question USER SETTINGS blocks into rows of a tribble() that drives the helpers. 4. Replace flat # header stacks with ## + ::: panel-tabset. 5. Delete dead dir.create() calls and unused imports.\nExpect a well-run refactor to reduce line count by roughly 4× and bring the page into theme/palette compliance as a side effect.",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Quarto File Standards"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/newsroom-standards.html",
+    "href": "newsroom-data-reporting-standards/newsroom-standards.html",
+    "title": "Newsroom Web Standard for Data Reporting",
     "section": "",
-    "text": "These principles govern every chart. The detailed rules in the other documents are applications of them; when a situation is not covered by a specific rule, decide by these.",
+    "text": "This is a synthesis of house standards for publishing charts and data-driven reporting on the web. It defines which chart types to use for which analytical task, which color palettes to use, and the typography, annotation, and accessibility rules that hold the two together.\nThe standard is distilled from the published practice of three newsrooms with mature data-visualization operations — the BBC (Visual & Data Journalism cookbook and bbplot), the Financial Times (Visual Vocabulary and chart color tokens), and The Economist (visual style guide) — cross-checked against non-newsroom authorities: the UK Government Analysis Function, the Urban Institute, Datawrapper, the Okabe–Ito colorblind-safe palette, and WCAG 2.2. Every hex code and rule traces to a published source; see 07-sources.qmd.",
     "crumbs": [
       "Home",
       "Newsroom Data Reporting Standards",
-      "Principles"
+      "Newsroom Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-1-the-message-comes-first-must",
-    "href": "newsroom-data-reporting-standards/01-principles.html#p-1-the-message-comes-first-must",
-    "title": "Core Principles",
-    "section": "1 P-1 The message comes first (MUST)",
-    "text": "1 P-1 The message comes first (MUST)\nEvery chart MUST have a single, stateable message. If you cannot complete the sentence “this chart shows that …”, the chart is not ready. The Financial Times’ Visual Vocabulary makes this operational: chart choice starts from the analytical function of the message — deviation, correlation, ranking, distribution, change over time, magnitude, part-to-whole, spatial, or flow — not from a preferred chart form.",
+    "objectID": "newsroom-data-reporting-standards/newsroom-standards.html#conformance-language",
+    "href": "newsroom-data-reporting-standards/newsroom-standards.html#conformance-language",
+    "title": "Newsroom Web Standard for Data Reporting",
+    "section": "1 Conformance language",
+    "text": "1 Conformance language\nThe key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are used as described in RFC 2119:\n\nMUST / MUST NOT — an absolute requirement. A chart violating it fails review.\nSHOULD / SHOULD NOT — the default. Deviating requires a documented reason.\nMAY — genuinely optional.\n\nRules carry stable IDs (e.g. CT-3, CO-7) so reviews can cite them.",
     "crumbs": [
       "Home",
       "Newsroom Data Reporting Standards",
-      "Principles"
+      "Newsroom Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-2-titles-state-the-finding-should",
-    "href": "newsroom-data-reporting-standards/01-principles.html#p-2-titles-state-the-finding-should",
-    "title": "Core Principles",
-    "section": "2 P-2 Titles state the finding (SHOULD)",
-    "text": "2 P-2 Titles state the finding (SHOULD)\nThe main title SHOULD be an assertive headline stating what the chart shows (“Vaccination halved infections”), not a variable listing (“Infections by vaccination status, 2020–24”). The descriptive part — measure, unit, geography, period — belongs in the subtitle. This is the consistent practice of the BBC, FT, and The Economist, and the UK Analysis Function formalizes it as “headline title plus statistical subtitle.”",
+    "objectID": "newsroom-data-reporting-standards/newsroom-standards.html#documents",
+    "href": "newsroom-data-reporting-standards/newsroom-standards.html#documents",
+    "title": "Newsroom Web Standard for Data Reporting",
+    "section": "2 Documents",
+    "text": "2 Documents\n\n\n\nFile\nScope\n\n\n\n\n01-principles.qmd\nCore principles: clarity, integrity, titling, sourcing (rules P-*)\n\n\n02-chart-types.qmd\nChart-type selection by analytical function; anti-patterns (rules CT-*)\n\n\n03-color-palettes.qmd\nPalettes with hex codes; color usage rules (rules CO-*)\n\n\n04-typography-annotation.qmd\nTitles, labels, legends, number formatting, source lines (rules TY-*)\n\n\n05-accessibility.qmd\nContrast, alt text, color-independence (rules AX-*)\n\n\n06-implementation-r.qmd\nNon-normative appendix: applying the standard in ggplot2/Quarto\n\n\n07-sources.qmd\nAnnotated bibliography",
     "crumbs": [
       "Home",
       "Newsroom Data Reporting Standards",
-      "Principles"
+      "Newsroom Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-3-show-the-data-honestly-must",
-    "href": "newsroom-data-reporting-standards/01-principles.html#p-3-show-the-data-honestly-must",
-    "title": "Core Principles",
-    "section": "3 P-3 Show the data honestly (MUST)",
-    "text": "3 P-3 Show the data honestly (MUST)\n\nBar and column charts encode value in length, so their value axis MUST start at zero and MUST NOT be broken. (Economist style guide; UK Analysis Function; Urban Institute.)\nLine charts MAY use a non-zero baseline when the level is not the story, but the axis MUST NOT be broken silently, and the range MUST NOT be chosen to manufacture drama.\nDual value axes SHOULD NOT be used. The Urban Institute bans them outright (“confusing, difficult to read, and often misleading”); The Economist permits them only under strict conditions (aligned zero lines, no broken scales, no disparate measures forced into visual correlation) and otherwise directs: split into panels or index the series to a common base.\nAreas MUST scale with the values they represent: no 3-D effects, no perspective, no pictograms sliced to represent fractions (“do not slice off an arm to represent a decimal” — FT Visual Vocabulary).",
+    "objectID": "newsroom-data-reporting-standards/newsroom-standards.html#how-to-use-this-standard",
+    "href": "newsroom-data-reporting-standards/newsroom-standards.html#how-to-use-this-standard",
+    "title": "Newsroom Web Standard for Data Reporting",
+    "section": "3 How to use this standard",
+    "text": "3 How to use this standard\n\nChoosing a chart — start from the analytical function of the message (02-chart-types.qmd), not from a chart you like.\nColoring it — pick the palette role (categorical, sequential, diverging, highlight) in 03-color-palettes.qmd; never invent ad-hoc colors.\nFinishing it — apply the titling, labeling, and sourcing rules (04-typography-annotation.qmd) and the accessibility checklist (05-accessibility.qmd).\nReviewing — a reviewer should be able to pass/fail any published chart against the numbered rules alone.",
     "crumbs": [
       "Home",
       "Newsroom Data Reporting Standards",
-      "Principles"
+      "Newsroom Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-4-maximize-data-minimize-decoration-should",
-    "href": "newsroom-data-reporting-standards/01-principles.html#p-4-maximize-data-minimize-decoration-should",
-    "title": "Core Principles",
-    "section": "4 P-4 Maximize data, minimize decoration (SHOULD)",
-    "text": "4 P-4 Maximize data, minimize decoration (SHOULD)\nEvery non-data element must earn its place. Defaults that follow from this:\n\nGridlines: light grey, one axis only where possible, never more than about 10 (UK Analysis Function). The BBC’s default theme draws horizontal gridlines only.\nA single strong zero/base line anchors the chart (BBC: #333333 baseline).\nNo borders, shadows, textures, or background fills that do not encode data.\nPrefer direct labels over legends (04-typography-annotation.qmd, TY-6).",
+    "objectID": "newsroom-data-reporting-standards/newsroom-standards.html#scope",
+    "href": "newsroom-data-reporting-standards/newsroom-standards.html#scope",
+    "title": "Newsroom Web Standard for Data Reporting",
+    "section": "4 Scope",
+    "text": "4 Scope\nApplies to any chart published on the web: static images, SVG, and interactive graphics embedded in articles, dashboards, or reports. The core standard is technology-agnostic; 06-implementation-r.qmd maps it to an R/ggplot2/Quarto stack but any charting library can conform.",
     "crumbs": [
       "Home",
       "Newsroom Data Reporting Standards",
-      "Principles"
+      "Newsroom Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-5-less-but-comparable-should",
-    "href": "newsroom-data-reporting-standards/01-principles.html#p-5-less-but-comparable-should",
-    "title": "Core Principles",
-    "section": "5 P-5 Less, but comparable (SHOULD)",
-    "text": "5 P-5 Less, but comparable (SHOULD)\nFewer well-chosen series beat exhaustive ones. Working limits used throughout this standard: at most 4 lines on one line chart, at most 4 bars per cluster, at most 6–7 categories per chart (UK Analysis Function; Urban Institute; The Economist’s tooling plots at most 6 colors). When the data exceed these limits, use small multiples — repeat the same chart per category with shared scales — rather than cramming one panel.",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Principles"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-6-consistency-across-the-publication-must",
-    "href": "newsroom-data-reporting-standards/01-principles.html#p-6-consistency-across-the-publication-must",
-    "title": "Core Principles",
-    "section": "6 P-6 Consistency across the publication (MUST)",
-    "text": "6 P-6 Consistency across the publication (MUST)\nThe same entity MUST keep the same color, the same measure the same format, and the same chart family the same conventions across a page or report. Readers learn your encoding once; do not make them relearn it per chart.",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Principles"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-7-every-chart-cites-its-source-must",
-    "href": "newsroom-data-reporting-standards/01-principles.html#p-7-every-chart-cites-its-source-must",
-    "title": "Core Principles",
-    "section": "7 P-7 Every chart cites its source (MUST)",
-    "text": "7 P-7 Every chart cites its source (MUST)\nA source line (“Source: …”, or “Sources: …”) MUST appear on or directly beneath every chart, bottom-left, naming the data provider — not the file, not the analyst. Footnote markers (*, †) qualify individual figures. This is uniform BBC, FT, and Economist practice; the BBC’s finalise_plot() makes the source line a required argument.",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Principles"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-8-design-for-the-reader-you-dont-control-must",
-    "href": "newsroom-data-reporting-standards/01-principles.html#p-8-design-for-the-reader-you-dont-control-must",
-    "title": "Core Principles",
-    "section": "8 P-8 Design for the reader you don’t control (MUST)",
-    "text": "8 P-8 Design for the reader you don’t control (MUST)\nThe chart will be read on a phone, projected, printed in greyscale, or read aloud by a screen reader. It MUST survive all four:\n\nMeaning MUST NOT be carried by color alone (WCAG 1.4.1) — see 05-accessibility.qmd.\nText MUST remain legible at the smallest published size.\nEvery chart MUST have a text alternative (alt text, a data table, or descriptive prose).",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Principles"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shambhala Mirror standards",
+    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html",
+    "href": "newsroom-data-reporting-standards/06-implementation-r.html",
+    "title": "Implementation: R / ggplot2 / Quarto",
     "section": "",
-    "text": "Background"
+    "text": "Maps the standard onto a ggplot2 (≥ 4.0) + Quarto stack. The normative rules live in documents 01–05; this file shows one conforming implementation. Patterned on the BBC’s bbplot/cookbook approach.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Implementation R"
+    ]
   },
   {
-    "objectID": "index.html#history",
-    "href": "index.html#history",
-    "title": "Shambhala Mirror standards",
-    "section": "1 History",
-    "text": "1 History\nA 5 year effort to look at the community and organization to describe how it’s evolved."
+    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html#palettes-as-constants",
+    "href": "newsroom-data-reporting-standards/06-implementation-r.html#palettes-as-constants",
+    "title": "Implementation: R / ggplot2 / Quarto",
+    "section": "1 Palettes as constants",
+    "text": "1 Palettes as constants\n\nlibrary(ggplot2)\n\n# 03-color-palettes.qmd — categorical default (UK Analysis Function order)\npalette_categorical &lt;- c(\n  \"#12436D\",\n  \"#28A197\",\n  \"#801650\",\n  \"#F46A25\",\n  \"#3D3D3D\",\n  \"#A285D1\"\n)\n\n# Okabe–Ito alternative (also available as grDevices::palette.colors(palette = \"Okabe-Ito\"))\npalette_okabe_ito &lt;- c(\n  \"#000000\",\n  \"#E69F00\",\n  \"#56B4E9\",\n  \"#009E73\",\n  \"#F0E442\",\n  \"#0072B2\",\n  \"#D55E00\",\n  \"#CC79A7\"\n)\n\npalette_sequential &lt;- c(\n  \"#F2F2F2\",\n  \"#ADD1F1\",\n  \"#6BACE6\",\n  \"#2073BC\",\n  \"#12436D\",\n  \"#092135\"\n)\n\npalette_highlight &lt;- c(highlight = \"#12436D\", context = \"#BFBFBF\")\n\ncolor_text &lt;- \"#333333\"\ncolor_text_soft &lt;- \"#555555\"\ncolor_gridline &lt;- \"#CBCBCB\"\ncolor_baseline &lt;- \"#333333\"",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Implementation R"
+    ]
   },
   {
-    "objectID": "index.html#opportunity",
-    "href": "index.html#opportunity",
-    "title": "Shambhala Mirror standards",
-    "section": "2 Opportunity",
-    "text": "2 Opportunity\nThe https://mirror.shambhala.org has evolved incrementally over the years. This standards site is an opportunity to look at its current state and describe it in a way that accelerates the next phase of development. The goal is to create a set of standards that can be used to guide the next phase of development."
+    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html#theme-p-4-ty-2378",
+    "href": "newsroom-data-reporting-standards/06-implementation-r.html#theme-p-4-ty-2378",
+    "title": "Implementation: R / ggplot2 / Quarto",
+    "section": "2 Theme (P-4, TY-2/3/7/8)",
+    "text": "2 Theme (P-4, TY-2/3/7/8)\n\ntheme_report &lt;- function(base_size = 12) {\n  ggplot2::theme_minimal(base_size = base_size) +\n    ggplot2::theme(\n      # finding-first title block, left-aligned to the plot edge (TY-2)\n      plot.title.position = \"plot\",\n      plot.title = ggplot2::element_text(face = \"bold\", size = base_size * 1.6),\n      plot.subtitle = ggplot2::element_text(color = color_text_soft),\n      plot.caption = ggplot2::element_text(color = color_text_soft, hjust = 0),\n      plot.caption.position = \"plot\",\n      # y gridlines only, light grey (P-4, TY-7)\n      panel.grid.major.x = ggplot2::element_blank(),\n      panel.grid.minor = ggplot2::element_blank(),\n      panel.grid.major.y = ggplot2::element_line(color = color_gridline),\n      axis.title = ggplot2::element_blank(), # units go in the subtitle (TY-11)\n      axis.text = ggplot2::element_text(color = color_text),\n      # legend top, no title; prefer direct labels anyway (TY-6)\n      legend.position = \"top\",\n      legend.title = ggplot2::element_blank(),\n      text = ggplot2::element_text(color = color_text)\n    )\n}",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Implementation R"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html#scales",
+    "href": "newsroom-data-reporting-standards/06-implementation-r.html#scales",
+    "title": "Implementation: R / ggplot2 / Quarto",
+    "section": "3 Scales",
+    "text": "3 Scales\n\nscale_color_report &lt;- function(...) {\n  ggplot2::scale_color_manual(values = palette_categorical, ...)\n}\n\nscale_fill_report &lt;- function(...) {\n  ggplot2::scale_fill_manual(values = palette_categorical, ...)\n}\n\n# Sequential/continuous: viridis is a conforming perceptually-uniform default\n# (03 — sequential): ggplot2::scale_fill_viridis_c()",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Implementation R"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html#a-conforming-chart",
+    "href": "newsroom-data-reporting-standards/06-implementation-r.html#a-conforming-chart",
+    "title": "Implementation: R / ggplot2 / Quarto",
+    "section": "4 A conforming chart",
+    "text": "4 A conforming chart\n\n# Use economics dataset and compute a rate-like variable for demonstration\ninflation &lt;- data.frame(\n  date = economics$date[economics$date &gt;= as.Date(\"2000-01-01\")],\n  rate = (economics$pce[economics$date &gt;= as.Date(\"2000-01-01\")] /\n    lag(economics$pce[economics$date &gt;= as.Date(\"2000-01-01\")], 12) -\n    1) *\n    100\n)\n\nplot_inflation &lt;- inflation |&gt;\n  ggplot(aes(date, rate)) +\n  geom_hline(yintercept = 0, linewidth = 1, color = color_baseline) + # TY-8\n  geom_line(linewidth = 1, color = palette_categorical[[1]]) + # AX-11\n  scale_y_continuous(labels = scales::label_percent(scale = 1)) +\n  labs(\n    title = \"Inflation has returned to target\", # P-2: the finding\n    subtitle = \"UK CPI, % change on a year earlier\", # TY-1: measure + unit\n    caption = \"Source: ONS\" # P-7 / TY-15\n  ) +\n  theme_report()\n\nHighlight-vs-context pattern (CO-5, CT-A7): map the featured series to palette_highlight[[\"highlight\"]] and all others to palette_highlight[[\"context\"]], then label directly with geom_text() / ggrepel instead of a legend.\nSmall multiples (CT-3): facet_wrap(vars(category)) with fixed scales unless a documented reason requires scales = \"free_y\".",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Implementation R"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html#quarto-integration",
+    "href": "newsroom-data-reporting-standards/06-implementation-r.html#quarto-integration",
+    "title": "Implementation: R / ggplot2 / Quarto",
+    "section": "5 Quarto integration",
+    "text": "5 Quarto integration\n\nAlt text (AX-6/7) — every figure chunk sets fig-alt:\n\nplot_inflation\n\n\n\n\n\n\n\n\nHTML-native titles (TY-5, AX-8) — for web output, prefer the page’s heading and lead paragraph to carry title/context, and emit SVG: knitr: opts_chunk: dev: \"svglite\".\nTheme discipline — define theme_report(), palettes, and scale helpers once in a sourced R/theme.R (or an internal package), never inline per chunk; set ggplot2::theme_set(theme_report()) in a setup chunk.\nBrand — a _brand.yml can carry the palette for non-ggplot outputs (tables, value boxes) so HTML components and charts share hex codes.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Implementation R"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html#verification-helper",
+    "href": "newsroom-data-reporting-standards/06-implementation-r.html#verification-helper",
+    "title": "Implementation: R / ggplot2 / Quarto",
+    "section": "6 Verification helper",
+    "text": "6 Verification helper\nContrast checking (AX-1/2) without leaving R:\n\ncontrast_ratio &lt;- function(fg, bg = \"#FFFFFF\") {\n  lum &lt;- function(hex) {\n    rgb &lt;- grDevices::col2rgb(hex)[, 1] / 255\n    lin &lt;- ifelse(rgb &lt;= 0.03928, rgb / 12.92, ((rgb + 0.055) / 1.055)^2.4)\n    sum(lin * c(0.2126, 0.7152, 0.0722))\n  }\n  l &lt;- sort(c(lum(fg), lum(bg)), decreasing = TRUE)\n  (l[[1]] + 0.05) / (l[[2]] + 0.05)\n}\n\npalette_categorical |&gt; purrr::map_dbl(contrast_ratio) # all &gt;= 3\n\n[1] 10.246867  3.165013  9.774534  3.028141 10.862247  3.082805\n\n\nColorblind simulation: colorblindr::cvd_grid(plot_inflation) or colorspace::simulate_cvd().",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Implementation R"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html",
+    "href": "newsroom-data-reporting-standards/04-typography-annotation.html",
+    "title": "Typography & Annotation",
+    "section": "",
+    "text": "Text is how a chart explains itself. These rules cover the text hierarchy, axis and data labeling, number formatting, and the source line.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Typography Annotation"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#text-hierarchy",
+    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#text-hierarchy",
+    "title": "Typography & Annotation",
+    "section": "1 Text hierarchy",
+    "text": "1 Text hierarchy\n\nTY-1 (MUST) Every chart carries, in order: title (the finding, P-2), subtitle (measure, unit, geography, period), and source line (P-7). Optional between subtitle and source: axis labels, annotations, footnotes.\nTY-2 (MUST) Title and subtitle are left-aligned at the chart’s left edge (BBC finalise_plot() convention; Economist and FT practice). Units live in the subtitle (“GDP, % change on a year earlier”), not repeated on every axis tick.\nTY-3 (MUST) Chart text uses a single sans-serif family at web sizes that stay legible on phones. Reference scale (Urban Institute web values):\n\ntitle ~20px bold,\nsubtitle ~16px,\naxis and data labels ~12px,\nlegend ~14px,\nsource/notes ~11px.\nSentence case for all chart text; never all-caps for data labels.\n\nTY-4 (MUST) All text is horizontal — no vertical or diagonal axis labels (UK Analysis Function). If category labels don’t fit horizontally, flip to horizontal bars (CT-14).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Typography Annotation"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#titles-and-subtitles-on-the-web-accessibility-interaction",
+    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#titles-and-subtitles-on-the-web-accessibility-interaction",
+    "title": "Typography & Annotation",
+    "section": "2 Titles and subtitles on the web (accessibility interaction)",
+    "text": "2 Titles and subtitles on the web (accessibility interaction)\n\nTY-5 (SHOULD) On web pages, render title, subtitle, and source as HTML text adjacent to the graphic rather than baking them into the image — screen readers and reflow then get them for free (UK Analysis Function 1.4.5 guidance).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Typography Annotation"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#legends-vs-direct-labels",
+    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#legends-vs-direct-labels",
+    "title": "Typography & Annotation",
+    "section": "3 Legends vs direct labels",
+    "text": "3 Legends vs direct labels\n\nTY-6 (SHOULD) Label series directly at the line end or on the bar whenever space allows; use a legend only when direct labels genuinely don’t fit (UK AF: “don’t use legends if direct labeling is possible”; Economist: where linking lines get crowded, “key the labels with small colour block”). If a legend is used, order it to match the visual order of the series and place it above the plot (BBC default: legend at top, no legend title).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Typography Annotation"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#axes-gridlines-ticks",
+    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#axes-gridlines-ticks",
+    "title": "Typography & Annotation",
+    "section": "4 Axes, gridlines, ticks",
+    "text": "4 Axes, gridlines, ticks\n\nTY-7 (MUST) Value axis: right-align numeric tick labels; use thousands separators (“121,576”); at most ~10 light-grey gridlines; label the final tick when space permits (UK AF).\nTY-8 (MUST) Draw one strong baseline at zero (or the reference value) — BBC style #333333 — heavier than gridlines. Other chart borders and axis lines are omitted.\nTY-9 (SHOULD) Abbreviate time axes after first mention the way newsrooms do: “1994 96 98 2000 02 …” (Economist practice); don’t repeat the century on every tick.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Typography Annotation"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#numbers",
+    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#numbers",
+    "title": "Typography & Annotation",
+    "section": "5 Numbers",
+    "text": "5 Numbers\n\nTY-10 (MUST) Round to the precision the story needs — no false precision (write 4.5, not 4.5271). Keep decimal places consistent within a series.\nTY-11 (MUST) State units once, in the subtitle or axis header: %, $bn, per 100,000 population. Symbols (%, $) don’t repeat on every tick if stated in the subtitle.\nTY-12 (SHOULD) For scale words follow one convention: bn/m/trn abbreviations or full words, publication-wide.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Typography Annotation"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#annotation",
+    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#annotation",
+    "title": "Typography & Annotation",
+    "section": "6 Annotation",
+    "text": "6 Annotation\n\nTY-13 (SHOULD) Annotate the chart where the story happens: short labels with a thin pointer at the event (“Privatisation begins” — Economist example), placed near the relevant data in dark grey/black (UK AF). An annotated chart beats a caption paragraph.\nTY-14 (MUST) Footnote markers (*, †, ‡) attach caveats to specific values; the note text sits with the source line (“*To June 30th”).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Typography Annotation"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#source-and-credit-line",
+    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#source-and-credit-line",
+    "title": "Typography & Annotation",
+    "section": "7 Source and credit line",
+    "text": "7 Source and credit line\n\nTY-15 (MUST) Bottom-left: Source: / Sources: naming the data provider(s), separated by semicolons (“Sources: Thomson Reuters; IMF”). Bottom-right MAY carry the publication credit or logo (BBC finalise_plot() places the logo bottom-right).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Typography Annotation"
+    ]
   },
   {
     "objectID": "newsroom-data-reporting-standards/02-chart-types.html",
@@ -441,243 +732,576 @@
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html",
-    "href": "newsroom-data-reporting-standards/04-typography-annotation.html",
-    "title": "Typography & Annotation",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shambhala Mirror standards",
     "section": "",
-    "text": "Text is how a chart explains itself. These rules cover the text hierarchy, axis and data labeling, number formatting, and the source line.",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Typography Annotation"
-    ]
+    "text": "Background"
   },
   {
-    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#text-hierarchy",
-    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#text-hierarchy",
-    "title": "Typography & Annotation",
-    "section": "1 Text hierarchy",
-    "text": "1 Text hierarchy\n\nTY-1 (MUST) Every chart carries, in order: title (the finding, P-2), subtitle (measure, unit, geography, period), and source line (P-7). Optional between subtitle and source: axis labels, annotations, footnotes.\nTY-2 (MUST) Title and subtitle are left-aligned at the chart’s left edge (BBC finalise_plot() convention; Economist and FT practice). Units live in the subtitle (“GDP, % change on a year earlier”), not repeated on every axis tick.\nTY-3 (MUST) Chart text uses a single sans-serif family at web sizes that stay legible on phones. Reference scale (Urban Institute web values): title ~20px bold, subtitle ~16px, axis and data labels ~12px, legend ~14px, source/notes ~11px. Sentence case for all chart text; never all-caps for data labels.\nTY-4 (MUST) All text is horizontal — no vertical or diagonal axis labels (UK Analysis Function). If category labels don’t fit horizontally, flip to horizontal bars (CT-14).",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Typography Annotation"
-    ]
+    "objectID": "index.html#history",
+    "href": "index.html#history",
+    "title": "Shambhala Mirror standards",
+    "section": "1 History",
+    "text": "1 History\nThe Societal Mirror is a 5-year effort to support the Shambhala Community’s ability to look at itself – as a community and an organization."
   },
   {
-    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#titles-and-subtitles-on-the-web-accessibility-interaction",
-    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#titles-and-subtitles-on-the-web-accessibility-interaction",
-    "title": "Typography & Annotation",
-    "section": "2 Titles and subtitles on the web (accessibility interaction)",
-    "text": "2 Titles and subtitles on the web (accessibility interaction)\n\nTY-5 (SHOULD) On web pages, render title, subtitle, and source as HTML text adjacent to the graphic rather than baking them into the image — screen readers and reflow then get them for free (UK Analysis Function 1.4.5 guidance).",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Typography Annotation"
-    ]
+    "objectID": "index.html#opportunity",
+    "href": "index.html#opportunity",
+    "title": "Shambhala Mirror standards",
+    "section": "2 Opportunity",
+    "text": "2 Opportunity\nThe https://mirror.shambhala.org has evolved incrementally over the years. This standards site is an opportunity to look at its current state and describe it in a way that accelerates the next phase of development. The goal is to create a set of standards that can be used to guide the next phase of development."
   },
   {
-    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#legends-vs-direct-labels",
-    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#legends-vs-direct-labels",
-    "title": "Typography & Annotation",
-    "section": "3 Legends vs direct labels",
-    "text": "3 Legends vs direct labels\n\nTY-6 (SHOULD) Label series directly at the line end or on the bar whenever space allows; use a legend only when direct labels genuinely don’t fit (UK AF: “don’t use legends if direct labeling is possible”; Economist: where linking lines get crowded, “key the labels with small colour block”). If a legend is used, order it to match the visual order of the series and place it above the plot (BBC default: legend at top, no legend title).",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Typography Annotation"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#axes-gridlines-ticks",
-    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#axes-gridlines-ticks",
-    "title": "Typography & Annotation",
-    "section": "4 Axes, gridlines, ticks",
-    "text": "4 Axes, gridlines, ticks\n\nTY-7 (MUST) Value axis: right-align numeric tick labels; use thousands separators (“121,576”); at most ~10 light-grey gridlines; label the final tick when space permits (UK AF).\nTY-8 (MUST) Draw one strong baseline at zero (or the reference value) — BBC style #333333 — heavier than gridlines. Other chart borders and axis lines are omitted.\nTY-9 (SHOULD) Abbreviate time axes after first mention the way newsrooms do: “1994 96 98 2000 02 …” (Economist practice); don’t repeat the century on every tick.",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Typography Annotation"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#numbers",
-    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#numbers",
-    "title": "Typography & Annotation",
-    "section": "5 Numbers",
-    "text": "5 Numbers\n\nTY-10 (MUST) Round to the precision the story needs — no false precision (write 4.5, not 4.5271). Keep decimal places consistent within a series.\nTY-11 (MUST) State units once, in the subtitle or axis header: %, $bn, per 100,000 population. Symbols (%, $) don’t repeat on every tick if stated in the subtitle.\nTY-12 (SHOULD) For scale words follow one convention: bn/m/trn abbreviations or full words, publication-wide.",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Typography Annotation"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#annotation",
-    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#annotation",
-    "title": "Typography & Annotation",
-    "section": "6 Annotation",
-    "text": "6 Annotation\n\nTY-13 (SHOULD) Annotate the chart where the story happens: short labels with a thin pointer at the event (“Privatisation begins” — Economist example), placed near the relevant data in dark grey/black (UK AF). An annotated chart beats a caption paragraph.\nTY-14 (MUST) Footnote markers (*, †, ‡) attach caveats to specific values; the note text sits with the source line (“*To June 30th”).",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Typography Annotation"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/04-typography-annotation.html#source-and-credit-line",
-    "href": "newsroom-data-reporting-standards/04-typography-annotation.html#source-and-credit-line",
-    "title": "Typography & Annotation",
-    "section": "7 Source and credit line",
-    "text": "7 Source and credit line\n\nTY-15 (MUST) Bottom-left: Source: / Sources: naming the data provider(s), separated by semicolons (“Sources: Thomson Reuters; IMF”). Bottom-right MAY carry the publication credit or logo (BBC finalise_plot() places the logo bottom-right).",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Typography Annotation"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html",
-    "href": "newsroom-data-reporting-standards/06-implementation-r.html",
-    "title": "Implementation: R / ggplot2 / Quarto",
+    "objectID": "admin-page-standards.html",
+    "href": "admin-page-standards.html",
+    "title": "Admin Page Standards",
     "section": "",
-    "text": "Maps the standard onto a ggplot2 (≥ 4.0) + Quarto stack. The normative rules live in documents 01–05; this file shows one conforming implementation. Patterned on the BBC’s bbplot/cookbook approach.",
+    "text": "Use this skill when working on admin (SDB/administrative records) pages in The Societal Mirror project. Triggers when user asks to add a chart, table, or section to pages like membership.qmd, centre_profile.qmd, or any page working with member_base_data, center data, enrollment data, or GCC constellation/region analysis from the Shambhala Database (SDB).",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Implementation R"
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html#palettes-as-constants",
-    "href": "newsroom-data-reporting-standards/06-implementation-r.html#palettes-as-constants",
-    "title": "Implementation: R / ggplot2 / Quarto",
-    "section": "1 Palettes as constants",
-    "text": "1 Palettes as constants\n\nlibrary(ggplot2)\n\n# 03-color-palettes.qmd — categorical default (UK Analysis Function order)\npalette_categorical &lt;- c(\n  \"#12436D\",\n  \"#28A197\",\n  \"#801650\",\n  \"#F46A25\",\n  \"#3D3D3D\",\n  \"#A285D1\"\n)\n\n# Okabe–Ito alternative (also available as grDevices::palette.colors(palette = \"Okabe-Ito\"))\npalette_okabe_ito &lt;- c(\n  \"#000000\",\n  \"#E69F00\",\n  \"#56B4E9\",\n  \"#009E73\",\n  \"#F0E442\",\n  \"#0072B2\",\n  \"#D55E00\",\n  \"#CC79A7\"\n)\n\npalette_sequential &lt;- c(\n  \"#F2F2F2\",\n  \"#ADD1F1\",\n  \"#6BACE6\",\n  \"#2073BC\",\n  \"#12436D\",\n  \"#092135\"\n)\n\npalette_highlight &lt;- c(highlight = \"#12436D\", context = \"#BFBFBF\")\n\ncolor_text &lt;- \"#333333\"\ncolor_text_soft &lt;- \"#555555\"\ncolor_gridline &lt;- \"#CBCBCB\"\ncolor_baseline &lt;- \"#333333\"",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Implementation R"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html#theme-p-4-ty-2378",
-    "href": "newsroom-data-reporting-standards/06-implementation-r.html#theme-p-4-ty-2378",
-    "title": "Implementation: R / ggplot2 / Quarto",
-    "section": "2 Theme (P-4, TY-2/3/7/8)",
-    "text": "2 Theme (P-4, TY-2/3/7/8)\n\ntheme_report &lt;- function(base_size = 12) {\n  ggplot2::theme_minimal(base_size = base_size) +\n    ggplot2::theme(\n      # finding-first title block, left-aligned to the plot edge (TY-2)\n      plot.title.position = \"plot\",\n      plot.title = ggplot2::element_text(face = \"bold\", size = base_size * 1.6),\n      plot.subtitle = ggplot2::element_text(color = color_text_soft),\n      plot.caption = ggplot2::element_text(color = color_text_soft, hjust = 0),\n      plot.caption.position = \"plot\",\n      # y gridlines only, light grey (P-4, TY-7)\n      panel.grid.major.x = ggplot2::element_blank(),\n      panel.grid.minor = ggplot2::element_blank(),\n      panel.grid.major.y = ggplot2::element_line(color = color_gridline),\n      axis.title = ggplot2::element_blank(), # units go in the subtitle (TY-11)\n      axis.text = ggplot2::element_text(color = color_text),\n      # legend top, no title; prefer direct labels anyway (TY-6)\n      legend.position = \"top\",\n      legend.title = ggplot2::element_blank(),\n      text = ggplot2::element_text(color = color_text)\n    )\n}",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Implementation R"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html#scales",
-    "href": "newsroom-data-reporting-standards/06-implementation-r.html#scales",
-    "title": "Implementation: R / ggplot2 / Quarto",
-    "section": "3 Scales",
-    "text": "3 Scales\n\nscale_color_report &lt;- function(...) {\n  ggplot2::scale_color_manual(values = palette_categorical, ...)\n}\n\nscale_fill_report &lt;- function(...) {\n  ggplot2::scale_fill_manual(values = palette_categorical, ...)\n}\n\n# Sequential/continuous: viridis is a conforming perceptually-uniform default\n# (03 — sequential): ggplot2::scale_fill_viridis_c()",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Implementation R"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html#a-conforming-chart",
-    "href": "newsroom-data-reporting-standards/06-implementation-r.html#a-conforming-chart",
-    "title": "Implementation: R / ggplot2 / Quarto",
-    "section": "4 A conforming chart",
-    "text": "4 A conforming chart\n\n# Use economics dataset and compute a rate-like variable for demonstration\ninflation &lt;- data.frame(\n  date = economics$date[economics$date &gt;= as.Date(\"2000-01-01\")],\n  rate = (economics$pce[economics$date &gt;= as.Date(\"2000-01-01\")] /\n    lag(economics$pce[economics$date &gt;= as.Date(\"2000-01-01\")], 12) -\n    1) *\n    100\n)\n\nplot_inflation &lt;- inflation |&gt;\n  ggplot(aes(date, rate)) +\n  geom_hline(yintercept = 0, linewidth = 1, color = color_baseline) + # TY-8\n  geom_line(linewidth = 1, color = palette_categorical[[1]]) + # AX-11\n  scale_y_continuous(labels = scales::label_percent(scale = 1)) +\n  labs(\n    title = \"Inflation has returned to target\", # P-2: the finding\n    subtitle = \"UK CPI, % change on a year earlier\", # TY-1: measure + unit\n    caption = \"Source: ONS\" # P-7 / TY-15\n  ) +\n  theme_report()\n\nHighlight-vs-context pattern (CO-5, CT-A7): map the featured series to palette_highlight[[\"highlight\"]] and all others to palette_highlight[[\"context\"]], then label directly with geom_text() / ggrepel instead of a legend.\nSmall multiples (CT-3): facet_wrap(vars(category)) with fixed scales unless a documented reason requires scales = \"free_y\".",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Implementation R"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html#quarto-integration",
-    "href": "newsroom-data-reporting-standards/06-implementation-r.html#quarto-integration",
-    "title": "Implementation: R / ggplot2 / Quarto",
-    "section": "5 Quarto integration",
-    "text": "5 Quarto integration\n\nAlt text (AX-6/7) — every figure chunk sets fig-alt:\n\nplot_inflation\n\n\n\n\n\n\n\n\nHTML-native titles (TY-5, AX-8) — for web output, prefer the page’s heading and lead paragraph to carry title/context, and emit SVG: knitr: opts_chunk: dev: \"svglite\".\nTheme discipline — define theme_report(), palettes, and scale helpers once in a sourced R/theme.R (or an internal package), never inline per chunk; set ggplot2::theme_set(theme_report()) in a setup chunk.\nBrand — a _brand.yml can carry the palette for non-ggplot outputs (tables, value boxes) so HTML components and charts share hex codes.",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Implementation R"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/06-implementation-r.html#verification-helper",
-    "href": "newsroom-data-reporting-standards/06-implementation-r.html#verification-helper",
-    "title": "Implementation: R / ggplot2 / Quarto",
-    "section": "6 Verification helper",
-    "text": "6 Verification helper\nContrast checking (AX-1/2) without leaving R:\n\ncontrast_ratio &lt;- function(fg, bg = \"#FFFFFF\") {\n  lum &lt;- function(hex) {\n    rgb &lt;- grDevices::col2rgb(hex)[, 1] / 255\n    lin &lt;- ifelse(rgb &lt;= 0.03928, rgb / 12.92, ((rgb + 0.055) / 1.055)^2.4)\n    sum(lin * c(0.2126, 0.7152, 0.0722))\n  }\n  l &lt;- sort(c(lum(fg), lum(bg)), decreasing = TRUE)\n  (l[[1]] + 0.05) / (l[[2]] + 0.05)\n}\n\npalette_categorical |&gt; purrr::map_dbl(contrast_ratio) # all &gt;= 3\n\n[1] 10.246867  3.165013  9.774534  3.028141 10.862247  3.082805\n\n\nColorblind simulation: colorblindr::cvd_grid(plot_inflation) or colorspace::simulate_cvd().",
-    "crumbs": [
-      "Home",
-      "Newsroom Data Reporting Standards",
-      "Implementation R"
-    ]
-  },
-  {
-    "objectID": "newsroom-data-reporting-standards/newsroom-standards.html",
-    "href": "newsroom-data-reporting-standards/newsroom-standards.html",
-    "title": "Newsroom Web Standard for Data Reporting",
+    "objectID": "admin-page-standards.html#purpose",
+    "href": "admin-page-standards.html#purpose",
+    "title": "Admin Page Standards",
     "section": "",
-    "text": "A house standard for publishing charts and data-driven reporting on the web. It defines which chart types to use for which analytical task, which color palettes to use, and the typography, annotation, and accessibility rules that hold the two together.\nThe standard is distilled from the published practice of three newsrooms with mature data-visualization operations — the BBC (Visual & Data Journalism cookbook and bbplot), the Financial Times (Visual Vocabulary and chart color tokens), and The Economist (visual style guide) — cross-checked against non-newsroom authorities: the UK Government Analysis Function, the Urban Institute, Datawrapper, the Okabe–Ito colorblind-safe palette, and WCAG 2.2. Every hex code and rule traces to a published source; see 07-sources.qmd.",
+    "text": "Use this skill when working on admin (SDB/administrative records) pages in The Societal Mirror project. Triggers when user asks to add a chart, table, or section to pages like membership.qmd, centre_profile.qmd, or any page working with member_base_data, center data, enrollment data, or GCC constellation/region analysis from the Shambhala Database (SDB).",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Newsroom Standards"
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/newsroom-standards.html#conformance-language",
-    "href": "newsroom-data-reporting-standards/newsroom-standards.html#conformance-language",
-    "title": "Newsroom Web Standard for Data Reporting",
-    "section": "1 Conformance language",
-    "text": "1 Conformance language\nThe key words MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY are used as described in RFC 2119:\n\nMUST / MUST NOT — an absolute requirement. A chart violating it fails review.\nSHOULD / SHOULD NOT — the default. Deviating requires a documented reason.\nMAY — genuinely optional.\n\nRules carry stable IDs (e.g. CT-3, CO-7) so reviews can cite them.",
+    "objectID": "admin-page-standards.html#standard",
+    "href": "admin-page-standards.html#standard",
+    "title": "Admin Page Standards",
+    "section": "0.2 Standard",
+    "text": "0.2 Standard",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Newsroom Standards"
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/newsroom-standards.html#documents",
-    "href": "newsroom-data-reporting-standards/newsroom-standards.html#documents",
-    "title": "Newsroom Web Standard for Data Reporting",
-    "section": "2 Documents",
-    "text": "2 Documents\n\n\n\nFile\nScope\n\n\n\n\n01-principles.qmd\nCore principles: clarity, integrity, titling, sourcing (rules P-*)\n\n\n02-chart-types.qmd\nChart-type selection by analytical function; anti-patterns (rules CT-*)\n\n\n03-color-palettes.qmd\nPalettes with hex codes; color usage rules (rules CO-*)\n\n\n04-typography-annotation.qmd\nTitles, labels, legends, number formatting, source lines (rules TY-*)\n\n\n05-accessibility.qmd\nContrast, alt text, color-independence (rules AX-*)\n\n\n06-implementation-r.qmd\nNon-normative appendix: applying the standard in ggplot2/Quarto\n\n\n07-sources.qmd\nAnnotated bibliography",
+    "objectID": "admin-page-standards.html#visual-identity-sdb_background_tint",
+    "href": "admin-page-standards.html#visual-identity-sdb_background_tint",
+    "title": "Admin Page Standards",
+    "section": "1.1 Visual Identity: sdb_background_tint",
+    "text": "1.1 Visual Identity: sdb_background_tint\nEvery admin plot MUST carry the SDB tint in both plot.background and panel.background. This visually distinguishes admin pages from survey pages.\ntheme(\n  plot.background  = element_rect(fill = sdb_background_tint),  # \"#F4F4F4\"\n  panel.background = element_rect(fill = sdb_background_tint)\n)\n\nSurvey (member) pages use member_background_tint (#FEF7F4)\nSurvey (leader) pages use leader_background_tint (#F4FFF5)\nAdmin/SDB pages use sdb_background_tint (#F4F4F4)",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Newsroom Standards"
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/newsroom-standards.html#how-to-use-this-standard",
-    "href": "newsroom-data-reporting-standards/newsroom-standards.html#how-to-use-this-standard",
-    "title": "Newsroom Web Standard for Data Reporting",
-    "section": "3 How to use this standard",
-    "text": "3 How to use this standard\n\nChoosing a chart — start from the analytical function of the message (02-chart-types.qmd), not from a chart you like.\nColoring it — pick the palette role (categorical, sequential, diverging, highlight) in 03-color-palettes.qmd; never invent ad-hoc colors.\nFinishing it — apply the titling, labeling, and sourcing rules (04-typography-annotation.qmd) and the accessibility checklist (05-accessibility.qmd).\nReviewing — a reviewer should be able to pass/fail any published chart against the numbered rules alone.",
+    "objectID": "admin-page-standards.html#mirror_theme-explicit-vs-implicit",
+    "href": "admin-page-standards.html#mirror_theme-explicit-vs-implicit",
+    "title": "Admin Page Standards",
+    "section": "1.2 mirror_theme(): Explicit vs Implicit",
+    "text": "1.2 mirror_theme(): Explicit vs Implicit\nshared_code_26.R calls theme_set(mirror_theme()), so the theme is already the global default. Two valid styles appear across pages:\n# Implicit (centre_profile.qmd style) — theme already set globally\nggplot(...) + geom_col() + theme(panel.grid.major.x = element_blank(), ...)\n\n# Explicit (membership.qmd style) — redundant but harmless\nggplot(...) + geom_col() + mirror_theme() + theme(panel.grid.major.x = element_blank(), ...)\nBoth work. Be consistent within a page.",
     "crumbs": [
       "Home",
-      "Newsroom Data Reporting Standards",
-      "Newsroom Standards"
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
     ]
   },
   {
-    "objectID": "newsroom-data-reporting-standards/newsroom-standards.html#scope",
-    "href": "newsroom-data-reporting-standards/newsroom-standards.html#scope",
-    "title": "Newsroom Web Standard for Data Reporting",
-    "section": "4 Scope",
-    "text": "4 Scope\nApplies to any chart published on the web: static images, SVG, and interactive graphics embedded in articles, dashboards, or reports. The core standard is technology-agnostic; 06-implementation-r.qmd maps it to an R/ggplot2/Quarto stack but any charting library can conform.",
+    "objectID": "admin-page-standards.html#color-constants",
+    "href": "admin-page-standards.html#color-constants",
+    "title": "Admin Page Standards",
+    "section": "1.3 Color Constants",
+    "text": "1.3 Color Constants\n\n\n\n\n\n\n\n\nConstant\nHex\nUse\n\n\n\n\ndark_bar_green\n#488460\nPrimary bar/area fill (single series)\n\n\nsdb_background_tint\n#F4F4F4\nPlot/panel background\n\n\nsize_palette (4 colors)\ngreens\nFill when colored by center size group\n\n\nsize_palette (2 colors)\nlight + dark green\nFill for year-comparison (last yr / this yr)\n\n\nmembership_colors[2:3]\n#86BD9C / #7994B8\nMember vs Friend two-series fills\n\n\n\n\n1.3.1 size_palette — Two Variants\n# 4-color (stacked by size group) — defined globally in shared_sdb_code_26.R\nsize_palette &lt;- c(\"#B1CEBD\", \"#7CA98E\", \"#488460\", \"#346046\")\n\n# 2-color (year comparison) — redefine locally in the chunk\nsize_palette &lt;- c(\"#B1CEBD\", \"#488460\")   # light = last year, dark = current year\n\n\n1.3.2 Member/Friend Color Constants\nmembership_colors &lt;- c(\"#F4D786\", \"#86BD9C\", \"#7994B8\")\nnames(membership_colors) &lt;- c(\"Non member\", \"Member\", \"Past member\")\n\nmember_friends_colors &lt;- membership_colors[2:3]\nnames(member_friends_colors) &lt;- c(\"Members\", \"Friends\")\n\nscale_fill_manual(values = member_friends_colors)\nUse fct_recode() to align factor levels with color names:\nmutate(membertype = fct_recode(membertype,\n  Members = \"current_members\",\n  Friends = \"current_friends\"\n))",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
+    ]
+  },
+  {
+    "objectID": "admin-page-standards.html#key-pre-built-objects-from-shared_sdb_code_26.r",
+    "href": "admin-page-standards.html#key-pre-built-objects-from-shared_sdb_code_26.r",
+    "title": "Admin Page Standards",
+    "section": "1.4 Key Pre-built Objects (from shared_sdb_code_26.R)",
+    "text": "1.4 Key Pre-built Objects (from shared_sdb_code_26.R)\nDo not recompute these — they are already loaded:\n\n\n\n\n\n\n\nObject\nContents\n\n\n\n\ncenter_member_count_class\nOne row per center: center, active_members, size_group, gcc_region, societal_mirror_label, iscenter, center_visible, location_type, Year\n\n\ncenter_member_count_class_last_year\nSame structure, prior year\n\n\ncenter_size_member_count\nCenters by societal_mirror_label × size_group (current year, urban active only)\n\n\ncenter_size_member_count_last_year\nSame, prior year\n\n\ncenter_size_comparison\nbind_rows of last + current year with factor-ordered societal_mirror_label\n\n\ngcc_order\nCharacter vector of societal_mirror_label ordered by gcc_region — use with fct_relevel()\n\n\nenrollment_location\nlocation, calendar_year, enrollment_at_location, enrollment_from_location, net_enrollment\n\n\nstatistiques\nHistorical member counts (POSIXct created, integer members)\n\n\nchange_tracking\nDerived from membership_changes_year_detail: member/friend gains and losses by center × year",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
+    ]
+  },
+  {
+    "objectID": "admin-page-standards.html#key-data-pipelines",
+    "href": "admin-page-standards.html#key-data-pipelines",
+    "title": "Admin Page Standards",
+    "section": "1.5 Key Data Pipelines",
+    "text": "1.5 Key Data Pipelines\n\n1.5.1 Members / Friends snapshot\nmember_base_data |&gt;\n  filter(membertype == \"Member\")           # or \"Friend of Shambhala\"\n  # or filter(membertype != \"Non-member\")  # members + friends combined\n\n\n1.5.2 By generation\nmember_base_data |&gt;\n  filter(membertype == \"Member\") |&gt;\n  count(imputed_generation, name = \"count\") |&gt;\n  mutate(\n    pct   = count / sum(count) * 100,\n    label = paste0(round(pct, 0), \"%\"),\n    imputed_generation = fct_rev(imputed_generation)\n  )\n\n\n1.5.3 By center size\ncenter_member_count_class |&gt;\n  filter_out(center %in% c(5, 68)) |&gt;\n  filter(str_detect(location_type, \"Meditation\"), center_visible == 1) |&gt;\n  count(size_group, wt = active_members, name = \"active_members\") |&gt;\n  filter(!is.na(size_group)) |&gt;\n  mutate(size_group = fct_rev(size_group))\n\n\n1.5.4 By GCC constellation / region\ncenter_member_count_class |&gt;\n  filter(Year == filter_year, center_visible == 1) |&gt;\n  count(gcc_region, societal_mirror_label, wt = active_members, name = \"active_members\") |&gt;\n  mutate(societal_mirror_label = fct_reorder(societal_mirror_label, gcc_region)) |&gt;\n  filter(!is.na(societal_mirror_label))\n# Axis: scale_x_discrete(labels = scales::label_wrap(30))\n\n\n1.5.5 Year-to-year comparison pipeline\n# Build current + prior year separately, then bind\ncurrent_yr &lt;- center_member_count_class |&gt;\n  filter_out(center %in% c(5, 68)) |&gt;\n  filter(str_detect(location_type, \"Meditation\"), center_visible == 1) |&gt;\n  count(size_group, name = \"active_centers\") |&gt;    # or wt = active_members\n  filter(!is.na(size_group)) |&gt;\n  mutate(Year = as.character(filter_year))\n\nlast_yr &lt;- center_member_count_class_last_year |&gt;\n  filter_out(center %in% c(5, 68)) |&gt;\n  filter(str_detect(location_type, \"Meditation\"), center_visible == 1) |&gt;\n  count(size_group, name = \"active_centers\") |&gt;\n  mutate(Year = as.character(filter_year - 1))\n\ncombined &lt;- bind_rows(last_yr, current_yr) |&gt;    # last year first = legend order\n  filter(!is.na(size_group))\n\n# For GCC region (no urban filter):\nbind_rows(last_yr, current_yr) |&gt;\n  mutate(\n    societal_mirror_label = fct_relevel(societal_mirror_label, gcc_order),\n    societal_mirror_label = fct_rev(societal_mirror_label)\n  )\n\n\n1.5.6 Membership changes / gains-losses (since 2020)\nchange_tracking |&gt;\n  filter(change_year &gt;= \"2020-01-01\") |&gt;\n  count(change_year, wt = new_members, name = \"new_members\")\n\n\n1.5.7 Enrollment activity (offering vs participating)\ncutoff &lt;- 3\n\nenrollment_location |&gt;\n  filter(calendar_year %in% c(2020, 2025)) |&gt;\n  select(-net_enrollment) |&gt;\n  pivot_longer(\n    cols = c(enrollment_at_location, enrollment_from_location),\n    names_to = \"where\", values_to = \"enrollment\"\n  ) |&gt;\n  mutate(where = case_when(\n    where == \"enrollment_at_location\"   ~ \"Offering\",\n    where == \"enrollment_from_location\" ~ \"Participating\"\n  )) |&gt;\n  left_join(center_member_count_class, by = c(\"location\" = \"center\")) |&gt;\n  filter(enrollment &gt; cutoff, !is.na(size_group)) |&gt;\n  summarise(centers = n_distinct(location),\n            .by = c(where, size_group, calendar_year))\n\n\n1.5.8 Joins to center metadata\nleft_join(\n  center_member_count_class |&gt;\n    filter_out(center %in% c(5, 68)) |&gt;\n    filter(str_detect(location_type, \"Meditation\"), center_visible == 1) |&gt;\n    select(center, size_group, gcc_region, societal_mirror_label),\n  by = \"center\"\n)",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
+    ]
+  },
+  {
+    "objectID": "admin-page-standards.html#standard-exclusions",
+    "href": "admin-page-standards.html#standard-exclusions",
+    "title": "Admin Page Standards",
+    "section": "1.6 Standard Exclusions",
+    "text": "1.6 Standard Exclusions\n\nfilter_out(center %in% c(5, 68)) — exclude Shambhala Online (5) and Shambhala Global (68)\nfilter(center_visible == 1) — active centers only\nfilter(str_detect(location_type, \"Meditation\")) — urban centres/groups only\nfilter(change_year &gt;= \"2020-01-01\") — “since 2020” analyses",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
+    ]
+  },
+  {
+    "objectID": "admin-page-standards.html#ggplot-templates",
+    "href": "admin-page-standards.html#ggplot-templates",
+    "title": "Admin Page Standards",
+    "section": "1.7 ggplot Templates",
+    "text": "1.7 ggplot Templates\n\n1.7.1 Horizontal Bar (most common)\ndata |&gt;\n  mutate(category = fct_rev(category)) |&gt;\n  ggplot(aes(category, count)) +\n  geom_col(fill = dark_bar_green, width = 0.7) +\n  geom_text(aes(label = scales::comma(count)),\n            position = position_stack(vjust = 0.5),\n            color = \"white\", fontface = \"bold\") +\n  coord_flip() +\n  scale_y_continuous(labels = scales::comma, limits = c(0, &lt;max&gt;)) +\n  labs(title = \"...\", subtitle = \"...\", x = NULL, y = NULL, caption = \"...\") +\n  mirror_theme() +\n  theme(\n    panel.grid.major.y = element_blank(),\n    panel.grid.minor.y = element_blank(),\n    plot.background    = element_rect(fill = sdb_background_tint),\n    panel.background   = element_rect(fill = sdb_background_tint)\n  )\n\n\n1.7.2 Vertical Bar / Time Series Bar\ndata |&gt;\n  ggplot(aes(year_col, count)) +\n  geom_col(fill = dark_bar_green) +\n  geom_text(aes(label = count),\n            position = position_stack(vjust = 0.5),\n            color = \"white\", fontface = \"bold\") +\n  labs(title = \"...\", x = NULL, y = NULL) +\n  mirror_theme() +\n  theme(\n    panel.grid.major.x = element_blank(),\n    panel.grid.minor.x = element_blank(),\n    plot.background    = element_rect(fill = sdb_background_tint),\n    panel.background   = element_rect(fill = sdb_background_tint)\n  )\n\n\n1.7.3 Dodged Bar (year comparison, vertical)\ndodge_width &lt;- 1    # or 0.9 for narrower gaps\n\ncombined |&gt;\n  ggplot(aes(x = size_group, y = active_centers, fill = Year, group = Year)) +\n  geom_col(position = position_dodge(width = dodge_width)) +\n  geom_text(\n    aes(y = active_centers,\n        label = scales::number(active_centers, accuracy = 1, big.mark = \",\")),\n    position = position_dodge(width = dodge_width),\n    vjust = -0.5                             # labels above bars\n  ) +\n  scale_fill_manual(values = size_palette) +\n  scale_x_discrete(labels = scales::label_wrap(12)) +\n  scale_y_continuous(limits = c(0, &lt;max&gt;)) +\n  labs(title = \"...\", x = NULL, y = NULL, fill = \"Year\") +\n  theme(\n    legend.position    = \"bottom\",\n    panel.grid.major.x = element_blank(),\n    plot.background    = element_rect(fill = sdb_background_tint),\n    panel.background   = element_rect(fill = sdb_background_tint)\n  )\n\n\n1.7.4 Dodged Bar with coord_flip (GCC region year comparison)\n#| fig-height: 12\n\ncombined |&gt;\n  filter(!is.na(societal_mirror_label)) |&gt;\n  ggplot(aes(x = societal_mirror_label, y = active_centers, fill = Year, group = Year)) +\n  geom_col(position = position_dodge(width = dodge_width)) +\n  geom_text(\n    aes(y = active_centers + 0.5, label = scales::number(active_centers)),\n    position = position_dodge(width = dodge_width)\n  ) +\n  coord_flip() +\n  scale_fill_manual(values = size_palette) +\n  scale_x_discrete(labels = scales::label_wrap(30)) +\n  labs(title = \"...\", x = NULL, y = NULL, fill = \"Year\") +\n  theme(\n    legend.position    = \"bottom\",\n    panel.grid.major.x = element_blank(),\n    plot.background    = element_rect(fill = sdb_background_tint),\n    panel.background   = element_rect(fill = sdb_background_tint)\n  )\n\n\n1.7.5 Stacked Bar by Size within GCC Region\n#| fig-height: 12\n\ncenter_size_member_count |&gt;\n  ggplot(aes(x = societal_mirror_label, y = active_centers, fill = size_group)) +\n  geom_col(position = \"stack\") +\n  geom_text(aes(label = active_centers),\n            position = position_stack(vjust = 0.5),\n            color = \"white\") +\n  coord_flip() +\n  scale_fill_manual(values = size_palette) +       # 4-color palette\n  scale_x_discrete(labels = scales::label_wrap(30)) +\n  labs(title = \"...\", x = NULL, y = NULL, fill = NULL) +\n  theme(\n    legend.position   = \"bottom\",\n    legend.box.just   = \"left\",\n    legend.margin     = margin(0, 0, 0, 0),\n    legend.box.margin = margin(0, 0, 0, -150),     # align legend with bars\n    panel.grid.major.x = element_blank(),\n    plot.background    = element_rect(fill = sdb_background_tint),\n    panel.background   = element_rect(fill = sdb_background_tint)\n  )\n\n\n1.7.6 Faceted Stacked Bar\ndata |&gt;\n  ggplot(aes(x_var, y_var, fill = size_group)) +\n  geom_col() +\n  geom_text(aes(label = y_var),\n            position = position_stack(vjust = 0.5),\n            color = \"white\", fontface = \"bold\", size = 3.5) +\n  geom_text(                                        # totals above bars\n    data = data |&gt; summarise(total = sum(y_var), .by = c(x_var, facet_var)),\n    aes(y = total, label = total, fill = NULL),\n    vjust = -0.5, fontface = \"bold\"\n  ) +\n  facet_wrap(~ facet_var) +\n  scale_fill_manual(values = ...) +\n  scale_y_continuous(limits = c(0, &lt;max&gt;)) +\n  guides(fill = guide_legend(nrow = 2)) +\n  theme(\n    legend.position    = \"top\",\n    panel.grid.major.x = element_blank(),\n    plot.background    = element_rect(fill = sdb_background_tint),\n    panel.background   = element_rect(fill = sdb_background_tint),\n    strip.background   = element_rect(fill = sdb_background_tint),  # required for facets\n    strip.text         = element_text(hjust = 0.5)\n  )\n\n\n1.7.7 Time Series Area Chart\ndata |&gt;\n  ggplot(aes(x = date_col, y = count)) +\n  geom_area(fill = membership_colors[2]) +\n  scale_y_continuous(\n    labels = scales::label_comma(),\n    breaks = seq(0, 12000, 2000),\n    expansion(mult = c(0, .05)),\n    limits = c(0, 12000)\n  ) +\n  scale_x_datetime(date_breaks = \"2 years\", date_labels = \"%Y\") +\n  # or: scale_x_date(date_breaks = \"1 year\", date_labels = \"%Y\") for Date columns\n  labs(y = NULL, x = NULL, title = \"...\") +\n  mirror_theme() +\n  theme(\n    panel.grid.major.x = element_blank(),\n    plot.background    = element_rect(fill = sdb_background_tint),\n    panel.background   = element_rect(fill = sdb_background_tint)\n  )\nTo annotate specific data points (odd years, max):\nhighlights &lt;- data |&gt;\n  filter(\n    (month(date_col) == 1 & day(date_col) == 1 & year(date_col) %% 2 == 1) |\n    date_col == max(date_col) | date_col == min(date_col)\n  )\nmax_point &lt;- data |&gt; filter(count == max(count))\n\n# Add to ggplot:\ngeom_point(data = highlights, size = 2, shape = 25, fill = \"black\",\n           position = position_nudge(y = 200)) +\ngeom_text(data = highlights, aes(label = scales::comma(count)),\n          vjust = -2, size = 3) +\ngeom_point(data = max_point, size = 2, shape = 25, fill = \"red\",\n           position = position_nudge(y = 200)) +\ngeom_text(data = max_point,\n          aes(label = paste0(\"Max: \", scales::comma(count), \"\\n\", as.Date(date_col))),\n          vjust = -0.8, size = 3, color = \"red\")\n\n\n1.7.8 Diverging Bar (gains and losses)\ndata |&gt;\n  ggplot(aes(x = year_col, y = count, fill = type)) +\n  geom_col(width = 0.7) +\n  geom_hline(yintercept = 0, color = \"black\", linewidth = 1) +\n  geom_text(aes(label = abs(count)),\n            position = position_stack(vjust = 0.5),\n            color = \"white\", fontface = \"bold\", size = 4) +\n  scale_fill_manual(\n    values = c(\"gains\" = dark_bar_green, \"losses\" = \"gray60\"),\n    labels = c(\"gains\" = \"Gains\", \"losses\" = \"Losses\")\n  ) +\n  scale_y_continuous(\n    breaks = seq(-800, 400, 100),\n    labels = function(x) scales::comma(abs(x)),    # show absolute values\n    limits = c(-800, 400)\n  ) +\n  labs(title = \"...\", x = NULL, y = NULL, fill = NULL) +\n  mirror_theme() +\n  theme(\n    legend.position    = \"top\",\n    panel.grid.major.x = element_blank(),\n    panel.grid.minor   = element_blank()\n  )",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
+    ]
+  },
+  {
+    "objectID": "admin-page-standards.html#grid-line-rules",
+    "href": "admin-page-standards.html#grid-line-rules",
+    "title": "Admin Page Standards",
+    "section": "1.8 Grid Line Rules",
+    "text": "1.8 Grid Line Rules\n\nHorizontal bars (coord_flip()): blank panel.grid.major.y and .minor.y\nVertical bars / time series: blank panel.grid.major.x\nFaceted charts: also add strip.background = element_rect(fill = sdb_background_tint)",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
+    ]
+  },
+  {
+    "objectID": "admin-page-standards.html#scale_y_continuous-expansion-for-headroom",
+    "href": "admin-page-standards.html#scale_y_continuous-expansion-for-headroom",
+    "title": "Admin Page Standards",
+    "section": "1.9 scale_y_continuous: expansion() for Headroom",
+    "text": "1.9 scale_y_continuous: expansion() for Headroom\nscale_y_continuous(\n  labels = scales::comma,\n  breaks = seq(0, 12000, 2000),\n  expansion(mult = c(0, .05)),    # 0 padding at bottom, 5% at top\n  limits = c(0, 12000)\n)",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
+    ]
+  },
+  {
+    "objectID": "admin-page-standards.html#gt-tables",
+    "href": "admin-page-standards.html#gt-tables",
+    "title": "Admin Page Standards",
+    "section": "1.10 gt Tables",
+    "text": "1.10 gt Tables\n\n1.10.1 Basic template\ndata |&gt;\n  gt() |&gt;\n  cols_label(col1 = md(\"Line 1&lt;br&gt;Line 2\"), col2 = \"Label\") |&gt;\n  fmt_number(columns = where(is.numeric), decimals = 0, use_seps = TRUE) |&gt;\n  fmt_percent(columns = pct_col, decimals = 0) |&gt;\n  grand_summary_rows(\n    columns = where(is.numeric),\n    fns = list(\"Total\" = ~ sum(., na.rm = TRUE)),\n    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))\n  ) |&gt;\n  mrr_gt_theme()\n\n\n1.10.2 Grouped rows with group + grand summaries\ndata |&gt;\n  group_by(group_col) |&gt;\n  gt(groupname_col = \"group_col\") |&gt;\n  fmt_number(columns = c(\"col1\", \"col2\"), decimals = 0, use_seps = TRUE) |&gt;\n  fmt_percent(columns = pct_col, decimals = 0) |&gt;\n  cols_label(...) |&gt;\n  cols_width(1 ~ px(300), 2:5 ~ px(100)) |&gt;\n  summary_rows(                               # subtotal per row group\n    columns = c(\"col1\", \"col2\"),\n    fns = list(\"Total\" = ~ sum(., na.rm = TRUE)),\n    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))\n  ) |&gt;\n  grand_summary_rows(                         # overall total\n    columns = c(\"col1\", \"col2\"),\n    fns = list(\"Grand Total\" = ~ sum(., na.rm = TRUE)),\n    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))\n  ) |&gt;\n  mrr_gt_theme() |&gt;\n  tab_options(stub_row_group.border.width = px(10)) |&gt;\n  as_raw_html()                               # prevents render issues for complex grouped tables\nsummary_rows() — one subtotal per row group. grand_summary_rows() — one total at table bottom. Both can appear together; call separately per column set when formatting differs.\n\n\n1.10.3 Spanner columns (year × metric)\ndata |&gt;\n  pivot_wider(values_from = metric, names_from = c(category, year)) |&gt;\n  gt() |&gt;\n  cols_label(\n    Offering_2020 = \"Offering\", Participating_2020 = \"Participating\",\n    Offering_2025 = \"Offering\", Participating_2025 = \"Participating\"\n  ) |&gt;\n  tab_spanner(label = md(\"2020\"), columns = c(Offering_2020, Participating_2020)) |&gt;\n  tab_spanner(label = md(\"2025\"), columns = c(Offering_2025, Participating_2025)) |&gt;\n  # Nested spanners — apply widest first:\n  tab_spanner(label = md(\"Year-end&lt;br&gt;Count\"),         columns = 2:3) |&gt;\n  tab_spanner(label = md(\"Change from&lt;br&gt;prior year\"), columns = 4:7) |&gt;\n  grand_summary_rows(\n    columns = where(is.numeric),\n    fns = list(\"Total\" = ~ sum(., na.rm = TRUE)),\n    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))\n  ) |&gt;\n  mrr_gt_theme()",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
+    ]
+  },
+  {
+    "objectID": "admin-page-standards.html#page-structure",
+    "href": "admin-page-standards.html#page-structure",
+    "title": "Admin Page Standards",
+    "section": "1.11 Page Structure",
+    "text": "1.11 Page Structure\nEvery admin section follows the Graph + Table panel-tabset pattern:\n## Section Title\n\n;;;; {.panel-tabset}\n\n### Graph\n\n::: {.cell}\n\n```{.r .cell-code}\n# ggplot code\n:::\n\n1.11.1 Table\n#| label: tbl-descriptive-name\n# gt() |&gt; mrr_gt_theme() code\n;;;;\n\n- `knitr::knit_exit()` in a chunk stops rendering — use to hide unfinished sections during development\n- `{=html} &lt;!-- ... --&gt;` blocks for editorial comments hidden from output\n- `#| eval: false` on exploratory or upload chunks not ready to render\n- Section inventory in an `eval: false` chunk at top is a useful tracking pattern\n\n## Chunk Options\n\n#| label: fig-descriptive-name # fig- prefix for plots, tbl- for tables #| echo: false #| message: false #| warning: false #| fig-height: 12 # always use for GCC region charts (18+ rows) ```\nAll chunks suppress output by default via the setup chunk.",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "Admin Page Standards"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/01-principles.html",
+    "href": "newsroom-data-reporting-standards/01-principles.html",
+    "title": "Core Principles",
+    "section": "",
+    "text": "These principles govern every chart. The detailed rules in the other documents are applications of them; when a situation is not covered by a specific rule, decide by these.",
     "crumbs": [
       "Home",
       "Newsroom Data Reporting Standards",
-      "Newsroom Standards"
+      "Principles"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-1-the-message-comes-first-must",
+    "href": "newsroom-data-reporting-standards/01-principles.html#p-1-the-message-comes-first-must",
+    "title": "Core Principles",
+    "section": "0.1 P-1 The message comes first (MUST)",
+    "text": "0.1 P-1 The message comes first (MUST)\nEvery chart MUST have a single, stateable message. If you cannot complete the sentence “this chart shows that …”, the chart is not ready. The Financial Times’ Visual Vocabulary makes this operational: chart choice starts from the analytical function of the message — deviation, correlation, ranking, distribution, change over time, magnitude, part-to-whole, spatial, or flow — not from a preferred chart form.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Principles"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-2-titles-state-the-finding-should",
+    "href": "newsroom-data-reporting-standards/01-principles.html#p-2-titles-state-the-finding-should",
+    "title": "Core Principles",
+    "section": "0.2 P-2 Titles state the finding (SHOULD)",
+    "text": "0.2 P-2 Titles state the finding (SHOULD)\nThe main title SHOULD be an assertive headline stating what the chart shows (“Vaccination halved infections”), not a variable listing (“Infections by vaccination status, 2020–24”). The descriptive part — measure, unit, geography, period — belongs in the subtitle. This is the consistent practice of the BBC, FT, and The Economist, and the UK Analysis Function formalizes it as “headline title plus statistical subtitle.”",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Principles"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-3-show-the-data-honestly-must",
+    "href": "newsroom-data-reporting-standards/01-principles.html#p-3-show-the-data-honestly-must",
+    "title": "Core Principles",
+    "section": "0.3 P-3 Show the data honestly (MUST)",
+    "text": "0.3 P-3 Show the data honestly (MUST)\n\nBar and column charts encode value in length, so their value axis MUST start at zero and MUST NOT be broken. (Economist style guide; UK Analysis Function; Urban Institute.)\nLine charts MAY use a non-zero baseline when the level is not the story, but the axis MUST NOT be broken silently, and the range MUST NOT be chosen to manufacture drama.\nDual value axes SHOULD NOT be used. The Urban Institute bans them outright (“confusing, difficult to read, and often misleading”); The Economist permits them only under strict conditions (aligned zero lines, no broken scales, no disparate measures forced into visual correlation) and otherwise directs: split into panels or index the series to a common base.\nAreas MUST scale with the values they represent: no 3-D effects, no perspective, no pictograms sliced to represent fractions (“do not slice off an arm to represent a decimal” — FT Visual Vocabulary).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Principles"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-4-maximize-data-minimize-decoration-should",
+    "href": "newsroom-data-reporting-standards/01-principles.html#p-4-maximize-data-minimize-decoration-should",
+    "title": "Core Principles",
+    "section": "0.4 P-4 Maximize data, minimize decoration (SHOULD)",
+    "text": "0.4 P-4 Maximize data, minimize decoration (SHOULD)\nEvery non-data element must earn its place. Defaults that follow from this:\n\nGridlines: light grey, one axis only where possible, never more than about 10 (UK Analysis Function). The BBC’s default theme draws horizontal gridlines only.\nA single strong zero/base line anchors the chart (BBC: #333333 baseline).\nNo borders, shadows, textures, or background fills that do not encode data.\nPrefer direct labels over legends (04-typography-annotation.qmd, TY-6).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Principles"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-5-less-but-comparable-should",
+    "href": "newsroom-data-reporting-standards/01-principles.html#p-5-less-but-comparable-should",
+    "title": "Core Principles",
+    "section": "0.5 P-5 Less, but comparable (SHOULD)",
+    "text": "0.5 P-5 Less, but comparable (SHOULD)\nFewer well-chosen series beat exhaustive ones. Working limits used throughout this standard: at most 4 lines on one line chart, at most 4 bars per cluster, at most 6–7 categories per chart (UK Analysis Function; Urban Institute; The Economist’s tooling plots at most 6 colors). When the data exceed these limits, use small multiples — repeat the same chart per category with shared scales — rather than cramming one panel.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Principles"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-6-consistency-across-the-publication-must",
+    "href": "newsroom-data-reporting-standards/01-principles.html#p-6-consistency-across-the-publication-must",
+    "title": "Core Principles",
+    "section": "0.6 P-6 Consistency across the publication (MUST)",
+    "text": "0.6 P-6 Consistency across the publication (MUST)\nThe same entity MUST keep the same color, the same measure the same format, and the same chart family the same conventions across a page or report. Readers learn your encoding once; do not make them relearn it per chart.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Principles"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-7-every-chart-cites-its-source-must",
+    "href": "newsroom-data-reporting-standards/01-principles.html#p-7-every-chart-cites-its-source-must",
+    "title": "Core Principles",
+    "section": "0.7 P-7 Every chart cites its source (MUST)",
+    "text": "0.7 P-7 Every chart cites its source (MUST)\nA source line (“Source: …”, or “Sources: …”) MUST appear on or directly beneath every chart, bottom-left, naming the data provider — not the file, not the analyst. Footnote markers (*, †) qualify individual figures. This is uniform BBC, FT, and Economist practice; the BBC’s finalise_plot() makes the source line a required argument.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Principles"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/01-principles.html#p-8-design-for-the-reader-you-dont-control-must",
+    "href": "newsroom-data-reporting-standards/01-principles.html#p-8-design-for-the-reader-you-dont-control-must",
+    "title": "Core Principles",
+    "section": "0.8 P-8 Design for the reader you don’t control (MUST)",
+    "text": "0.8 P-8 Design for the reader you don’t control (MUST)\nThe chart will be read on a phone, projected, printed in greyscale, or read aloud by a screen reader. It MUST survive all four:\n\nMeaning MUST NOT be carried by color alone (WCAG 1.4.1) — see 05-accessibility.qmd.\nText MUST remain legible at the smallest published size.\nEvery chart MUST have a text alternative (alt text, a data table, or descriptive\n1 prose).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Principles"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/03-color-palettes.html",
+    "href": "newsroom-data-reporting-standards/03-color-palettes.html",
+    "title": "Color Palettes",
+    "section": "",
+    "text": "Color in a chart is an encoding, not a decoration. Every color on a published chart belongs to one of five roles, each with its own palette. Hex codes below are taken verbatim from the cited sources; contrast ratios were computed against WCAG 2.x relative-luminance formulas (see 05-accessibility.qmd).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Color Palettes"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/03-color-palettes.html#roles-and-rules",
+    "href": "newsroom-data-reporting-standards/03-color-palettes.html#roles-and-rules",
+    "title": "Color Palettes",
+    "section": "1 Roles and rules",
+    "text": "1 Roles and rules\n\nCO-1 (MUST) Use only colors defined in this document (or a project palette derived under CO-10). No ad-hoc colors.\nCO-2 (MUST) Pick the palette by data type: categorical for unordered groups, sequential for ordered/continuous values, diverging for values around a meaningful midpoint, highlight for featuring one series, neutral for everything that is not data.\nCO-3 (MUST) Assign categorical colors in the palette’s stated order, starting from the first. Exceptions (The Economist’s “colour overrides”): chronological categories take a light-to-dark sequential scale; semantically grouped categories take colors that reinforce the grouping; categories with fixed public associations (political parties, “don’t know” = grey) keep them.\nCO-4 (SHOULD NOT) More than 6 categorical colors on one chart (The Economist’s tooling maxes at 6; UK AF recommends ≤4). Beyond that: group into “other”, or facet.\nCO-5 (MUST) Grey is a data color. Context series, de-emphasized data, and “don’t know” categories take grey; emphasis takes one saturated highlight color. Datawrapper: “Gray is the most important color in data visualization.”\nCO-6 (MUST) Diverging palettes MUST place their neutral midpoint at the meaningful zero/midpoint of the data, and MUST NOT be used on data without one.\nCO-7 (MUST) Meaning MUST NOT be carried by color alone (WCAG 1.4.1): pair color with direct labels, position, or line style. See AX-2.\nCO-8 (MUST) Semantic consistency: the same entity keeps the same color across every chart in a publication (P-6). Reserve sign conventions (e.g. red = negative) and do not reuse those hues for arbitrary categories nearby.\nCO-9 (SHOULD) Check every palette use in a colorblind simulator and in greyscale before publishing; distinguish adjacent categorical colors by lightness, not hue alone (Datawrapper: aim for a wide lightness range; UK AF: check adjacent colors).\nCO-10 (MAY) A project MAY define a brand palette, but it inherits all rules above; brand color is best spent on the single most important series (Datawrapper’s brand-integration guidance), not sprayed across all categories.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Color Palettes"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/03-color-palettes.html#default-palettes-normative",
+    "href": "newsroom-data-reporting-standards/03-color-palettes.html#default-palettes-normative",
+    "title": "Color Palettes",
+    "section": "2 Default palettes (normative)",
+    "text": "2 Default palettes (normative)\n\n2.1 Categorical default — UK Analysis Function palette\nChosen as the default because it is the only published newsroom/government palette in our sources where every color meets WCAG 1.4.11’s 3:1 contrast against white (verified: 3.03–10.86:1). Use in this order:\n\n\n\n\n\n\n\n\n\nOrder\nName\nHex\nContrast vs white\n\n\n\n\n1\nDark blue\n#12436D\n10.25:1\n\n\n2\nTurquoise\n#28A197\n3.17:1\n\n\n3\nDark pink\n#801650\n9.77:1\n\n\n4\nOrange\n#F46A25\n3.03:1\n\n\n5\nDark grey\n#3D3D3D\n10.86:1\n\n\n6\nLight purple\n#A285D1\n3.08:1\n\n\n\n\n\n2.2 Categorical alternative — Okabe–Ito (colorblind-safe)\nThe reference palette for color-vision-deficiency safety (Okabe & Ito 2008). Its distinctions survive protanopia/deuteranopia, but note three of its colors fall below 3:1 contrast on white (yellow 1.32:1, orange 2.25:1, sky blue 2.31:1) — on white backgrounds pair them with direct labels and adequate mark weight, or prefer the Analysis Function palette for thin lines.\n\n\n\n\n\n\n\n\nName\nHex\nRGB\n\n\n\n\nBlack\n#000000\n0, 0, 0\n\n\nOrange\n#E69F00\n230, 159, 0\n\n\nSky blue\n#56B4E9\n86, 180, 233\n\n\nBluish green\n#009E73\n0, 158, 115\n\n\nYellow\n#F0E442\n240, 228, 66\n\n\nBlue\n#0072B2\n0, 114, 178\n\n\nVermilion\n#D55E00\n213, 94, 0\n\n\nReddish purple\n#CC79A7\n204, 121, 167\n\n\n\n(Okabe–Ito also recommends vermilion over pure red for protanope visibility.)\n\n\n2.3 Sequential default\nSingle-hue blue ramp (UK Analysis Function), light → dark:\n#F2F2F2 → #ADD1F1 → #6BACE6 → #2073BC → #12436D → #092135\nUse as many steps as the data need, keeping ends far apart in lightness (Datawrapper: cover a wide lightness range, ideally 60+ percentage points). For continuous scales in software, viridis family scales are an acceptable perceptually-uniform, colorblind-safe substitute. Adjacent steps of any sequential ramp rarely meet 3:1 contrast — so a sequential-colored graphic MUST also be readable via labels or an alternative format (UK AF).\n\n\n2.4 Diverging default\nBuild from the two endpoint hues of the categorical palette around a pale neutral midpoint, e.g. dark blue #12436D ↔︎ pale grey #F2F2F2 ↔︎ dark pink #801650; or ColorBrewer’s tested diverging schemes (e.g. RdBu). Prefer blue/red or blue/orange pairs over green/red (colorblind-hostile).\n\n\n2.5 Highlight/focus pair\nOne featured series + greyed context (UK AF “focus” palette):\n\nHighlight: #12436D (or the publication’s brand accent)\nContext: #BFBFBF\n\n\n\n2.6 Neutrals (non-data ink)\nFollowing BBC bbplot values, which sit comfortably on white:\n\n\n\n\n\n\n\n\nElement\nHex\nNote\n\n\n\n\nChart text / annotations\n#222222–#333333\n12.6:1 on white at #333333\n\n\nSecondary text\n#555555\n7.5:1 on white\n\n\nBaseline / zero line\n#333333\nstrong single anchor line\n\n\nGridlines\n#CBCBCB\nlight grey, y-axis only by default\n\n\nDe-emphasized data\n#DDDDDD\n\n\n\nBackground\n#FFFFFF\nwhite only (UK AF) unless a brand paper color is a documented house choice",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Color Palettes"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/03-color-palettes.html#house-palettes-from-the-three-newsrooms-informative",
+    "href": "newsroom-data-reporting-standards/03-color-palettes.html#house-palettes-from-the-three-newsrooms-informative",
+    "title": "Color Palettes",
+    "section": "3 House palettes from the three newsrooms (informative)",
+    "text": "3 House palettes from the three newsrooms (informative)\nThese are documented as worked examples of the rules above — not for direct reuse, since they are those publications’ brands.\n\n3.1 The Economist — web chart palette (visual style guide, 2017)\nMain order: Econ red #E3120B, red #DB444B, blue #006BA2, cyan #3EBCD2, green #379A8B, yellow #EBB434, olive #B4BA39, purple #9A607F, gold #D1B07C, grey #758D99. Black #0C0C0C; chart text #3F5661; boxes/nav background #E9EDF0. The guide also defines equal-lightness color scales under each main hue (e.g. blue #00588D → #1270A8 → #3D89C3 → #5DA4DF → #7BBFFC → #98DAFF) so any hue can serve as a sequential ramp at consistent lightness steps. Note the severe hue discipline — mostly reds/blues plus grey — which Datawrapper credits for their instant brand recognition.\n\n\n3.2 BBC — bbplot working colors (Visual & Data Journalism cookbook)\nData hues used in the cookbook: blue #1380A1, gold #FAAB18, dark red #990000, green #588300. Neutrals as tabulated above (#333333 baseline, #CBCBCB gridlines, #DDDDDD de-emphasis). Legends top or removed in favor of direct labels; y-gridlines only.\n\n\n3.3 Financial Times — chart colors (g-chartcolour / Origami)\nBackgrounds: web “paper” #FFF1E5, video #333/#335, clean white #FFF. Web line palette: #0F5499, #EB5E8D, #70DCE6, #9DBF57, #208FCE, #7F062E, #C2B7AF. Diverging: #B31147 ↔︎ #1162B3 (through a warm neutral #CEC6B9). Sequential multi: #F3DEC8 → #0F5499. Fixed political colors (e.g. US Democrat #238FCE, Republican #E5262D) illustrate CO-3’s “fixed public association” override. The FT’s pink paper deliberately narrows the usable lightness range — a reminder that background choice constrains the whole palette (Datawrapper).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Color Palettes"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/05-accessibility.html",
+    "href": "newsroom-data-reporting-standards/05-accessibility.html",
+    "title": "Accessibility",
+    "section": "",
+    "text": "Charts published on the web are subject to WCAG 2.2 Level AA. These rules make that concrete for data graphics. IDs: AX-*.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Accessibility"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/05-accessibility.html#contrast",
+    "href": "newsroom-data-reporting-standards/05-accessibility.html#contrast",
+    "title": "Accessibility",
+    "section": "1 Contrast",
+    "text": "1 Contrast\n\nAX-1 (MUST) Text on and around charts meets 4.5:1 contrast against its background (WCAG 1.4.3); large text (≥24px, or ≥18.66px bold) may drop to 3:1. The neutral text colors in 03-color-palettes.qmd comply on white (#333333 = 12.6:1, #555555 = 7.5:1).\nAX-2 (MUST) Essential graphical elements — bars, lines, points that the reader must distinguish to understand the chart — meet 3:1 against adjacent colors (WCAG 1.4.11). The default categorical palette was chosen to satisfy this against white (verified 3.03–10.86:1).\nAX-3 (SHOULD) Sequential ramps cannot keep 3:1 between adjacent steps; when a chart depends on fine sequential distinctions, provide the values as labels or an accompanying table (UK Analysis Function requirement). Note also Datawrapper’s caution that mechanically applying WCAG ratios to gradients can reduce discriminability — satisfy the intent (readable data) and document exceptions.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Accessibility"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/05-accessibility.html#color-independence",
+    "href": "newsroom-data-reporting-standards/05-accessibility.html#color-independence",
+    "title": "Accessibility",
+    "section": "2 Color independence",
+    "text": "2 Color independence\n\nAX-4 (MUST) Color is never the only carrier of meaning (WCAG 1.4.1). Pair it with direct labels (TY-6), position, marker shape, or line type. Okabe & Ito: “use not only different colors but also a combination of different shapes, positions, line types.”\nAX-5 (MUST) Test every published palette combination with a color-vision simulator (e.g. Sim Daltonism, Viz Palette) and in greyscale; adjacent categories must differ in lightness, not hue alone. Avoid red/green pairs; prefer blue/orange or blue/red; use vermilion rather than pure red where red is required (Okabe–Ito).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Accessibility"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/05-accessibility.html#text-alternatives",
+    "href": "newsroom-data-reporting-standards/05-accessibility.html#text-alternatives",
+    "title": "Accessibility",
+    "section": "3 Text alternatives",
+    "text": "3 Text alternatives\n\nAX-6 (MUST) Every chart has a text alternative serving the equivalent purpose (WCAG 1.1.1): alt text on the image, plus either an accessible data table or descriptive prose for complex charts (UK Analysis Function).\nAX-7 (MUST) Alt text states the chart type, the variables, and the finding — content and function, not appearance. Keep it roughly a sentence (~160 characters, Urban Institute); put the full data elsewhere. No “image of”, no “chart of” prefix beyond the type. Example: “Line chart showing UK inflation falling from 11% in 2022 to 2% by mid-2024.”\nAX-8 (SHOULD) Render titles, subtitles, and sources as HTML text, not pixels (TY-5), and publish charts as SVG where feasible (UK AF) so text scales and high-contrast modes work.\nAX-9 (SHOULD) Offer the underlying data for download with unique, descriptive link text (UK AF).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Accessibility"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/05-accessibility.html#legibility-floor",
+    "href": "newsroom-data-reporting-standards/05-accessibility.html#legibility-floor",
+    "title": "Accessibility",
+    "section": "4 Legibility floor",
+    "text": "4 Legibility floor\n\nAX-10 (MUST) Minimum rendered text size on the web: ~11–12px for source notes, 12px for axis labels (Urban Institute scale, TY-3); verify at the smallest responsive breakpoint, not the desktop layout.\nAX-11 (SHOULD) Lines carrying data are thick enough to show their color (roughly ≥2px); increase mark weight rather than saturating color to rescue a thin mark (Okabe–Ito: bold fonts, thicker lines for color-coded objects).",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Accessibility"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/05-accessibility.html#review-checklist",
+    "href": "newsroom-data-reporting-standards/05-accessibility.html#review-checklist",
+    "title": "Accessibility",
+    "section": "5 Review checklist",
+    "text": "5 Review checklist\n\nTitle states the finding; subtitle has measure/unit/period. (P-2, TY-1)\nCorrect chart family for the analytical function. (CT-1)\nZero baselines where length encodes value; no broken axes. (P-3)\nPalette role correct; colors in palette order; ≤6 categories. (CO-2/3/4)\nSurvives greyscale and colorblind simulation. (AX-5)\nNo meaning by color alone; direct labels present. (AX-4, TY-6)\nText contrast 4.5:1; graphical contrast 3:1 or mitigated. (AX-1/2/3)\nAlt text + table/prose alternative. (AX-6/7)\nSource line present and correct. (P-7, TY-15)\nReadable at mobile width. (AX-10)",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Accessibility"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/07-sources.html",
+    "href": "newsroom-data-reporting-standards/07-sources.html",
+    "title": "Sources",
+    "section": "",
+    "text": "Annotated bibliography. All sources were consulted directly in July 2026 except where noted. Hex codes in 03-color-palettes.qmd trace to the starred (★) primary sources.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Sources"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/07-sources.html#the-three-newsrooms",
+    "href": "newsroom-data-reporting-standards/07-sources.html#the-three-newsrooms",
+    "title": "Sources",
+    "section": "1 The three newsrooms",
+    "text": "1 The three newsrooms\n\n1.1 Financial Times\n\n★ Visual Vocabulary — Financial-Times/chart-doctor, visual-vocabulary/, https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary. The normative chart-type taxonomy in 02-chart-types.qmd: nine analytical functions (deviation, correlation, ranking, distribution, change over time, magnitude, part-to-whole, spatial, flow) with per-chart usage notes. Interactive version: https://ft-interactive.github.io/visual-vocabulary/.\n★ g-chartcolour — ft-interactive, https://github.com/ft-interactive/g-chartcolour, docs https://ft-interactive.github.io/g-chartcolour/. FT chart color tokens: paper #FFF1E5, web line palette, sequential/diverging ramps, political palettes.\nOrigami o-colors — https://github.com/Financial-Times/o-colors (archived; now in https://github.com/Financial-Times/origami). Brand palette Sass tokens.\n\n\n\n1.2 BBC\n\n★ BBC Visual & Data Journalism cookbook for R graphics — https://bbc.github.io/rcookbook/ (source: https://github.com/bbc/rcookbook). Working hex codes (#1380A1, #FAAB18, #990000, #588300; neutrals #333333, #CBCBCB, #DDDDDD), gridline/legend/baseline rules, chart types demonstrated, annotation conventions.\n★ bbplot — https://github.com/bbc/bbplot. bbc_style() theme and finalise_plot(): left-aligned title block, source bottom-left, logo bottom-right, 640×450 px default export.\n\n\n\n1.3 The Economist\n\n★ The Economist visual styleguide (chart style guide PDF, 2017-05-05). Mirror consulted: https://sa.ipaa.org.au/wp-content/uploads/2026/02/Economist-CHARTstyleguide_20170505.pdf. Web chart palette (Econ red #E3120B, blue #006BA2, cyan #3EBCD2, …; black #0C0C0C, text #3F5661), equal-lightness color scales, standard color order and overrides, pie limit (“abandoned in favour of stacked bar if over 4 categories”), double-scale rules (no broken scales, aligned zero lines, no disparate measures; else panels or indexing).\n“Mistakes, we’ve drawn a few” — Sarah Leo, The Economist (Medium, 2019), https://medium.economist.com/mistakes-weve-drawn-a-few-8cdd8a42d368. Self-audit of misleading practices (truncated axes, forced dual-scale correlations). Not fetchable at time of writing; cited from the styleguide’s matching rules.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Sources"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/07-sources.html#corroborating-authorities",
+    "href": "newsroom-data-reporting-standards/07-sources.html#corroborating-authorities",
+    "title": "Sources",
+    "section": "2 Corroborating authorities",
+    "text": "2 Corroborating authorities\n\n★ UK Government Analysis Function — Data visualisation: charts, https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/, and Data visualisation: colours, https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-colours-in-charts/. Accessible categorical palette (#12436D, #28A197, #801650, #F46A25, #3D3D3D, #A285D1 — all ≥3:1 on white), sequential blues, focus palette (#12436D + #BFBFBF), and the do/don’t list (≤4 lines, ≤4 bars per cluster, never break bar axes, horizontal text, direct labels, ≤10 gridlines, pie rules, SVG output). Implementations: afcharts (R), py_af_colours (Python).\n★ Okabe, M. & Ito, K. — Color Universal Design: How to make figures and presentations that are friendly to colorblind people, https://jfly.uni-koeln.de/color/. The 8-color colorblind-safe palette and the redundancy principles (shape/line-type pairing, vermilion over red). Also shipped in R as grDevices::palette.colors(palette = \"Okabe-Ito\").\n★ Urban Institute Data Visualization Style Guide — https://urbaninstitute.github.io/graphics-styleguide/. Typography scale, palette structure, the “absolutes” (no dual axes, zero baselines for bars, pie ≤5 slices, ≤7 categories, no 3-D), alt-text practice (~160 characters).\nDatawrapper — Lisa Charlotte Muth, A detailed guide to colors in data vis style guides, https://www.datawrapper.de/blog/colors-for-data-vis-style-guides. Palette-construction guidance: data vs non-data greys, lightness range (60+ points), semantic category colors, size-dependent saturation, brand-color discipline, and the newsroom comparisons cited in 03.\nW3C, WCAG 2.2 — https://www.w3.org/TR/WCAG22/. Criteria applied: 1.1.1 (non-text content), 1.4.1 (use of color), 1.4.3 (text contrast 4.5:1), 1.4.5 (images of text), 1.4.11 (non-text contrast 3:1).\nColorBrewer — Cynthia Brewer, https://colorbrewer2.org/. Tested sequential and diverging schemes referenced for diverging defaults.\nviridis — perceptually uniform, colorblind-safe continuous scales; in ggplot2 as scale_*_viridis_*(). https://sjmgarnier.github.io/viridis/.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Sources"
+    ]
+  },
+  {
+    "objectID": "newsroom-data-reporting-standards/07-sources.html#verification-notes",
+    "href": "newsroom-data-reporting-standards/07-sources.html#verification-notes",
+    "title": "Sources",
+    "section": "3 Verification notes",
+    "text": "3 Verification notes\n\nContrast ratios quoted in 03 and 05 were computed from the cited hex codes with the WCAG 2.x relative-luminance formula (not copied from the sources): Analysis Function categorical palette 3.03–10.86:1 vs white; Okabe–Ito yellow 1.32:1, orange 2.25:1, sky blue 2.31:1 vs white (hence the caveat in 03); BBC #333333 text 12.63:1.\nThe Economist hex values were extracted from the styleguide PDF’s own text layer; where third-party summaries disagreed with the PDF, the PDF was used.",
+    "crumbs": [
+      "Home",
+      "Newsroom Data Reporting Standards",
+      "Sources"
+    ]
+  },
+  {
+    "objectID": "r-data-pipeline-review.html",
+    "href": "r-data-pipeline-review.html",
+    "title": "r-data-pipeline-review",
+    "section": "",
+    "text": "Review a set of R data-retrieval/ETL scripts (the backend pipeline that produces the .Rds/.csv files a Quarto site or analysis consumes) to write a code-quality report. Use when the user asks to review, audit, or check the retrieval/pipeline scripts, or when preparing for a new reporting cycle.",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "R Data Pipeline Review"
+    ]
+  },
+  {
+    "objectID": "r-data-pipeline-review.html#purpose",
+    "href": "r-data-pipeline-review.html#purpose",
+    "title": "r-data-pipeline-review",
+    "section": "",
+    "text": "Review a set of R data-retrieval/ETL scripts (the backend pipeline that produces the .Rds/.csv files a Quarto site or analysis consumes) to write a code-quality report. Use when the user asks to review, audit, or check the retrieval/pipeline scripts, or when preparing for a new reporting cycle.",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "R Data Pipeline Review"
+    ]
+  },
+  {
+    "objectID": "r-data-pipeline-review.html#standard",
+    "href": "r-data-pipeline-review.html#standard",
+    "title": "r-data-pipeline-review",
+    "section": "0.2 Standard",
+    "text": "0.2 Standard",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "R Data Pipeline Review"
+    ]
+  },
+  {
+    "objectID": "r-data-pipeline-review.html#step-1-identify-the-files-and-their-order",
+    "href": "r-data-pipeline-review.html#step-1-identify-the-files-and-their-order",
+    "title": "r-data-pipeline-review",
+    "section": "1.1 Step 1 — Identify the files and their order",
+    "text": "1.1 Step 1 — Identify the files and their order\nAsk the user (or infer from imports/sourced files) which scripts make up the pipeline, and in what order they must run. Note any script that is sourced by others rather than run directly — document the dependency chain explicitly, including which steps could run in parallel.",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "R Data Pipeline Review"
+    ]
+  },
+  {
+    "objectID": "r-data-pipeline-review.html#step-2-critical-issues",
+    "href": "r-data-pipeline-review.html#step-2-critical-issues",
+    "title": "r-data-pipeline-review",
+    "section": "1.2 Step 2 — Critical Issues",
+    "text": "1.2 Step 2 — Critical Issues\nFlag anything that would produce wrong output or silently fail:\n\nDate/period math. Any date arithmetic that builds a cutoff or reporting period — verify it resolves to the date the author intended. Off-by-one-year and off-by-one-day errors in formulas like as.double(year) - 1 + 2000 are common; check the arithmetic by hand.\nDisabled filters. Look for date-range or status filters that have been commented out — these often get disabled “temporarily” during debugging and never restored.\nFile extension mismatches. write_csv() calls should produce .csv; write_rds()/ saveRDS() calls should produce .rds/.Rds. Flag mismatches.\nUnreachable guards. is.null(x) immediately after x &lt;- readRDS(...) (or similar) can never be true — readRDS either returns a value or errors. Flag dead guards like this.\nDead objects. Objects that are computed but never used downstream or saved.\nNon-existent column references. Cross-check filter()/select() column names against what the upstream step actually produces.",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "R Data Pipeline Review"
+    ]
+  },
+  {
+    "objectID": "r-data-pipeline-review.html#step-3-convention-issues",
+    "href": "r-data-pipeline-review.html#step-3-convention-issues",
+    "title": "r-data-pipeline-review",
+    "section": "1.3 Step 3 — Convention Issues",
+    "text": "1.3 Step 3 — Convention Issues\nCheck against the project’s stated R conventions (usually in a CLAUDE.md or style guide):\n\nPipe: native |&gt;, not %&gt;%\nJoins: join_by(), not by = c(\"a\" = \"b\")\nGrouping: .by = or explicit ungroup() — flag any function that returns a still-grouped data frame to its caller\nmap: map() |&gt; list_rbind() — map_dfr() is deprecated\nPerformance: rowwise() |&gt; mutate(min(...)) (or similar) on large tables — usually replaceable with a vectorized function like pmin()\nType safety: ifelse() where if_else() would catch type mismatches; numeric comparisons done as strings (e.g. &lt;= \"3\" instead of &lt;= 3L)\nTidy-eval misuse: { } used where a plain .env$var or string would be correct",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "R Data Pipeline Review"
+    ]
+  },
+  {
+    "objectID": "r-data-pipeline-review.html#step-4-readability-and-logic-issues",
+    "href": "r-data-pipeline-review.html#step-4-readability-and-logic-issues",
+    "title": "r-data-pipeline-review",
+    "section": "1.4 Step 4 — Readability and Logic Issues",
+    "text": "1.4 Step 4 — Readability and Logic Issues\n\nHardcoded values that should be derived from a previous step instead of pasted in\nNA converted to the literal string \"NA\" (breaks downstream is.na() checks)\nDuplicate column selections in the same select() call\nknitr::opts_chunk$set() inside a plain .R script (no-op outside a .qmd/.Rmd)\nA local variable shadowing a package function name (e.g. today &lt;- Sys.Date() shadowing lubridate::today())\nDate-span math done with 365 * n instead of a calendar-aware function (years(n), months(n)) — fails on leap years\nLeftover View() calls and large commented-out blocks in production scripts\nMissing file.exists() guards before reading a file that might not be there yet",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "R Data Pipeline Review"
+    ]
+  },
+  {
+    "objectID": "r-data-pipeline-review.html#step-5-summary-table",
+    "href": "r-data-pipeline-review.html#step-5-summary-table",
+    "title": "r-data-pipeline-review",
+    "section": "1.5 Step 5 — Summary Table",
+    "text": "1.5 Step 5 — Summary Table\nEnd with:\n\n\n\n#\nFile\nSeverity\nIssue\n\n\n\n\n\nSeverity levels: Critical (wrong output), High (convention violation or performance), Medium (logic or clarity), Low (style).",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "R Data Pipeline Review"
+    ]
+  },
+  {
+    "objectID": "r-data-pipeline-review.html#tone-and-format",
+    "href": "r-data-pipeline-review.html#tone-and-format",
+    "title": "r-data-pipeline-review",
+    "section": "1.6 Tone and Format",
+    "text": "1.6 Tone and Format\n\nUse fenced code blocks to show the problem and the fix side by side where helpful.\nKeep descriptions factual and specific — cite file and line number where possible.\nDo not summarize what each file does; focus entirely on problems and fixes.\nNo introductory preamble; start directly with “## Execution Order”.",
+    "crumbs": [
+      "Home",
+      "Societal Mirror Site Standards",
+      "R Data Pipeline Review"
     ]
   }
 ]
