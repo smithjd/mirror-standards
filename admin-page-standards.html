@@ -111,10 +111,14 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="https://shambhala.org"> 
 <span class="menu-text">Shambhala</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://mirror.shambhala.org"> 
+<span class="menu-text">Shambhala Mirror</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/smithjd/mirror-standards" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -823,7 +827,8 @@ geom_text(data = max_point,
 # gt() |&gt; mrr_gt_theme() code</code></pre>
 <p>;;;;</p>
 <pre><code>
-- `knitr::knit_exit()` in a chunk stops rendering — use to hide unfinished sections during development
+- `knitr
+knit_exit()` in a chunk stops rendering — use to hide unfinished sections during development
 - `{=html} &lt;!-- ... --&gt;` blocks for editorial comments hidden from output
 - `#| eval: false` on exploratory or upload chunks not ready to render
 - Section inventory in an `eval: false` chunk at top is a useful tracking pattern

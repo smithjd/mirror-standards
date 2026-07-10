@@ -497,7 +497,8 @@ Every admin section follows the Graph + Table panel-tabset pattern:
 ;;;;
 
 
-    - `knitr::knit_exit()` in a chunk stops rendering — use to hide unfinished sections during development
+    - `knitr
+    knit_exit()` in a chunk stops rendering — use to hide unfinished sections during development
     - `{=html} <!-- ... -->` blocks for editorial comments hidden from output
     - `#| eval: false` on exploratory or upload chunks not ready to render
     - Section inventory in an `eval: false` chunk at top is a useful tracking pattern
