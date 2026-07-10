@@ -114,3 +114,6 @@ if (identical(environment(), globalenv()) && !interactive()) {
   source_label <- if (length(args) >= 3) args[3] else "project"
   render_standard(args[1], args[2], source_label)
 }
+
+# Example:
+# Rscript ./R/render_standard.R "/Users/jds/Documents/cch/SGS_IT/PT-stats/as-mirror.nosync/.claude/skills/survey-page-conventions/SKILL.md" survey-page-conventions.qmd

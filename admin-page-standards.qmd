@@ -1,0 +1,550 @@
+---
+title: "admin-page-conventions"
+subtitle: "Standards derived from the `admin-page-conventions` skill"
+---
+
+## Purpose
+
+Use this skill when working on admin (SDB/administrative records) pages in The Societal Mirror project. Triggers when user asks to add a chart, table, or section to pages like membership.qmd, centre_profile.qmd, or any page working with member_base_data, center data, enrollment data, or GCC constellation/region analysis from the Shambhala Database (SDB).
+
+## Standard
+
+
+# Admin Page Conventions
+
+Admin pages draw from the Shambhala Database (SDB) — not survey responses. They use `member_base_data`, `base_center_data`, `center_member_count_class`, `membership_changes_year_detail`, and related datasets loaded by `shared_sdb_code_26.R`.
+
+## Visual Identity: sdb_background_tint
+
+Every admin plot MUST carry the SDB tint in both `plot.background` and `panel.background`. This visually distinguishes admin pages from survey pages.
+
+```
+theme(
+  plot.background  = element_rect(fill = sdb_background_tint),  # "#F4F4F4"
+  panel.background = element_rect(fill = sdb_background_tint)
+)
+```
+
+- Survey (member) pages use `member_background_tint` (#FEF7F4)
+- Survey (leader) pages use `leader_background_tint` (#F4FFF5)
+- Admin/SDB pages use `sdb_background_tint` (#F4F4F4)
+
+## mirror_theme(): Explicit vs Implicit
+
+`shared_code_26.R` calls `theme_set(mirror_theme())`, so the theme is already the global default. Two valid styles appear across pages:
+
+```
+# Implicit (centre_profile.qmd style) — theme already set globally
+ggplot(...) + geom_col() + theme(panel.grid.major.x = element_blank(), ...)
+
+# Explicit (membership.qmd style) — redundant but harmless
+ggplot(...) + geom_col() + mirror_theme() + theme(panel.grid.major.x = element_blank(), ...)
+```
+
+Both work. Be consistent within a page.
+
+## Color Constants
+
+| Constant | Hex | Use |
+|---|---|---|
+| `dark_bar_green` | #488460 | Primary bar/area fill (single series) |
+| `sdb_background_tint` | #F4F4F4 | Plot/panel background |
+| `size_palette` (4 colors) | greens | Fill when colored by center size group |
+| `size_palette` (2 colors) | light + dark green | Fill for year-comparison (last yr / this yr) |
+| `membership_colors[2:3]` | #86BD9C / #7994B8 | Member vs Friend two-series fills |
+
+### size_palette — Two Variants
+
+```
+# 4-color (stacked by size group) — defined globally in shared_sdb_code_26.R
+size_palette <- c("#B1CEBD", "#7CA98E", "#488460", "#346046")
+
+# 2-color (year comparison) — redefine locally in the chunk
+size_palette <- c("#B1CEBD", "#488460")   # light = last year, dark = current year
+```
+
+### Member/Friend Color Constants
+
+```
+membership_colors <- c("#F4D786", "#86BD9C", "#7994B8")
+names(membership_colors) <- c("Non member", "Member", "Past member")
+
+member_friends_colors <- membership_colors[2:3]
+names(member_friends_colors) <- c("Members", "Friends")
+
+scale_fill_manual(values = member_friends_colors)
+```
+
+Use `fct_recode()` to align factor levels with color names:
+```
+mutate(membertype = fct_recode(membertype,
+  Members = "current_members",
+  Friends = "current_friends"
+))
+```
+
+## Key Pre-built Objects (from shared_sdb_code_26.R)
+
+Do not recompute these — they are already loaded:
+
+| Object | Contents |
+|---|---|
+| `center_member_count_class` | One row per center: `center`, `active_members`, `size_group`, `gcc_region`, `societal_mirror_label`, `iscenter`, `center_visible`, `location_type`, `Year` |
+| `center_member_count_class_last_year` | Same structure, prior year |
+| `center_size_member_count` | Centers by `societal_mirror_label` × `size_group` (current year, urban active only) |
+| `center_size_member_count_last_year` | Same, prior year |
+| `center_size_comparison` | `bind_rows` of last + current year with factor-ordered `societal_mirror_label` |
+| `gcc_order` | Character vector of `societal_mirror_label` ordered by `gcc_region` — use with `fct_relevel()` |
+| `enrollment_location` | `location`, `calendar_year`, `enrollment_at_location`, `enrollment_from_location`, `net_enrollment` |
+| `statistiques` | Historical member counts (POSIXct `created`, integer `members`) |
+| `change_tracking` | Derived from `membership_changes_year_detail`: member/friend gains and losses by center × year |
+
+## Key Data Pipelines
+
+### Members / Friends snapshot
+```
+member_base_data |>
+  filter(membertype == "Member")           # or "Friend of Shambhala"
+  # or filter(membertype != "Non-member")  # members + friends combined
+```
+
+### By generation
+```
+member_base_data |>
+  filter(membertype == "Member") |>
+  count(imputed_generation, name = "count") |>
+  mutate(
+    pct   = count / sum(count) * 100,
+    label = paste0(round(pct, 0), "%"),
+    imputed_generation = fct_rev(imputed_generation)
+  )
+```
+
+### By center size
+```
+center_member_count_class |>
+  filter_out(center %in% c(5, 68)) |>
+  filter(str_detect(location_type, "Meditation"), center_visible == 1) |>
+  count(size_group, wt = active_members, name = "active_members") |>
+  filter(!is.na(size_group)) |>
+  mutate(size_group = fct_rev(size_group))
+```
+
+### By GCC constellation / region
+```
+center_member_count_class |>
+  filter(Year == filter_year, center_visible == 1) |>
+  count(gcc_region, societal_mirror_label, wt = active_members, name = "active_members") |>
+  mutate(societal_mirror_label = fct_reorder(societal_mirror_label, gcc_region)) |>
+  filter(!is.na(societal_mirror_label))
+# Axis: scale_x_discrete(labels = scales::label_wrap(30))
+```
+
+### Year-to-year comparison pipeline
+```
+# Build current + prior year separately, then bind
+current_yr <- center_member_count_class |>
+  filter_out(center %in% c(5, 68)) |>
+  filter(str_detect(location_type, "Meditation"), center_visible == 1) |>
+  count(size_group, name = "active_centers") |>    # or wt = active_members
+  filter(!is.na(size_group)) |>
+  mutate(Year = as.character(filter_year))
+
+last_yr <- center_member_count_class_last_year |>
+  filter_out(center %in% c(5, 68)) |>
+  filter(str_detect(location_type, "Meditation"), center_visible == 1) |>
+  count(size_group, name = "active_centers") |>
+  mutate(Year = as.character(filter_year - 1))
+
+combined <- bind_rows(last_yr, current_yr) |>    # last year first = legend order
+  filter(!is.na(size_group))
+
+# For GCC region (no urban filter):
+bind_rows(last_yr, current_yr) |>
+  mutate(
+    societal_mirror_label = fct_relevel(societal_mirror_label, gcc_order),
+    societal_mirror_label = fct_rev(societal_mirror_label)
+  )
+```
+
+### Membership changes / gains-losses (since 2020)
+```
+change_tracking |>
+  filter(change_year >= "2020-01-01") |>
+  count(change_year, wt = new_members, name = "new_members")
+```
+
+### Enrollment activity (offering vs participating)
+```
+cutoff <- 3
+
+enrollment_location |>
+  filter(calendar_year %in% c(2020, 2025)) |>
+  select(-net_enrollment) |>
+  pivot_longer(
+    cols = c(enrollment_at_location, enrollment_from_location),
+    names_to = "where", values_to = "enrollment"
+  ) |>
+  mutate(where = case_when(
+    where == "enrollment_at_location"   ~ "Offering",
+    where == "enrollment_from_location" ~ "Participating"
+  )) |>
+  left_join(center_member_count_class, by = c("location" = "center")) |>
+  filter(enrollment > cutoff, !is.na(size_group)) |>
+  summarise(centers = n_distinct(location),
+            .by = c(where, size_group, calendar_year))
+```
+
+### Joins to center metadata
+```
+left_join(
+  center_member_count_class |>
+    filter_out(center %in% c(5, 68)) |>
+    filter(str_detect(location_type, "Meditation"), center_visible == 1) |>
+    select(center, size_group, gcc_region, societal_mirror_label),
+  by = "center"
+)
+```
+
+## Standard Exclusions
+
+- **`filter_out(center %in% c(5, 68))`** — exclude Shambhala Online (5) and Shambhala Global (68)
+- **`filter(center_visible == 1)`** — active centers only
+- **`filter(str_detect(location_type, "Meditation"))`** — urban centres/groups only
+- **`filter(change_year >= "2020-01-01")`** — "since 2020" analyses
+
+## ggplot Templates
+
+### Horizontal Bar (most common)
+```
+data |>
+  mutate(category = fct_rev(category)) |>
+  ggplot(aes(category, count)) +
+  geom_col(fill = dark_bar_green, width = 0.7) +
+  geom_text(aes(label = scales::comma(count)),
+            position = position_stack(vjust = 0.5),
+            color = "white", fontface = "bold") +
+  coord_flip() +
+  scale_y_continuous(labels = scales::comma, limits = c(0, <max>)) +
+  labs(title = "...", subtitle = "...", x = NULL, y = NULL, caption = "...") +
+  mirror_theme() +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint)
+  )
+```
+
+### Vertical Bar / Time Series Bar
+```
+data |>
+  ggplot(aes(year_col, count)) +
+  geom_col(fill = dark_bar_green) +
+  geom_text(aes(label = count),
+            position = position_stack(vjust = 0.5),
+            color = "white", fontface = "bold") +
+  labs(title = "...", x = NULL, y = NULL) +
+  mirror_theme() +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint)
+  )
+```
+
+### Dodged Bar (year comparison, vertical)
+```
+dodge_width <- 1    # or 0.9 for narrower gaps
+
+combined |>
+  ggplot(aes(x = size_group, y = active_centers, fill = Year, group = Year)) +
+  geom_col(position = position_dodge(width = dodge_width)) +
+  geom_text(
+    aes(y = active_centers,
+        label = scales::number(active_centers, accuracy = 1, big.mark = ",")),
+    position = position_dodge(width = dodge_width),
+    vjust = -0.5                             # labels above bars
+  ) +
+  scale_fill_manual(values = size_palette) +
+  scale_x_discrete(labels = scales::label_wrap(12)) +
+  scale_y_continuous(limits = c(0, <max>)) +
+  labs(title = "...", x = NULL, y = NULL, fill = "Year") +
+  theme(
+    legend.position    = "bottom",
+    panel.grid.major.x = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint)
+  )
+```
+
+### Dodged Bar with coord_flip (GCC region year comparison)
+```
+#| fig-height: 12
+
+combined |>
+  filter(!is.na(societal_mirror_label)) |>
+  ggplot(aes(x = societal_mirror_label, y = active_centers, fill = Year, group = Year)) +
+  geom_col(position = position_dodge(width = dodge_width)) +
+  geom_text(
+    aes(y = active_centers + 0.5, label = scales::number(active_centers)),
+    position = position_dodge(width = dodge_width)
+  ) +
+  coord_flip() +
+  scale_fill_manual(values = size_palette) +
+  scale_x_discrete(labels = scales::label_wrap(30)) +
+  labs(title = "...", x = NULL, y = NULL, fill = "Year") +
+  theme(
+    legend.position    = "bottom",
+    panel.grid.major.x = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint)
+  )
+```
+
+### Stacked Bar by Size within GCC Region
+```
+#| fig-height: 12
+
+center_size_member_count |>
+  ggplot(aes(x = societal_mirror_label, y = active_centers, fill = size_group)) +
+  geom_col(position = "stack") +
+  geom_text(aes(label = active_centers),
+            position = position_stack(vjust = 0.5),
+            color = "white") +
+  coord_flip() +
+  scale_fill_manual(values = size_palette) +       # 4-color palette
+  scale_x_discrete(labels = scales::label_wrap(30)) +
+  labs(title = "...", x = NULL, y = NULL, fill = NULL) +
+  theme(
+    legend.position   = "bottom",
+    legend.box.just   = "left",
+    legend.margin     = margin(0, 0, 0, 0),
+    legend.box.margin = margin(0, 0, 0, -150),     # align legend with bars
+    panel.grid.major.x = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint)
+  )
+```
+
+### Faceted Stacked Bar
+```
+data |>
+  ggplot(aes(x_var, y_var, fill = size_group)) +
+  geom_col() +
+  geom_text(aes(label = y_var),
+            position = position_stack(vjust = 0.5),
+            color = "white", fontface = "bold", size = 3.5) +
+  geom_text(                                        # totals above bars
+    data = data |> summarise(total = sum(y_var), .by = c(x_var, facet_var)),
+    aes(y = total, label = total, fill = NULL),
+    vjust = -0.5, fontface = "bold"
+  ) +
+  facet_wrap(~ facet_var) +
+  scale_fill_manual(values = ...) +
+  scale_y_continuous(limits = c(0, <max>)) +
+  guides(fill = guide_legend(nrow = 2)) +
+  theme(
+    legend.position    = "top",
+    panel.grid.major.x = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint),
+    strip.background   = element_rect(fill = sdb_background_tint),  # required for facets
+    strip.text         = element_text(hjust = 0.5)
+  )
+```
+
+### Time Series Area Chart
+```
+data |>
+  ggplot(aes(x = date_col, y = count)) +
+  geom_area(fill = membership_colors[2]) +
+  scale_y_continuous(
+    labels = scales::label_comma(),
+    breaks = seq(0, 12000, 2000),
+    expansion(mult = c(0, .05)),
+    limits = c(0, 12000)
+  ) +
+  scale_x_datetime(date_breaks = "2 years", date_labels = "%Y") +
+  # or: scale_x_date(date_breaks = "1 year", date_labels = "%Y") for Date columns
+  labs(y = NULL, x = NULL, title = "...") +
+  mirror_theme() +
+  theme(
+    panel.grid.major.x = element_blank(),
+    plot.background    = element_rect(fill = sdb_background_tint),
+    panel.background   = element_rect(fill = sdb_background_tint)
+  )
+```
+
+To annotate specific data points (odd years, max):
+```
+highlights <- data |>
+  filter(
+    (month(date_col) == 1 & day(date_col) == 1 & year(date_col) %% 2 == 1) |
+    date_col == max(date_col) | date_col == min(date_col)
+  )
+max_point <- data |> filter(count == max(count))
+
+# Add to ggplot:
+geom_point(data = highlights, size = 2, shape = 25, fill = "black",
+           position = position_nudge(y = 200)) +
+geom_text(data = highlights, aes(label = scales::comma(count)),
+          vjust = -2, size = 3) +
+geom_point(data = max_point, size = 2, shape = 25, fill = "red",
+           position = position_nudge(y = 200)) +
+geom_text(data = max_point,
+          aes(label = paste0("Max: ", scales::comma(count), "\n", as.Date(date_col))),
+          vjust = -0.8, size = 3, color = "red")
+```
+
+### Diverging Bar (gains and losses)
+```
+data |>
+  ggplot(aes(x = year_col, y = count, fill = type)) +
+  geom_col(width = 0.7) +
+  geom_hline(yintercept = 0, color = "black", linewidth = 1) +
+  geom_text(aes(label = abs(count)),
+            position = position_stack(vjust = 0.5),
+            color = "white", fontface = "bold", size = 4) +
+  scale_fill_manual(
+    values = c("gains" = dark_bar_green, "losses" = "gray60"),
+    labels = c("gains" = "Gains", "losses" = "Losses")
+  ) +
+  scale_y_continuous(
+    breaks = seq(-800, 400, 100),
+    labels = function(x) scales::comma(abs(x)),    # show absolute values
+    limits = c(-800, 400)
+  ) +
+  labs(title = "...", x = NULL, y = NULL, fill = NULL) +
+  mirror_theme() +
+  theme(
+    legend.position    = "top",
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor   = element_blank()
+  )
+```
+
+## Grid Line Rules
+
+- **Horizontal bars** (`coord_flip()`): blank `panel.grid.major.y` and `.minor.y`
+- **Vertical bars / time series**: blank `panel.grid.major.x`
+- **Faceted charts**: also add `strip.background = element_rect(fill = sdb_background_tint)`
+
+## scale_y_continuous: expansion() for Headroom
+
+```
+scale_y_continuous(
+  labels = scales::comma,
+  breaks = seq(0, 12000, 2000),
+  expansion(mult = c(0, .05)),    # 0 padding at bottom, 5% at top
+  limits = c(0, 12000)
+)
+```
+
+## gt Tables
+
+### Basic template
+```
+data |>
+  gt() |>
+  cols_label(col1 = md("Line 1<br>Line 2"), col2 = "Label") |>
+  fmt_number(columns = where(is.numeric), decimals = 0, use_seps = TRUE) |>
+  fmt_percent(columns = pct_col, decimals = 0) |>
+  grand_summary_rows(
+    columns = where(is.numeric),
+    fns = list("Total" = ~ sum(., na.rm = TRUE)),
+    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))
+  ) |>
+  mrr_gt_theme()
+```
+
+### Grouped rows with group + grand summaries
+```
+data |>
+  group_by(group_col) |>
+  gt(groupname_col = "group_col") |>
+  fmt_number(columns = c("col1", "col2"), decimals = 0, use_seps = TRUE) |>
+  fmt_percent(columns = pct_col, decimals = 0) |>
+  cols_label(...) |>
+  cols_width(1 ~ px(300), 2:5 ~ px(100)) |>
+  summary_rows(                               # subtotal per row group
+    columns = c("col1", "col2"),
+    fns = list("Total" = ~ sum(., na.rm = TRUE)),
+    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))
+  ) |>
+  grand_summary_rows(                         # overall total
+    columns = c("col1", "col2"),
+    fns = list("Grand Total" = ~ sum(., na.rm = TRUE)),
+    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))
+  ) |>
+  mrr_gt_theme() |>
+  tab_options(stub_row_group.border.width = px(10)) |>
+  as_raw_html()                               # prevents render issues for complex grouped tables
+```
+
+**`summary_rows()`** — one subtotal per row group. **`grand_summary_rows()`** — one total at table bottom. Both can appear together; call separately per column set when formatting differs.
+
+### Spanner columns (year × metric)
+```
+data |>
+  pivot_wider(values_from = metric, names_from = c(category, year)) |>
+  gt() |>
+  cols_label(
+    Offering_2020 = "Offering", Participating_2020 = "Participating",
+    Offering_2025 = "Offering", Participating_2025 = "Participating"
+  ) |>
+  tab_spanner(label = md("2020"), columns = c(Offering_2020, Participating_2020)) |>
+  tab_spanner(label = md("2025"), columns = c(Offering_2025, Participating_2025)) |>
+  # Nested spanners — apply widest first:
+  tab_spanner(label = md("Year-end<br>Count"),         columns = 2:3) |>
+  tab_spanner(label = md("Change from<br>prior year"), columns = 4:7) |>
+  grand_summary_rows(
+    columns = where(is.numeric),
+    fns = list("Total" = ~ sum(., na.rm = TRUE)),
+    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))
+  ) |>
+  mrr_gt_theme()
+```
+
+## Page Structure
+
+Every admin section follows the Graph + Table panel-tabset pattern:
+
+```
+## Section Title
+
+`  :::: {.panel-tabset}
+
+### Graph
+```{r}
+#| label: fig-descriptive-name
+# ggplot code
+```
+
+### Table
+```{r}
+#| label: tbl-descriptive-name
+# gt() |> mrr_gt_theme() code
+```
+
+`  ::::
+```
+
+- `knitr::knit_exit()` in a chunk stops rendering — use to hide unfinished sections during development
+- `{=html} <!-- ... -->` blocks for editorial comments hidden from output
+- `#| eval: false` on exploratory or upload chunks not ready to render
+- Section inventory in an `eval: false` chunk at top is a useful tracking pattern
+
+## Chunk Options
+
+```
+#| label: fig-descriptive-name    # fig- prefix for plots, tbl- for tables
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-height: 12                 # always use for GCC region charts (18+ rows)
+```
+
+All chunks suppress output by default via the setup chunk.
+

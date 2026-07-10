@@ -59,8 +59,8 @@ tooling plots at most 6 colors). When the data exceed these limits, use small mu
 ## P-6 Consistency across the publication (MUST)
 
 The same entity MUST keep the same color, the same measure the same format, and the
-same chart family the same conventions across a page or report. Readers learn your
-encoding once; do not make them relearn it per chart.
+same chart family the same conventions across a page or report. **Readers learn your**
+**encoding once; do not make them relearn it per chart.**
 
 ## P-7 Every chart cites its source (MUST)
 
@@ -78,4 +78,5 @@ screen reader. It MUST survive all four:
   [05-accessibility.qmd](05-accessibility.qmd).
 - Text MUST remain legible at the smallest published size.
 - Every chart MUST have a text alternative (alt text, a data table, or descriptive
-  prose).
+  
+  # prose).

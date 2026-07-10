@@ -24,7 +24,7 @@ website:
   description: "A set of standards for data reporting in the Shambhala Mirror."
   llms-txt: true
   favicon: "/images/SI-sunburst.ico"
-#  site-url: "https://ourmirror.netlify.app"
+  site-url: "https://smithjd.github.io/mirror-standards/"
   navbar:
     logo: "images/SI-sunburst.png"
     pinned: false
@@ -40,6 +40,14 @@ website:
   page-navigation: true
   sidebar:
     contents:
+      - section: "Societal Mirror Site Standards"
+        contents:
+          - text: Survey Page Standards
+            href: survey-page-standards.qmd
+          - text: Quarto File Standards
+            href: quarto-file-standards.qmd
+          - text: Admin Page Standards
+            href: admin-page-standards.qmd
       - section: "Newsroom Data Reporting Standards"
         contents:
           - text: Newsroom Standards
