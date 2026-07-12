@@ -1,0 +1,213 @@
+---
+title: "Page Edit History Analysis"
+page-layout: article
+toc: true
+number-sections: true
+---
+
+```{r, include=FALSE}
+#| label: setup
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  error = FALSE,
+  warning = FALSE
+)
+library(here)
+library(tidyverse)
+library(lubridate)
+library(ourmirror)
+```{.r}
+
+The data on this page comes from the commit history of the Quarto files in Societal Mirror repository. The analysis focuses on the editing activity for each page, including the number of commits, the time span of edits, and temporal patterns of page development.
+
+```{r}
+#| label: load-data
+
+# Load commit history
+qmd_commits <- read_csv(here("raw", "qmd_commits.csv")) |>
+  mutate(
+    commit_date = ymd_hms(commit_date),
+    file = str_replace(file, "^\\./", ""),
+    file = str_replace(file, "\\.qmd$", "")
+  ) |>
+  filter_out(str_detect(file, "^_|back-end|draft")) |>
+  arrange(desc(commit_date))
+
+# Calculate days from first commit for each file
+qmd_commits_history <- qmd_commits |>
+  arrange(commit_date) |>
+  group_by(file) |>
+  mutate(
+    first_commit = min(commit_date),
+    days_from_first = as.numeric(difftime(
+      commit_date,
+      first_commit,
+      units = "days"
+    ))
+  ) |>
+  ungroup()
+
+# Calculate summary statistics for ordering
+file_summary <- qmd_commits_history |>
+  group_by(file) |>
+  summarise(
+    max_days = max(days_from_first),
+    n_commits = n()
+  ) |>
+  arrange(desc(max_days))
+
+# Join back and create ordered factor
+qmd_commits_history <- qmd_commits_history |>
+  left_join(file_summary, by = "file") |>
+  mutate(file = fct_reorder(file, max_days))
+```{.r}
+
+## Editing Activity by Page Name
+
+```{r}
+#| label: fig-activity-by-file
+#| fig-cap: "Editing activity over time for each file, sorted by total editing span. Numbers at right show total commit count."
+#| fig-height: 8
+
+ggplot(qmd_commits_history, aes(y = file)) +
+  geom_boxplot(aes(x = days_from_first), outlier.shape = NA) +
+  geom_jitter(
+    aes(x = days_from_first),
+    width = 0,
+    height = 0.2,
+    alpha = 0.4,
+    size = 1
+  ) +
+  geom_text(
+    data = file_summary |> mutate(file = fct_reorder(file, max_days)),
+    aes(x = Inf, label = n_commits),
+    hjust = 1.2,
+    size = 3
+  ) +
+  labs(
+    x = "Days from first commit",
+    y = NULL,
+    title = "Editing activity over time by file",
+    subtitle = "Numbers at right show total commit count"
+  ) +
+  theme(plot.subtitle = element_text(size = 9, color = "gray40")) +
+  ourmirror::mirror_theme()
+```{.r}
+
+Each file was set up early in the process, but the editing activity varies widely. Work on some files began immediately, and other waited for a while. The boxplots show the distribution of editing days for each file, with jittered points representing individual commits.
+
+The files are sorted by their editing span (max days from first commit), with commit counts displayed on the right. `enrollment_overview` has been the most actively maintained page with the longest editing history (157 days) and the most commits (45), followed by `centre_profile` (33 commits over 157 days) and `study_activities` (25 commits over 153 days). The newer pages at the bottom like `centre_connections`, `centre_participation`, and `centre_resources` have shorter histories (under 10 days) and fewer commits (2-4).
+
+Interestingly, `data_collection_and_analysis` was created early but only recently received its 7 commits around day 140, showing a different pattern of intermittent maintenance.
+
+## Post-Creation Maintenance Pattern
+
+```{r}
+#| label: fig-second-commit-onward
+#| fig-cap: "Editing activity from the 2nd commit onward, excluding initial creation commit"
+#| fig-height: 8
+
+# Filter to start from 2nd commit for each file
+qmd_commits_history_2nd <- qmd_commits_history |>
+  group_by(file) |>
+  arrange(commit_date) |>
+  mutate(commit_number = row_number()) |>
+  filter(commit_number >= 2) |>
+  ungroup()
+
+# Calculate max days and commit counts from 2nd commit onward
+file_summary_2nd <- qmd_commits_history_2nd |>
+  group_by(file) |>
+  summarise(
+    max_days = max(days_from_first),
+    n_commits = n()
+  ) |>
+  arrange(desc(max_days))
+
+# Join and create ordered factor
+qmd_commits_history_2nd <- qmd_commits_history_2nd |>
+  left_join(
+    file_summary_2nd |>
+      select(file, max_days_2nd = max_days, n_commits_2nd = n_commits),
+    by = "file"
+  ) |>
+  mutate(file = fct_reorder(file, max_days_2nd))
+
+# Create the plot
+ggplot(qmd_commits_history_2nd, aes(y = file)) +
+  geom_boxplot(aes(x = days_from_first), outlier.shape = NA) +
+  geom_jitter(
+    aes(x = days_from_first),
+    width = 0,
+    height = 0.2,
+    alpha = 0.4,
+    size = 1
+  ) +
+  geom_text(
+    data = file_summary_2nd |> mutate(file = fct_reorder(file, max_days)),
+    aes(x = Inf, label = n_commits),
+    hjust = 1.2,
+    size = 3
+  ) +
+  labs(
+    x = "Days from first commit",
+    y = NULL,
+    title = "Editing activity over time by file (from 2nd commit onward)",
+    subtitle = "Numbers at right show commit count (excluding first commit)"
+  ) +
+  theme(plot.subtitle = element_text(size = 9, color = "gray40")) +
+  ourmirror::mirror_theme()
+```{.r}
+
+This view focuses on ongoing maintenance patterns by excluding the initial creation commit. The commit counts are reduced by 1 for each file, showing only post-creation edits. Some files like `centre_size_experience` only have 1 commit after creation, indicating they've been relatively stable since their initial setup.
+
+## Temporal Editing Patterns
+
+```{r}
+#| label: fig-weekly-heatmap
+#| fig-cap: "Weekly editing activity heatmap showing when each file received edits"
+#| fig-height: 8
+#| fig-width: 10
+
+# Create week-based summary
+commits_by_week <- qmd_commits_history |>
+  mutate(
+    week = floor_date(commit_date, "week")
+  ) |>
+  count(file, week) |>
+  complete(file, week, fill = list(n = 0))
+
+# Order files by max days
+commits_by_week <- commits_by_week |>
+  left_join(file_summary |> select(file, max_days), by = "file") |>
+  mutate(file = fct_reorder(file, max_days))
+
+# Create heatmap
+ggplot(commits_by_week, aes(x = week, y = file, fill = n)) +
+  geom_tile(color = "white", linewidth = 0.3) +
+  scale_fill_gradient(
+    low = "white",
+    high = "steelblue",
+    name = "Commits"
+  ) +
+  labs(
+    x = "Week",
+    y = NULL,
+    title = "Weekly editing activity by file"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid = element_blank()
+  ) +
+  ourmirror::mirror_theme()
+```{.r}
+
+The heatmap reveals distinct editing patterns across time:
+
+- **enrollment_overview** and **centre_profile** show the most sustained activity, with edits spread throughout January-June
+- Several files had concentrated bursts of activity in specific periods (e.g., **study_activities** in mid-April, **leadership_and_service_roles** in January-February)
+- Most newer files at the bottom only appear in the June timeframe
+- Some weeks saw intensive editing across multiple files, particularly in late May/early June
+- **data_collection_and_analysis** shows a gap from creation until recent activity in May-June
