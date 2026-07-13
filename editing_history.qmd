@@ -164,7 +164,7 @@ ggplot(qmd_commits_history_2nd, aes(y = file)) +
   ourmirror::mirror_theme()
 ```
 
-This view focuses on ongoing maintenance patterns by excluding the initial creation commit. The commit counts are reduced by 1 for each file, showing only post-creation edits. Some files like `centre_size_experience` only have 1 commit after creation, indicating they've been relatively stable since their initial setup.
+This view focuses on activity after development has begun in earnest by excluding the initial creation commit. The commit counts are reduced by 1 for each file, showing only post-creation edits. Some files like `centre_size_experience` only have 1 commit after creation, indicating they've been untouched since their initial setup.
 
 ## Temporal Editing Patterns
 

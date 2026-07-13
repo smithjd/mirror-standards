@@ -109,7 +109,7 @@ member_base_data |>
 ```
 
 ### By generation
-```
+```{.r}
 member_base_data |>
   filter(membertype == "Member") |>
   count(imputed_generation, name = "count") |>
@@ -121,7 +121,7 @@ member_base_data |>
 ```
 
 ### By center size
-```
+```{.r}
 center_member_count_class |>
   filter_out(center %in% c(5, 68)) |>
   filter(str_detect(location_type, "Meditation"), center_visible == 1) |>
@@ -131,7 +131,7 @@ center_member_count_class |>
 ```
 
 ### By GCC constellation / region
-```
+```{.r}
 center_member_count_class |>
   filter(Year == filter_year, center_visible == 1) |>
   count(gcc_region, societal_mirror_label, wt = active_members, name = "active_members") |>
@@ -141,7 +141,7 @@ center_member_count_class |>
 ```
 
 ### Year-to-year comparison pipeline
-```
+```{.r}
 # Build current + prior year separately, then bind
 current_yr <- center_member_count_class |>
   filter_out(center %in% c(5, 68)) |>
@@ -168,14 +168,14 @@ bind_rows(last_yr, current_yr) |>
 ```
 
 ### Membership changes / gains-losses (since 2020)
-```
+```{.r}
 change_tracking |>
   filter(change_year >= "2020-01-01") |>
   count(change_year, wt = new_members, name = "new_members")
 ```
 
 ### Enrollment activity (offering vs participating)
-```
+```{.r}
 cutoff <- 3
 
 enrollment_location |>
@@ -196,7 +196,7 @@ enrollment_location |>
 ```
 
 ### Joins to center metadata
-```
+```{.r}
 left_join(
   center_member_count_class |>
     filter_out(center %in% c(5, 68)) |>
@@ -216,7 +216,7 @@ left_join(
 ## ggplot Templates
 
 ### Horizontal Bar (most common)
-```
+```{.r}
 data |>
   mutate(category = fct_rev(category)) |>
   ggplot(aes(category, count)) +
@@ -237,7 +237,7 @@ data |>
 ```
 
 ### Vertical Bar / Time Series Bar
-```
+```{.r}
 data |>
   ggplot(aes(year_col, count)) +
   geom_col(fill = dark_bar_green) +
@@ -255,7 +255,7 @@ data |>
 ```
 
 ### Dodged Bar (year comparison, vertical)
-```
+```{.r}
 dodge_width <- 1    # or 0.9 for narrower gaps
 
 combined |>
@@ -280,7 +280,7 @@ combined |>
 ```
 
 ### Dodged Bar with coord_flip (GCC region year comparison)
-```
+```{.r}
 #| fig-height: 12
 
 combined |>
@@ -304,7 +304,7 @@ combined |>
 ```
 
 ### Stacked Bar by Size within GCC Region
-```
+```{.r}
 #| fig-height: 12
 
 center_size_member_count |>
@@ -329,7 +329,7 @@ center_size_member_count |>
 ```
 
 ### Faceted Stacked Bar
-```
+```{.r}
 data |>
   ggplot(aes(x_var, y_var, fill = size_group)) +
   geom_col() +
@@ -356,7 +356,7 @@ data |>
 ```
 
 ### Time Series Area Chart
-```
+```{.r}
 data |>
   ggplot(aes(x = date_col, y = count)) +
   geom_area(fill = membership_colors[2]) +
@@ -378,7 +378,7 @@ data |>
 ```
 
 To annotate specific data points (odd years, max):
-```
+```{.r}
 highlights <- data |>
   filter(
     (month(date_col) == 1 & day(date_col) == 1 & year(date_col) %% 2 == 1) |
@@ -399,7 +399,7 @@ geom_text(data = max_point,
 ```
 
 ### Diverging Bar (gains and losses)
-```
+```{.r}
 data |>
   ggplot(aes(x = year_col, y = count, fill = type)) +
   geom_col(width = 0.7) +
@@ -433,7 +433,7 @@ data |>
 
 ## scale_y_continuous: expansion() for Headroom
 
-```
+```{.r}
 scale_y_continuous(
   labels = scales::comma,
   breaks = seq(0, 12000, 2000),
@@ -445,7 +445,7 @@ scale_y_continuous(
 ## gt Tables
 
 ### Basic template
-```
+```{.r}
 data |>
   gt() |>
   cols_label(col1 = md("Line 1<br>Line 2"), col2 = "Label") |>
@@ -460,7 +460,7 @@ data |>
 ```
 
 ### Grouped rows with group + grand summaries
-```
+```{.r}
 data |>
   group_by(group_col) |>
   gt(groupname_col = "group_col") |>
@@ -486,7 +486,7 @@ data |>
 **`summary_rows()`** — one subtotal per row group. **`grand_summary_rows()`** — one total at table bottom. Both can appear together; call separately per column set when formatting differs.
 
 ### Spanner columns (year × metric)
-```
+```{.r}
 data |>
   pivot_wider(values_from = metric, names_from = c(category, year)) |>
   gt() |>
@@ -511,24 +511,23 @@ data |>
 
 Every admin section follows the Graph + Table panel-tabset pattern:
 
-```
+```{.bash}
 ## Section Title
 
-`  :::: {.panel-tabset}
+ :::: {.panel-tabset}
 
 ### Graph
-```{r}
+
 #| label: fig-descriptive-name
 # ggplot code
-```
+
 
 ### Table
-```{r}
+
 #| label: tbl-descriptive-name
 # gt() |> mrr_gt_theme() code
-```
 
-`  ::::
+  ::::
 ```
 
 - `knitr::knit_exit()` in a chunk stops rendering — use to hide unfinished sections during development
@@ -538,7 +537,7 @@ Every admin section follows the Graph + Table panel-tabset pattern:
 
 ## Chunk Options
 
-```
+```{.r}
 #| label: fig-descriptive-name    # fig- prefix for plots, tbl- for tables
 #| echo: false
 #| message: false

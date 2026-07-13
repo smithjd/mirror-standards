@@ -24,15 +24,15 @@ website:
   description: "A set of standards for data reporting in the Shambhala Mirror."
   llms-txt: true
   favicon: "/images/SI-sunburst.ico"
-  site-url: "https://smithjd.github.io/mirror-standards/"
+  site-url: "https://github.com/smithjd/mirror-standards"
   navbar:
     logo: "images/SI-sunburst.png"
     pinned: false
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Shambhala"
-        href: "https://shambhala.org"
+      - text: "Shambhala's Societal Mirror"
+        href: "https://mirror.shambhala.org"
     tools: 
       - icon: github
         text: Github
@@ -68,5 +68,7 @@ website:
             href: newsroom-data-reporting-standards/07-sources.qmd
       - section: "Site metrics and analytics"
         contents:
+          - text: Graph and Table Profile
+            href: website-profile.qmd
           - text: Editing History
             href: editing_history.qmd

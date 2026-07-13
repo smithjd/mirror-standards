@@ -1,0 +1,123 @@
+---
+title: "Website profile"
+page-layout: article
+toc: true
+number-sections: true
+---
+
+This document profiles the content structure of the mirror standards website, analyzing each page by the number of plots, tables, and tabset panels it contains. This helps us understand the complexity and layout patterns across the site.
+
+## Content Analysis
+
+The visualization below shows two key dimensions of content complexity:
+
+- **Plots and Tables**: The left panel shows the distribution of visual and tabular content across pages, with plots in green and tables in blue. Pages are sorted by total content count.
+- **Nesting**: The right panel indicates the number of tabset panels on each page, which reflects organizational complexity and information hierarchy.
+
+```{r, include=FALSE}
+#| label: setup
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  error = FALSE,
+  warning = FALSE
+)
+library(here)
+library(tidyverse)
+library(lubridate)
+library(ourmirror)
+library(patchwork)
+source("R/shared_resources.R")
+```
+
+
+```{r}
+#| label: load data
+
+library(readr)
+plots <- read_delim(
+  "raw/plots.csv",
+  delim = ".",
+  col_names = c("file_name", "code"),
+  skip = 1
+) |>
+  count(file_name, name = "plots")
+
+tables <- read_delim(
+  "raw/tables.csv",
+  delim = ".",
+  col_names = c("file_name", "code"),
+  skip = 1
+) |>
+  count(file_name, name = "tables")
+
+nesting <- read_delim(
+  "raw/tabsets.csv",
+  delim = ".",
+  col_names = c("file_name", "code"),
+  skip = 1
+) |>
+  count(file_name, name = "nesting")
+
+profile <- full_join(plots, tables, join_by(file_name))
+profile <- full_join(profile, nesting, join_by(file_name))
+
+library(tidyverse)
+profile <- profile |> mutate(across(everything(), ~ replace_na(., 0)))
+```
+
+
+```{r}
+#| fig-width: 12
+#| fig-height: 9
+
+# Left plot: stacked plots and tables, sorted by total
+p1 <- profile |>
+  mutate(total = plots + tables) |>
+  arrange(total) |>
+  mutate(file_name = factor(file_name, levels = file_name)) |>
+  pivot_longer(
+    cols = c(plots, tables),
+    names_to = "type",
+    values_to = "count"
+  ) |>
+  ggplot(aes(x = count, y = file_name, fill = type)) +
+  geom_col() +
+  scale_fill_manual(values = c("plots" = "#009E73", "tables" = "#ADD1F1")) +
+  geom_text(
+    aes(label = count),
+    position = position_stack(vjust = 0.5),
+    size = 3
+  ) +
+  labs(
+    x = "Count",
+    y = NULL,
+    fill = "Content Type",
+    title = "Plots and Tables"
+  ) +
+  theme(legend.position = "top") +
+  mirror_theme()
+
+# Right plot: nesting with dark grey bars
+p2 <- profile |>
+  mutate(total = plots + tables) |>
+  arrange(total) |>
+  mutate(file_name = factor(file_name, levels = file_name)) |>
+  ggplot(aes(x = nesting, y = file_name)) +
+  geom_col(fill = "darkgrey") +
+  scale_x_continuous(limits = c(0, 8)) +
+  geom_text(aes(label = nesting), hjust = -0.2, size = 3) +
+  labs(
+    x = "Count",
+    y = NULL,
+    title = "Nesting"
+  ) +
+  mirror_theme() +
+  theme(
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank()
+  )
+
+# Combine plots
+p1 + p2 + plot_layout(widths = c(3, 1))
+```

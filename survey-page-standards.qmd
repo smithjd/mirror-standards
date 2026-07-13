@@ -3,15 +3,6 @@ title: "survey-page-conventions"
 subtitle: "Standards derived from the `survey-page-conventions` skill"
 ---
 
-
-```{.r}
-#| label: setup
-
-#| include: false
-#| message: false
-#| error: false
-```
-
 ## Purpose
 
 This standard clarifies good practice as it applies to societal mirror pages that present data from Survey Monkey.
@@ -23,7 +14,7 @@ This standard clarifies good practice as it applies to societal mirror pages tha
 
 Survey pages draw from labelled SPSS files such as (`m26`, `m25`, `m24`, `L26`, `L25`, `L24`) loaded by `shared_code_26.R`. They use the `labelled` package throughout — `var_label()`, `to_factor()`, `to_character()` — and differ visually from admin pages via background tint.
 
-Alternatively use the folloing code:
+Alternatively use the following code:
 
 ```{.r}
 dictionary <- spss_df |> look_for()
@@ -41,7 +32,7 @@ When constructing pipelines or graphs, use `./back-end/dd_C26.json` as a referen
 | Survey | Constant | Hex | Use |
 |---|---|---|---|
 | Member (`m26`, `m25`, `m24`) | `member_background_tint` | #FEF7F4 | warm pinkish |
-| Leader (`C26`,`L25`, `L24`) | `leader_background_tint` | #F4FFF5 | cool greenish |
+| Centre/Leader (`C26`,`L25`, `L24`) | `leader_background_tint` | #F4FFF5 | cool greenish |
 | Admin/SDB | `sdb_background_tint` | #F4F4F4 | neutral grey |
 
 Every survey ggplot must carry its tint in both backgrounds:

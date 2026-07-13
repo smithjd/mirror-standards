@@ -6,6 +6,9 @@
     },
     "bash": {
       "quarto *": "allow"
+    },
+    "executeCode": {
+      "*": "allow"
     }
   }
 }

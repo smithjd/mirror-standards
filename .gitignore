@@ -10,3 +10,7 @@
 _specs
 _site/
 R/_site/
+
+# Stray Quarto HTML renders outside _site/
+/index.html
+newsroom-data-reporting-standards/*.html
