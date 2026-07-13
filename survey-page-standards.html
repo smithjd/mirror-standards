@@ -142,17 +142,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://shambhala.org"> 
-<span class="menu-text">Shambhala</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="https://mirror.shambhala.org"> 
-<span class="menu-text">Shambhala Mirror</span></a>
+<span class="menu-text">Shambhala’s Societal Mirror</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com/smithjd/mirror-standards" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+    <a href="https://github.com" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -198,12 +194,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./admin-page-standards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Admin Page Standards</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-data-pipeline-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R Data Pipeline Review</span></a>
   </div>
 </li>
       </ul>
@@ -262,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./newsroom-data-reporting-standards/07-sources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sources</span></a>
+ <span class="menu-text">Newsroom Sources</span></a>
   </div>
 </li>
       </ul>
@@ -270,7 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">2026 Data</span></a>
+ <span class="menu-text">Site metrics and analytics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -278,8 +268,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./website-profile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graph and Table Profile</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./editing_history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Page edit history</span></a>
+ <span class="menu-text">Editing History</span></a>
   </div>
 </li>
       </ul>
@@ -315,11 +311,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<pre><code>#| label: setup
-
-#| include: false
-#| message: false
-#| error: false</code></pre>
 <section id="purpose" class="level2" data-number="0.1">
 <h2 data-number="0.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">0.1</span> Purpose</h2>
 <p>This standard clarifies good practice as it applies to societal mirror pages that present data from Survey Monkey.</p>
@@ -330,8 +321,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="survey-page-conventions" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Survey Page Conventions</h1>
 <p>Survey pages draw from labelled SPSS files such as (<code>m26</code>, <code>m25</code>, <code>m24</code>, <code>L26</code>, <code>L25</code>, <code>L24</code>) loaded by <code>shared_code_26.R</code>. They use the <code>labelled</code> package throughout — <code>var_label()</code>, <code>to_factor()</code>, <code>to_character()</code> — and differ visually from admin pages via background tint.</p>
-<p>Alternatively use the folloing code:</p>
-<pre><code>dictionary &lt;- spss_df |&gt; look_for()</code></pre>
+<p>Alternatively use the following code:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dictionary <span class="ot">&lt;-</span> spss_df <span class="sc">|&gt;</span> <span class="fu">look_for</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="data-dictionary" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="data-dictionary"><span class="header-section-number">1.1</span> Data Dictionary</h2>
 <p>When constructing pipelines or graphs, use <code>./back-end/dd_m26.json</code> as a reference data dictionary describing the <code>m26</code> survey.</p>
@@ -362,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>warm pinkish</td>
 </tr>
 <tr class="even">
-<td>Leader (<code>C26</code>,<code>L25</code>, <code>L24</code>)</td>
+<td>Centre/Leader (<code>C26</code>,<code>L25</code>, <code>L24</code>)</td>
 <td><code>leader_background_tint</code></td>
 <td>#F4FFF5</td>
 <td>cool greenish</td>
@@ -376,273 +367,273 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>Every survey ggplot must carry its tint in both backgrounds:</p>
-<pre><code>
-theme(
-  plot.background = element_rect(fill = member_background_tint),
-  panel.background = element_rect(fill = member_background_tint)
-)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> member_background_tint),</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> member_background_tint)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="ggplot-template-horizontal-bar-percentages" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="ggplot-template-horizontal-bar-percentages"><span class="header-section-number">1.3</span> ggplot Template: Horizontal Bar (percentages)</h2>
 <p>The dominant pattern — categories sorted by <code>pct</code>, labels inside bars:</p>
-<pre><code>
-data |&gt;
-  mutate(
-    category = str_wrap(category, width = 30),
-    category = fct_reorder(category, pct)
-  ) |&gt;
-  ggplot(aes(category, pct)) +
-  geom_col(fill = dark_bar_green) +
-  geom_text(
-    aes(label = scales::percent(pct, accuracy = 1)),
-    y = pct / 2, # center in bar
-    color = "white",
-    fontface = "bold"
-  ) +
-  scale_y_continuous(
-    labels = scales::percent_format(), # data is 0–1 proportions
-    limits = c(0, 0.8)
-  ) +
-  labs(title = str_wrap("Question text here", width = 40), x = NULL, y = NULL) +
-  coord_flip() +
-  mirror_theme() +
-  theme(
-    panel.grid.major.y = element_blank(),
-    plot.background = element_rect(fill = member_background_tint),
-    panel.background = element_rect(fill = member_background_tint)
-  )</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">category =</span> <span class="fu">str_wrap</span>(category, <span class="at">width =</span> <span class="dv">30</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">category =</span> <span class="fu">fct_reorder</span>(category, pct)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(category, pct)) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> dark_bar_green) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(pct, <span class="at">accuracy =</span> <span class="dv">1</span>)),</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> pct <span class="sc">/</span> <span class="dv">2</span>, <span class="co"># center in bar</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"white"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(), <span class="co"># data is 0–1 proportions</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.8</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">str_wrap</span>(<span class="st">"Question text here"</span>, <span class="at">width =</span> <span class="dv">40</span>), <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mirror_theme</span>() <span class="sc">+</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> member_background_tint),</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> member_background_tint)</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Scale note:</strong> Survey percentages are often stored as 0–1 proportions — use <code>scales::percent_format()</code> and <code>scales::percent(pct, accuracy = 1)</code>. If stored as 0–100 (e.g., after <code>* 100</code>), use <code>scales::percent_format(scale = 1)</code> and <code>scales::percent(pct, accuracy = 1, scale = 1)</code>.</p>
 </section>
 <section id="ggplot-template-stacked-bar-multi-response-fill" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="ggplot-template-stacked-bar-multi-response-fill"><span class="header-section-number">1.4</span> ggplot Template: Stacked Bar (multi-response fill)</h2>
 <p>For yes/maybe/no or ordered response categories:</p>
-<pre><code>
-data |&gt;
-  mutate(
-    response = to_factor(response),
-    response = fct_rev(response),
-    var_label = fct_reorder(var_label, pct, .fun = sum)
-  ) |&gt;
-  ggplot(aes(var_label, pct, fill = response)) +
-  geom_col() +
-  geom_text(
-    aes(label = scales::percent(pct, accuracy = 1, scale = 1)),
-    color = "white",
-    fontface = "bold",
-    position = position_stack(vjust = 0.5)
-  ) +
-  scale_fill_manual(values = c("Yes" = "#247467ff", "Maybe" = "#63bba9ff")) +
-  scale_y_continuous(
-    labels = scales::percent_format(scale = 1),
-    limits = c(0, 80)
-  ) +
-  labs(title = str_wrap("...", 40), x = NULL, y = NULL, fill = NULL) +
-  coord_flip() +
-  mirror_theme() +
-  theme(
-    legend.position = "top",
-    panel.grid.major.y = element_blank(),
-    plot.background = element_rect(fill = member_background_tint),
-    panel.background = element_rect(fill = member_background_tint)
-  )</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">response =</span> <span class="fu">to_factor</span>(response),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">response =</span> <span class="fu">fct_rev</span>(response),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_label =</span> <span class="fu">fct_reorder</span>(var_label, pct, <span class="at">.fun =</span> sum)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(var_label, pct, <span class="at">fill =</span> response)) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(pct, <span class="at">accuracy =</span> <span class="dv">1</span>, <span class="at">scale =</span> <span class="dv">1</span>)),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"white"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">fontface =</span> <span class="st">"bold"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Yes"</span> <span class="ot">=</span> <span class="st">"#247467ff"</span>, <span class="st">"Maybe"</span> <span class="ot">=</span> <span class="st">"#63bba9ff"</span>)) <span class="sc">+</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>(<span class="at">scale =</span> <span class="dv">1</span>),</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">80</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="fu">str_wrap</span>(<span class="st">"..."</span>, <span class="dv">40</span>), <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mirror_theme</span>() <span class="sc">+</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> member_background_tint),</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> member_background_tint)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="key-utility-functions-shared_functions_26.r" class="level2" data-number="1.5">
 <h2 data-number="1.5" class="anchored" data-anchor-id="key-utility-functions-shared_functions_26.r"><span class="header-section-number">1.5</span> Key Utility Functions (shared_functions_26.R)</h2>
 <section id="role_subset-filter-by-role-flag-get-counts" class="level3" data-number="1.5.1">
 <h3 data-number="1.5.1" class="anchored" data-anchor-id="role_subset-filter-by-role-flag-get-counts"><span class="header-section-number">1.5.1</span> role_subset() — filter by role flag, get counts</h3>
-<pre><code>
-q &lt;- role_subset(
-  data = m26_relate_to_a_center,
-  title_flag_var = q0035, # unquoted; rows where == 1 kept
-  subject_vars = c("q0036", sprintf("q0037_%04d", 1:5)),
-  comment_var = q0037_other
-)
-# Returns list: q$df, q$counts (named list of tibbles), q$comments
-# e.g. q$counts$n_q0036 is a count tibble for q0036</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">role_subset</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> m26_relate_to_a_center,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">title_flag_var =</span> q0035, <span class="co"># unquoted; rows where == 1 kept</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">subject_vars =</span> <span class="fu">c</span>(<span class="st">"q0036"</span>, <span class="fu">sprintf</span>(<span class="st">"q0037_%04d"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">comment_var =</span> q0037_other</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns list: q$df, q$counts (named list of tibbles), q$comments</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># e.g. q$counts$n_q0036 is a count tibble for q0036</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="count_yes_str-count-binary-yes-1-across-role-vars" class="level3" data-number="1.5.2">
 <h3 data-number="1.5.2" class="anchored" data-anchor-id="count_yes_str-count-binary-yes-1-across-role-vars"><span class="header-section-number">1.5.2</span> count_yes_str() — count binary Yes (==1) across role vars</h3>
-<pre><code>
-role_counts &lt;- map(role_vars, \(v) count_yes_str(m26_relate_to_a_center, v)) |&gt;
-  bind_rows() |&gt;
-  mutate(pct = round(n / n_total * 100))
-# Returns: n, label (var_label), var_name</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>role_counts <span class="ot">&lt;-</span> <span class="fu">map</span>(role_vars, \(v) <span class="fu">count_yes_str</span>(m26_relate_to_a_center, v)) <span class="sc">|&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>() <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> <span class="fu">round</span>(n <span class="sc">/</span> n_total <span class="sc">*</span> <span class="dv">100</span>))</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns: n, label (var_label), var_name</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="calc_pct_selected-selecting-follow-up-items-among-role-holders" class="level3" data-number="1.5.3">
 <h3 data-number="1.5.3" class="anchored" data-anchor-id="calc_pct_selected-selecting-follow-up-items-among-role-holders"><span class="header-section-number">1.5.3</span> calc_pct_selected() — % selecting follow-up items among role-holders</h3>
-<pre><code>
-calc_pct_selected(
-  data = m26_relate_to_a_center,
-  root_var = "q0035", # character string
-  filter_value = "Yes",
-  list_vars = sprintf("q0042_%04d", 1:5)
-)
-# Returns: root_var, var_label, var_value, choice_label, have_the_job, n, pct</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_pct_selected</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> m26_relate_to_a_center,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">root_var =</span> <span class="st">"q0035"</span>, <span class="co"># character string</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">filter_value =</span> <span class="st">"Yes"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">list_vars =</span> <span class="fu">sprintf</span>(<span class="st">"q0042_%04d"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns: root_var, var_label, var_value, choice_label, have_the_job, n, pct</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="calc_val_labels-build-long-format-count-df-for-multi-item-series" class="level3" data-number="1.5.4">
 <h3 data-number="1.5.4" class="anchored" data-anchor-id="calc_val_labels-build-long-format-count-df-for-multi-item-series"><span class="header-section-number">1.5.4</span> calc_val_labels() — build long-format count df for multi-item series</h3>
-<pre><code>
-# Requires q$counts to exist in environment
-count_all &lt;- calc_val_labels("q0037", n_levels = 5)
-# Returns long-format tibble: n, name, value (factor), choice_label</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Requires q$counts to exist in environment</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>count_all <span class="ot">&lt;-</span> <span class="fu">calc_val_labels</span>(<span class="st">"q0037"</span>, <span class="at">n_levels =</span> <span class="dv">5</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns long-format tibble: n, name, value (factor), choice_label</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="plot_1_level-quick-horizontal-bar-for-a-single-categorical-var" class="level3" data-number="1.5.5">
 <h3 data-number="1.5.5" class="anchored" data-anchor-id="plot_1_level-quick-horizontal-bar-for-a-single-categorical-var"><span class="header-section-number">1.5.5</span> plot_1_level() — quick horizontal bar for a single categorical var</h3>
-<pre><code>
-plot_1_level(q$counts$n_q0036) # auto-extracts var_label as title
-plot_1_level(q$counts$n_q0036, pct_max = 100)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_1_level</span>(q<span class="sc">$</span>counts<span class="sc">$</span>n_q0036) <span class="co"># auto-extracts var_label as title</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_1_level</span>(q<span class="sc">$</span>counts<span class="sc">$</span>n_q0036, <span class="at">pct_max =</span> <span class="dv">100</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="plot_interest-horizontal-bar-for-interestsupport-items" class="level3" data-number="1.5.6">
 <h3 data-number="1.5.6" class="anchored" data-anchor-id="plot_interest-horizontal-bar-for-interestsupport-items"><span class="header-section-number">1.5.6</span> plot_interest() — horizontal bar for interest/support items</h3>
-<pre><code>
-plot_interest(teacher_interest_counts, gtitle = "Are you interested in...?")</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_interest</span>(teacher_interest_counts, <span class="at">gtitle =</span> <span class="st">"Are you interested in...?"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="count_all_that_apply-multiple-select-check-all-that-apply-questions" class="level3" data-number="1.5.7">
 <h3 data-number="1.5.7" class="anchored" data-anchor-id="count_all_that_apply-multiple-select-check-all-that-apply-questions"><span class="header-section-number">1.5.7</span> count_all_that_apply() — multiple-select (“check all that apply”) questions</h3>
-<pre><code>
-count_all_that_apply(m26, "q0015")
-# Returns: value, n, percent — denominator is all respondents who answered</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">count_all_that_apply</span>(m26, <span class="st">"q0015"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns: value, n, percent — denominator is all respondents who answered</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="counting-yes-1-across-non-contiguous-named-variables" class="level3" data-number="1.5.8">
 <h3 data-number="1.5.8" class="anchored" data-anchor-id="counting-yes-1-across-non-contiguous-named-variables"><span class="header-section-number">1.5.8</span> Counting Yes (==1) across non-contiguous named variables</h3>
 <p>When variables share no common prefix, name them explicitly with <code>any_of()</code> and pivot long:</p>
-<pre><code>
-activity_vars &lt;- c("q0001", "q0003", "q0009", "q0011", "q0013")
-n_total &lt;- 1335 # set denominator explicitly
-
-activity_counts &lt;- m26 |&gt;
-  select(RespondentID, any_of(activity_vars)) |&gt;
-  pivot_longer(-RespondentID, names_to = "variable", values_to = "value") |&gt;
-  filter(value == 1) |&gt;
-  count(variable, name = "n_yes") |&gt;
-  mutate(pct = n_yes / n_total)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>activity_vars <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"q0001"</span>, <span class="st">"q0003"</span>, <span class="st">"q0009"</span>, <span class="st">"q0011"</span>, <span class="st">"q0013"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>n_total <span class="ot">&lt;-</span> <span class="dv">1335</span> <span class="co"># set denominator explicitly</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>activity_counts <span class="ot">&lt;-</span> m26 <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(RespondentID, <span class="fu">any_of</span>(activity_vars)) <span class="sc">|&gt;</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>RespondentID, <span class="at">names_to =</span> <span class="st">"variable"</span>, <span class="at">values_to =</span> <span class="st">"value"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(value <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(variable, <span class="at">name =</span> <span class="st">"n_yes"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pct =</span> n_yes <span class="sc">/</span> n_total)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="extracting-joinable-variable-labels-for-a-named-set-of-columns" class="level3" data-number="1.5.9">
 <h3 data-number="1.5.9" class="anchored" data-anchor-id="extracting-joinable-variable-labels-for-a-named-set-of-columns"><span class="header-section-number">1.5.9</span> Extracting joinable variable labels for a named set of columns</h3>
 <p>When you need <code>var_label()</code> as a data frame to join onto counts:</p>
-<pre><code>
-var_labels &lt;- m26 |&gt;
-  select(any_of(activity_vars)) |&gt;
-  var_label() |&gt;
-  as_tibble_row() |&gt;
-  pivot_longer(everything(), names_to = "variable", values_to = "label") |&gt;
-  mutate(label = as.character(label))
-
-activity_counts &lt;- activity_counts |&gt;
-  left_join(var_labels, by = join_by(variable))</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>var_labels <span class="ot">&lt;-</span> m26 <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">any_of</span>(activity_vars)) <span class="sc">|&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">var_label</span>() <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_tibble_row</span>() <span class="sc">|&gt;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"variable"</span>, <span class="at">values_to =</span> <span class="st">"label"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">label =</span> <span class="fu">as.character</span>(label))</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>activity_counts <span class="ot">&lt;-</span> activity_counts <span class="sc">|&gt;</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(var_labels, <span class="at">by =</span> <span class="fu">join_by</span>(variable))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="deriving-a-short_label-from-verbose-spss-variable-label-text" class="level3" data-number="1.5.10">
 <h3 data-number="1.5.10" class="anchored" data-anchor-id="deriving-a-short_label-from-verbose-spss-variable-label-text"><span class="header-section-number">1.5.10</span> Deriving a short_label from verbose SPSS variable label text</h3>
 <p>Variable labels often share a common preamble (e.g., “In the past 12 months, did you …?”). Extract just the differentiating fragment with a lookbehind/lookahead regex, then recode to human-friendly labels. Use <strong><code>replace_values()</code></strong> when you only need to fix a few labels and want all other values to pass through unchanged:</p>
-<pre><code>
-mutate(
-  short_label = str_extract(label, "(?&lt;=did you ).*?(?=\\?)"),
-  short_label = str_to_sentence(short_label),
-  short_label = replace_values(
-    short_label,
-    "Donate financially or pay dues to shambhala" ~ "Any donation or dues payment",
-    "Participate in group meditation practice" ~ "Participate in group meditation"
-    # unspecified values are left as-is automatically
-  )
-)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">short_label =</span> <span class="fu">str_extract</span>(label, <span class="st">"(?&lt;=did you ).*?(?=</span><span class="sc">\\</span><span class="st">?)"</span>),</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">short_label =</span> <span class="fu">str_to_sentence</span>(short_label),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">short_label =</span> <span class="fu">replace_values</span>(</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    short_label,</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Donate financially or pay dues to shambhala"</span> <span class="sc">~</span> <span class="st">"Any donation or dues payment"</span>,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Participate in group meditation practice"</span> <span class="sc">~</span> <span class="st">"Participate in group meditation"</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># unspecified values are left as-is automatically</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Use <strong><code>case_match()</code></strong> instead when building an entirely new vector and enumerating all cases (any omitted value becomes <code>NA</code> unless <code>.default</code> is set):</p>
-<pre><code>
-short_label &lt;- case_match(
-  short_label,
-  "Donate financially or pay dues to shambhala" ~ "Any donation or dues payment",
-  .default = short_label # required — omitting makes unmatched values NA
-)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>short_label <span class="ot">&lt;-</span> <span class="fu">case_match</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  short_label,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Donate financially or pay dues to shambhala"</span> <span class="sc">~</span> <span class="st">"Any donation or dues payment"</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">.default =</span> short_label <span class="co"># required — omitting makes unmatched values NA</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Rule of thumb:</strong> partial update → <code>replace_values()</code>; full recode → <code>case_match()</code>.</p>
 <p>Adjust the lookbehind string to match the preamble in your question series. Note: <code>dplyr::recode()</code> is deprecated — use <code>replace_values()</code> or <code>case_match()</code> instead.</p>
 </section>
 <section id="disp_var_prep-select-a-variable-group-by-prefix" class="level3" data-number="1.5.11">
 <h3 data-number="1.5.11" class="anchored" data-anchor-id="disp_var_prep-select-a-variable-group-by-prefix"><span class="header-section-number">1.5.11</span> disp_var_prep() — select a variable group by prefix</h3>
-<pre><code>
-disp_var_prep(m26, "q0015")
-# Returns: RespondentID + all cols starting with "q0015", drops character cols</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">disp_var_prep</span>(m26, <span class="st">"q0015"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns: RespondentID + all cols starting with "q0015", drops character cols</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="pivot_df-pivot-to-long-format-with-within-variable-percentages" class="level3" data-number="1.5.12">
 <h3 data-number="1.5.12" class="anchored" data-anchor-id="pivot_df-pivot-to-long-format-with-within-variable-percentages"><span class="header-section-number">1.5.12</span> pivot_df() — pivot to long format with within-variable percentages</h3>
-<pre><code>
-disp_var_prep(m26, "q0015") |&gt; pivot_df()
-# Returns: var_name, value, n, pct (pct is within-var, sums to 1 per var_name)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">disp_var_prep</span>(m26, <span class="st">"q0015"</span>) <span class="sc">|&gt;</span> <span class="fu">pivot_df</span>()</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Returns: var_name, value, n, pct (pct is within-var, sums to 1 per var_name)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="labelled-package-patterns" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="labelled-package-patterns"><span class="header-section-number">1.6</span> labelled Package Patterns</h2>
 <p>Survey data is SPSS-style labelled. Always handle labels explicitly:</p>
-<pre><code>
-# Get variable label (question text) — use as plot title
-var_label(m26$q0035)
-var_label(df) |&gt; pluck(1) # from single-column df
-
-# Convert value labels to factor for plotting
-df |&gt; to_factor() # converts all labelled cols
-df |&gt; mutate(q0035 = to_factor(q0035)) # single col
-
-# Convert to character (for counting, joining)
-df |&gt; to_character()
-
-# Inspect what variables exist
-m26 |&gt; look_for("keyword")
-makedd() # creates m26dd, m25dd, L25dd, m24dd, L24dd in global env
-
-# ggplot2 4.0+ picks up var_label automatically on bare column names:
-ggplot(m26, aes(q0035, q0036)) + geom_point() # axis labels auto-filled
-# For bulk override: labs(dictionary = unlist(var_label(df)))</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Get variable label (question text) — use as plot title</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(m26<span class="sc">$</span>q0035)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">var_label</span>(df) <span class="sc">|&gt;</span> <span class="fu">pluck</span>(<span class="dv">1</span>) <span class="co"># from single-column df</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert value labels to factor for plotting</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">to_factor</span>() <span class="co"># converts all labelled cols</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">q0035 =</span> <span class="fu">to_factor</span>(q0035)) <span class="co"># single col</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to character (for counting, joining)</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span> <span class="fu">to_character</span>()</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect what variables exist</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>m26 <span class="sc">|&gt;</span> <span class="fu">look_for</span>(<span class="st">"keyword"</span>)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="fu">makedd</span>() <span class="co"># creates m26dd, m25dd, L25dd, m24dd, L24dd in global env</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot2 4.0+ picks up var_label automatically on bare column names:</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(m26, <span class="fu">aes</span>(q0035, q0036)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="co"># axis labels auto-filled</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co"># For bulk override: labs(dictionary = unlist(var_label(df)))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="variable-specific-transformations" class="level2" data-number="1.7">
 <h2 data-number="1.7" class="anchored" data-anchor-id="variable-specific-transformations"><span class="header-section-number">1.7</span> Variable-Specific Transformations</h2>
 <section id="q0080-decade-first-joined-always-collapse" class="level3" data-number="1.7.1">
 <h3 data-number="1.7.1" class="anchored" data-anchor-id="q0080-decade-first-joined-always-collapse"><span class="header-section-number">1.7.1</span> q0080 — Decade first joined (always collapse)</h3>
 <p>Whenever <code>q0080</code> is used, immediately follow <code>to_factor()</code> with this collapse to reduce the 7-level decade variable to 4 meaningful groups:</p>
-<pre><code>
-to_factor() |&gt;
-  mutate(
-    q0080 = fct_collapse(
-      q0080,
-      "70's-80's" = c("1970s", "1980s"),
-      "90's-2007" = c("1990s", "2000-2007"),
-      "2008-2017" = c("2008-2012", "2013-2017")
-    )
-  ) |&gt;</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">to_factor</span>() <span class="sc">|&gt;</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">q0080 =</span> <span class="fu">fct_collapse</span>(</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>      q0080,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">"70's-80's"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"1970s"</span>, <span class="st">"1980s"</span>),</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">"90's-2007"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"1990s"</span>, <span class="st">"2000-2007"</span>),</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"2008-2017"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"2008-2012"</span>, <span class="st">"2013-2017"</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The four resulting levels are: <code>"70's-80's"</code>, <code>"90's-2007"</code>, <code>"2008-2017"</code>, <code>"2018-2025"</code>.</p>
 </section>
 <section id="q0032-relates-to-a-centre-strip-parenthetical-label" class="level3" data-number="1.7.2">
 <h3 data-number="1.7.2" class="anchored" data-anchor-id="q0032-relates-to-a-centre-strip-parenthetical-label"><span class="header-section-number">1.7.2</span> q0032 — Relates to a centre (strip parenthetical label)</h3>
 <p><code>q0032</code> value labels for “No” and “Not sure” contain a long parenthetical that must be stripped before plotting or factoring:</p>
-<pre><code>
-mutate(
-  q0032 = str_remove_all(
-    as.character(q0032),
-    "\\s*\\(you will automatically skip to the next set of questions\\)"
-  ),
-  q0032 = str_trim(q0032),
-  q0032 = factor(q0032, levels = c("Yes", "Not sure", "No"))
-)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">q0032 =</span> <span class="fu">str_remove_all</span>(</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.character</span>(q0032),</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"</span><span class="sc">\\</span><span class="st">s*</span><span class="sc">\\</span><span class="st">(you will automatically skip to the next set of questions</span><span class="sc">\\</span><span class="st">)"</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">q0032 =</span> <span class="fu">str_trim</span>(q0032),</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">q0032 =</span> <span class="fu">factor</span>(q0032, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Yes"</span>, <span class="st">"Not sure"</span>, <span class="st">"No"</span>))</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Apply this after <code>to_character()</code> or <code>as.character()</code> — do not apply to the raw labelled column.</p>
 </section>
 <section id="q0034-primary-membership-identity-filter-to-centre-affiliates" class="level3" data-number="1.7.3">
 <h3 data-number="1.7.3" class="anchored" data-anchor-id="q0034-primary-membership-identity-filter-to-centre-affiliates"><span class="header-section-number">1.7.3</span> q0034 — Primary membership identity (filter to centre-affiliates)</h3>
 <p><code>q0034</code> asks respondents to identify as centre member, global member, friend, donor, etc. It is only meaningful for those who relate to a centre. Always filter to <code>q0032 == 1</code> before using <code>q0034</code>:</p>
-<pre><code>
-m26 |&gt;
-  filter(q0032 == 1) |&gt;
-  select(q0080, q0034) |&gt;
-  ...</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>m26 <span class="sc">|&gt;</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(q0032 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(q0080, q0034) <span class="sc">|&gt;</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>q0034</code> has 6 long value labels — always apply <code>str_wrap(as.character(q0034), width = 30)</code> after <code>to_factor()</code> to keep legends readable. Use <code>fct_inorder()</code> afterward to preserve label order:</p>
-<pre><code>
-mutate(
-  q0034 = str_wrap(as.character(q0034), width = 30),
-  q0034 = fct_inorder(q0034)
-)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">q0034 =</span> <span class="fu">str_wrap</span>(<span class="fu">as.character</span>(q0034), <span class="at">width =</span> <span class="dv">30</span>),</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">q0034 =</span> <span class="fu">fct_inorder</span>(q0034)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="color-palette-when-to-use-scale_fill_brewer" class="level2" data-number="1.8">
 <h2 data-number="1.8" class="anchored" data-anchor-id="color-palette-when-to-use-scale_fill_brewer"><span class="header-section-number">1.8</span> Color Palette — When to Use <code>scale_fill_brewer</code></h2>
 <p>The standard <code>green_step_2[3:1]</code> fill works for <strong>3-level</strong> outcomes. For variables with <strong>4+ unordered categories</strong> (e.g., <code>q0034</code> with 6 levels), use:</p>
-<pre><code>
-scale_fill_brewer(palette = "Dark2")</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>For ordered/sequential outcomes (low → high), continue using <code>green_step_2[3:1]</code> (3 levels) or <code>green_step_5</code> (5 levels).</p>
 </section>
 <section id="variable-naming-conventions" class="level2" data-number="1.9">
@@ -657,32 +648,32 @@ scale_fill_brewer(palette = "Dark2")</code></pre>
 </section>
 <section id="standard-sub-population-filters" class="level2" data-number="1.10">
 <h2 data-number="1.10" class="anchored" data-anchor-id="standard-sub-population-filters"><span class="header-section-number">1.10</span> Standard Sub-population Filters</h2>
-<pre><code>
-# Set once at top of page, then use throughout
-m26_relate_to_a_center &lt;- m26 |&gt; filter(q0032 == 1)
-n_relate_to_local_center &lt;- nrow(m26_relate_to_a_center)
-
-# Always report n in table source notes:
-tab_source_note(source_note = paste0("n = ", n_relate_to_local_center, " ..."))</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Set once at top of page, then use throughout</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>m26_relate_to_a_center <span class="ot">&lt;-</span> m26 <span class="sc">|&gt;</span> <span class="fu">filter</span>(q0032 <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>n_relate_to_local_center <span class="ot">&lt;-</span> <span class="fu">nrow</span>(m26_relate_to_a_center)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Always report n in table source notes:</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="fu">paste0</span>(<span class="st">"n = "</span>, n_relate_to_local_center, <span class="st">" ..."</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="gt-table-template-survey" class="level2" data-number="1.11">
 <h2 data-number="1.11" class="anchored" data-anchor-id="gt-table-template-survey"><span class="header-section-number">1.11</span> gt Table Template (survey)</h2>
-<pre><code>
-data |&gt;
-  gt() |&gt;
-  cols_label(var = "Label", pct = "% of Total") |&gt;
-  fmt_percent(is.numeric, decimals = 0) |&gt;
-  tab_header(title = md("Title&lt;br&gt;Subtitle")) |&gt;
-  tab_source_note(source_note = paste0("n = ", n, " respondents")) |&gt;
-  mrr_gt_theme(col_label_size = 18) # note: survey tables often use 18</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">var =</span> <span class="st">"Label"</span>, <span class="at">pct =</span> <span class="st">"% of Total"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(is.numeric, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="fu">md</span>(<span class="st">"Title&lt;br&gt;Subtitle"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(<span class="at">source_note =</span> <span class="fu">paste0</span>(<span class="st">"n = "</span>, n, <span class="st">" respondents"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mrr_gt_theme</span>(<span class="at">col_label_size =</span> <span class="dv">18</span>) <span class="co"># note: survey tables often use 18</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>For grouped tables with row group headers:</p>
-<pre><code>
-gt() |&gt;
-  tab_style(
-    style = cell_text(weight = "bold"),
-    locations = cells_row_groups()
-  ) |&gt;
-  mrr_gt_theme()</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>),</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_row_groups</span>()</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mrr_gt_theme</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="page-structure" class="level2" data-number="1.12">
 <h2 data-number="1.12" class="anchored" data-anchor-id="page-structure"><span class="header-section-number">1.12</span> Page Structure</h2>
@@ -699,36 +690,36 @@ gt() |&gt;
 </section>
 <section id="capacity" class="level2" data-number="1.14">
 <h2 data-number="1.14" class="anchored" data-anchor-id="capacity"><span class="header-section-number">1.14</span> Capacity</h2>
-<pre><code>
-#| label: img-role_capacity
-q &lt;- role_subset(
-  m26_relate_to_a_center,
-  q00XX,
-  c("q00YY", sprintf("q00ZZ_%04d", 1:N))
-)
-plot_1_level(q$counts$n_q00YY)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: img-role_capacity</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>q <span class="ot">&lt;-</span> <span class="fu">role_subset</span>(</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  m26_relate_to_a_center,</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  q00XX,</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">"q00YY"</span>, <span class="fu">sprintf</span>(<span class="st">"q00ZZ_%04d"</span>, <span class="dv">1</span><span class="sc">:</span>N))</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_1_level</span>(q<span class="sc">$</span>counts<span class="sc">$</span>n_q00YY)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="interest-in-support" class="level2" data-number="1.15">
 <h2 data-number="1.15" class="anchored" data-anchor-id="interest-in-support"><span class="header-section-number">1.15</span> Interest in support</h2>
-<pre><code>
-#| label: img-role_interest_in_support
-interest_counts &lt;- all_pct_selected |&gt;
-  filter(var_label == "Role Label", str_detect(var_value, "Yes, I would"))
-plot_interest(interest_counts, gtitle)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: img-role_interest_in_support</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>interest_counts <span class="ot">&lt;-</span> all_pct_selected <span class="sc">|&gt;</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(var_label <span class="sc">==</span> <span class="st">"Role Label"</span>, <span class="fu">str_detect</span>(var_value, <span class="st">"Yes, I would"</span>))</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_interest</span>(interest_counts, gtitle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="interest-in-support-table" class="level2" data-number="1.16">
 <h2 data-number="1.16" class="anchored" data-anchor-id="interest-in-support-table"><span class="header-section-number">1.16</span> Interest in support table</h2>
-<pre><code>
-#| label: tbl-role_interest_table
-gt_table_interest(interest_counts_full, gtitle)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-role_interest_table</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">gt_table_interest</span>(interest_counts_full, gtitle)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>: : :</p>
 <p>Collapsible tables use raw HTML:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Click to show all responses in a table<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&lt;</span>details<span class="sc">&gt;</span><span class="er">&lt;</span>summary<span class="sc">&gt;</span>Click to show all responses <span class="cf">in</span> a table<span class="sc">&lt;</span><span class="er">/</span>summary<span class="sc">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="gt-table-code" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> gt table code</h1>
-<pre><code>&lt;/details&gt;</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&lt;</span><span class="er">/</span>details<span class="sc">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="chunk-label-prefixes" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="chunk-label-prefixes"><span class="header-section-number">2.1</span> Chunk Label Prefixes</h2>
 <ul>
@@ -740,8 +731,8 @@ gt_table_interest(interest_counts_full, gtitle)</code></pre>
 <section id="show_open_endeds-flag" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="show_open_endeds-flag"><span class="header-section-number">2.2</span> show_open_endeds Flag</h2>
 <p>Set at top of page:</p>
-<pre><code>
-show_open_endeds &lt;- FALSE</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>show_open_endeds <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Use <code>#| eval: !expr show_open_endeds</code> on chunks with open-ended text.</p>
 
 
@@ -822,7 +813,7 @@ show_open_endeds &lt;- FALSE</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/smithjd\.github\.io\/mirror-standards\/");
+        var filterRegex = new RegExp("https:\/\/github\.com\/smithjd\/mirror-standards");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

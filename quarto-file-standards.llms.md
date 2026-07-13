@@ -16,15 +16,17 @@ These standards come from comparing a well-structured page (`leadership_and_serv
 
 A `.qmd` page should look like **one thin helper library at the top, then short consumer chunks that call it**.
 
-    ┌─ YAML header
-    ├─ Setup chunk (echo=FALSE, include=FALSE)
-    │    source(shared_code_26.R, shared_functions_26.R, shared_sdb_code_26.R)
-    ├─ Helper chunk  (define plot_* / table_* / calc_* once, with roxygen docs)
-    ├─ Narrative markdown
-    ├─ Chunk: data prep + call plot_xxx(q_var)
-    ├─ Narrative markdown
-    ├─ Chunk: data prep + call plot_xxx(other_var)
-    └─ ...
+``` bash
+┌─ YAML header
+├─ Setup chunk (echo=FALSE, include=FALSE)
+│    source(shared_code_26.R, shared_functions_26.R, shared_sdb_code_26.R)
+├─ Helper chunk  (define plot_* / table_* / calc_* once, with roxygen docs)
+├─ Narrative markdown
+├─ Chunk: data prep + call plot_xxx(q_var)
+├─ Narrative markdown
+├─ Chunk: data prep + call plot_xxx(other_var)
+└─ ...
+```
 
 One question → one short chunk. Each chunk does **prep + call helper**, not prep + helper-definition + call.
 
@@ -32,11 +34,13 @@ One question → one short chunk. Each chunk does **prep + call helper**, not pr
 
 ### 1.2.1 1. Always source the shared scripts, never inline their contents
 
-    #| include: false
-    mirror_year <- 26
-    source(here("back-end", paste0("shared_code_",      mirror_year, ".R")))
-    source(here("back-end", paste0("shared_functions_", mirror_year, ".R")))
-    source(here("back-end", paste0("shared_sdb_code_",  mirror_year, ".R")))
+``` r
+#| include: false
+mirror_year <- 26
+source(here("back-end", paste0("shared_code_",      mirror_year, ".R")))
+source(here("back-end", paste0("shared_functions_", mirror_year, ".R")))
+source(here("back-end", paste0("shared_sdb_code_",  mirror_year, ".R")))
+```
 
 Don’t redefine utilities that already live in `shared_functions_26.R`.
 
@@ -50,15 +54,17 @@ No `"#2E8B57"`, `"#C62828"`, `"#F9A825"` sprinkled through chunks. Colors come f
 
 ### 1.2.4 4. Define helpers **once**, in one helper chunk, with roxygen docs
 
-    #| label: helpers
-    #| include: false
+``` r
+#| label: helpers
+#| include: false
 
-    #' Plot a one-level summary of a categorical question
-    #'
-    #' @param .data  tibble filtered to respondents answering this question
-    #' @param q_var  bare column name of the question
-    #' @param title  chart title
-    plot_1_level <- function(.data, q_var, title) { ... }
+#' Plot a one-level summary of a categorical question
+#'
+#' @param .data  tibble filtered to respondents answering this question
+#' @param q_var  bare column name of the question
+#' @param title  chart title
+plot_1_level <- function(.data, q_var, title) { ... }
+```
 
 If you catch yourself writing `html_safe <- function(...)` or `apply_named_recode <- function(...)` in a second chunk, stop: move it to the helper chunk.
 
@@ -71,11 +77,13 @@ If you catch yourself writing `html_safe <- function(...)` or `apply_named_recod
 
 ### 1.2.6 6. Use Quarto cross-reference labels
 
-    #| label: fig-belonging-by-generation
-    #| fig-cap: "Sense of belonging by generation"
+``` r
+#| label: fig-belonging-by-generation
+#| fig-cap: "Sense of belonging by generation"
 
-    #| label: tbl-capacity-counts
-    #| tbl-cap: "Capacity counts by role"
+#| label: tbl-capacity-counts
+#| tbl-cap: "Capacity counts by role"
+```
 
 `fig-…` and `tbl-…` prefixes enable `@fig-belonging-by-generation` cross-refs and produce proper “Figure 1” numbering.
 
@@ -83,13 +91,17 @@ If you catch yourself writing `html_safe <- function(...)` or `apply_named_recod
 
 At the top of every page:
 
-    knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+``` r
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
 
 Don’t repeat `echo=FALSE, message=FALSE, warning=FALSE` on every chunk.
 
 ### 1.2.8 8. Every chart’s subtitle carries N
 
-    labs(subtitle = str_glue("N = {scales::number(n, big_mark = ',')}"))
+``` r
+labs(subtitle = str_glue("N = {scales::number(n, big_mark = ',')}"))
+```
 
 ### 1.2.9 9. Tidyverse idioms (from project CLAUDE.md)
 

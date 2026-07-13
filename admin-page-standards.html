@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Admin Page Standards – Shambhala Mirror Standards</title>
+<title>admin-page-conventions – Shambhala Mirror Standards</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./r-data-pipeline-review.html" rel="next">
+<link href="./newsroom-data-reporting-standards/newsroom-standards.html" rel="next">
 <link href="./quarto-file-standards.html" rel="prev">
 <link href=".//images/SI-sunburst.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
@@ -108,17 +143,13 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://shambhala.org"> 
-<span class="menu-text">Shambhala</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="https://mirror.shambhala.org"> 
-<span class="menu-text">Shambhala Mirror</span></a>
+<span class="menu-text">Shambhala’s Societal Mirror</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com/smithjd/mirror-standards" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+    <a href="https://github.com" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -164,12 +195,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./admin-page-standards.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Admin Page Standards</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-data-pipeline-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R Data Pipeline Review</span></a>
   </div>
 </li>
       </ul>
@@ -228,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./newsroom-data-reporting-standards/07-sources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sources</span></a>
+ <span class="menu-text">Newsroom Sources</span></a>
   </div>
 </li>
       </ul>
@@ -236,7 +261,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">2026 Data</span></a>
+ <span class="menu-text">Site metrics and analytics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -244,8 +269,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./website-profile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graph and Table Profile</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./editing_history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Page edit history</span></a>
+ <span class="menu-text">Editing History</span></a>
   </div>
 </li>
       </ul>
@@ -263,7 +294,8 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./survey-page-standards.html">Societal Mirror Site Standards</a></li><li class="breadcrumb-item"><a href="./admin-page-standards.html">Admin Page Standards</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Admin Page Standards</h1>
+<h1 class="title">admin-page-conventions</h1>
+<p class="subtitle lead">Standards derived from the <code>admin-page-conventions</code> skill</p>
 </div>
 
 
@@ -293,10 +325,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="visual-identity-sdb_background_tint" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="visual-identity-sdb_background_tint"><span class="header-section-number">1.1</span> Visual Identity: sdb_background_tint</h2>
 <p>Every admin plot MUST carry the SDB tint in both <code>plot.background</code> and <code>panel.background</code>. This visually distinguishes admin pages from survey pages.</p>
-<pre><code>theme(
-  plot.background  = element_rect(fill = sdb_background_tint),  # "#F4F4F4"
-  panel.background = element_rect(fill = sdb_background_tint)
-)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">plot.background  =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint),  <span class="co"># "#F4F4F4"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Survey (member) pages use <code>member_background_tint</code> (#FEF7F4)</li>
 <li>Survey (leader) pages use <code>leader_background_tint</code> (#F4FFF5)</li>
@@ -306,11 +338,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="mirror_theme-explicit-vs-implicit" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="mirror_theme-explicit-vs-implicit"><span class="header-section-number">1.2</span> mirror_theme(): Explicit vs Implicit</h2>
 <p><code>shared_code_26.R</code> calls <code>theme_set(mirror_theme())</code>, so the theme is already the global default. Two valid styles appear across pages:</p>
-<pre><code># Implicit (centre_profile.qmd style) — theme already set globally
-ggplot(...) + geom_col() + theme(panel.grid.major.x = element_blank(), ...)
-
-# Explicit (membership.qmd style) — redundant but harmless
-ggplot(...) + geom_col() + mirror_theme() + theme(panel.grid.major.x = element_blank(), ...)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Implicit (centre_profile.qmd style) — theme already set globally</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(...) <span class="sc">+</span> <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(), ...)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Explicit (membership.qmd style) — redundant but harmless</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(...) <span class="sc">+</span> <span class="fu">geom_col</span>() <span class="sc">+</span> <span class="fu">mirror_theme</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(), ...)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Both work. Be consistent within a page.</p>
 </section>
 <section id="color-constants" class="level2" data-number="1.3">
@@ -358,26 +390,26 @@ ggplot(...) + geom_col() + mirror_theme() + theme(panel.grid.major.x = element_b
 </table>
 <section id="size_palette-two-variants" class="level3" data-number="1.3.1">
 <h3 data-number="1.3.1" class="anchored" data-anchor-id="size_palette-two-variants"><span class="header-section-number">1.3.1</span> size_palette — Two Variants</h3>
-<pre><code># 4-color (stacked by size group) — defined globally in shared_sdb_code_26.R
-size_palette &lt;- c("#B1CEBD", "#7CA98E", "#488460", "#346046")
-
-# 2-color (year comparison) — redefine locally in the chunk
-size_palette &lt;- c("#B1CEBD", "#488460")   # light = last year, dark = current year</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4-color (stacked by size group) — defined globally in shared_sdb_code_26.R</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>size_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#B1CEBD"</span>, <span class="st">"#7CA98E"</span>, <span class="st">"#488460"</span>, <span class="st">"#346046"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2-color (year comparison) — redefine locally in the chunk</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>size_palette <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#B1CEBD"</span>, <span class="st">"#488460"</span>)   <span class="co"># light = last year, dark = current year</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="memberfriend-color-constants" class="level3" data-number="1.3.2">
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="memberfriend-color-constants"><span class="header-section-number">1.3.2</span> Member/Friend Color Constants</h3>
-<pre><code>membership_colors &lt;- c("#F4D786", "#86BD9C", "#7994B8")
-names(membership_colors) &lt;- c("Non member", "Member", "Past member")
-
-member_friends_colors &lt;- membership_colors[2:3]
-names(member_friends_colors) &lt;- c("Members", "Friends")
-
-scale_fill_manual(values = member_friends_colors)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>membership_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#F4D786"</span>, <span class="st">"#86BD9C"</span>, <span class="st">"#7994B8"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(membership_colors) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Non member"</span>, <span class="st">"Member"</span>, <span class="st">"Past member"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>member_friends_colors <span class="ot">&lt;-</span> membership_colors[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(member_friends_colors) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Members"</span>, <span class="st">"Friends"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_fill_manual</span>(<span class="at">values =</span> member_friends_colors)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Use <code>fct_recode()</code> to align factor levels with color names:</p>
-<pre><code>mutate(membertype = fct_recode(membertype,
-  Members = "current_members",
-  Friends = "current_friends"
-))</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">membertype =</span> <span class="fu">fct_recode</span>(membertype,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Members =</span> <span class="st">"current_members"</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Friends =</span> <span class="st">"current_friends"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="key-pre-built-objects-from-shared_sdb_code_26.r" class="level2" data-number="1.4">
@@ -438,100 +470,100 @@ scale_fill_manual(values = member_friends_colors)</code></pre>
 <h2 data-number="1.5" class="anchored" data-anchor-id="key-data-pipelines"><span class="header-section-number">1.5</span> Key Data Pipelines</h2>
 <section id="members-friends-snapshot" class="level3" data-number="1.5.1">
 <h3 data-number="1.5.1" class="anchored" data-anchor-id="members-friends-snapshot"><span class="header-section-number">1.5.1</span> Members / Friends snapshot</h3>
-<pre><code>member_base_data |&gt;
-  filter(membertype == "Member")           # or "Friend of Shambhala"
-  # or filter(membertype != "Non-member")  # members + friends combined</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>member_base_data <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(membertype <span class="sc">==</span> <span class="st">"Member"</span>)           <span class="co"># or "Friend of Shambhala"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># or filter(membertype != "Non-member")  # members + friends combined</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="by-generation" class="level3" data-number="1.5.2">
 <h3 data-number="1.5.2" class="anchored" data-anchor-id="by-generation"><span class="header-section-number">1.5.2</span> By generation</h3>
-<pre><code>member_base_data |&gt;
-  filter(membertype == "Member") |&gt;
-  count(imputed_generation, name = "count") |&gt;
-  mutate(
-    pct   = count / sum(count) * 100,
-    label = paste0(round(pct, 0), "%"),
-    imputed_generation = fct_rev(imputed_generation)
-  )</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>member_base_data <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(membertype <span class="sc">==</span> <span class="st">"Member"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(imputed_generation, <span class="at">name =</span> <span class="st">"count"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct   =</span> count <span class="sc">/</span> <span class="fu">sum</span>(count) <span class="sc">*</span> <span class="dv">100</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> <span class="fu">paste0</span>(<span class="fu">round</span>(pct, <span class="dv">0</span>), <span class="st">"%"</span>),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">imputed_generation =</span> <span class="fu">fct_rev</span>(imputed_generation)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="by-center-size" class="level3" data-number="1.5.3">
 <h3 data-number="1.5.3" class="anchored" data-anchor-id="by-center-size"><span class="header-section-number">1.5.3</span> By center size</h3>
-<pre><code>center_member_count_class |&gt;
-  filter_out(center %in% c(5, 68)) |&gt;
-  filter(str_detect(location_type, "Meditation"), center_visible == 1) |&gt;
-  count(size_group, wt = active_members, name = "active_members") |&gt;
-  filter(!is.na(size_group)) |&gt;
-  mutate(size_group = fct_rev(size_group))</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>center_member_count_class <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter_out</span>(center <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">68</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(location_type, <span class="st">"Meditation"</span>), center_visible <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(size_group, <span class="at">wt =</span> active_members, <span class="at">name =</span> <span class="st">"active_members"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(size_group)) <span class="sc">|&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">size_group =</span> <span class="fu">fct_rev</span>(size_group))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="by-gcc-constellation-region" class="level3" data-number="1.5.4">
 <h3 data-number="1.5.4" class="anchored" data-anchor-id="by-gcc-constellation-region"><span class="header-section-number">1.5.4</span> By GCC constellation / region</h3>
-<pre><code>center_member_count_class |&gt;
-  filter(Year == filter_year, center_visible == 1) |&gt;
-  count(gcc_region, societal_mirror_label, wt = active_members, name = "active_members") |&gt;
-  mutate(societal_mirror_label = fct_reorder(societal_mirror_label, gcc_region)) |&gt;
-  filter(!is.na(societal_mirror_label))
-# Axis: scale_x_discrete(labels = scales::label_wrap(30))</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>center_member_count_class <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Year <span class="sc">==</span> filter_year, center_visible <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(gcc_region, societal_mirror_label, <span class="at">wt =</span> active_members, <span class="at">name =</span> <span class="st">"active_members"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">societal_mirror_label =</span> <span class="fu">fct_reorder</span>(societal_mirror_label, gcc_region)) <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(societal_mirror_label))</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Axis: scale_x_discrete(labels = scales::label_wrap(30))</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="year-to-year-comparison-pipeline" class="level3" data-number="1.5.5">
 <h3 data-number="1.5.5" class="anchored" data-anchor-id="year-to-year-comparison-pipeline"><span class="header-section-number">1.5.5</span> Year-to-year comparison pipeline</h3>
-<pre><code># Build current + prior year separately, then bind
-current_yr &lt;- center_member_count_class |&gt;
-  filter_out(center %in% c(5, 68)) |&gt;
-  filter(str_detect(location_type, "Meditation"), center_visible == 1) |&gt;
-  count(size_group, name = "active_centers") |&gt;    # or wt = active_members
-  filter(!is.na(size_group)) |&gt;
-  mutate(Year = as.character(filter_year))
-
-last_yr &lt;- center_member_count_class_last_year |&gt;
-  filter_out(center %in% c(5, 68)) |&gt;
-  filter(str_detect(location_type, "Meditation"), center_visible == 1) |&gt;
-  count(size_group, name = "active_centers") |&gt;
-  mutate(Year = as.character(filter_year - 1))
-
-combined &lt;- bind_rows(last_yr, current_yr) |&gt;    # last year first = legend order
-  filter(!is.na(size_group))
-
-# For GCC region (no urban filter):
-bind_rows(last_yr, current_yr) |&gt;
-  mutate(
-    societal_mirror_label = fct_relevel(societal_mirror_label, gcc_order),
-    societal_mirror_label = fct_rev(societal_mirror_label)
-  )</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Build current + prior year separately, then bind</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>current_yr <span class="ot">&lt;-</span> center_member_count_class <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter_out</span>(center <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">68</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(location_type, <span class="st">"Meditation"</span>), center_visible <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(size_group, <span class="at">name =</span> <span class="st">"active_centers"</span>) <span class="sc">|&gt;</span>    <span class="co"># or wt = active_members</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(size_group)) <span class="sc">|&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Year =</span> <span class="fu">as.character</span>(filter_year))</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>last_yr <span class="ot">&lt;-</span> center_member_count_class_last_year <span class="sc">|&gt;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter_out</span>(center <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">68</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(location_type, <span class="st">"Meditation"</span>), center_visible <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(size_group, <span class="at">name =</span> <span class="st">"active_centers"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Year =</span> <span class="fu">as.character</span>(filter_year <span class="sc">-</span> <span class="dv">1</span>))</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>combined <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(last_yr, current_yr) <span class="sc">|&gt;</span>    <span class="co"># last year first = legend order</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(size_group))</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="co"># For GCC region (no urban filter):</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(last_yr, current_yr) <span class="sc">|&gt;</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">societal_mirror_label =</span> <span class="fu">fct_relevel</span>(societal_mirror_label, gcc_order),</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">societal_mirror_label =</span> <span class="fu">fct_rev</span>(societal_mirror_label)</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="membership-changes-gains-losses-since-2020" class="level3" data-number="1.5.6">
 <h3 data-number="1.5.6" class="anchored" data-anchor-id="membership-changes-gains-losses-since-2020"><span class="header-section-number">1.5.6</span> Membership changes / gains-losses (since 2020)</h3>
-<pre><code>change_tracking |&gt;
-  filter(change_year &gt;= "2020-01-01") |&gt;
-  count(change_year, wt = new_members, name = "new_members")</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>change_tracking <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(change_year <span class="sc">&gt;=</span> <span class="st">"2020-01-01"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(change_year, <span class="at">wt =</span> new_members, <span class="at">name =</span> <span class="st">"new_members"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="enrollment-activity-offering-vs-participating" class="level3" data-number="1.5.7">
 <h3 data-number="1.5.7" class="anchored" data-anchor-id="enrollment-activity-offering-vs-participating"><span class="header-section-number">1.5.7</span> Enrollment activity (offering vs participating)</h3>
-<pre><code>cutoff &lt;- 3
-
-enrollment_location |&gt;
-  filter(calendar_year %in% c(2020, 2025)) |&gt;
-  select(-net_enrollment) |&gt;
-  pivot_longer(
-    cols = c(enrollment_at_location, enrollment_from_location),
-    names_to = "where", values_to = "enrollment"
-  ) |&gt;
-  mutate(where = case_when(
-    where == "enrollment_at_location"   ~ "Offering",
-    where == "enrollment_from_location" ~ "Participating"
-  )) |&gt;
-  left_join(center_member_count_class, by = c("location" = "center")) |&gt;
-  filter(enrollment &gt; cutoff, !is.na(size_group)) |&gt;
-  summarise(centers = n_distinct(location),
-            .by = c(where, size_group, calendar_year))</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cutoff <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>enrollment_location <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(calendar_year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">2020</span>, <span class="dv">2025</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>net_enrollment) <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(enrollment_at_location, enrollment_from_location),</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"where"</span>, <span class="at">values_to =</span> <span class="st">"enrollment"</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">where =</span> <span class="fu">case_when</span>(</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    where <span class="sc">==</span> <span class="st">"enrollment_at_location"</span>   <span class="sc">~</span> <span class="st">"Offering"</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    where <span class="sc">==</span> <span class="st">"enrollment_from_location"</span> <span class="sc">~</span> <span class="st">"Participating"</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(center_member_count_class, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"location"</span> <span class="ot">=</span> <span class="st">"center"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(enrollment <span class="sc">&gt;</span> cutoff, <span class="sc">!</span><span class="fu">is.na</span>(size_group)) <span class="sc">|&gt;</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">centers =</span> <span class="fu">n_distinct</span>(location),</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> <span class="fu">c</span>(where, size_group, calendar_year))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="joins-to-center-metadata" class="level3" data-number="1.5.8">
 <h3 data-number="1.5.8" class="anchored" data-anchor-id="joins-to-center-metadata"><span class="header-section-number">1.5.8</span> Joins to center metadata</h3>
-<pre><code>left_join(
-  center_member_count_class |&gt;
-    filter_out(center %in% c(5, 68)) |&gt;
-    filter(str_detect(location_type, "Meditation"), center_visible == 1) |&gt;
-    select(center, size_group, gcc_region, societal_mirror_label),
-  by = "center"
-)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">left_join</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  center_member_count_class <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter_out</span>(center <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">68</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="fu">str_detect</span>(location_type, <span class="st">"Meditation"</span>), center_visible <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(center, size_group, gcc_region, societal_mirror_label),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="st">"center"</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="standard-exclusions" class="level2" data-number="1.6">
@@ -547,202 +579,202 @@ enrollment_location |&gt;
 <h2 data-number="1.7" class="anchored" data-anchor-id="ggplot-templates"><span class="header-section-number">1.7</span> ggplot Templates</h2>
 <section id="horizontal-bar-most-common" class="level3" data-number="1.7.1">
 <h3 data-number="1.7.1" class="anchored" data-anchor-id="horizontal-bar-most-common"><span class="header-section-number">1.7.1</span> Horizontal Bar (most common)</h3>
-<pre><code>data |&gt;
-  mutate(category = fct_rev(category)) |&gt;
-  ggplot(aes(category, count)) +
-  geom_col(fill = dark_bar_green, width = 0.7) +
-  geom_text(aes(label = scales::comma(count)),
-            position = position_stack(vjust = 0.5),
-            color = "white", fontface = "bold") +
-  coord_flip() +
-  scale_y_continuous(labels = scales::comma, limits = c(0, &lt;max&gt;)) +
-  labs(title = "...", subtitle = "...", x = NULL, y = NULL, caption = "...") +
-  mirror_theme() +
-  theme(
-    panel.grid.major.y = element_blank(),
-    panel.grid.minor.y = element_blank(),
-    plot.background    = element_rect(fill = sdb_background_tint),
-    panel.background   = element_rect(fill = sdb_background_tint)
-  )</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">category =</span> <span class="fu">fct_rev</span>(category)) <span class="sc">|&gt;</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(category, count)) <span class="sc">+</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> dark_bar_green, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">comma</span>(count)),</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma, <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="sc">&lt;</span>max<span class="sc">&gt;</span>)) <span class="sc">+</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"..."</span>, <span class="at">subtitle =</span> <span class="st">"..."</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">caption =</span> <span class="st">"..."</span>) <span class="sc">+</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mirror_theme</span>() <span class="sc">+</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background    =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint),</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background   =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint)</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="vertical-bar-time-series-bar" class="level3" data-number="1.7.2">
 <h3 data-number="1.7.2" class="anchored" data-anchor-id="vertical-bar-time-series-bar"><span class="header-section-number">1.7.2</span> Vertical Bar / Time Series Bar</h3>
-<pre><code>data |&gt;
-  ggplot(aes(year_col, count)) +
-  geom_col(fill = dark_bar_green) +
-  geom_text(aes(label = count),
-            position = position_stack(vjust = 0.5),
-            color = "white", fontface = "bold") +
-  labs(title = "...", x = NULL, y = NULL) +
-  mirror_theme() +
-  theme(
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor.x = element_blank(),
-    plot.background    = element_rect(fill = sdb_background_tint),
-    panel.background   = element_rect(fill = sdb_background_tint)
-  )</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(year_col, count)) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> dark_bar_green) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> count),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"..."</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mirror_theme</span>() <span class="sc">+</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background    =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint),</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background   =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dodged-bar-year-comparison-vertical" class="level3" data-number="1.7.3">
 <h3 data-number="1.7.3" class="anchored" data-anchor-id="dodged-bar-year-comparison-vertical"><span class="header-section-number">1.7.3</span> Dodged Bar (year comparison, vertical)</h3>
-<pre><code>dodge_width &lt;- 1    # or 0.9 for narrower gaps
-
-combined |&gt;
-  ggplot(aes(x = size_group, y = active_centers, fill = Year, group = Year)) +
-  geom_col(position = position_dodge(width = dodge_width)) +
-  geom_text(
-    aes(y = active_centers,
-        label = scales::number(active_centers, accuracy = 1, big.mark = ",")),
-    position = position_dodge(width = dodge_width),
-    vjust = -0.5                             # labels above bars
-  ) +
-  scale_fill_manual(values = size_palette) +
-  scale_x_discrete(labels = scales::label_wrap(12)) +
-  scale_y_continuous(limits = c(0, &lt;max&gt;)) +
-  labs(title = "...", x = NULL, y = NULL, fill = "Year") +
-  theme(
-    legend.position    = "bottom",
-    panel.grid.major.x = element_blank(),
-    plot.background    = element_rect(fill = sdb_background_tint),
-    panel.background   = element_rect(fill = sdb_background_tint)
-  )</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dodge_width <span class="ot">&lt;-</span> <span class="dv">1</span>    <span class="co"># or 0.9 for narrower gaps</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>combined <span class="sc">|&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> size_group, <span class="at">y =</span> active_centers, <span class="at">fill =</span> Year, <span class="at">group =</span> Year)) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> dodge_width)) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> active_centers,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">label =</span> scales<span class="sc">::</span><span class="fu">number</span>(active_centers, <span class="at">accuracy =</span> <span class="dv">1</span>, <span class="at">big.mark =</span> <span class="st">","</span>)),</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> dodge_width),</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>                             <span class="co"># labels above bars</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> size_palette) <span class="sc">+</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_wrap</span>(<span class="dv">12</span>)) <span class="sc">+</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="sc">&lt;</span>max<span class="sc">&gt;</span>)) <span class="sc">+</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"..."</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="st">"Year"</span>) <span class="sc">+</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position    =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background    =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint),</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background   =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint)</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="dodged-bar-with-coord_flip-gcc-region-year-comparison" class="level3" data-number="1.7.4">
 <h3 data-number="1.7.4" class="anchored" data-anchor-id="dodged-bar-with-coord_flip-gcc-region-year-comparison"><span class="header-section-number">1.7.4</span> Dodged Bar with coord_flip (GCC region year comparison)</h3>
-<pre><code>#| fig-height: 12
-
-combined |&gt;
-  filter(!is.na(societal_mirror_label)) |&gt;
-  ggplot(aes(x = societal_mirror_label, y = active_centers, fill = Year, group = Year)) +
-  geom_col(position = position_dodge(width = dodge_width)) +
-  geom_text(
-    aes(y = active_centers + 0.5, label = scales::number(active_centers)),
-    position = position_dodge(width = dodge_width)
-  ) +
-  coord_flip() +
-  scale_fill_manual(values = size_palette) +
-  scale_x_discrete(labels = scales::label_wrap(30)) +
-  labs(title = "...", x = NULL, y = NULL, fill = "Year") +
-  theme(
-    legend.position    = "bottom",
-    panel.grid.major.x = element_blank(),
-    plot.background    = element_rect(fill = sdb_background_tint),
-    panel.background   = element_rect(fill = sdb_background_tint)
-  )</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 12</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>combined <span class="sc">|&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(societal_mirror_label)) <span class="sc">|&gt;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> societal_mirror_label, <span class="at">y =</span> active_centers, <span class="at">fill =</span> Year, <span class="at">group =</span> Year)) <span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> dodge_width)) <span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> active_centers <span class="sc">+</span> <span class="fl">0.5</span>, <span class="at">label =</span> scales<span class="sc">::</span><span class="fu">number</span>(active_centers)),</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> dodge_width)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> size_palette) <span class="sc">+</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_wrap</span>(<span class="dv">30</span>)) <span class="sc">+</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"..."</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="st">"Year"</span>) <span class="sc">+</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position    =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background    =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint),</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background   =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint)</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="stacked-bar-by-size-within-gcc-region" class="level3" data-number="1.7.5">
 <h3 data-number="1.7.5" class="anchored" data-anchor-id="stacked-bar-by-size-within-gcc-region"><span class="header-section-number">1.7.5</span> Stacked Bar by Size within GCC Region</h3>
-<pre><code>#| fig-height: 12
-
-center_size_member_count |&gt;
-  ggplot(aes(x = societal_mirror_label, y = active_centers, fill = size_group)) +
-  geom_col(position = "stack") +
-  geom_text(aes(label = active_centers),
-            position = position_stack(vjust = 0.5),
-            color = "white") +
-  coord_flip() +
-  scale_fill_manual(values = size_palette) +       # 4-color palette
-  scale_x_discrete(labels = scales::label_wrap(30)) +
-  labs(title = "...", x = NULL, y = NULL, fill = NULL) +
-  theme(
-    legend.position   = "bottom",
-    legend.box.just   = "left",
-    legend.margin     = margin(0, 0, 0, 0),
-    legend.box.margin = margin(0, 0, 0, -150),     # align legend with bars
-    panel.grid.major.x = element_blank(),
-    plot.background    = element_rect(fill = sdb_background_tint),
-    panel.background   = element_rect(fill = sdb_background_tint)
-  )</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 12</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>center_size_member_count <span class="sc">|&gt;</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> societal_mirror_label, <span class="at">y =</span> active_centers, <span class="at">fill =</span> size_group)) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">"stack"</span>) <span class="sc">+</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> active_centers),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> size_palette) <span class="sc">+</span>       <span class="co"># 4-color palette</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_wrap</span>(<span class="dv">30</span>)) <span class="sc">+</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"..."</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position   =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.box.just   =</span> <span class="st">"left"</span>,</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.margin     =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>),</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.box.margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="sc">-</span><span class="dv">150</span>),     <span class="co"># align legend with bars</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background    =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint),</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background   =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint)</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="faceted-stacked-bar" class="level3" data-number="1.7.6">
 <h3 data-number="1.7.6" class="anchored" data-anchor-id="faceted-stacked-bar"><span class="header-section-number">1.7.6</span> Faceted Stacked Bar</h3>
-<pre><code>data |&gt;
-  ggplot(aes(x_var, y_var, fill = size_group)) +
-  geom_col() +
-  geom_text(aes(label = y_var),
-            position = position_stack(vjust = 0.5),
-            color = "white", fontface = "bold", size = 3.5) +
-  geom_text(                                        # totals above bars
-    data = data |&gt; summarise(total = sum(y_var), .by = c(x_var, facet_var)),
-    aes(y = total, label = total, fill = NULL),
-    vjust = -0.5, fontface = "bold"
-  ) +
-  facet_wrap(~ facet_var) +
-  scale_fill_manual(values = ...) +
-  scale_y_continuous(limits = c(0, &lt;max&gt;)) +
-  guides(fill = guide_legend(nrow = 2)) +
-  theme(
-    legend.position    = "top",
-    panel.grid.major.x = element_blank(),
-    plot.background    = element_rect(fill = sdb_background_tint),
-    panel.background   = element_rect(fill = sdb_background_tint),
-    strip.background   = element_rect(fill = sdb_background_tint),  # required for facets
-    strip.text         = element_text(hjust = 0.5)
-  )</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x_var, y_var, <span class="at">fill =</span> size_group)) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> y_var),</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(                                        <span class="co"># totals above bars</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> data <span class="sc">|&gt;</span> <span class="fu">summarise</span>(<span class="at">total =</span> <span class="fu">sum</span>(y_var), <span class="at">.by =</span> <span class="fu">c</span>(x_var, facet_var)),</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> total, <span class="at">label =</span> total, <span class="at">fill =</span> <span class="cn">NULL</span>),</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">fontface =</span> <span class="st">"bold"</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> facet_var) <span class="sc">+</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> ...) <span class="sc">+</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="sc">&lt;</span>max<span class="sc">&gt;</span>)) <span class="sc">+</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position    =</span> <span class="st">"top"</span>,</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background    =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint),</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background   =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint),</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background   =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint),  <span class="co"># required for facets</span></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.text         =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>)</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="time-series-area-chart" class="level3" data-number="1.7.7">
 <h3 data-number="1.7.7" class="anchored" data-anchor-id="time-series-area-chart"><span class="header-section-number">1.7.7</span> Time Series Area Chart</h3>
-<pre><code>data |&gt;
-  ggplot(aes(x = date_col, y = count)) +
-  geom_area(fill = membership_colors[2]) +
-  scale_y_continuous(
-    labels = scales::label_comma(),
-    breaks = seq(0, 12000, 2000),
-    expansion(mult = c(0, .05)),
-    limits = c(0, 12000)
-  ) +
-  scale_x_datetime(date_breaks = "2 years", date_labels = "%Y") +
-  # or: scale_x_date(date_breaks = "1 year", date_labels = "%Y") for Date columns
-  labs(y = NULL, x = NULL, title = "...") +
-  mirror_theme() +
-  theme(
-    panel.grid.major.x = element_blank(),
-    plot.background    = element_rect(fill = sdb_background_tint),
-    panel.background   = element_rect(fill = sdb_background_tint)
-  )</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> date_col, <span class="at">y =</span> count)) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">fill =</span> membership_colors[<span class="dv">2</span>]) <span class="sc">+</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>(),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">12000</span>, <span class="dv">2000</span>),</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, .<span class="dv">05</span>)),</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">12000</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_datetime</span>(<span class="at">date_breaks =</span> <span class="st">"2 years"</span>, <span class="at">date_labels =</span> <span class="st">"%Y"</span>) <span class="sc">+</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># or: scale_x_date(date_breaks = "1 year", date_labels = "%Y") for Date columns</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">title =</span> <span class="st">"..."</span>) <span class="sc">+</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mirror_theme</span>() <span class="sc">+</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.background    =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint),</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background   =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> sdb_background_tint)</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>To annotate specific data points (odd years, max):</p>
-<pre><code>highlights &lt;- data |&gt;
-  filter(
-    (month(date_col) == 1 &amp; day(date_col) == 1 &amp; year(date_col) %% 2 == 1) |
-    date_col == max(date_col) | date_col == min(date_col)
-  )
-max_point &lt;- data |&gt; filter(count == max(count))
-
-# Add to ggplot:
-geom_point(data = highlights, size = 2, shape = 25, fill = "black",
-           position = position_nudge(y = 200)) +
-geom_text(data = highlights, aes(label = scales::comma(count)),
-          vjust = -2, size = 3) +
-geom_point(data = max_point, size = 2, shape = 25, fill = "red",
-           position = position_nudge(y = 200)) +
-geom_text(data = max_point,
-          aes(label = paste0("Max: ", scales::comma(count), "\n", as.Date(date_col))),
-          vjust = -0.8, size = 3, color = "red")</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>highlights <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    (<span class="fu">month</span>(date_col) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">day</span>(date_col) <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> <span class="fu">year</span>(date_col) <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">|</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>    date_col <span class="sc">==</span> <span class="fu">max</span>(date_col) <span class="sc">|</span> date_col <span class="sc">==</span> <span class="fu">min</span>(date_col)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>max_point <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span> <span class="fu">filter</span>(count <span class="sc">==</span> <span class="fu">max</span>(count))</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Add to ggplot:</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">data =</span> highlights, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">shape =</span> <span class="dv">25</span>, <span class="at">fill =</span> <span class="st">"black"</span>,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">y =</span> <span class="dv">200</span>)) <span class="sc">+</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="at">data =</span> highlights, <span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">comma</span>(count)),</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">vjust =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">data =</span> max_point, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">shape =</span> <span class="dv">25</span>, <span class="at">fill =</span> <span class="st">"red"</span>,</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>           <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">y =</span> <span class="dv">200</span>)) <span class="sc">+</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="at">data =</span> max_point,</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>          <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">"Max: "</span>, scales<span class="sc">::</span><span class="fu">comma</span>(count), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">as.Date</span>(date_col))),</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.8</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="diverging-bar-gains-and-losses" class="level3" data-number="1.7.8">
 <h3 data-number="1.7.8" class="anchored" data-anchor-id="diverging-bar-gains-and-losses"><span class="header-section-number">1.7.8</span> Diverging Bar (gains and losses)</h3>
-<pre><code>data |&gt;
-  ggplot(aes(x = year_col, y = count, fill = type)) +
-  geom_col(width = 0.7) +
-  geom_hline(yintercept = 0, color = "black", linewidth = 1) +
-  geom_text(aes(label = abs(count)),
-            position = position_stack(vjust = 0.5),
-            color = "white", fontface = "bold", size = 4) +
-  scale_fill_manual(
-    values = c("gains" = dark_bar_green, "losses" = "gray60"),
-    labels = c("gains" = "Gains", "losses" = "Losses")
-  ) +
-  scale_y_continuous(
-    breaks = seq(-800, 400, 100),
-    labels = function(x) scales::comma(abs(x)),    # show absolute values
-    limits = c(-800, 400)
-  ) +
-  labs(title = "...", x = NULL, y = NULL, fill = NULL) +
-  mirror_theme() +
-  theme(
-    legend.position    = "top",
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor   = element_blank()
-  )</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year_col, <span class="at">y =</span> count, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">abs</span>(count)),</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"gains"</span> <span class="ot">=</span> dark_bar_green, <span class="st">"losses"</span> <span class="ot">=</span> <span class="st">"gray60"</span>),</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"gains"</span> <span class="ot">=</span> <span class="st">"Gains"</span>, <span class="st">"losses"</span> <span class="ot">=</span> <span class="st">"Losses"</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">800</span>, <span class="dv">400</span>, <span class="dv">100</span>),</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="cf">function</span>(x) scales<span class="sc">::</span><span class="fu">comma</span>(<span class="fu">abs</span>(x)),    <span class="co"># show absolute values</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">800</span>, <span class="dv">400</span>)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"..."</span>, <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mirror_theme</span>() <span class="sc">+</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position    =</span> <span class="st">"top"</span>,</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor   =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="grid-line-rules" class="level2" data-number="1.8">
@@ -755,108 +787,111 @@ geom_text(data = max_point,
 </section>
 <section id="scale_y_continuous-expansion-for-headroom" class="level2" data-number="1.9">
 <h2 data-number="1.9" class="anchored" data-anchor-id="scale_y_continuous-expansion-for-headroom"><span class="header-section-number">1.9</span> scale_y_continuous: expansion() for Headroom</h2>
-<pre><code>scale_y_continuous(
-  labels = scales::comma,
-  breaks = seq(0, 12000, 2000),
-  expansion(mult = c(0, .05)),    # 0 padding at bottom, 5% at top
-  limits = c(0, 12000)
-)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_y_continuous</span>(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> scales<span class="sc">::</span>comma,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">12000</span>, <span class="dv">2000</span>),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, .<span class="dv">05</span>)),    <span class="co"># 0 padding at bottom, 5% at top</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">12000</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="gt-tables" class="level2" data-number="1.10">
 <h2 data-number="1.10" class="anchored" data-anchor-id="gt-tables"><span class="header-section-number">1.10</span> gt Tables</h2>
 <section id="basic-template" class="level3" data-number="1.10.1">
 <h3 data-number="1.10.1" class="anchored" data-anchor-id="basic-template"><span class="header-section-number">1.10.1</span> Basic template</h3>
-<pre><code>data |&gt;
-  gt() |&gt;
-  cols_label(col1 = md("Line 1&lt;br&gt;Line 2"), col2 = "Label") |&gt;
-  fmt_number(columns = where(is.numeric), decimals = 0, use_seps = TRUE) |&gt;
-  fmt_percent(columns = pct_col, decimals = 0) |&gt;
-  grand_summary_rows(
-    columns = where(is.numeric),
-    fns = list("Total" = ~ sum(., na.rm = TRUE)),
-    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))
-  ) |&gt;
-  mrr_gt_theme()</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(<span class="at">col1 =</span> <span class="fu">md</span>(<span class="st">"Line 1&lt;br&gt;Line 2"</span>), <span class="at">col2 =</span> <span class="st">"Label"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">where</span>(is.numeric), <span class="at">decimals =</span> <span class="dv">0</span>, <span class="at">use_seps =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> pct_col, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">grand_summary_rows</span>(</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">where</span>(is.numeric),</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">fns =</span> <span class="fu">list</span>(<span class="st">"Total"</span> <span class="ot">=</span> <span class="er">~</span> <span class="fu">sum</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">fmt =</span> <span class="fu">list</span>(<span class="sc">~</span> <span class="fu">fmt_number</span>(., <span class="at">decimals =</span> <span class="dv">0</span>, <span class="at">use_seps =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mrr_gt_theme</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="grouped-rows-with-group-grand-summaries" class="level3" data-number="1.10.2">
 <h3 data-number="1.10.2" class="anchored" data-anchor-id="grouped-rows-with-group-grand-summaries"><span class="header-section-number">1.10.2</span> Grouped rows with group + grand summaries</h3>
-<pre><code>data |&gt;
-  group_by(group_col) |&gt;
-  gt(groupname_col = "group_col") |&gt;
-  fmt_number(columns = c("col1", "col2"), decimals = 0, use_seps = TRUE) |&gt;
-  fmt_percent(columns = pct_col, decimals = 0) |&gt;
-  cols_label(...) |&gt;
-  cols_width(1 ~ px(300), 2:5 ~ px(100)) |&gt;
-  summary_rows(                               # subtotal per row group
-    columns = c("col1", "col2"),
-    fns = list("Total" = ~ sum(., na.rm = TRUE)),
-    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))
-  ) |&gt;
-  grand_summary_rows(                         # overall total
-    columns = c("col1", "col2"),
-    fns = list("Grand Total" = ~ sum(., na.rm = TRUE)),
-    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))
-  ) |&gt;
-  mrr_gt_theme() |&gt;
-  tab_options(stub_row_group.border.width = px(10)) |&gt;
-  as_raw_html()                               # prevents render issues for complex grouped tables</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group_col) <span class="sc">|&gt;</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>(<span class="at">groupname_col =</span> <span class="st">"group_col"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"col1"</span>, <span class="st">"col2"</span>), <span class="at">decimals =</span> <span class="dv">0</span>, <span class="at">use_seps =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_percent</span>(<span class="at">columns =</span> pct_col, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(...) <span class="sc">|&gt;</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_width</span>(<span class="dv">1</span> <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">300</span>), <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span> <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">100</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary_rows</span>(                               <span class="co"># subtotal per row group</span></span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"col1"</span>, <span class="st">"col2"</span>),</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">fns =</span> <span class="fu">list</span>(<span class="st">"Total"</span> <span class="ot">=</span> <span class="er">~</span> <span class="fu">sum</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">fmt =</span> <span class="fu">list</span>(<span class="sc">~</span> <span class="fu">fmt_number</span>(., <span class="at">decimals =</span> <span class="dv">0</span>, <span class="at">use_seps =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">grand_summary_rows</span>(                         <span class="co"># overall total</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"col1"</span>, <span class="st">"col2"</span>),</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">fns =</span> <span class="fu">list</span>(<span class="st">"Grand Total"</span> <span class="ot">=</span> <span class="er">~</span> <span class="fu">sum</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">fmt =</span> <span class="fu">list</span>(<span class="sc">~</span> <span class="fu">fmt_number</span>(., <span class="at">decimals =</span> <span class="dv">0</span>, <span class="at">use_seps =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mrr_gt_theme</span>() <span class="sc">|&gt;</span></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">stub_row_group.border.width =</span> <span class="fu">px</span>(<span class="dv">10</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as_raw_html</span>()                               <span class="co"># prevents render issues for complex grouped tables</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong><code>summary_rows()</code></strong> — one subtotal per row group. <strong><code>grand_summary_rows()</code></strong> — one total at table bottom. Both can appear together; call separately per column set when formatting differs.</p>
 </section>
 <section id="spanner-columns-year-metric" class="level3" data-number="1.10.3">
 <h3 data-number="1.10.3" class="anchored" data-anchor-id="spanner-columns-year-metric"><span class="header-section-number">1.10.3</span> Spanner columns (year × metric)</h3>
-<pre><code>data |&gt;
-  pivot_wider(values_from = metric, names_from = c(category, year)) |&gt;
-  gt() |&gt;
-  cols_label(
-    Offering_2020 = "Offering", Participating_2020 = "Participating",
-    Offering_2025 = "Offering", Participating_2025 = "Participating"
-  ) |&gt;
-  tab_spanner(label = md("2020"), columns = c(Offering_2020, Participating_2020)) |&gt;
-  tab_spanner(label = md("2025"), columns = c(Offering_2025, Participating_2025)) |&gt;
-  # Nested spanners — apply widest first:
-  tab_spanner(label = md("Year-end&lt;br&gt;Count"),         columns = 2:3) |&gt;
-  tab_spanner(label = md("Change from&lt;br&gt;prior year"), columns = 4:7) |&gt;
-  grand_summary_rows(
-    columns = where(is.numeric),
-    fns = list("Total" = ~ sum(., na.rm = TRUE)),
-    fmt = list(~ fmt_number(., decimals = 0, use_seps = TRUE))
-  ) |&gt;
-  mrr_gt_theme()</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">values_from =</span> metric, <span class="at">names_from =</span> <span class="fu">c</span>(category, year)) <span class="sc">|&gt;</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Offering_2020 =</span> <span class="st">"Offering"</span>, <span class="at">Participating_2020 =</span> <span class="st">"Participating"</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Offering_2025 =</span> <span class="st">"Offering"</span>, <span class="at">Participating_2025 =</span> <span class="st">"Participating"</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"2020"</span>), <span class="at">columns =</span> <span class="fu">c</span>(Offering_2020, Participating_2020)) <span class="sc">|&gt;</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"2025"</span>), <span class="at">columns =</span> <span class="fu">c</span>(Offering_2025, Participating_2025)) <span class="sc">|&gt;</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Nested spanners — apply widest first:</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"Year-end&lt;br&gt;Count"</span>),         <span class="at">columns =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">|&gt;</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"Change from&lt;br&gt;prior year"</span>), <span class="at">columns =</span> <span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>) <span class="sc">|&gt;</span></span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">grand_summary_rows</span>(</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">where</span>(is.numeric),</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">fns =</span> <span class="fu">list</span>(<span class="st">"Total"</span> <span class="ot">=</span> <span class="er">~</span> <span class="fu">sum</span>(., <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">fmt =</span> <span class="fu">list</span>(<span class="sc">~</span> <span class="fu">fmt_number</span>(., <span class="at">decimals =</span> <span class="dv">0</span>, <span class="at">use_seps =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mrr_gt_theme</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="page-structure" class="level2" data-number="1.11">
 <h2 data-number="1.11" class="anchored" data-anchor-id="page-structure"><span class="header-section-number">1.11</span> Page Structure</h2>
 <p>Every admin section follows the Graph + Table panel-tabset pattern:</p>
-<pre><code>## Section Title
-
-;;;; {.panel-tabset}
-
-### Graph
-
-::: {.cell}
-
-```{.r .cell-code}
-# ggplot code</code></pre>
-<p>:::</p>
-<section id="table" class="level3" data-number="1.11.1">
-<h3 data-number="1.11.1" class="anchored" data-anchor-id="table"><span class="header-section-number">1.11.1</span> Table</h3>
-<pre><code>#| label: tbl-descriptive-name
-# gt() |&gt; mrr_gt_theme() code</code></pre>
-<p>;;;;</p>
-<pre><code>
-- `knitr
-knit_exit()` in a chunk stops rendering — use to hide unfinished sections during development
-- `{=html} &lt;!-- ... --&gt;` blocks for editorial comments hidden from output
-- `#| eval: false` on exploratory or upload chunks not ready to render
-- Section inventory in an `eval: false` chunk at top is a useful tracking pattern
-
-## Chunk Options
-</code></pre>
-<p>#| label: fig-descriptive-name # fig- prefix for plots, tbl- for tables #| echo: false #| message: false #| warning: false #| fig-height: 12 # always use for GCC region charts (18+ rows) ```</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Section Title</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a> <span class="ex">::::</span> {.panel-tabset}</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">### Graph</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-descriptive-name</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot code</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co">### Table</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-descriptive-name</span></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="co"># gt() |&gt; mrr_gt_theme() code</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>  <span class="ex">::::</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>knitr::knit_exit()</code> in a chunk stops rendering — use to hide unfinished sections during development</li>
+<li><code>{=html} &lt;!-- ... --&gt;</code> blocks for editorial comments hidden from output</li>
+<li><code>#| eval: false</code> on exploratory or upload chunks not ready to render</li>
+<li>Section inventory in an <code>eval: false</code> chunk at top is a useful tracking pattern</li>
+</ul>
+</section>
+<section id="chunk-options" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="chunk-options"><span class="header-section-number">1.12</span> Chunk Options</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-descriptive-name    # fig- prefix for plots, tbl- for tables</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 12                 # always use for GCC region charts (18+ rows)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>All chunks suppress output by default via the setup chunk.</p>
 
 
-</section>
 </section>
 </section>
 
@@ -934,7 +969,7 @@ knit_exit()` in a chunk stops rendering — use to hide unfinished sections duri
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/smithjd\.github\.io\/mirror-standards\/");
+        var filterRegex = new RegExp("https:\/\/github\.com\/smithjd\/mirror-standards");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1268,8 +1303,8 @@ knit_exit()` in a chunk stops rendering — use to hide unfinished sections duri
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./r-data-pipeline-review.html" class="pagination-link" aria-label="R Data Pipeline Review">
-        <span class="nav-page-text">R Data Pipeline Review</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./newsroom-data-reporting-standards/newsroom-standards.html" class="pagination-link" aria-label="Newsroom Standards">
+        <span class="nav-page-text">Newsroom Standards</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

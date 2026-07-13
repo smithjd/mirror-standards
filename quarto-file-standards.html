@@ -143,17 +143,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://shambhala.org"> 
-<span class="menu-text">Shambhala</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="https://mirror.shambhala.org"> 
-<span class="menu-text">Shambhala Mirror</span></a>
+<span class="menu-text">Shambhala’s Societal Mirror</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com/smithjd/mirror-standards" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+    <a href="https://github.com" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -199,12 +195,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="./admin-page-standards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Admin Page Standards</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-data-pipeline-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R Data Pipeline Review</span></a>
   </div>
 </li>
       </ul>
@@ -263,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./newsroom-data-reporting-standards/07-sources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sources</span></a>
+ <span class="menu-text">Newsroom Sources</span></a>
   </div>
 </li>
       </ul>
@@ -271,7 +261,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">2026 Data</span></a>
+ <span class="menu-text">Site metrics and analytics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -279,8 +269,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./website-profile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graph and Table Profile</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./editing_history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Page edit history</span></a>
+ <span class="menu-text">Editing History</span></a>
   </div>
 </li>
       </ul>
@@ -329,26 +325,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="the-shape-of-a-good-page" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="the-shape-of-a-good-page"><span class="header-section-number">1.1</span> The Shape of a Good Page</h2>
 <p>A <code>.qmd</code> page should look like <strong>one thin helper library at the top, then short consumer chunks that call it</strong>.</p>
-<pre><code>┌─ YAML header
-├─ Setup chunk (echo=FALSE, include=FALSE)
-│    source(shared_code_26.R, shared_functions_26.R, shared_sdb_code_26.R)
-├─ Helper chunk  (define plot_* / table_* / calc_* once, with roxygen docs)
-├─ Narrative markdown
-├─ Chunk: data prep + call plot_xxx(q_var)
-├─ Narrative markdown
-├─ Chunk: data prep + call plot_xxx(other_var)
-└─ ...</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">┌─</span> YAML header</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├─</span> Setup chunk <span class="er">(</span><span class="va">echo</span><span class="op">=</span>FALSE, <span class="va">include</span><span class="op">=</span>FALSE<span class="kw">)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>    source<span class="er">(</span><span class="ex">shared_code_26.R,</span> shared_functions_26.R, shared_sdb_code_26.R<span class="kw">)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├─</span> Helper chunk  <span class="er">(</span><span class="ex">define</span> plot_<span class="pp">*</span> / table_<span class="pp">*</span> / calc_<span class="pp">*</span> once, with roxygen docs<span class="kw">)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">├─</span> Narrative markdown</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├─</span> Chunk: data prep + call plot_xxx<span class="er">(</span><span class="ex">q_var</span><span class="kw">)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">├─</span> Narrative markdown</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">├─</span> Chunk: data prep + call plot_xxx<span class="er">(</span><span class="ex">other_var</span><span class="kw">)</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">└─</span> ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>One question → one short chunk. Each chunk does <strong>prep + call helper</strong>, not prep + helper-definition + call.</p>
 </section>
 <section id="core-rules" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="core-rules"><span class="header-section-number">1.2</span> Core Rules</h2>
 <section id="always-source-the-shared-scripts-never-inline-their-contents" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="always-source-the-shared-scripts-never-inline-their-contents"><span class="header-section-number">1.2.1</span> 1. Always source the shared scripts, never inline their contents</h3>
-<pre><code>#| include: false
-mirror_year &lt;- 26
-source(here("back-end", paste0("shared_code_",      mirror_year, ".R")))
-source(here("back-end", paste0("shared_functions_", mirror_year, ".R")))
-source(here("back-end", paste0("shared_sdb_code_",  mirror_year, ".R")))</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mirror_year <span class="ot">&lt;-</span> <span class="dv">26</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"back-end"</span>, <span class="fu">paste0</span>(<span class="st">"shared_code_"</span>,      mirror_year, <span class="st">".R"</span>)))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"back-end"</span>, <span class="fu">paste0</span>(<span class="st">"shared_functions_"</span>, mirror_year, <span class="st">".R"</span>)))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"back-end"</span>, <span class="fu">paste0</span>(<span class="st">"shared_sdb_code_"</span>,  mirror_year, <span class="st">".R"</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Don’t redefine utilities that already live in <code>shared_functions_26.R</code>.</p>
 </section>
 <section id="always-use-ourmirrormirror_theme-never-theme_set-or-custom-themes" class="level3" data-number="1.2.2">
@@ -361,15 +357,15 @@ source(here("back-end", paste0("shared_sdb_code_",  mirror_year, ".R")))</code><
 </section>
 <section id="define-helpers-once-in-one-helper-chunk-with-roxygen-docs" class="level3" data-number="1.2.4">
 <h3 data-number="1.2.4" class="anchored" data-anchor-id="define-helpers-once-in-one-helper-chunk-with-roxygen-docs"><span class="header-section-number">1.2.4</span> 4. Define helpers <strong>once</strong>, in one helper chunk, with roxygen docs</h3>
-<pre><code>#| label: helpers
-#| include: false
-
-#' Plot a one-level summary of a categorical question
-#'
-#' @param .data  tibble filtered to respondents answering this question
-#' @param q_var  bare column name of the question
-#' @param title  chart title
-plot_1_level &lt;- function(.data, q_var, title) { ... }</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: helpers</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#' Plot a one-level summary of a categorical question</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#'</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param .data  tibble filtered to respondents answering this question</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param q_var  bare column name of the question</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#' @param title  chart title</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plot_1_level <span class="ot">&lt;-</span> <span class="cf">function</span>(.data, q_var, title) { ... }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If you catch yourself writing <code>html_safe &lt;- function(...)</code> or <code>apply_named_recode &lt;- function(...)</code> in a second chunk, stop: move it to the helper chunk.</p>
 </section>
 <section id="use-quarto-semantic-divs-not-custom-html-or-flat-h1-stacks" class="level3" data-number="1.2.5">
@@ -383,22 +379,22 @@ plot_1_level &lt;- function(.data, q_var, title) { ... }</code></pre>
 </section>
 <section id="use-quarto-cross-reference-labels" class="level3" data-number="1.2.6">
 <h3 data-number="1.2.6" class="anchored" data-anchor-id="use-quarto-cross-reference-labels"><span class="header-section-number">1.2.6</span> 6. Use Quarto cross-reference labels</h3>
-<pre><code>#| label: fig-belonging-by-generation
-#| fig-cap: "Sense of belonging by generation"
-
-#| label: tbl-capacity-counts
-#| tbl-cap: "Capacity counts by role"</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-belonging-by-generation</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Sense of belonging by generation"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-capacity-counts</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Capacity counts by role"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>fig-…</code> and <code>tbl-…</code> prefixes enable <code>@fig-belonging-by-generation</code> cross-refs and produce proper “Figure 1” numbering.</p>
 </section>
 <section id="suppress-chunk-output-globally-opt-in-explicitly" class="level3" data-number="1.2.7">
 <h3 data-number="1.2.7" class="anchored" data-anchor-id="suppress-chunk-output-globally-opt-in-explicitly"><span class="header-section-number">1.2.7</span> 7. Suppress chunk output globally, opt in explicitly</h3>
 <p>At the top of every page:</p>
-<pre><code>knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">FALSE</span>, <span class="at">message =</span> <span class="cn">FALSE</span>, <span class="at">warning =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Don’t repeat <code>echo=FALSE, message=FALSE, warning=FALSE</code> on every chunk.</p>
 </section>
 <section id="every-charts-subtitle-carries-n" class="level3" data-number="1.2.8">
 <h3 data-number="1.2.8" class="anchored" data-anchor-id="every-charts-subtitle-carries-n"><span class="header-section-number">1.2.8</span> 8. Every chart’s subtitle carries N</h3>
-<pre><code>labs(subtitle = str_glue("N = {scales::number(n, big_mark = ',')}"))</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="fu">str_glue</span>(<span class="st">"N = {scales::number(n, big_mark = ',')}"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="tidyverse-idioms-from-project-claude.md" class="level3" data-number="1.2.9">
 <h3 data-number="1.2.9" class="anchored" data-anchor-id="tidyverse-idioms-from-project-claude.md"><span class="header-section-number">1.2.9</span> 9. Tidyverse idioms (from project CLAUDE.md)</h3>
@@ -568,7 +564,7 @@ plot_1_level &lt;- function(.data, q_var, title) { ... }</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/smithjd\.github\.io\/mirror-standards\/");
+        var filterRegex = new RegExp("https:\/\/github\.com\/smithjd\/mirror-standards");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

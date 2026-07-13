@@ -1,1 +1,1 @@
-Sitemap: https://smithjd.github.io/mirror-standards/sitemap.xml
+Sitemap: https://github.com/smithjd/mirror-standards/sitemap.xml

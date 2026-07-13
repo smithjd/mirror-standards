@@ -106,17 +106,13 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://shambhala.org"> 
-<span class="menu-text">Shambhala</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="https://mirror.shambhala.org"> 
-<span class="menu-text">Shambhala Mirror</span></a>
+<span class="menu-text">Shambhala’s Societal Mirror</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com/smithjd/mirror-standards" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+    <a href="https://github.com" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -162,12 +158,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./admin-page-standards.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Admin Page Standards</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./r-data-pipeline-review.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R Data Pipeline Review</span></a>
   </div>
 </li>
       </ul>
@@ -226,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./newsroom-data-reporting-standards/07-sources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sources</span></a>
+ <span class="menu-text">Newsroom Sources</span></a>
   </div>
 </li>
       </ul>
@@ -234,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">2026 Data</span></a>
+ <span class="menu-text">Site metrics and analytics</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -242,8 +232,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./website-profile.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graph and Table Profile</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./editing_history.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Page edit history</span></a>
+ <span class="menu-text">Editing History</span></a>
   </div>
 </li>
       </ul>
@@ -285,7 +281,22 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="opportunity" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="opportunity"><span class="header-section-number">2</span> Opportunity</h2>
-<p>The <a href="Shambhala Societal Mirror">https://mirror.shambhala.org</a> has evolved incrementally over the years. This standards site is an opportunity to look at its current state and describe it in a way that accelerates the next phase of development. The goal is to create a set of standards that can be used to guide the next phase of development.</p>
+<p>The <a href="Shambhala Societal Mirror">https://mirror.shambhala.org</a> has evolved incrementally over the years. This standards site is an opportunity to look at its current state and describe it in a way that accelerates the next phase of development. The goal is to create a set of standards that can be used to guide future development.</p>
+</section>
+<section id="whats-included" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="whats-included"><span class="header-section-number">3</span> What’s included</h2>
+<ul>
+<li>DRAFT website standards</li>
+<li>Industry standards from mature Newsrooms</li>
+<li>Some website metrics</li>
+</ul>
+</section>
+<section id="possible-futures" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="possible-futures"><span class="header-section-number">4</span> Possible futures</h2>
+<ul>
+<li>Standards for processing open-ended comments</li>
+<li>Survey standards</li>
+</ul>
 
 
 </section>
@@ -364,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/smithjd\.github\.io\/mirror-standards\/");
+        var filterRegex = new RegExp("https:\/\/github\.com\/smithjd\/mirror-standards");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

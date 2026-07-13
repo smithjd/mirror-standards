@@ -1,6 +1,8 @@
 # Page Edit History Analysis
 
-The data on this page comes from the commit history of the Quarto files in Societal Mirror repository. The analysis focuses on the editing activity for each page, including the number of commits, the time span of edits, and temporal patterns of page development.
+The data on this page comes from the Git “commit” history of the Quarto files in Societal Mirror repository. The analysis focuses on the editing activity for each page, including the number of commits, the time span of edits, and temporal patterns of page development.
+
+It provides a rough history of the project code base.
 
 ## 1 Editing Activity by Page Name
 
@@ -20,7 +22,7 @@ Interestingly, `data_collection_and_analysis` was created early but only recentl
 
 Figure 2: Editing activity from the 2nd commit onward, excluding initial creation commit
 
-This view focuses on ongoing maintenance patterns by excluding the initial creation commit. The commit counts are reduced by 1 for each file, showing only post-creation edits. Some files like `centre_size_experience` only have 1 commit after creation, indicating they’ve been relatively stable since their initial setup.
+This view focuses on activity after development has begun in earnest by excluding the initial creation commit. The commit counts are reduced by 1 for each file, showing only post-creation edits. Some files like `centre_size_experience` only have 1 commit after creation, indicating they’ve been untouched since their initial setup.
 
 ## 3 Temporal Editing Patterns
 
