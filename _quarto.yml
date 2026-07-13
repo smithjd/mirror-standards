@@ -24,7 +24,7 @@ website:
   description: "A set of standards for data reporting in the Shambhala Mirror."
   llms-txt: true
   favicon: "/images/SI-sunburst.ico"
-  site-url: "https://github.com/smithjd/mirror-standards"
+  site-url: "https://smithjd.github.io/mirror-standards"
   navbar:
     logo: "images/SI-sunburst.png"
     pinned: false
@@ -36,7 +36,7 @@ website:
     tools: 
       - icon: github
         text: Github
-        href: https://github.com
+        href: https://github.com/smithjd/mirror-standards
   page-navigation: true
   sidebar:
     contents:
