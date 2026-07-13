@@ -18,7 +18,7 @@ Admin pages draw from the Shambhala Database (SDB) — not survey responses. The
 
 Every admin plot MUST carry the SDB tint in both `plot.background` and `panel.background`. This visually distinguishes admin pages from survey pages.
 
-```
+```{.r}
 theme(
   plot.background  = element_rect(fill = sdb_background_tint),  # "#F4F4F4"
   panel.background = element_rect(fill = sdb_background_tint)
@@ -33,7 +33,7 @@ theme(
 
 `shared_code_26.R` calls `theme_set(mirror_theme())`, so the theme is already the global default. Two valid styles appear across pages:
 
-```
+```{.r}
 # Implicit (centre_profile.qmd style) — theme already set globally
 ggplot(...) + geom_col() + theme(panel.grid.major.x = element_blank(), ...)
 
@@ -55,7 +55,7 @@ Both work. Be consistent within a page.
 
 ### size_palette — Two Variants
 
-```
+```{.r}
 # 4-color (stacked by size group) — defined globally in shared_sdb_code_26.R
 size_palette <- c("#B1CEBD", "#7CA98E", "#488460", "#346046")
 
@@ -65,7 +65,7 @@ size_palette <- c("#B1CEBD", "#488460")   # light = last year, dark = current ye
 
 ### Member/Friend Color Constants
 
-```
+```{.r}
 membership_colors <- c("#F4D786", "#86BD9C", "#7994B8")
 names(membership_colors) <- c("Non member", "Member", "Past member")
 
@@ -76,7 +76,7 @@ scale_fill_manual(values = member_friends_colors)
 ```
 
 Use `fct_recode()` to align factor levels with color names:
-```
+```{.r}
 mutate(membertype = fct_recode(membertype,
   Members = "current_members",
   Friends = "current_friends"
@@ -102,7 +102,7 @@ Do not recompute these — they are already loaded:
 ## Key Data Pipelines
 
 ### Members / Friends snapshot
-```
+```{.r}
 member_base_data |>
   filter(membertype == "Member")           # or "Friend of Shambhala"
   # or filter(membertype != "Non-member")  # members + friends combined

@@ -64,5 +64,9 @@ website:
             href: newsroom-data-reporting-standards/05-accessibility.qmd
           - text: Implementation R
             href: newsroom-data-reporting-standards/06-implementation-r.qmd
-          - text: Sources
+          - text: Newsroom Sources
             href: newsroom-data-reporting-standards/07-sources.qmd
+      - section: "Site metrics and analytics"
+        contents:
+          - text: Editing History
+            href: editing_history.qmd

@@ -4,7 +4,7 @@ subtitle: "Standards derived from the `survey-page-conventions` skill"
 ---
 
 
-```
+```{.r}
 #| label: setup
 
 #| include: false
@@ -25,7 +25,7 @@ Survey pages draw from labelled SPSS files such as (`m26`, `m25`, `m24`, `L26`, 
 
 Alternatively use the folloing code:
 
-```
+```{.r}
 dictionary <- spss_df |> look_for()
 ```
 
@@ -45,7 +45,7 @@ When constructing pipelines or graphs, use `./back-end/dd_C26.json` as a referen
 | Admin/SDB | `sdb_background_tint` | #F4F4F4 | neutral grey |
 
 Every survey ggplot must carry its tint in both backgrounds:
-```
+```{.r}
 
 theme(
   plot.background = element_rect(fill = member_background_tint),
@@ -57,7 +57,7 @@ theme(
 
 The dominant pattern — categories sorted by `pct`, labels inside bars:
 
-```
+```{.r}
 
 data |>
   mutate(
@@ -93,7 +93,7 @@ If stored as 0–100 (e.g., after `* 100`), use `scales::percent_format(scale = 
 
 For yes/maybe/no or ordered response categories:
 
-```
+```{.r}
 
 data |>
   mutate(
@@ -128,7 +128,7 @@ data |>
 ## Key Utility Functions (shared_functions_26.R)
 
 ### role_subset() — filter by role flag, get counts
-```
+```{.r}
 
 q <- role_subset(
   data = m26_relate_to_a_center,
@@ -141,7 +141,7 @@ q <- role_subset(
 ```
 
 ### count_yes_str() — count binary Yes (==1) across role vars
-```
+```{.r}
 
 role_counts <- map(role_vars, \(v) count_yes_str(m26_relate_to_a_center, v)) |>
   bind_rows() |>
@@ -150,7 +150,7 @@ role_counts <- map(role_vars, \(v) count_yes_str(m26_relate_to_a_center, v)) |>
 ```
 
 ### calc_pct_selected() — % selecting follow-up items among role-holders
-```
+```{.r}
 
 calc_pct_selected(
   data = m26_relate_to_a_center,
@@ -162,7 +162,7 @@ calc_pct_selected(
 ```
 
 ### calc_val_labels() — build long-format count df for multi-item series
-```
+```{.r}
 
 # Requires q$counts to exist in environment
 count_all <- calc_val_labels("q0037", n_levels = 5)
@@ -170,20 +170,20 @@ count_all <- calc_val_labels("q0037", n_levels = 5)
 ```
 
 ### plot_1_level() — quick horizontal bar for a single categorical var
-```
+```{.r}
 
 plot_1_level(q$counts$n_q0036) # auto-extracts var_label as title
 plot_1_level(q$counts$n_q0036, pct_max = 100)
 ```
 
 ### plot_interest() — horizontal bar for interest/support items
-```
+```{.r}
 
 plot_interest(teacher_interest_counts, gtitle = "Are you interested in...?")
 ```
 
 ### count_all_that_apply() — multiple-select ("check all that apply") questions
-```
+```{.r}
 
 count_all_that_apply(m26, "q0015")
 # Returns: value, n, percent — denominator is all respondents who answered
@@ -191,7 +191,7 @@ count_all_that_apply(m26, "q0015")
 
 ### Counting Yes (==1) across non-contiguous named variables
 When variables share no common prefix, name them explicitly with `any_of()` and pivot long:
-```
+```{.r}
 
 activity_vars <- c("q0001", "q0003", "q0009", "q0011", "q0013")
 n_total <- 1335 # set denominator explicitly
@@ -206,7 +206,7 @@ activity_counts <- m26 |>
 
 ### Extracting joinable variable labels for a named set of columns
 When you need `var_label()` as a data frame to join onto counts:
-```
+```{.r}
 
 var_labels <- m26 |>
   select(any_of(activity_vars)) |>
@@ -224,7 +224,7 @@ Variable labels often share a common preamble (e.g., "In the past 12 months, did
 Extract just the differentiating fragment with a lookbehind/lookahead regex, then recode to
 human-friendly labels. Use **`replace_values()`** when you only need to fix a few labels and
 want all other values to pass through unchanged:
-```
+```{.r}
 
 mutate(
   short_label = str_extract(label, "(?<=did you ).*?(?=\\?)"),
@@ -239,7 +239,7 @@ mutate(
 ```
 Use **`case_match()`** instead when building an entirely new vector and enumerating all cases
 (any omitted value becomes `NA` unless `.default` is set):
-```
+```{.r}
 
 short_label <- case_match(
   short_label,
@@ -254,14 +254,14 @@ Adjust the lookbehind string to match the preamble in your question series.
 Note: `dplyr::recode()` is deprecated — use `replace_values()` or `case_match()` instead.
 
 ### disp_var_prep() — select a variable group by prefix
-```
+```{.r}
 
 disp_var_prep(m26, "q0015")
 # Returns: RespondentID + all cols starting with "q0015", drops character cols
 ```
 
 ### pivot_df() — pivot to long format with within-variable percentages
-```
+```{.r}
 
 disp_var_prep(m26, "q0015") |> pivot_df()
 # Returns: var_name, value, n, pct (pct is within-var, sums to 1 per var_name)
@@ -271,7 +271,7 @@ disp_var_prep(m26, "q0015") |> pivot_df()
 
 Survey data is SPSS-style labelled. Always handle labels explicitly:
 
-```
+```{.r}
 
 # Get variable label (question text) — use as plot title
 var_label(m26$q0035)
@@ -299,7 +299,7 @@ ggplot(m26, aes(q0035, q0036)) + geom_point() # axis labels auto-filled
 
 Whenever `q0080` is used, immediately follow `to_factor()` with this collapse to reduce the 7-level decade variable to 4 meaningful groups:
 
-```
+```{.r}
 
 to_factor() |>
   mutate(
@@ -318,7 +318,7 @@ The four resulting levels are: `"70's-80's"`, `"90's-2007"`, `"2008-2017"`, `"20
 
 `q0032` value labels for "No" and "Not sure" contain a long parenthetical that must be stripped before plotting or factoring:
 
-```
+```{.r}
 
 mutate(
   q0032 = str_remove_all(
@@ -336,7 +336,7 @@ Apply this after `to_character()` or `as.character()` — do not apply to the ra
 
 `q0034` asks respondents to identify as centre member, global member, friend, donor, etc. It is only meaningful for those who relate to a centre. Always filter to `q0032 == 1` before using `q0034`:
 
-```
+```{.r}
 
 m26 |>
   filter(q0032 == 1) |>
@@ -346,7 +346,7 @@ m26 |>
 
 `q0034` has 6 long value labels — always apply `str_wrap(as.character(q0034), width = 30)` after `to_factor()` to keep legends readable. Use `fct_inorder()` afterward to preserve label order:
 
-```
+```{.r}
 
 mutate(
   q0034 = str_wrap(as.character(q0034), width = 30),
@@ -358,7 +358,7 @@ mutate(
 
 The standard `green_step_2[3:1]` fill works for **3-level** outcomes. For variables with **4+ unordered categories** (e.g., `q0034` with 6 levels), use:
 
-```
+```{.r}
 
 scale_fill_brewer(palette = "Dark2")
 ```
@@ -375,7 +375,7 @@ For ordered/sequential outcomes (low → high), continue using `green_step_2[3:1
 
 ## Standard Sub-population Filters
 
-```
+```{.r}
 
 # Set once at top of page, then use throughout
 m26_relate_to_a_center <- m26 |> filter(q0032 == 1)
@@ -387,7 +387,7 @@ tab_source_note(source_note = paste0("n = ", n_relate_to_local_center, " ..."))
 
 ## gt Table Template (survey)
 
-```
+```{.r}
 
 data |>
   gt() |>
@@ -399,7 +399,7 @@ data |>
 ```
 
 For grouped tables with row group headers:
-```
+```{.r}
 
 gt() |>
   tab_style(
@@ -422,7 +422,7 @@ Survey sections follow the **Capacity + Interest + Table** tabset pattern:
 
 ## Capacity
 
-```
+```{.r}
 
 #| label: img-role_capacity
 q <- role_subset(
@@ -435,7 +435,7 @@ plot_1_level(q$counts$n_q00YY)
 
 ## Interest in support
 
-```
+```{.r}
 
 #| label: img-role_interest_in_support
 interest_counts <- all_pct_selected |>
@@ -445,7 +445,7 @@ plot_interest(interest_counts, gtitle)
 
 ## Interest in support table
 
-```
+```{.r}
 
 #| label: tbl-role_interest_table
 gt_table_interest(interest_counts_full, gtitle)
@@ -456,11 +456,11 @@ gt_table_interest(interest_counts_full, gtitle)
 
 
 Collapsible tables use raw HTML:
-```md
+```{.r}
 <details><summary>Click to show all responses in a table</summary>
 ```
 # gt table code
-```
+```{.r}
 </details>
 ```
 
@@ -473,7 +473,7 @@ Collapsible tables use raw HTML:
 ## show_open_endeds Flag
 
 Set at top of page:
-```
+```{.r}
 
 show_open_endeds <- FALSE
 ```

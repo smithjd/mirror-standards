@@ -17,9 +17,9 @@ library(here)
 library(tidyverse)
 library(lubridate)
 library(ourmirror)
-```{.r}
+```
 
-The data on this page comes from the commit history of the Quarto files in Societal Mirror repository. The analysis focuses on the editing activity for each page, including the number of commits, the time span of edits, and temporal patterns of page development.
+The data on this page comes from the Git "commit" history of the Quarto files in Societal Mirror repository. The analysis focuses on the editing activity for each page, including the number of commits, the time span of edits, and temporal patterns of page development.
 
 ```{r}
 #| label: load-data
@@ -61,7 +61,7 @@ file_summary <- qmd_commits_history |>
 qmd_commits_history <- qmd_commits_history |>
   left_join(file_summary, by = "file") |>
   mutate(file = fct_reorder(file, max_days))
-```{.r}
+```
 
 ## Editing Activity by Page Name
 
@@ -69,6 +69,7 @@ qmd_commits_history <- qmd_commits_history |>
 #| label: fig-activity-by-file
 #| fig-cap: "Editing activity over time for each file, sorted by total editing span. Numbers at right show total commit count."
 #| fig-height: 8
+#| fig-width: 10
 
 ggplot(qmd_commits_history, aes(y = file)) +
   geom_boxplot(aes(x = days_from_first), outlier.shape = NA) +
@@ -82,8 +83,9 @@ ggplot(qmd_commits_history, aes(y = file)) +
   geom_text(
     data = file_summary |> mutate(file = fct_reorder(file, max_days)),
     aes(x = Inf, label = n_commits),
-    hjust = 1.2,
-    size = 3
+    hjust = 1.5,
+    size = 3,
+    fontface = "bold"
   ) +
   labs(
     x = "Days from first commit",
@@ -93,7 +95,7 @@ ggplot(qmd_commits_history, aes(y = file)) +
   ) +
   theme(plot.subtitle = element_text(size = 9, color = "gray40")) +
   ourmirror::mirror_theme()
-```{.r}
+```
 
 Each file was set up early in the process, but the editing activity varies widely. Work on some files began immediately, and other waited for a while. The boxplots show the distribution of editing days for each file, with jittered points representing individual commits.
 
@@ -158,7 +160,7 @@ ggplot(qmd_commits_history_2nd, aes(y = file)) +
   ) +
   theme(plot.subtitle = element_text(size = 9, color = "gray40")) +
   ourmirror::mirror_theme()
-```{.r}
+```
 
 This view focuses on ongoing maintenance patterns by excluding the initial creation commit. The commit counts are reduced by 1 for each file, showing only post-creation edits. Some files like `centre_size_experience` only have 1 commit after creation, indicating they've been relatively stable since their initial setup.
 
@@ -202,7 +204,7 @@ ggplot(commits_by_week, aes(x = week, y = file, fill = n)) +
     panel.grid = element_blank()
   ) +
   ourmirror::mirror_theme()
-```{.r}
+```
 
 The heatmap reveals distinct editing patterns across time:
 

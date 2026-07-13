@@ -18,7 +18,7 @@ These standards come from comparing a well-structured page (`leadership_and_serv
 
 A `.qmd` page should look like **one thin helper library at the top, then short consumer chunks that call it**.
 
-```
+```{.bash}
 ┌─ YAML header
 ├─ Setup chunk (echo=FALSE, include=FALSE)
 │    source(shared_code_26.R, shared_functions_26.R, shared_sdb_code_26.R)
@@ -35,7 +35,7 @@ One question → one short chunk. Each chunk does **prep + call helper**, not pr
 ## Core Rules
 
 ### 1. Always source the shared scripts, never inline their contents
-```
+```{.r}
 #| include: false
 mirror_year <- 26
 source(here("back-end", paste0("shared_code_",      mirror_year, ".R")))
@@ -51,7 +51,7 @@ Project CLAUDE.md requires this. If you want a background tint, `mirror_theme()`
 No `"#2E8B57"`, `"#C62828"`, `"#F9A825"` sprinkled through chunks. Colors come from the palette function or named constants (`dark_bar_green`, `member_background_tint`, `leader_background_tint`, `sdb_background_tint`) that already exist in `shared_code_26.R`.
 
 ### 4. Define helpers **once**, in one helper chunk, with roxygen docs
-```
+```{.r}
 #| label: helpers
 #| include: false
 
@@ -71,7 +71,7 @@ If you catch yourself writing `html_safe <- function(...)` or `apply_named_recod
 - `##`/`###` headers for hierarchy — avoid a chain of 20+ flat `#` headers
 
 ### 6. Use Quarto cross-reference labels
-```
+```{.r}
 #| label: fig-belonging-by-generation
 #| fig-cap: "Sense of belonging by generation"
 
@@ -82,13 +82,13 @@ If you catch yourself writing `html_safe <- function(...)` or `apply_named_recod
 
 ### 7. Suppress chunk output globally, opt in explicitly
 At the top of every page:
-```
+```{.r}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 ```
 Don't repeat `echo=FALSE, message=FALSE, warning=FALSE` on every chunk.
 
 ### 8. Every chart's subtitle carries N
-```
+```{.r}
 labs(subtitle = str_glue("N = {scales::number(n, big_mark = ',')}"))
 ```
 
@@ -123,7 +123,7 @@ When reviewing or refactoring, flag any of these — they are the signature of t
 
 If you're unsure whether a page follows the standard, grep it:
 
-```bash
+```{.bash}
 # Should be 0 or very small:
 grep -c "^html_safe <- function"         page.qmd   # helper redefinitions
 grep -c "^apply_named_recode <- function" page.qmd
