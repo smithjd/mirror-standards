@@ -101,11 +101,11 @@ ggplot(qmd_commits_history, aes(y = file)) +
 
 Each file was set up early in the process, but the editing activity varies widely. Work on some files began immediately, and other waited for a while. The boxplots show the distribution of editing days for each file, with jittered points representing individual commits.
 
-The files are sorted by their editing span (max days from first commit), with commit counts displayed on the right. `enrollment_overview` has been the most actively maintained page with the longest editing history (157 days) and the most commits (45), followed by `centre_profile` (33 commits over 157 days) and `study_activities` (25 commits over 153 days). The newer pages at the bottom like `centre_connections`, `centre_participation`, and `centre_resources` have shorter histories (under 10 days) and fewer commits (2-4).
+The files are sorted by their editing span (max days from first commit), with commit counts displayed on the right. `enrollment_overview` has been the most frequently edited page with the longest editing history (157 days) and the most commits (45), followed by `centre_profile` (33 commits over 157 days) and `study_activities` (25 commits over 153 days). The newer pages at the bottom like `centre_connections`, `centre_participation`, and `centre_resources` have shorter histories (under 10 days) and fewer commits (2-4).
 
-Interestingly, `data_collection_and_analysis` was created early but only recently received its 7 commits around day 140, showing a different pattern of intermittent maintenance.
+Interestingly, `data_collection_and_analysis` was created early but only recently received its 7 commits around day 140, showing a different pattern of intermittent edits.
 
-## Post-Creation Maintenance Pattern
+## Post-Creation Edit Pattern
 
 ```{r}
 #| label: fig-second-commit-onward
@@ -154,10 +154,11 @@ ggplot(qmd_commits_history_2nd, aes(y = file)) +
     hjust = 1.2,
     size = 3
   ) +
+  scale_x_continuous(expand = expansion(mult = c(0.05, 0.15))) +
   labs(
     x = "Days from first commit",
     y = NULL,
-    title = "Editing activity over time by file (from 2nd commit onward)",
+    title = "Editing activity over time by file\n(from 2nd commit onward)",
     subtitle = "Numbers at right show commit count (excluding first commit)"
   ) +
   theme(plot.subtitle = element_text(size = 9, color = "gray40")) +
@@ -193,7 +194,8 @@ ggplot(commits_by_week, aes(x = week, y = file, fill = n)) +
   scale_fill_gradient(
     low = "white",
     high = "steelblue",
-    name = "Commits"
+    name = "Commits",
+    breaks = c(1, 5, 10)
   ) +
   labs(
     x = "Week",
