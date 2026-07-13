@@ -4,13 +4,13 @@ Standards derived from the `quarto-file-standards` skill
 
 ## 0.1 Purpose
 
-Use this skill when authoring, reviewing, or refactoring any `.qmd` page in The Societal Mirror project. Captures the house style for Quarto file structure, chunk organization, helper-function placement, theme/palette compliance, and `.llms.md` export behavior. Triggers on requests like “review this page”, “refactor this qmd”, “why is this file so long”, “make this page consistent”, or whenever new pages are drafted.
+Use these standards when authoring, reviewing, or refactoring any `.qmd` page in The Societal Mirror project. Captures the house style for Quarto file structure, chunk organization, helper-function placement, theme/palette compliance, and `.llms.md` export behavior.
 
 ## 0.2 Standard
 
 # 1 Quarto File Standards
 
-These standards come from comparing a well-structured page (`leadership_and_service_roles.qmd`, ~950 lines, 17 chunks) against an anti-pattern page. Follow the good pattern; don’t replicate the bad one.
+These standards come from comparing a well-structured page (`leadership_and_service_roles.qmd`, ~950 lines, 17 chunks) against an anti-pattern page. Follow the good pattern; don’t replicate the other one.
 
 ## 1.1 The Shape of a Good Page
 
@@ -46,7 +46,7 @@ Don’t redefine utilities that already live in `shared_functions_26.R`.
 
 ### 1.2.2 2. Always use `ourmirror::mirror_theme()` — never `theme_set()` or custom themes
 
-Project CLAUDE.md requires this. If you want a background tint, `mirror_theme()` + `theme(plot.background=…)` on top — don’t replace it.
+For a background tint, `mirror_theme()` + `theme(plot.background=…)` on top — don’t replace it.
 
 ### 1.2.3 3. Always use `shambhala_palette_function()` — never hardcoded hex colors
 
@@ -103,7 +103,7 @@ Don’t repeat `echo=FALSE, message=FALSE, warning=FALSE` on every chunk.
 labs(subtitle = str_glue("N = {scales::number(n, big_mark = ',')}"))
 ```
 
-### 1.2.9 9. Tidyverse idioms (from project CLAUDE.md)
+### 1.2.9 9. Tidyverse idioms
 
 - Native pipe `|>` — never `%>%`
 - `.by =` grouping — never `group_by() |> ungroup()`

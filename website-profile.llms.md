@@ -1,6 +1,6 @@
 # Website profile
 
-This document profiles the content structure of the mirror standards website, analyzing each page by the number of plots, tables, and tabset panels it contains. This helps us understand the complexity and layout patterns across the site.
+This page shows the content structure of the Societal Mirror website, analyzing each page by the number of plots, tables, and tabset panels it contains. This helps us understand the complexity and layout patterns across the site.
 
 ## 1 Content Analysis
 

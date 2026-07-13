@@ -12,11 +12,11 @@ Figure 1: Editing activity over time for each file, sorted by total editing spa
 
 Each file was set up early in the process, but the editing activity varies widely. Work on some files began immediately, and other waited for a while. The boxplots show the distribution of editing days for each file, with jittered points representing individual commits.
 
-The files are sorted by their editing span (max days from first commit), with commit counts displayed on the right. `enrollment_overview` has been the most actively maintained page with the longest editing history (157 days) and the most commits (45), followed by `centre_profile` (33 commits over 157 days) and `study_activities` (25 commits over 153 days). The newer pages at the bottom like `centre_connections`, `centre_participation`, and `centre_resources` have shorter histories (under 10 days) and fewer commits (2-4).
+The files are sorted by their editing span (max days from first commit), with commit counts displayed on the right. `enrollment_overview` has been the most frequently edited page with the longest editing history (157 days) and the most commits (45), followed by `centre_profile` (33 commits over 157 days) and `study_activities` (25 commits over 153 days). The newer pages at the bottom like `centre_connections`, `centre_participation`, and `centre_resources` have shorter histories (under 10 days) and fewer commits (2-4).
 
-Interestingly, `data_collection_and_analysis` was created early but only recently received its 7 commits around day 140, showing a different pattern of intermittent maintenance.
+Interestingly, `data_collection_and_analysis` was created early but only recently received its 7 commits around day 140, showing a different pattern of intermittent edits.
 
-## 2 Post-Creation Maintenance Pattern
+## 2 Post-Creation Edit Pattern
 
 ![](editing_history_files/figure-html/fig-second-commit-onward-1.png)
 

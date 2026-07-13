@@ -149,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/smithjd/mirror-standards" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -314,14 +314,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="purpose" class="level2" data-number="0.1">
 <h2 data-number="0.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">0.1</span> Purpose</h2>
-<p>Use this skill when authoring, reviewing, or refactoring any <code>.qmd</code> page in The Societal Mirror project. Captures the house style for Quarto file structure, chunk organization, helper-function placement, theme/palette compliance, and <code>.llms.md</code> export behavior. Triggers on requests like “review this page”, “refactor this qmd”, “why is this file so long”, “make this page consistent”, or whenever new pages are drafted.</p>
+<p>Use these standards when authoring, reviewing, or refactoring any <code>.qmd</code> page in The Societal Mirror project. Captures the house style for Quarto file structure, chunk organization, helper-function placement, theme/palette compliance, and <code>.llms.md</code> export behavior.</p>
 </section>
 <section id="standard" class="level2" data-number="0.2">
 <h2 data-number="0.2" class="anchored" data-anchor-id="standard"><span class="header-section-number">0.2</span> Standard</h2>
 </section>
 <section id="quarto-file-standards" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Quarto File Standards</h1>
-<p>These standards come from comparing a well-structured page (<code>leadership_and_service_roles.qmd</code>, ~950 lines, 17 chunks) against an anti-pattern page. Follow the good pattern; don’t replicate the bad one.</p>
+<p>These standards come from comparing a well-structured page (<code>leadership_and_service_roles.qmd</code>, ~950 lines, 17 chunks) against an anti-pattern page. Follow the good pattern; don’t replicate the other one.</p>
 <section id="the-shape-of-a-good-page" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="the-shape-of-a-good-page"><span class="header-section-number">1.1</span> The Shape of a Good Page</h2>
 <p>A <code>.qmd</code> page should look like <strong>one thin helper library at the top, then short consumer chunks that call it</strong>.</p>
@@ -349,7 +349,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="always-use-ourmirrormirror_theme-never-theme_set-or-custom-themes" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="always-use-ourmirrormirror_theme-never-theme_set-or-custom-themes"><span class="header-section-number">1.2.2</span> 2. Always use <code>ourmirror::mirror_theme()</code> — never <code>theme_set()</code> or custom themes</h3>
-<p>Project CLAUDE.md requires this. If you want a background tint, <code>mirror_theme()</code> + <code>theme(plot.background=…)</code> on top — don’t replace it.</p>
+<p>For a background tint, <code>mirror_theme()</code> + <code>theme(plot.background=…)</code> on top — don’t replace it.</p>
 </section>
 <section id="always-use-shambhala_palette_function-never-hardcoded-hex-colors" class="level3" data-number="1.2.3">
 <h3 data-number="1.2.3" class="anchored" data-anchor-id="always-use-shambhala_palette_function-never-hardcoded-hex-colors"><span class="header-section-number">1.2.3</span> 3. Always use <code>shambhala_palette_function()</code> — never hardcoded hex colors</h3>
@@ -396,8 +396,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="1.2.8" class="anchored" data-anchor-id="every-charts-subtitle-carries-n"><span class="header-section-number">1.2.8</span> 8. Every chart’s subtitle carries N</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="fu">str_glue</span>(<span class="st">"N = {scales::number(n, big_mark = ',')}"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="tidyverse-idioms-from-project-claude.md" class="level3" data-number="1.2.9">
-<h3 data-number="1.2.9" class="anchored" data-anchor-id="tidyverse-idioms-from-project-claude.md"><span class="header-section-number">1.2.9</span> 9. Tidyverse idioms (from project CLAUDE.md)</h3>
+<section id="tidyverse-idioms" class="level3" data-number="1.2.9">
+<h3 data-number="1.2.9" class="anchored" data-anchor-id="tidyverse-idioms"><span class="header-section-number">1.2.9</span> 9. Tidyverse idioms</h3>
 <ul>
 <li>Native pipe <code>|&gt;</code> — never <code>%&gt;%</code></li>
 <li><code>.by =</code> grouping — never <code>group_by() |&gt; ungroup()</code></li>
@@ -564,7 +564,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/github\.com\/smithjd\/mirror-standards");
+        var filterRegex = new RegExp("https:\/\/smithjd\.github\.io\/mirror-standards");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

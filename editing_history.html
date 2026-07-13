@@ -113,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/smithjd/mirror-standards" title="Github" class="quarto-navigation-tool px-1" aria-label="Github"><i class="bi bi-github"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -256,7 +256,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#editing-activity-by-page-name" id="toc-editing-activity-by-page-name" class="nav-link active" data-scroll-target="#editing-activity-by-page-name"><span class="header-section-number">1</span> Editing Activity by Page Name</a></li>
-  <li><a href="#post-creation-maintenance-pattern" id="toc-post-creation-maintenance-pattern" class="nav-link" data-scroll-target="#post-creation-maintenance-pattern"><span class="header-section-number">2</span> Post-Creation Maintenance Pattern</a></li>
+  <li><a href="#post-creation-edit-pattern" id="toc-post-creation-edit-pattern" class="nav-link" data-scroll-target="#post-creation-edit-pattern"><span class="header-section-number">2</span> Post-Creation Edit Pattern</a></li>
   <li><a href="#temporal-editing-patterns" id="toc-temporal-editing-patterns" class="nav-link" data-scroll-target="#temporal-editing-patterns"><span class="header-section-number">3</span> Temporal Editing Patterns</a></li>
   </ul>
 </nav>
@@ -302,11 +302,11 @@ Figure&nbsp;1: Editing activity over time for each file, sorted by total editing
 </div>
 </div>
 <p>Each file was set up early in the process, but the editing activity varies widely. Work on some files began immediately, and other waited for a while. The boxplots show the distribution of editing days for each file, with jittered points representing individual commits.</p>
-<p>The files are sorted by their editing span (max days from first commit), with commit counts displayed on the right. <code>enrollment_overview</code> has been the most actively maintained page with the longest editing history (157 days) and the most commits (45), followed by <code>centre_profile</code> (33 commits over 157 days) and <code>study_activities</code> (25 commits over 153 days). The newer pages at the bottom like <code>centre_connections</code>, <code>centre_participation</code>, and <code>centre_resources</code> have shorter histories (under 10 days) and fewer commits (2-4).</p>
-<p>Interestingly, <code>data_collection_and_analysis</code> was created early but only recently received its 7 commits around day 140, showing a different pattern of intermittent maintenance.</p>
+<p>The files are sorted by their editing span (max days from first commit), with commit counts displayed on the right. <code>enrollment_overview</code> has been the most frequently edited page with the longest editing history (157 days) and the most commits (45), followed by <code>centre_profile</code> (33 commits over 157 days) and <code>study_activities</code> (25 commits over 153 days). The newer pages at the bottom like <code>centre_connections</code>, <code>centre_participation</code>, and <code>centre_resources</code> have shorter histories (under 10 days) and fewer commits (2-4).</p>
+<p>Interestingly, <code>data_collection_and_analysis</code> was created early but only recently received its 7 commits around day 140, showing a different pattern of intermittent edits.</p>
 </section>
-<section id="post-creation-maintenance-pattern" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="post-creation-maintenance-pattern"><span class="header-section-number">2</span> Post-Creation Maintenance Pattern</h2>
+<section id="post-creation-edit-pattern" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="post-creation-edit-pattern"><span class="header-section-number">2</span> Post-Creation Edit Pattern</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-second-commit-onward" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -425,7 +425,7 @@ Figure&nbsp;3: Weekly editing activity heatmap showing when each file received e
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/github\.com\/smithjd\/mirror-standards");
+        var filterRegex = new RegExp("https:\/\/smithjd\.github\.io\/mirror-standards");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
