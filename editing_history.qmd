@@ -21,6 +21,8 @@ library(ourmirror)
 
 The data on this page comes from the Git "commit" history of the Quarto files in Societal Mirror repository. The analysis focuses on the editing activity for each page, including the number of commits, the time span of edits, and temporal patterns of page development.
 
+It provides a rough history of the project code base.
+
 ```{r}
 #| label: load-data
 
