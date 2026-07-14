@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>r-data-pipeline-review – Shambhala Mirror Standards</title>
+<title>Writing Survey Results – Shambhala Mirror Standards</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,6 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./newsroom-data-reporting-standards/newsroom-standards.html" rel="next">
+<link href="./admin-page-standards.html" rel="prev">
 <link href=".//images/SI-sunburst.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -121,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">r-data-pipeline-review</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./survey-page-standards.html">Societal Mirror Site Standards</a></li><li class="breadcrumb-item"><a href="./writing-up-survey-results.html">Writing Up Survey Results</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -162,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./writing-up-survey-results.html" class="sidebar-item-text sidebar-link">
+  <a href="./writing-up-survey-results.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Writing Up Survey Results</span></a>
   </div>
 </li>
@@ -261,10 +263,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./survey-page-standards.html">Societal Mirror Site Standards</a></li><li class="breadcrumb-item"><a href="./writing-up-survey-results.html">Writing Up Survey Results</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">r-data-pipeline-review</h1>
-<p class="subtitle lead">Standards derived from the <code>r-data-pipeline-review</code> skill</p>
+<h1 class="title">Writing Survey Results</h1>
 </div>
 
 
@@ -281,87 +282,76 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="purpose" class="level2" data-number="0.1">
-<h2 data-number="0.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">0.1</span> Purpose</h2>
-<p>Review a set of R data-retrieval/ETL scripts (the backend pipeline that produces the .Rds/.csv files a Quarto site or analysis consumes) to write a code-quality report. Use when the user asks to review, audit, or check the retrieval/pipeline scripts, or when preparing for a new reporting cycle.</p>
-</section>
-<section id="standard" class="level2" data-number="0.2">
-<h2 data-number="0.2" class="anchored" data-anchor-id="standard"><span class="header-section-number">0.2</span> Standard</h2>
-</section>
-<section id="r-data-pipeline-review" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> R Data Pipeline Review</h1>
-<p>Read a set of backend data-retrieval/cleaning scripts and write a code-quality report to <code>tasks/data-pipeline-review.md</code> (create <code>tasks/</code> if it doesn’t exist).</p>
-<section id="step-1-identify-the-files-and-their-order" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="step-1-identify-the-files-and-their-order"><span class="header-section-number">1.1</span> Step 1 — Identify the files and their order</h2>
-<p>Ask the user (or infer from imports/sourced files) which scripts make up the pipeline, and in what order they must run. Note any script that is <em>sourced</em> by others rather than run directly — document the dependency chain explicitly, including which steps could run in parallel.</p>
-</section>
-<section id="step-2-critical-issues" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="step-2-critical-issues"><span class="header-section-number">1.2</span> Step 2 — Critical Issues</h2>
-<p>Flag anything that would produce wrong output or silently fail:</p>
+<p>To write objective, unbiased survey reports, anchor your text strictly in the quantitative data and thematic analysis. Separate observed facts from assumptions. Avoid speculation, emotion, and motive attribution. Adopt established research and organizational standards to ensure findings are neutral and actionable. [<a href="https://sk.sagepub.com/book/mono/download/how-to-conduct-organizational-surveys/chpt/presentation-survey-findings.pdf">1</a>, <a href="https://www.kantar.com/north-america/inspiration/research-services/unbiased-survey-questions-pf">2</a>, <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10950005/">3</a>, <a href="https://betterbeing.com.au/blog/employee-engagement-survey-best-practice">4</a>, <a href="https://knowledgeservices.com/blog/survey-management/identify-and-prevent-survey-biases">5</a>]</p>
+<p><strong>1. Language and Phrasing Guidelines</strong></p>
 <ul>
-<li><strong>Date/period math.</strong> Any date arithmetic that builds a cutoff or reporting period — verify it resolves to the date the author intended. Off-by-one-year and off-by-one-day errors in formulas like <code>as.double(year) - 1 + 2000</code> are common; check the arithmetic by hand.</li>
-<li><strong>Disabled filters.</strong> Look for date-range or status filters that have been commented out — these often get disabled “temporarily” during debugging and never restored.</li>
-<li><strong>File extension mismatches.</strong> <code>write_csv()</code> calls should produce <code>.csv</code>; <code>write_rds()</code>/ <code>saveRDS()</code> calls should produce <code>.rds</code>/<code>.Rds</code>. Flag mismatches.</li>
-<li><strong>Unreachable guards.</strong> <code>is.null(x)</code> immediately after <code>x &lt;- readRDS(...)</code> (or similar) can never be true — <code>readRDS</code> either returns a value or errors. Flag dead guards like this.</li>
-<li><strong>Dead objects.</strong> Objects that are computed but never used downstream or saved.</li>
-<li><strong>Non-existent column references.</strong> Cross-check <code>filter()</code>/<code>select()</code> column names against what the upstream step actually produces.</li>
-</ul>
-</section>
-<section id="step-3-convention-issues" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="step-3-convention-issues"><span class="header-section-number">1.3</span> Step 3 — Convention Issues</h2>
-<p>Check against the project’s stated R conventions (usually in a <code>CLAUDE.md</code> or style guide):</p>
+<li><strong>Use Neutral Terminology:</strong> Replace subjective adjectives (e.g., <em>disappointing, excellent</em>) with objective adverbs or precise phrasing (e.g., <em>a favorability score of 45%</em>, <em>an increase of 12 points</em>). [<a href="https://www.sogolytics.com/learning-center/surveys/how-to-avoid-bias-in-surveys/">1</a>]</li>
+<li><strong>State Findings, Not Feelings:</strong> Frame insights as direct representations of the data.
 <ul>
-<li><strong>Pipe</strong>: native <code>|&gt;</code>, not <code>%&gt;%</code></li>
-<li><strong>Joins</strong>: <code>join_by()</code>, not <code>by = c("a" = "b")</code></li>
-<li><strong>Grouping</strong>: <code>.by =</code> or explicit <code>ungroup()</code> — flag any function that returns a still-grouped data frame to its caller</li>
-<li><strong>map</strong>: <code>map() |&gt; list_rbind()</code> — <code>map_dfr()</code> is deprecated</li>
-<li><strong>Performance</strong>: <code>rowwise() |&gt; mutate(min(...))</code> (or similar) on large tables — usually replaceable with a vectorized function like <code>pmin()</code></li>
-<li><strong>Type safety</strong>: <code>ifelse()</code> where <code>if_else()</code> would catch type mismatches; numeric comparisons done as strings (e.g.&nbsp;<code>&lt;= "3"</code> instead of <code>&lt;= 3L</code>)</li>
-<li><strong>Tidy-eval misuse</strong>: <code>{ }</code> used where a plain <code>.env$var</code> or string would be correct</li>
+<li><em>Biased:</em> “The team feels overworked due to poor management.”</li>
+<li><em>Unbiased:</em> “The data indicates a 40% decline in work-life balance scores, coupled with lower favorability in leadership communication.”</li>
+</ul></li>
+<li><strong>Avoid Attributing Motive:</strong> Never assume <em>why</em> a respondent provided an answer unless a follow-up question specifically verified it. Report <em>what</em> the data shows rather than guessing intent. [<a href="https://sk.sagepub.com/book/mono/download/how-to-conduct-organizational-surveys/chpt/presentation-survey-findings.pdf">1</a>, <a href="https://www.nngroup.com/articles/survey-best-practices/">2</a>, <a href="https://scipubplus.com/hub/blog/presenting-your-findings-how-to-write-a-clear-and-effective-results-section/">3</a>]</li>
+<li><strong>Distinguish Correlation from Causation:</strong> State relationships neutrally. For example, “Team B’s low engagement scores coincide with high turnover” rather than “Low engagement is causing Team B to leave.” [<a href="https://www.nngroup.com/articles/survey-best-practices/">1</a>]</li>
 </ul>
-</section>
-<section id="step-4-readability-and-logic-issues" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="step-4-readability-and-logic-issues"><span class="header-section-number">1.4</span> Step 4 — Readability and Logic Issues</h2>
+<p><strong>2. Presenting Data and Verbatim Comments</strong></p>
 <ul>
-<li>Hardcoded values that should be derived from a previous step instead of pasted in</li>
-<li><code>NA</code> converted to the literal string <code>"NA"</code> (breaks downstream <code>is.na()</code> checks)</li>
-<li>Duplicate column selections in the same <code>select()</code> call</li>
-<li><code>knitr::opts_chunk$set()</code> inside a plain <code>.R</code> script (no-op outside a <code>.qmd</code>/<code>.Rmd</code>)</li>
-<li>A local variable shadowing a package function name (e.g.&nbsp;<code>today &lt;- Sys.Date()</code> shadowing <code>lubridate::today()</code>)</li>
-<li>Date-span math done with <code>365 * n</code> instead of a calendar-aware function (<code>years(n)</code>, <code>months(n)</code>) — fails on leap years</li>
-<li>Leftover <code>View()</code> calls and large commented-out blocks in production scripts</li>
-<li>Missing <code>file.exists()</code> guards before reading a file that might not be there yet</li>
+<li><strong>Report Demographics Responsibly:</strong> Do not report on small subgroups (e.g., fewer than 5 respondents). This ensures statistical validity and protects respondent confidentiality, which encourages honest feedback in future surveys. [<a href="https://www.gallup.com/workplace/692474/workplace-employee-surveys.aspx">1</a>, <a href="https://www.linkedin.com/pulse/complete-guide-employee-surveys-3-employee-feedback-mmwje?trk=public_post">2</a>]</li>
+<li><strong>Frame Qualitative Comments Objectively:</strong> Treat open-text responses as representative examples of broader, quantified themes rather than standalone facts. [<a href="https://support.cultureamp.com/en/articles/7048670-manager-s-guide-to-taking-action-on-engagement-survey-results">1</a>]</li>
+<li><strong>Quantify Qualitative Themes:</strong> Coding free-text responses into categories and presenting them with their corresponding percentages (e.g., “30% of comments mentioned system downtime”) can prevent cherry-picking isolated negative or positive statements. [<a href="https://www.nature.com/articles/s41431-026-02044-7">1</a>, <a href="https://atlasti.com/guides/the-guide-to-mixed-methods-research/reporting-results-in-mixed-methods-research">2</a>]</li>
 </ul>
-</section>
-<section id="step-5-summary-table" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="step-5-summary-table"><span class="header-section-number">1.5</span> Step 5 — Summary Table</h2>
-<p>End with:</p>
-<table class="caption-top">
+<p><strong>3. Structural Standards for the Report</strong></p>
+<ul>
+<li><strong>Start with Methodology:</strong> Outline the survey’s purpose, sample size, response rate, and data collection window before stating any findings. This provides necessary context for the results. [<a href="https://methods.sagepub.com/book/mono/conducting-online-surveys-2e/chpt/reporting-survey-results">1</a>, <a href="https://skeepers.io/blog/present-survey-results/">2</a>, <a href="https://fisher.osu.edu/blogs/leadreadtoday/insight-how-design-effective-employee-engagement-surveys">3</a>, <a href="https://peopleinsight.co.uk/wp-content/uploads/2021/07/People-Insight-How-great-managers-follow-up-survey-results-with-their-teams.pdf">4</a>, <a href="https://www.ovid.com/jnls/journaloftraumanursing/fulltext/10.1097/jtn.0000000000000582~prevent-rejection-of-your-manuscriptread-the-author">5</a>]</li>
+<li><strong>Separate Findings from Recommendations:</strong> Create distinct sections. The <strong>Findings</strong> section should present <em>what</em> the data shows. The <strong>Discussion/Recommendations</strong> section should cover <em>what actions</em> the organization might take based on that data. [<a href="https://slidemodel.com/how-to-present-survey-results-in-powerpoint/">1</a>, <a href="https://www.surveymonkey.com/learn/research-and-analysis/survey-analysis-reporting/">2</a>, <a href="https://sk.sagepub.com/book/mono/download/how-to-conduct-organizational-surveys/chpt/presentation-survey-findings.pdf">3</a>]</li>
+<li><strong>Acknowledge Limitations:</strong> Conclude by explicitly stating data limitations, such as potential non-response bias, small sample sizes, or survey timing, which could affect the generalizability of the findings. [<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10713437/">1</a>]</li>
+</ul>
+<p><strong>4. Newsroom Protocols for Data Reporting</strong></p>
+<p>The rules above keep the writing neutral. These practices, borrowed from data-journalism newsrooms, keep it <em>legible</em> — so a reader who skims one sentence still leaves with an accurate number and its meaning. They describe the voice already used across the <a href="https://mirror.shambhala.org">Societal Mirror</a>. [<a href="https://datajournalism.com/read/handbook/one">1</a>, <a href="https://www.pewresearch.org/our-methods/">2</a>, <a href="https://apstylebook.com/">3</a>]</p>
+<ul>
+<li><strong>Lead with the number, then its meaning.</strong> Put the finding first and let the sentence explain it, rather than warming up to it. <em>“79% of respondents took part in group meditation in the past year”</em> — not <em>“Respondents were asked about their participation, and it turned out that a majority…”</em></li>
+<li><strong>Always show the base.</strong> Every percentage names what it is a percentage <em>of</em> — respondents, centres, comments — and, where the base is small, the count as well (e.g.&nbsp;<em>“29 fewer centres than in 2023”</em>). A percentage without a denominator is not a finding. [<a href="https://www.pewresearch.org/our-methods/">1</a>]</li>
+<li><strong>Anchor every change to a baseline.</strong> A delta states its reference point: the year, the prior survey, or the group it is measured against. <em>“Since 2020, Buddhist course offerings have declined by 24%”</em> — the reader can see what “24%” is measured from.</li>
+<li><strong>Name the strongest signal plainly.</strong> When one relationship dominates the data, say so and label it as such rather than burying it among weaker ones: <em>“The single strongest correlation in the data: members affiliated with a centre report dramatically higher sense of belonging.”</em> This is emphasis, not interpretation — the ranking is in the data.</li>
+<li><strong>Flag puzzles; do not invent causes.</strong> When the data is surprising or self-contradictory, report the tension and mark it as unexplained. <em>“Since the smallest centres face the greatest shortage of teachers, this response is puzzling.”</em> Naming a puzzle is honest; supplying a motive to resolve it is the motive-attribution error warned against in Section 1.</li>
+<li><strong>Marked interpretation is allowed, sparingly.</strong> A reading that goes beyond the data is permitted when it is <em>visibly</em> the authors’ — kept in its own sentence, adjacent to the finding, and never fused with it. <em>“The change members most frequently ask for is more clarity about the current community vision”</em> is the finding; <em>“That request is not a critique; it is an invitation”</em> is the marked reading. Keep the two separable, and keep the second rare.</li>
+</ul>
+<p><strong>5. House Voice, Illustrated</strong></p>
+<p>Before/after pairs drawn from Mirror prose, showing the protocols in combination:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
 <thead>
 <tr class="header">
-<th>#</th>
-<th>File</th>
-<th>Severity</th>
-<th>Issue</th>
+<th>Weaker</th>
+<th>Mirror house voice</th>
 </tr>
 </thead>
 <tbody>
+<tr class="odd">
+<td>“Engagement was quite high overall.”</td>
+<td>“79% took part in group meditation; 77% gave financial support; 73% engaged in formal study.”</td>
+</tr>
+<tr class="even">
+<td>“Fewer centres are active now.”</td>
+<td>“There are 29 fewer centres than in 2023; small and medium-sized centres account for most of the loss.”</td>
+</tr>
+<tr class="odd">
+<td>“Older members care more about the teachings.”</td>
+<td>“Members who joined before 1990 are most invested in preserving Chögyam Trungpa’s teachings (85%); among those who joined since 2018, that figure is 54%.”</td>
+</tr>
+<tr class="even">
+<td>“The survey shows what everyone already knew.”</td>
+<td>“Across every entry cohort, 70–80% rate the same five features as very or extremely important. The shared ground is broader than it sometimes feels.”</td>
+</tr>
 </tbody>
 </table>
-<p>Severity levels: <strong>Critical</strong> (wrong output), <strong>High</strong> (convention violation or performance), <strong>Medium</strong> (logic or clarity), <strong>Low</strong> (style).</p>
-</section>
-<section id="tone-and-format" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="tone-and-format"><span class="header-section-number">1.6</span> Tone and Format</h2>
-<ul>
-<li>Use fenced code blocks to show the problem and the fix side by side where helpful.</li>
-<li>Keep descriptions factual and specific — cite file and line number where possible.</li>
-<li>Do not summarize what each file does; focus entirely on problems and fixes.</li>
-<li>No introductory preamble; start directly with “## Execution Order”.</li>
-</ul>
+<p>Each right-hand cell leads with the number, carries its base, and — where a reading is offered — keeps it in a separate clause the reader can accept or set aside.</p>
+<p>For more comprehensive guidance on research ethics and scientific reporting, consult the <a href="https://aapor.org/standards-and-ethics/best-practices/">American Association for Public Opinion Research Best Practices</a> or the <a href="https://methods.sagepub.com/book/mono/conducting-online-surveys/chpt/reporting-survey-results">SAGE Research Methods Reporting Guide</a>. [<a href="https://jamanetwork.com/journals/jamasurgery/fullarticle/2778469">1</a>, <a href="https://www.sgsci.org/guidelines/publication-ethics">2</a>]</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -764,6 +754,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./admin-page-standards.html" class="pagination-link" aria-label="Admin Page Standards">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Admin Page Standards</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./newsroom-data-reporting-standards/newsroom-standards.html" class="pagination-link" aria-label="Newsroom Standards">
+        <span class="nav-page-text">Newsroom Standards</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

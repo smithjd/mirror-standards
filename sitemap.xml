@@ -1,67 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://smithjd.github.io/mirror-standards/website-profile.html</loc>
-    <lastmod>2026-07-13T21:26:09.357Z</lastmod>
+    <loc>https://smithjd.github.io/mirror-standards/writing-up-survey-results.html</loc>
+    <lastmod>2026-07-14T19:07:32.003Z</lastmod>
   </url>
   <url>
-    <loc>https://smithjd.github.io/mirror-standards/r-data-pipeline-review.html</loc>
-    <lastmod>2026-07-12T00:26:38.919Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smithjd.github.io/mirror-standards/overview.html</loc>
-    <lastmod>2026-07-12T00:26:38.911Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/07-sources.html</loc>
-    <lastmod>2026-07-12T00:26:38.914Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/05-accessibility.html</loc>
-    <lastmod>2026-07-12T00:26:38.912Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/03-color-palettes.html</loc>
-    <lastmod>2026-07-12T00:26:38.915Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/01-principles.html</loc>
-    <lastmod>2026-07-12T00:26:38.916Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smithjd.github.io/mirror-standards/editing_history.html</loc>
-    <lastmod>2026-07-13T21:32:36.872Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smithjd.github.io/mirror-standards/admin-page-standards.html</loc>
-    <lastmod>2026-07-13T19:57:19.580Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smithjd.github.io/mirror-standards/index.html</loc>
-    <lastmod>2026-07-13T19:15:51.491Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/02-chart-types.html</loc>
-    <lastmod>2026-07-12T00:26:38.913Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/04-typography-annotation.html</loc>
-    <lastmod>2026-07-12T00:26:38.914Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/06-implementation-r.html</loc>
-    <lastmod>2026-07-12T00:31:50.298Z</lastmod>
-  </url>
-  <url>
-    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/newsroom-standards.html</loc>
-    <lastmod>2026-07-12T00:26:38.912Z</lastmod>
+    <loc>https://smithjd.github.io/mirror-standards/survey-page-standards.html</loc>
+    <lastmod>2026-07-13T19:25:16.074Z</lastmod>
   </url>
   <url>
     <loc>https://smithjd.github.io/mirror-standards/quarto-file-standards.html</loc>
     <lastmod>2026-07-13T21:41:37.963Z</lastmod>
   </url>
   <url>
-    <loc>https://smithjd.github.io/mirror-standards/survey-page-standards.html</loc>
-    <lastmod>2026-07-13T19:25:16.074Z</lastmod>
+    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/newsroom-standards.html</loc>
+    <lastmod>2026-07-12T00:26:38.912Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/06-implementation-r.html</loc>
+    <lastmod>2026-07-12T00:31:50.298Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/04-typography-annotation.html</loc>
+    <lastmod>2026-07-12T00:26:38.914Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/02-chart-types.html</loc>
+    <lastmod>2026-07-12T00:26:38.913Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/index.html</loc>
+    <lastmod>2026-07-13T19:15:51.491Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/admin-page-standards.html</loc>
+    <lastmod>2026-07-13T19:57:19.580Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/editing_history.html</loc>
+    <lastmod>2026-07-13T21:32:36.872Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/01-principles.html</loc>
+    <lastmod>2026-07-12T00:26:38.916Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/03-color-palettes.html</loc>
+    <lastmod>2026-07-12T00:26:38.915Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/05-accessibility.html</loc>
+    <lastmod>2026-07-12T00:26:38.912Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/newsroom-data-reporting-standards/07-sources.html</loc>
+    <lastmod>2026-07-12T00:26:38.914Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/overview.html</loc>
+    <lastmod>2026-07-12T00:26:38.911Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/r-data-pipeline-review.html</loc>
+    <lastmod>2026-07-12T00:26:38.919Z</lastmod>
+  </url>
+  <url>
+    <loc>https://smithjd.github.io/mirror-standards/website-profile.html</loc>
+    <lastmod>2026-07-13T21:26:09.357Z</lastmod>
   </url>
 </urlset>
