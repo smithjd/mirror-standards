@@ -92,13 +92,17 @@ Don't repeat `echo=FALSE, message=FALSE, warning=FALSE` on every chunk.
 labs(subtitle = str_glue("N = {scales::number(n, big_mark = ',')}"))
 ```
 
-### 9. Tidyverse idioms 
+### 9. Tidyverse idioms
 - Native pipe `|>` — never `%>%`
 - `.by =` grouping — never `group_by() |> ungroup()`
 - `join_by()` — never `by = c("a" = "b")`
+- On joins expected to be 1:1, add `multiple = "error"` / `unmatched = "error"` so a bad key fails loudly instead of silently fanning out or dropping rows
+- `reframe()` — for summaries that return more than one row per group (e.g. `reframe(q = quantile(x, c(.25, .5, .75)), .by = group)`); `summarise()` is for one row per group
 - `map() |> list_rbind()` — never `map_dfr()`
 - `stringr` — never `grepl`/`gsub`/`substr`/`nchar`/`tolower`/`paste0`
 - `to_factor()` from labelled — prefer over `haven::as_factor(.x, levels="labels") |> as.character()` chains
+- Data masking in helpers: embrace `{{ var }}` for bare column arguments, `.data[["name"]]` for character column names, and `across(where(...), ...)` for multiple columns — don't `eval(parse(text = ...))` or paste column names into strings
+- Prefix a helper's non-standard first data argument with a dot (`function(.data, ...)`) so it doesn't collide with tidy-eval names
 
 ### 10. Prefer static `ggplot` + `mirror_theme()` over raw `girafe` widgets by default
 Interactive charts have a real cost: they bloat HTML, and every `girafe()` widget **vanishes** from the `.llms.md` export that screen readers and LLMs consume. Use `ggiraph` intentionally when tooltips add value, not reflexively for every chart.
