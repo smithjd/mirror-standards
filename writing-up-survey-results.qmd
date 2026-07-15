@@ -1,0 +1,53 @@
+---
+title: "Writing Survey Results"
+format: html
+---
+
+To write objective, unbiased survey reports, anchor your text strictly in the quantitative data and thematic analysis. Separate observed facts from assumptions. Avoid speculation, emotion, and motive attribution. Adopt established research and organizational standards to ensure findings are neutral and actionable. [[1](https://sk.sagepub.com/book/mono/download/how-to-conduct-organizational-surveys/chpt/presentation-survey-findings.pdf), [2](https://www.kantar.com/north-america/inspiration/research-services/unbiased-survey-questions-pf), [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC10950005/), [4](https://betterbeing.com.au/blog/employee-engagement-survey-best-practice), [5](https://knowledgeservices.com/blog/survey-management/identify-and-prevent-survey-biases)]
+
+**1. Language and Phrasing Guidelines**
+
+- **Use Neutral Terminology:** Replace subjective adjectives (e.g., *disappointing, excellent*) with objective adverbs or precise phrasing (e.g., *a favorability score of 45%*, *an increase of 12 points*). [[1](https://www.sogolytics.com/learning-center/surveys/how-to-avoid-bias-in-surveys/)]
+- **State Findings, Not Feelings:** Frame insights as direct representations of the data.
+  - *Biased:* "The team feels overworked due to poor management."
+  - *Unbiased:* "The data indicates a 40% decline in work-life balance scores, coupled with lower favorability in leadership communication."
+- **Avoid Attributing Motive:** Never assume *why* a respondent provided an answer unless a follow-up question specifically verified it. Report *what* the data shows rather than guessing intent. [[1](https://sk.sagepub.com/book/mono/download/how-to-conduct-organizational-surveys/chpt/presentation-survey-findings.pdf), [2](https://www.nngroup.com/articles/survey-best-practices/), [3](https://scipubplus.com/hub/blog/presenting-your-findings-how-to-write-a-clear-and-effective-results-section/)]
+- **Distinguish Correlation from Causation:** State relationships neutrally. For example, "Team B's low engagement scores coincide with high turnover" rather than "Low engagement is causing Team B to leave." [[1](https://www.nngroup.com/articles/survey-best-practices/)]
+
+**2. Presenting Data and Verbatim Comments**
+
+- **Report Demographics Responsibly:** Do not report on small subgroups (e.g., fewer than 5 respondents). This ensures statistical validity and protects respondent confidentiality, which encourages honest feedback in future surveys. [[1](https://www.gallup.com/workplace/692474/workplace-employee-surveys.aspx), [2](https://www.linkedin.com/pulse/complete-guide-employee-surveys-3-employee-feedback-mmwje?trk=public_post)]
+- **Frame Qualitative Comments Objectively:** Treat open-text responses as representative examples of broader, quantified themes rather than standalone facts. [[1](https://support.cultureamp.com/en/articles/7048670-manager-s-guide-to-taking-action-on-engagement-survey-results)]
+- **Quantify Qualitative Themes:** Coding free-text responses into categories and presenting them with their corresponding percentages (e.g., "30% of comments mentioned system downtime") can prevent cherry-picking isolated negative or positive statements. [[1](https://www.nature.com/articles/s41431-026-02044-7), [2](https://atlasti.com/guides/the-guide-to-mixed-methods-research/reporting-results-in-mixed-methods-research)]
+
+**3. Structural Standards for the Report**
+
+- **Start with Methodology:** Outline the survey’s purpose, sample size, response rate, and data collection window before stating any findings. This provides necessary context for the results. [[1](https://methods.sagepub.com/book/mono/conducting-online-surveys-2e/chpt/reporting-survey-results), [2](https://skeepers.io/blog/present-survey-results/), [3](https://fisher.osu.edu/blogs/leadreadtoday/insight-how-design-effective-employee-engagement-surveys), [4](https://peopleinsight.co.uk/wp-content/uploads/2021/07/People-Insight-How-great-managers-follow-up-survey-results-with-their-teams.pdf), [5](https://www.ovid.com/jnls/journaloftraumanursing/fulltext/10.1097/jtn.0000000000000582~prevent-rejection-of-your-manuscriptread-the-author)]
+- **Separate Findings from Recommendations:** Create distinct sections. The **Findings** section should present *what* the data shows. The **Discussion/Recommendations** section should cover *what actions* the organization might take based on that data. [[1](https://slidemodel.com/how-to-present-survey-results-in-powerpoint/), [2](https://www.surveymonkey.com/learn/research-and-analysis/survey-analysis-reporting/), [3](https://sk.sagepub.com/book/mono/download/how-to-conduct-organizational-surveys/chpt/presentation-survey-findings.pdf)]
+- **Acknowledge Limitations:** Conclude by explicitly stating data limitations, such as potential non-response bias, small sample sizes, or survey timing, which could affect the generalizability of the findings. [[1](https://pmc.ncbi.nlm.nih.gov/articles/PMC10713437/)]
+
+**4. Newsroom Protocols for Data Reporting**
+
+The rules above keep the writing neutral. These practices, borrowed from data-journalism newsrooms, keep it *legible* — so a reader who skims one sentence still leaves with an accurate number and its meaning. They describe the voice already used across the [Societal Mirror](https://mirror.shambhala.org). [[1](https://datajournalism.com/read/handbook/one), [2](https://www.pewresearch.org/our-methods/), [3](https://apstylebook.com/)]
+
+- **Lead with the number, then its meaning.** Put the finding first and let the sentence explain it, rather than warming up to it. *"79% of respondents took part in group meditation in the past year"* — not *"Respondents were asked about their participation, and it turned out that a majority…"*
+- **Always show the base.** Every percentage names what it is a percentage *of* — respondents, centres, comments — and, where the base is small, the count as well (e.g. *"29 fewer centres than in 2023"*). A percentage without a denominator is not a finding. [[1](https://www.pewresearch.org/our-methods/)]
+- **Anchor every change to a baseline.** A delta states its reference point: the year, the prior survey, or the group it is measured against. *"Since 2020, Buddhist course offerings have declined by 24%"* — the reader can see what "24%" is measured from.
+- **Name the strongest signal plainly.** When one relationship dominates the data, say so and label it as such rather than burying it among weaker ones: *"The single strongest correlation in the data: members affiliated with a centre report dramatically higher sense of belonging."* This is emphasis, not interpretation — the ranking is in the data.
+- **Flag puzzles; do not invent causes.** When the data is surprising or self-contradictory, report the tension and mark it as unexplained. *"Since the smallest centres face the greatest shortage of teachers, this response is puzzling."* Naming a puzzle is honest; supplying a motive to resolve it is the motive-attribution error warned against in Section 1.
+- **Marked interpretation is allowed, sparingly.** A reading that goes beyond the data is permitted when it is *visibly* the authors' — kept in its own sentence, adjacent to the finding, and never fused with it. *"The change members most frequently ask for is more clarity about the current community vision"* is the finding; *"That request is not a critique; it is an invitation"* is the marked reading. Keep the two separable, and keep the second rare.
+
+**5. House Voice, Illustrated**
+
+Before/after pairs drawn from Mirror prose, showing the protocols in combination:
+
+| Weaker | Mirror house voice |
+|---|---|
+| "Engagement was quite high overall." | "79% took part in group meditation; 77% gave financial support; 73% engaged in formal study." |
+| "Fewer centres are active now." | "There are 29 fewer centres than in 2023; small and medium-sized centres account for most of the loss." |
+| "Older members care more about the teachings." | "Members who joined before 1990 are most invested in preserving Chögyam Trungpa's teachings (85%); among those who joined since 2018, that figure is 54%." |
+| "The survey shows what everyone already knew." | "Across every entry cohort, 70–80% rate the same five features as very or extremely important. The shared ground is broader than it sometimes feels." |
+
+Each right-hand cell leads with the number, carries its base, and — where a reading is offered — keeps it in a separate clause the reader can accept or set aside.
+
+For more comprehensive guidance on research ethics and scientific reporting, consult the [American Association for Public Opinion Research Best Practices](https://aapor.org/standards-and-ethics/best-practices/) or the [SAGE Research Methods Reporting Guide](https://methods.sagepub.com/book/mono/conducting-online-surveys/chpt/reporting-survey-results). [[1](https://jamanetwork.com/journals/jamasurgery/fullarticle/2778469), [2](https://www.sgsci.org/guidelines/publication-ethics)]
