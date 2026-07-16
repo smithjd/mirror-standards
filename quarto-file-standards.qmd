@@ -9,10 +9,13 @@ Use these standards  when authoring, reviewing, or refactoring any `.qmd` page i
 
 ## Standard
 
+These standards come from Quarto documentation found here:
 
-# Quarto File Standards
 
-These standards come from comparing a well-structured page (`leadership_and_service_roles.qmd`, ~950 lines, 17 chunks) against an anti-pattern page. Follow the good pattern; don't replicate the other one.
+- [https://quarto.org/docs/reference/](Quarto Documentation)
+- [https://quarto-tdg.org/](Quarto: The Practical Guide)
+
+They are also based comparing a well-structured page against an anti-pattern page. Follow the good pattern; don't replicate the other one.
 
 ## The Shape of a Good Page
 

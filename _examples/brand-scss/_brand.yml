@@ -1,9 +1,0 @@
-color:
-  palette:
-    white: "#ffffff"
-    grey: "#333333"
-    pink: "#b70ca6"
-  foreground: grey
-  background: white
-  primary: grey
-
