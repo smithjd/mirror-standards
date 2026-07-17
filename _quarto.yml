@@ -76,3 +76,5 @@ website:
             href: website-profile.qmd
           - text: Editing History
             href: editing_history.qmd
+
+# quarto publish gh-pages
