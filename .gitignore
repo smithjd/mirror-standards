@@ -4,6 +4,7 @@
 .httr-oauth
 .DS_Store
 .quarto
+mirror-standards.Rproj
 
 .posit/assistant/
 /.quarto/
