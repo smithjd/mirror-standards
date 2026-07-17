@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project overview – Shambhala Mirror Standards</title>
+<title>color-standards – Shambhala Mirror Standards</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,6 +68,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./writing-up-survey-results.html" rel="next">
+<link href="./admin-page-standards.html" rel="prev">
 <link href=".//images/SI-sunburst.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -121,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Project overview</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./survey-page-standards.html">Societal Mirror Site Standards</a></li><li class="breadcrumb-item"><a href="./color-standards.html">Color Standards</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -162,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./color-standards.html" class="sidebar-item-text sidebar-link">
+  <a href="./color-standards.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Color Standards</span></a>
   </div>
 </li>
@@ -267,9 +304,10 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./survey-page-standards.html">Societal Mirror Site Standards</a></li><li class="breadcrumb-item"><a href="./color-standards.html">Color Standards</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Project overview</h1>
+<h1 class="title">color-standards</h1>
+<p class="subtitle lead">The single source of truth for color in The Societal Mirror</p>
 </div>
 
 
@@ -286,8 +324,362 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="purpose" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">1</span> Purpose</h2>
+<p>Use these standards when adding or reviewing any chart, table, or tinted panel in The Societal Mirror. Color in a Mirror chart is an <strong>encoding, not a decoration</strong>: every hue comes from the <code>ourmirror</code> palette functions or a named constant in <code>shared_code_26.R</code>, never from a bare hex sprinkled into a chunk. This page is the inventory of what those functions return and where each color is used, so a reviewer can tell at a glance whether a page is palette-compliant.</p>
+</section>
+<section id="standard" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="standard"><span class="header-section-number">2</span> Standard</h2>
+<ul>
+<li><strong>Never hardcode a hex.</strong> Call a palette function or a named constant. The only sanctioned bare hexes in the whole code base are the three catalogued in <a href="#remaining-bare-hexes">Remaining bare hexes</a> — a brown-ramp anchor seed and a table-only tan.</li>
+<li><strong>Pick the palette by data type.</strong> Categorical for unordered groups, sequential for ordered values, stoplight for good→bad tiers, and the brand palette for the small set of fixed brand accents.</li>
+<li><strong>Let the palette pick label ink.</strong> Segment and bar labels take their color from <code>stoplight_ink()</code> or the <code>$ink</code> returned alongside <code>$fill</code> — don’t hand-tune label contrast.</li>
+<li><strong>Tint by survey.</strong> Every ggiraph panel carries its survey’s background tint (member, centre, or SDB); the tint is what visually distinguishes the survey families.</li>
+</ul>
+<p>This mirrors the palette rule in <a href="./quarto-file-standards.html">Quarto File Standards</a> (Core Rule 3) — this page is the detailed catalogue behind it.</p>
+<hr>
+</section>
+<section id="ourmirror-palette-functions-source-of-truth" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="ourmirror-palette-functions-source-of-truth"><span class="header-section-number">3</span> <code>ourmirror</code> palette functions (source of truth)</h2>
+<p>All values below are the live outputs of the installed <code>ourmirror</code> package. Pages call these functions rather than hard-coding hexes.</p>
+<section id="brand-palette-shambhala_palette_function" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="brand-palette-shambhala_palette_function"><span class="header-section-number">3.1</span> Brand palette — <code>shambhala_palette_function()</code></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Hex</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Light Text</td>
+<td><span style="background-color: #2E3C45; color: white; padding: 2px 6px; border-radius: 3px;"><code>#2E3C45</code></span></td>
+<td>Axes / secondary text</td>
+</tr>
+<tr class="even">
+<td>Header Text</td>
+<td><span style="background-color: #232D34; color: white; padding: 2px 6px; border-radius: 3px;"><code>#232D34</code></span></td>
+<td>Website headers</td>
+</tr>
+<tr class="odd">
+<td>Dark Text</td>
+<td><span style="background-color: #101417; color: white; padding: 2px 6px; border-radius: 3px;"><code>#101417</code></span></td>
+<td>Primary text / dark ink</td>
+</tr>
+<tr class="even">
+<td>Grid</td>
+<td><span style="background-color: #DCE0E3; color: black; padding: 2px 6px; border-radius: 3px;"><code>#DCE0E3</code></span></td>
+<td>Gridlines / neutral grey</td>
+</tr>
+<tr class="odd">
+<td>Green</td>
+<td><span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;"><code>#5AA678</code></span></td>
+<td>Brand green (chart fills)</td>
+</tr>
+<tr class="even">
+<td>Crimson</td>
+<td><span style="background-color: #D16471; color: white; padding: 2px 6px; border-radius: 3px;"><code>#D16471</code></span></td>
+<td>Brand crimson</td>
+</tr>
+<tr class="odd">
+<td>Yellow</td>
+<td><span style="background-color: #F1C95B; color: black; padding: 2px 6px; border-radius: 3px;"><code>#F1C95B</code></span></td>
+<td>Brand yellow</td>
+</tr>
+<tr class="even">
+<td>Blue</td>
+<td><span style="background-color: #587AA7; color: white; padding: 2px 6px; border-radius: 3px;"><code>#587AA7</code></span></td>
+<td>Brand blue</td>
+</tr>
+</tbody>
+</table>
+<p>Used directly in <code>how_engaged_are_they.qmd</code> and <code>membership.qmd</code>; underpins every derived palette below.</p>
+</section>
+<section id="categorical-mrr_pal_categoricaln" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="categorical-mrr_pal_categoricaln"><span class="header-section-number">3.2</span> Categorical — <code>mrr_pal_categorical(n)</code></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Call</th>
+<th>Hexes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mrr_pal_categorical()</code> (default 4)</td>
+<td><span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;"><code>#5AA678</code></span> <span style="background-color: #587AA7; color: white; padding: 2px 6px; border-radius: 3px;"><code>#587AA7</code></span> <span style="background-color: #D16471; color: white; padding: 2px 6px; border-radius: 3px;"><code>#D16471</code></span> <span style="background-color: #F1C95B; color: black; padding: 2px 6px; border-radius: 3px;"><code>#F1C95B</code></span></td>
+</tr>
+<tr class="even">
+<td><code>mrr_pal_categorical(3)</code></td>
+<td><span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;"><code>#5AA678</code></span> <span style="background-color: #587AA7; color: white; padding: 2px 6px; border-radius: 3px;"><code>#587AA7</code></span> <span style="background-color: #D16471; color: white; padding: 2px 6px; border-radius: 3px;"><code>#D16471</code></span></td>
+</tr>
+</tbody>
+</table>
+<p>Used in <code>centre_participation.qmd</code>, <code>centre_resources.qmd</code> (<code>bar_fill &lt;- mrr_pal_categorical()[2]</code>), and the participation-mode map in <code>how_engaged_are_they.qmd</code>.</p>
+</section>
+<section id="stoplight-mrr_pal_stoplightn-labels-fill-ink" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="stoplight-mrr_pal_stoplightn-labels-fill-ink"><span class="header-section-number">3.3</span> Stoplight — <code>mrr_pal_stoplight(n, labels)</code> → <code>$fill</code> + <code>$ink</code></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Call</th>
+<th><code>$fill</code></th>
+<th><code>$ink</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mrr_pal_stoplight(n = 3)</code></td>
+<td><span style="background-color: #C25B60; color: white; padding: 2px 6px; border-radius: 3px;"><code>#C25B60</code></span> <span style="background-color: #ECB552; color: black; padding: 2px 6px; border-radius: 3px;"><code>#ECB552</code></span> <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;"><code>#5AA678</code></span></td>
+<td>white, <code>#101417</code>, <code>#101417</code></td>
+</tr>
+<tr class="even">
+<td><code>mrr_pal_stoplight(n = 4)</code></td>
+<td><span style="background-color: #C25B60; color: white; padding: 2px 6px; border-radius: 3px;"><code>#C25B60</code></span> <span style="background-color: #E8A24A; color: black; padding: 2px 6px; border-radius: 3px;"><code>#E8A24A</code></span> <span style="background-color: #F1C95B; color: black; padding: 2px 6px; border-radius: 3px;"><code>#F1C95B</code></span> <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;"><code>#5AA678</code></span></td>
+<td>white, <code>#101417</code>, <code>#101417</code>, <code>#101417</code></td>
+</tr>
+</tbody>
+</table>
+<p>The single most-used palette (<strong>14 calls</strong> across 6 pages). The paired <code>$ink</code> gives contrast-safe label colors, so segment-label contrast is no longer hand-tuned. Callers: <code>centre_connections.qmd</code>, <code>centre_participation.qmd</code>, <code>centre_size_experience.qmd</code>, <code>centre_resources.qmd</code>, <code>what_do_they_value_and_need.qmd</code>.</p>
+</section>
+<section id="stoplight-constants-mrr_stoplight_constants" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="stoplight-constants-mrr_stoplight_constants"><span class="header-section-number">3.4</span> Stoplight constants — <code>mrr_stoplight_constants()</code></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Hex</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>red</td>
+<td><span style="background-color: #C25B60; color: white; padding: 2px 6px; border-radius: 3px;"><code>#C25B60</code></span></td>
+</tr>
+<tr class="even">
+<td>orange</td>
+<td><span style="background-color: #E8A24A; color: black; padding: 2px 6px; border-radius: 3px;"><code>#E8A24A</code></span></td>
+</tr>
+<tr class="odd">
+<td>amber</td>
+<td><span style="background-color: #F1C95B; color: black; padding: 2px 6px; border-radius: 3px;"><code>#F1C95B</code></span></td>
+</tr>
+<tr class="even">
+<td>lightgreen</td>
+<td><span style="background-color: #A5B769; color: black; padding: 2px 6px; border-radius: 3px;"><code>#A5B769</code></span></td>
+</tr>
+<tr class="odd">
+<td>green</td>
+<td><span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;"><code>#5AA678</code></span></td>
+</tr>
+<tr class="even">
+<td>grey</td>
+<td><span style="background-color: #DCE0E3; color: black; padding: 2px 6px; border-radius: 3px;"><code>#DCE0E3</code></span></td>
+</tr>
+</tbody>
+</table>
+<p>For pages needing named stoplight tiers beyond a simple n-step ramp (e.g.&nbsp;an “Other/grey” residual). Used via <code>stoplight_constants &lt;- mrr_stoplight_constants()</code> in <code>centre_participation.qmd</code>, <code>centre_connections.qmd</code>, <code>centre_size_experience.qmd</code>, and <code>centre_resources.qmd</code>.</p>
+</section>
+<section id="sequential-mrr_pal_sequentialanchor-n" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="sequential-mrr_pal_sequentialanchor-n"><span class="header-section-number">3.5</span> Sequential — <code>mrr_pal_sequential(anchor, n)</code></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Call</th>
+<th>Hexes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mrr_pal_sequential("Green", 4)</code></td>
+<td><span style="background-color: #DEEDE4; color: black; padding: 2px 6px; border-radius: 3px;"><code>#DEEDE4</code></span> <span style="background-color: #B2D5C0; color: black; padding: 2px 6px; border-radius: 3px;"><code>#B2D5C0</code></span> <span style="background-color: #86BD9C; color: black; padding: 2px 6px; border-radius: 3px;"><code>#86BD9C</code></span> <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;"><code>#5AA678</code></span></td>
+</tr>
+<tr class="even">
+<td><code>mrr_pal_sequential("Green", 3)</code></td>
+<td>3-step green ramp</td>
+</tr>
+<tr class="odd">
+<td><code>mrr_pal_sequential("#401F09", 4)</code></td>
+<td><span style="background-color: #D8D2CD; color: black; padding: 2px 6px; border-radius: 3px;"><code>#D8D2CD</code></span> <span style="background-color: #A5968C; color: black; padding: 2px 6px; border-radius: 3px;"><code>#A5968C</code></span> <span style="background-color: #725A4A; color: white; padding: 2px 6px; border-radius: 3px;"><code>#725A4A</code></span> <span style="background-color: #401F09; color: white; padding: 2px 6px; border-radius: 3px;"><code>#401F09</code></span> (brown ramp)</td>
+</tr>
+</tbody>
+</table>
+<p>Callers: <code>centre_size_experience.qmd</code>, <code>centre_profile.qmd</code> (brown ramp), <code>leadership_and_service_roles.qmd</code> (Yes/Maybe from a 3-step green).</p>
+</section>
+<section id="contrast-ink-stoplight_inkfills" class="level3" data-number="3.6">
+<h3 data-number="3.6" class="anchored" data-anchor-id="contrast-ink-stoplight_inkfills"><span class="header-section-number">3.6</span> Contrast ink — <code>stoplight_ink(fills)</code></h3>
+<p>Returns per-fill label colors (white / dark ink) for whatever fills you pass. This is the standard way bar labels get their color — <strong>~30 call sites</strong> across <code>membership.qmd</code>, <code>leadership_and_service_roles.qmd</code>, <code>enrollment_overview.qmd</code>, <code>how_engaged_are_they.qmd</code>, <code>centre_profile.qmd</code>, and the centre survey pages (typically <code>color = stoplight_ink(dark_bar_green)</code>).</p>
+</section>
+<section id="color-steps-mrr_color_stepstotal-index" class="level3" data-number="3.7">
+<h3 data-number="3.7" class="anchored" data-anchor-id="color-steps-mrr_color_stepstotal-index"><span class="header-section-number">3.7</span> Color steps — <code>mrr_color_steps(total, index)</code></h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Call</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mrr_color_steps(5, 4)</code> (<code>green_step_2</code>)</td>
+<td><span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;"><code>#5AA678</code></span> <span style="background-color: #7CB594; color: black; padding: 2px 6px; border-radius: 3px;"><code>#7CB594</code></span> <span style="background-color: #9FC4B1; color: black; padding: 2px 6px; border-radius: 3px;"><code>#9FC4B1</code></span> <span style="background-color: #C2D4CD; color: black; padding: 2px 6px; border-radius: 3px;"><code>#C2D4CD</code></span></td>
+</tr>
+<tr class="even">
+<td><code>mrr_color_steps(5, 5)</code> (<code>green_step_5</code>)</td>
+<td>5-step green ramp ending <span style="background-color: #C2D4CD; color: black; padding: 2px 6px; border-radius: 3px;"><code>#C2D4CD</code></span></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="constants-in-shared_code_26.r" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="constants-in-shared_code_26.r"><span class="header-section-number">4</span> Constants in <code>shared_code_26.R</code></h2>
+<p>These are defined once in shared code and referenced across pages. The three background tints are the most-referenced colors in the whole project — they fill nearly every ggiraph panel.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Constant</th>
+<th>Definition</th>
+<th>Value</th>
+<th>Uses</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>dark_bar_green</code></td>
+<td><code>shambhala_palette_function()[["Green"]]</code></td>
+<td><span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;"><code>#5AA678</code></span></td>
+<td><strong>63</strong></td>
+</tr>
+<tr class="even">
+<td><code>member_background_tint</code></td>
+<td>literal</td>
+<td><span style="background-color: #FEF7F4; color: black; padding: 2px 6px; border: 1px solid #ccc; border-radius: 3px;"><code>#FEF7F4</code></span> pale peach</td>
+<td><strong>112</strong></td>
+</tr>
+<tr class="odd">
+<td><code>sdb_background_tint</code></td>
+<td>literal</td>
+<td><span style="background-color: #F4F4F4; color: black; padding: 2px 6px; border: 1px solid #ccc; border-radius: 3px;"><code>#F4F4F4</code></span> light grey</td>
+<td><strong>66</strong></td>
+</tr>
+<tr class="even">
+<td><code>centre_background_tint</code></td>
+<td>literal</td>
+<td><span style="background-color: #F4FFF5; color: black; padding: 2px 6px; border: 1px solid #ccc; border-radius: 3px;"><code>#F4FFF5</code></span> pale mint</td>
+<td><strong>41</strong></td>
+</tr>
+<tr class="odd">
+<td><code>green_step_2</code></td>
+<td><code>mrr_color_steps(5, 4)</code></td>
+<td>green ramp</td>
+<td><strong>13</strong></td>
+</tr>
+<tr class="even">
+<td><code>green_step_5</code></td>
+<td><code>mrr_color_steps(5, 5)</code></td>
+<td>green ramp</td>
+<td><strong>1</strong></td>
+</tr>
+<tr class="odd">
+<td><code>membership_colors</code></td>
+<td><code>shambhala_palette_function()[c("Yellow","Green","Blue")]</code>, named Non member / Member / Past member</td>
+<td><span style="background-color: #F1C95B; color: black; padding: 2px 6px; border-radius: 3px;"><code>#F1C95B</code></span> <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;"><code>#5AA678</code></span> <span style="background-color: #587AA7; color: white; padding: 2px 6px; border-radius: 3px;"><code>#587AA7</code></span></td>
+<td><strong>2</strong></td>
+</tr>
+<tr class="even">
+<td><code>css_default_hover</code></td>
+<td><code>girafe_css_bicolor("yellow", "red")</code></td>
+<td>yellow / red</td>
+<td>ggiraph hover — wired into <code>set_girafe_defaults()</code>, applies globally</td>
+</tr>
+</tbody>
+</table>
+<p><code>css_default_hover</code> is wired into <code>set_girafe_defaults()</code>, so it applies to every ggiraph plot in the project without any by-name call in a page.</p>
+<hr>
+</section>
+<section id="remaining-bare-hexes" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="remaining-bare-hexes"><span class="header-section-number">5</span> Remaining bare hexes</h2>
+<p>Only three bare hex literals exist in the code base, and each is intentional. Nothing else should introduce a fourth.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>File:Line</th>
+<th>Hex</th>
+<th>Context</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>centre_profile.qmd:750</code></td>
+<td><span style="background-color: #401F09; color: white; padding: 2px 6px; border-radius: 3px;"><code>#401F09</code></span></td>
+<td><code>mrr_pal_sequential("#401F09", 4)</code> brown-ramp anchor</td>
+<td>Intentional seed for a non-brand brown ramp</td>
+</tr>
+<tr class="even">
+<td><code>what_do_they_value_and_need.qmd:755, 1016</code></td>
+<td><span style="background-color: #f5f0e8; color: black; padding: 2px 6px; border: 1px solid #ccc; border-radius: 3px;"><code>#f5f0e8</code></span></td>
+<td><code>gt</code> <code>cell_fill()</code> (pale tan table shading)</td>
+<td>Table-only accent; not a chart color</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="quick-diagnostic" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="quick-diagnostic"><span class="header-section-number">6</span> Quick diagnostic</h2>
+<p>To check a page for palette compliance, grep it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Should be 0 (bare hexes) — the only sanctioned exceptions are the three above:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-nE</span> <span class="st">'#[0-9A-Fa-f]{6}'</span> page.qmd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Should be &gt; 0 on any page that draws charts:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"shambhala_palette_function\|mrr_pal_\|dark_bar_green\|_background_tint"</span> page.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>A page with bare hexes outside the sanctioned three, or one that draws charts without touching the palette functions, is not conforming — regardless of whether it renders.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -690,6 +1082,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./admin-page-standards.html" class="pagination-link" aria-label="Admin Page Standards">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Admin Page Standards</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./writing-up-survey-results.html" class="pagination-link" aria-label="Writing Up Survey Results">
+        <span class="nav-page-text">Writing Up Survey Results</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

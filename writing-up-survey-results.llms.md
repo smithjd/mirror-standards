@@ -9,6 +9,8 @@ To write objective, unbiased survey reports, anchor your text strictly in the qu
   - *Biased:* “The team feels overworked due to poor management.”
   - *Unbiased:* “The data indicates a 40% decline in work-life balance scores, coupled with lower favorability in leadership communication.”
 - **Avoid Attributing Motive:** Never assume *why* a respondent provided an answer unless a follow-up question specifically verified it. Report *what* the data shows rather than guessing intent. \[[1](https://sk.sagepub.com/book/mono/download/how-to-conduct-organizational-surveys/chpt/presentation-survey-findings.pdf), [2](https://www.nngroup.com/articles/survey-best-practices/), [3](https://scipubplus.com/hub/blog/presenting-your-findings-how-to-write-a-clear-and-effective-results-section/)\]
+  - *Biased:* “Many people refused to answer the survey this year so as to express their lowered trust in the organisation”.  
+  - *Unbiased:* “The response rate to the survey was 25% this year, compared to 45% last year”.
 - **Distinguish Correlation from Causation:** State relationships neutrally. For example, “Team B’s low engagement scores coincide with high turnover” rather than “Low engagement is causing Team B to leave.” \[[1](https://www.nngroup.com/articles/survey-best-practices/)\]
 
 **2. Presenting Data and Verbatim Comments**
@@ -36,7 +38,7 @@ The rules above keep the writing neutral. These practices, borrowed from data-jo
 
 **5. House Voice, Illustrated**
 
-Before/after pairs drawn from Mirror prose, showing the protocols in combination:
+Before/after pairs drawn from [Societal Mirror](https://mirror.shambhala.org) prose, showing the protocols in combination:
 
 | Weaker | Mirror house voice |
 |----|----|

@@ -198,6 +198,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./color-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Color Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./writing-up-survey-results.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing Up Survey Results</span></a>
   </div>
@@ -567,6 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="labelled-package-patterns" class="level2" data-number="1.6">
 <h2 data-number="1.6" class="anchored" data-anchor-id="labelled-package-patterns"><span class="header-section-number">1.6</span> labelled Package Patterns</h2>
+<p>The automatic <code>var_label</code> axis labels and the label-handling below depend on recent package versions. Survey pages require <strong>ggplot2 ≥ 4.0.0</strong>, <strong>haven ≥ 2.5.5</strong>, and <strong>labelled ≥ 2.16.0</strong>; on older versions the bare-column-name labelling silently falls back to variable names.</p>
 <p>Survey data is SPSS-style labelled. Always handle labels explicitly:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Get variable label (question text) — use as plot title</span></span>

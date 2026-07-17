@@ -199,6 +199,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./color-standards.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Color Standards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./writing-up-survey-results.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing Up Survey Results</span></a>
   </div>
@@ -318,18 +324,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="purpose" class="level2" data-number="0.1">
-<h2 data-number="0.1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">0.1</span> Purpose</h2>
+<section id="purpose" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="purpose"><span class="header-section-number">1</span> Purpose</h2>
 <p>Use these standards when authoring, reviewing, or refactoring any <code>.qmd</code> page in The Societal Mirror project. Captures the house style for Quarto file structure, chunk organization, helper-function placement, theme/palette compliance, and <code>.llms.md</code> export behavior.</p>
 </section>
-<section id="standard" class="level2" data-number="0.2">
-<h2 data-number="0.2" class="anchored" data-anchor-id="standard"><span class="header-section-number">0.2</span> Standard</h2>
+<section id="standard" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="standard"><span class="header-section-number">2</span> Standard</h2>
+<p>These standards come from Quarto documentation found here:</p>
+<ul>
+<li><a href="Quarto Documentation">https://quarto.org/docs/reference/</a></li>
+<li><a href="Quarto:%20The%20Practical%20Guide">https://quarto-tdg.org/</a></li>
+</ul>
+<p>They are also based comparing a well-structured page against an anti-pattern page. Follow the good pattern; don’t replicate the other one.</p>
 </section>
-<section id="quarto-file-standards" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Quarto File Standards</h1>
-<p>These standards come from comparing a well-structured page (<code>leadership_and_service_roles.qmd</code>, ~950 lines, 17 chunks) against an anti-pattern page. Follow the good pattern; don’t replicate the other one.</p>
-<section id="the-shape-of-a-good-page" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="the-shape-of-a-good-page"><span class="header-section-number">1.1</span> The Shape of a Good Page</h2>
+<section id="the-shape-of-a-good-page" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="the-shape-of-a-good-page"><span class="header-section-number">3</span> The Shape of a Good Page</h2>
 <p>A <code>.qmd</code> page should look like <strong>one thin helper library at the top, then short consumer chunks that call it</strong>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">┌─</span> YAML header</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├─</span> Setup chunk <span class="er">(</span><span class="va">echo</span><span class="op">=</span>FALSE, <span class="va">include</span><span class="op">=</span>FALSE<span class="kw">)</span></span>
@@ -342,10 +351,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">└─</span> ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>One question → one short chunk. Each chunk does <strong>prep + call helper</strong>, not prep + helper-definition + call.</p>
 </section>
-<section id="core-rules" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="core-rules"><span class="header-section-number">1.2</span> Core Rules</h2>
-<section id="always-source-the-shared-scripts-never-inline-their-contents" class="level3" data-number="1.2.1">
-<h3 data-number="1.2.1" class="anchored" data-anchor-id="always-source-the-shared-scripts-never-inline-their-contents"><span class="header-section-number">1.2.1</span> 1. Always source the shared scripts, never inline their contents</h3>
+<section id="core-rules" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="core-rules"><span class="header-section-number">4</span> Core Rules</h2>
+<section id="always-source-the-shared-scripts-never-inline-their-contents" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="always-source-the-shared-scripts-never-inline-their-contents"><span class="header-section-number">4.1</span> 1. Always source the shared scripts, never inline their contents</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mirror_year <span class="ot">&lt;-</span> <span class="dv">26</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"back-end"</span>, <span class="fu">paste0</span>(<span class="st">"shared_code_"</span>,      mirror_year, <span class="st">".R"</span>)))</span>
@@ -353,16 +362,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"back-end"</span>, <span class="fu">paste0</span>(<span class="st">"shared_sdb_code_"</span>,  mirror_year, <span class="st">".R"</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Don’t redefine utilities that already live in <code>shared_functions_26.R</code>.</p>
 </section>
-<section id="always-use-ourmirrormirror_theme-never-theme_set-or-custom-themes" class="level3" data-number="1.2.2">
-<h3 data-number="1.2.2" class="anchored" data-anchor-id="always-use-ourmirrormirror_theme-never-theme_set-or-custom-themes"><span class="header-section-number">1.2.2</span> 2. Always use <code>ourmirror::mirror_theme()</code> — never <code>theme_set()</code> or custom themes</h3>
+<section id="always-use-ourmirrormirror_theme-never-theme_set-or-custom-themes" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="always-use-ourmirrormirror_theme-never-theme_set-or-custom-themes"><span class="header-section-number">4.2</span> 2. Always use <code>ourmirror::mirror_theme()</code> — never <code>theme_set()</code> or custom themes</h3>
 <p>For a background tint, <code>mirror_theme()</code> + <code>theme(plot.background=…)</code> on top — don’t replace it.</p>
 </section>
-<section id="always-use-shambhala_palette_function-never-hardcoded-hex-colors" class="level3" data-number="1.2.3">
-<h3 data-number="1.2.3" class="anchored" data-anchor-id="always-use-shambhala_palette_function-never-hardcoded-hex-colors"><span class="header-section-number">1.2.3</span> 3. Always use <code>shambhala_palette_function()</code> — never hardcoded hex colors</h3>
+<section id="always-use-shambhala_palette_function-never-hardcoded-hex-colors" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="always-use-shambhala_palette_function-never-hardcoded-hex-colors"><span class="header-section-number">4.3</span> 3. Always use <code>shambhala_palette_function()</code> — never hardcoded hex colors</h3>
 <p>No <code>"#2E8B57"</code>, <code>"#C62828"</code>, <code>"#F9A825"</code> sprinkled through chunks. Colors come from the palette function or named constants (<code>dark_bar_green</code>, <code>member_background_tint</code>, <code>leader_background_tint</code>, <code>sdb_background_tint</code>) that already exist in <code>shared_code_26.R</code>.</p>
 </section>
-<section id="define-helpers-once-in-one-helper-chunk-with-roxygen-docs" class="level3" data-number="1.2.4">
-<h3 data-number="1.2.4" class="anchored" data-anchor-id="define-helpers-once-in-one-helper-chunk-with-roxygen-docs"><span class="header-section-number">1.2.4</span> 4. Define helpers <strong>once</strong>, in one helper chunk, with roxygen docs</h3>
+<section id="define-helpers-once-in-one-helper-chunk-with-roxygen-docs" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="define-helpers-once-in-one-helper-chunk-with-roxygen-docs"><span class="header-section-number">4.4</span> 4. Define helpers <strong>once</strong>, in one helper chunk, with roxygen docs</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: helpers</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -374,8 +383,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plot_1_level <span class="ot">&lt;-</span> <span class="cf">function</span>(.data, q_var, title) { ... }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If you catch yourself writing <code>html_safe &lt;- function(...)</code> or <code>apply_named_recode &lt;- function(...)</code> in a second chunk, stop: move it to the helper chunk.</p>
 </section>
-<section id="use-quarto-semantic-divs-not-custom-html-or-flat-h1-stacks" class="level3" data-number="1.2.5">
-<h3 data-number="1.2.5" class="anchored" data-anchor-id="use-quarto-semantic-divs-not-custom-html-or-flat-h1-stacks"><span class="header-section-number">1.2.5</span> 5. Use Quarto semantic divs, not custom HTML or flat H1 stacks</h3>
+<section id="use-quarto-semantic-divs-not-custom-html-or-flat-h1-stacks" class="level3" data-number="4.5">
+<h3 data-number="4.5" class="anchored" data-anchor-id="use-quarto-semantic-divs-not-custom-html-or-flat-h1-stacks"><span class="header-section-number">4.5</span> 5. Use Quarto semantic divs, not custom HTML or flat H1 stacks</h3>
 <ul>
 <li><code>::: panel-tabset</code> to group related views of the same question</li>
 <li><code>::: {.callout-note icon=false appearance="simple"}</code> for quotes and side notes</li>
@@ -383,8 +392,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>##</code>/<code>###</code> headers for hierarchy — avoid a chain of 20+ flat <code>#</code> headers</li>
 </ul>
 </section>
-<section id="use-quarto-cross-reference-labels" class="level3" data-number="1.2.6">
-<h3 data-number="1.2.6" class="anchored" data-anchor-id="use-quarto-cross-reference-labels"><span class="header-section-number">1.2.6</span> 6. Use Quarto cross-reference labels</h3>
+<section id="use-quarto-cross-reference-labels" class="level3" data-number="4.6">
+<h3 data-number="4.6" class="anchored" data-anchor-id="use-quarto-cross-reference-labels"><span class="header-section-number">4.6</span> 6. Use Quarto cross-reference labels</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-belonging-by-generation</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Sense of belonging by generation"</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -392,34 +401,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Capacity counts by role"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><code>fig-…</code> and <code>tbl-…</code> prefixes enable <code>@fig-belonging-by-generation</code> cross-refs and produce proper “Figure 1” numbering.</p>
 </section>
-<section id="suppress-chunk-output-globally-opt-in-explicitly" class="level3" data-number="1.2.7">
-<h3 data-number="1.2.7" class="anchored" data-anchor-id="suppress-chunk-output-globally-opt-in-explicitly"><span class="header-section-number">1.2.7</span> 7. Suppress chunk output globally, opt in explicitly</h3>
+<section id="suppress-chunk-output-globally-opt-in-explicitly" class="level3" data-number="4.7">
+<h3 data-number="4.7" class="anchored" data-anchor-id="suppress-chunk-output-globally-opt-in-explicitly"><span class="header-section-number">4.7</span> 7. Suppress chunk output globally, opt in explicitly</h3>
 <p>At the top of every page:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">FALSE</span>, <span class="at">message =</span> <span class="cn">FALSE</span>, <span class="at">warning =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Don’t repeat <code>echo=FALSE, message=FALSE, warning=FALSE</code> on every chunk.</p>
 </section>
-<section id="every-charts-subtitle-carries-n" class="level3" data-number="1.2.8">
-<h3 data-number="1.2.8" class="anchored" data-anchor-id="every-charts-subtitle-carries-n"><span class="header-section-number">1.2.8</span> 8. Every chart’s subtitle carries N</h3>
+<section id="every-charts-subtitle-carries-n" class="level3" data-number="4.8">
+<h3 data-number="4.8" class="anchored" data-anchor-id="every-charts-subtitle-carries-n"><span class="header-section-number">4.8</span> 8. Every chart’s subtitle carries N</h3>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="fu">str_glue</span>(<span class="st">"N = {scales::number(n, big_mark = ',')}"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="tidyverse-idioms" class="level3" data-number="1.2.9">
-<h3 data-number="1.2.9" class="anchored" data-anchor-id="tidyverse-idioms"><span class="header-section-number">1.2.9</span> 9. Tidyverse idioms</h3>
+<section id="tidyverse-idioms" class="level3" data-number="4.9">
+<h3 data-number="4.9" class="anchored" data-anchor-id="tidyverse-idioms"><span class="header-section-number">4.9</span> 9. Tidyverse idioms</h3>
 <ul>
 <li>Native pipe <code>|&gt;</code> — never <code>%&gt;%</code></li>
 <li><code>.by =</code> grouping — never <code>group_by() |&gt; ungroup()</code></li>
 <li><code>join_by()</code> — never <code>by = c("a" = "b")</code></li>
+<li>On joins expected to be 1:1, add <code>multiple = "error"</code> / <code>unmatched = "error"</code> so a bad key fails loudly instead of silently fanning out or dropping rows</li>
+<li><code>reframe()</code> — for summaries that return more than one row per group (e.g.&nbsp;<code>reframe(q = quantile(x, c(.25, .5, .75)), .by = group)</code>); <code>summarise()</code> is for one row per group</li>
 <li><code>map() |&gt; list_rbind()</code> — never <code>map_dfr()</code></li>
 <li><code>stringr</code> — never <code>grepl</code>/<code>gsub</code>/<code>substr</code>/<code>nchar</code>/<code>tolower</code>/<code>paste0</code></li>
 <li><code>to_factor()</code> from labelled — prefer over <code>haven::as_factor(.x, levels="labels") |&gt; as.character()</code> chains</li>
+<li>Data masking in helpers: embrace <code>{ var }</code> for bare column arguments, <code>.data[["name"]]</code> for character column names, and <code>across(where(...), ...)</code> for multiple columns — don’t <code>eval(parse(text = ...))</code> or paste column names into strings</li>
+<li>Prefix a helper’s non-standard first data argument with a dot (<code>function(.data, ...)</code>) so it doesn’t collide with tidy-eval names</li>
 </ul>
 </section>
-<section id="prefer-static-ggplot-mirror_theme-over-raw-girafe-widgets-by-default" class="level3" data-number="1.2.10">
-<h3 data-number="1.2.10" class="anchored" data-anchor-id="prefer-static-ggplot-mirror_theme-over-raw-girafe-widgets-by-default"><span class="header-section-number">1.2.10</span> 10. Prefer static <code>ggplot</code> + <code>mirror_theme()</code> over raw <code>girafe</code> widgets by default</h3>
+<section id="prefer-static-ggplot-mirror_theme-over-raw-girafe-widgets-by-default" class="level3" data-number="4.10">
+<h3 data-number="4.10" class="anchored" data-anchor-id="prefer-static-ggplot-mirror_theme-over-raw-girafe-widgets-by-default"><span class="header-section-number">4.10</span> 10. Prefer static <code>ggplot</code> + <code>mirror_theme()</code> over raw <code>girafe</code> widgets by default</h3>
 <p>Interactive charts have a real cost: they bloat HTML, and every <code>girafe()</code> widget <strong>vanishes</strong> from the <code>.llms.md</code> export that screen readers and LLMs consume. Use <code>ggiraph</code> intentionally when tooltips add value, not reflexively for every chart.</p>
 </section>
 </section>
-<section id="anti-patterns-to-refuse" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="anti-patterns-to-refuse"><span class="header-section-number">1.3</span> Anti-Patterns to Refuse</h2>
+<section id="anti-patterns-to-refuse" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="anti-patterns-to-refuse"><span class="header-section-number">5</span> Anti-Patterns to Refuse</h2>
 <p>When reviewing or refactoring, flag any of these — they are the signature of the <code>centre_survey.qmd</code> anti-pattern:</p>
 <table class="caption-top table">
 <colgroup>
@@ -472,8 +485,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </section>
-<section id="quick-diagnostic" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="quick-diagnostic"><span class="header-section-number">1.4</span> Quick Diagnostic</h2>
+<section id="quick-diagnostic" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="quick-diagnostic"><span class="header-section-number">6</span> Quick Diagnostic</h2>
 <p>If you’re unsure whether a page follows the standard, grep it:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Should be 0 or very small:</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-c</span> <span class="st">"^html_safe &lt;- function"</span>         page.qmd   <span class="co"># helper redefinitions</span></span>
@@ -487,13 +500,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-cE</span> <span class="st">"(panel-tabset|callout-note)"</span>    page.qmd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>A page with zero <code>mirror_theme()</code> calls and dozens of helper redefinitions is not conforming to project standards, regardless of whether it renders.</p>
 </section>
-<section id="when-refactoring-an-offending-page" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="when-refactoring-an-offending-page"><span class="header-section-number">1.5</span> When Refactoring an Offending Page</h2>
+<section id="when-refactoring-an-offending-page" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="when-refactoring-an-offending-page"><span class="header-section-number">7</span> When Refactoring an Offending Page</h2>
 <p>The refactor path is usually: 1. Extract the repeated helpers into one helper chunk (or, if reusable across pages, into <code>back-end/shared_functions_26.R</code>). 2. Replace every <code>girafe</code>/custom theme block with a call to one parametric plot function that uses <code>mirror_theme()</code> + <code>shambhala_palette_function()</code>. 3. Collapse per-question USER SETTINGS blocks into rows of a <code>tribble()</code> that drives the helpers. 4. Replace flat <code>#</code> header stacks with <code>##</code> + <code>::: panel-tabset</code>. 5. Delete dead <code>dir.create()</code> calls and unused imports.</p>
 <p>Expect a well-run refactor to reduce line count by roughly 4× and bring the page into theme/palette compliance as a side effect.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

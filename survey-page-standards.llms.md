@@ -269,6 +269,8 @@ disp_var_prep(m26, "q0015") |> pivot_df()
 
 ## 1.6 labelled Package Patterns
 
+The automatic `var_label` axis labels and the label-handling below depend on recent package versions. Survey pages require **ggplot2 ≥ 4.0.0**, **haven ≥ 2.5.5**, and **labelled ≥ 2.16.0**; on older versions the bare-column-name labelling silently falls back to variable names.
+
 Survey data is SPSS-style labelled. Always handle labels explicitly:
 
 ``` r

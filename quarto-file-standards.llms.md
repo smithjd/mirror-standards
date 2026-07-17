@@ -2,17 +2,20 @@
 
 Standards derived from the `quarto-file-standards` skill
 
-## 0.1 Purpose
+## 1 Purpose
 
 Use these standards when authoring, reviewing, or refactoring any `.qmd` page in The Societal Mirror project. Captures the house style for Quarto file structure, chunk organization, helper-function placement, theme/palette compliance, and `.llms.md` export behavior.
 
-## 0.2 Standard
+## 2 Standard
 
-# 1 Quarto File Standards
+These standards come from Quarto documentation found here:
 
-These standards come from comparing a well-structured page (`leadership_and_service_roles.qmd`, ~950 lines, 17 chunks) against an anti-pattern page. Follow the good pattern; don’t replicate the other one.
+- [https://quarto.org/docs/reference/](Quarto%20Documentation)
+- [https://quarto-tdg.org/](Quarto:%20The%20Practical%20Guide)
 
-## 1.1 The Shape of a Good Page
+They are also based comparing a well-structured page against an anti-pattern page. Follow the good pattern; don’t replicate the other one.
+
+## 3 The Shape of a Good Page
 
 A `.qmd` page should look like **one thin helper library at the top, then short consumer chunks that call it**.
 
@@ -30,9 +33,9 @@ A `.qmd` page should look like **one thin helper library at the top, then short 
 
 One question → one short chunk. Each chunk does **prep + call helper**, not prep + helper-definition + call.
 
-## 1.2 Core Rules
+## 4 Core Rules
 
-### 1.2.1 1. Always source the shared scripts, never inline their contents
+### 4.1 1. Always source the shared scripts, never inline their contents
 
 ``` r
 #| include: false
@@ -44,15 +47,15 @@ source(here("back-end", paste0("shared_sdb_code_",  mirror_year, ".R")))
 
 Don’t redefine utilities that already live in `shared_functions_26.R`.
 
-### 1.2.2 2. Always use `ourmirror::mirror_theme()` — never `theme_set()` or custom themes
+### 4.2 2. Always use `ourmirror::mirror_theme()` — never `theme_set()` or custom themes
 
 For a background tint, `mirror_theme()` + `theme(plot.background=…)` on top — don’t replace it.
 
-### 1.2.3 3. Always use `shambhala_palette_function()` — never hardcoded hex colors
+### 4.3 3. Always use `shambhala_palette_function()` — never hardcoded hex colors
 
 No `"#2E8B57"`, `"#C62828"`, `"#F9A825"` sprinkled through chunks. Colors come from the palette function or named constants (`dark_bar_green`, `member_background_tint`, `leader_background_tint`, `sdb_background_tint`) that already exist in `shared_code_26.R`.
 
-### 1.2.4 4. Define helpers **once**, in one helper chunk, with roxygen docs
+### 4.4 4. Define helpers **once**, in one helper chunk, with roxygen docs
 
 ``` r
 #| label: helpers
@@ -68,14 +71,14 @@ plot_1_level <- function(.data, q_var, title) { ... }
 
 If you catch yourself writing `html_safe <- function(...)` or `apply_named_recode <- function(...)` in a second chunk, stop: move it to the helper chunk.
 
-### 1.2.5 5. Use Quarto semantic divs, not custom HTML or flat H1 stacks
+### 4.5 5. Use Quarto semantic divs, not custom HTML or flat H1 stacks
 
 - `::: panel-tabset` to group related views of the same question
 - `::: {.callout-note icon=false appearance="simple"}` for quotes and side notes
 - `::: column-screen-inset` for wide charts
 - `##`/`###` headers for hierarchy — avoid a chain of 20+ flat `#` headers
 
-### 1.2.6 6. Use Quarto cross-reference labels
+### 4.6 6. Use Quarto cross-reference labels
 
 ``` r
 #| label: fig-belonging-by-generation
@@ -87,7 +90,7 @@ If you catch yourself writing `html_safe <- function(...)` or `apply_named_recod
 
 `fig-…` and `tbl-…` prefixes enable `@fig-belonging-by-generation` cross-refs and produce proper “Figure 1” numbering.
 
-### 1.2.7 7. Suppress chunk output globally, opt in explicitly
+### 4.7 7. Suppress chunk output globally, opt in explicitly
 
 At the top of every page:
 
@@ -97,26 +100,30 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 Don’t repeat `echo=FALSE, message=FALSE, warning=FALSE` on every chunk.
 
-### 1.2.8 8. Every chart’s subtitle carries N
+### 4.8 8. Every chart’s subtitle carries N
 
 ``` r
 labs(subtitle = str_glue("N = {scales::number(n, big_mark = ',')}"))
 ```
 
-### 1.2.9 9. Tidyverse idioms
+### 4.9 9. Tidyverse idioms
 
 - Native pipe `|>` — never `%>%`
 - `.by =` grouping — never `group_by() |> ungroup()`
 - `join_by()` — never `by = c("a" = "b")`
+- On joins expected to be 1:1, add `multiple = "error"` / `unmatched = "error"` so a bad key fails loudly instead of silently fanning out or dropping rows
+- `reframe()` — for summaries that return more than one row per group (e.g. `reframe(q = quantile(x, c(.25, .5, .75)), .by = group)`); `summarise()` is for one row per group
 - `map() |> list_rbind()` — never `map_dfr()`
 - `stringr` — never `grepl`/`gsub`/`substr`/`nchar`/`tolower`/`paste0`
 - `to_factor()` from labelled — prefer over `haven::as_factor(.x, levels="labels") |> as.character()` chains
+- Data masking in helpers: embrace `{ var }` for bare column arguments, `.data[["name"]]` for character column names, and `across(where(...), ...)` for multiple columns — don’t `eval(parse(text = ...))` or paste column names into strings
+- Prefix a helper’s non-standard first data argument with a dot (`function(.data, ...)`) so it doesn’t collide with tidy-eval names
 
-### 1.2.10 10. Prefer static `ggplot` + `mirror_theme()` over raw `girafe` widgets by default
+### 4.10 10. Prefer static `ggplot` + `mirror_theme()` over raw `girafe` widgets by default
 
 Interactive charts have a real cost: they bloat HTML, and every `girafe()` widget **vanishes** from the `.llms.md` export that screen readers and LLMs consume. Use `ggiraph` intentionally when tooltips add value, not reflexively for every chart.
 
-## 1.3 Anti-Patterns to Refuse
+## 5 Anti-Patterns to Refuse
 
 When reviewing or refactoring, flag any of these — they are the signature of the `centre_survey.qmd` anti-pattern:
 
@@ -132,7 +139,7 @@ When reviewing or refactoring, flag any of these — they are the signature of t
 | Every question rendered as a `girafe()` widget | HTML balloons; `.llms.md` loses the charts entirely |
 | `# USER SETTINGS` / `# HELPER FUNCTIONS` blocks inside every chunk | That’s a script template, not a Quarto page; hoist to the helper chunk |
 
-## 1.4 Quick Diagnostic
+## 6 Quick Diagnostic
 
 If you’re unsure whether a page follows the standard, grep it:
 
@@ -151,7 +158,7 @@ grep -cE "(panel-tabset|callout-note)"    page.qmd
 
 A page with zero `mirror_theme()` calls and dozens of helper redefinitions is not conforming to project standards, regardless of whether it renders.
 
-## 1.5 When Refactoring an Offending Page
+## 7 When Refactoring an Offending Page
 
 The refactor path is usually: 1. Extract the repeated helpers into one helper chunk (or, if reusable across pages, into `back-end/shared_functions_26.R`). 2. Replace every `girafe`/custom theme block with a call to one parametric plot function that uses `mirror_theme()` + `shambhala_palette_function()`. 3. Collapse per-question USER SETTINGS blocks into rows of a `tribble()` that drives the helpers. 4. Replace flat `#` header stacks with `##` + `::: panel-tabset`. 5. Delete dead `dir.create()` calls and unused imports.
 
