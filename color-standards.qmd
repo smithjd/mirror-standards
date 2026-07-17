@@ -1,0 +1,171 @@
+---
+title: "color-standards"
+subtitle: "The single source of truth for color in The Societal Mirror"
+---
+
+## Purpose
+
+Use these standards when adding or reviewing any chart, table, or tinted panel in
+The Societal Mirror. Color in a Mirror chart is an **encoding, not a decoration**:
+every hue comes from the `ourmirror` palette functions or a named constant in
+`shared_code_26.R`, never from a bare hex sprinkled into a chunk. This page is the
+inventory of what those functions return and where each color is used, so a reviewer
+can tell at a glance whether a page is palette-compliant.
+
+## Standard
+
+- **Never hardcode a hex.** Call a palette function or a named constant. The only
+  sanctioned bare hexes in the whole code base are the three catalogued in
+  [Remaining bare hexes](#remaining-bare-hexes) — a brown-ramp anchor seed and a
+  table-only tan.
+- **Pick the palette by data type.** Categorical for unordered groups, sequential for
+  ordered values, stoplight for good→bad tiers, and the brand palette for the small
+  set of fixed brand accents.
+- **Let the palette pick label ink.** Segment and bar labels take their color from
+  `stoplight_ink()` or the `$ink` returned alongside `$fill` — don't hand-tune label
+  contrast.
+- **Tint by survey.** Every ggiraph panel carries its survey's background tint (member,
+  centre, or SDB); the tint is what visually distinguishes the survey families.
+
+This mirrors the palette rule in
+[Quarto File Standards](quarto-file-standards.qmd) (Core Rule 3) — this page is the
+detailed catalogue behind it.
+
+---
+
+## `ourmirror` palette functions (source of truth)
+
+All values below are the live outputs of the installed `ourmirror` package. Pages call
+these functions rather than hard-coding hexes.
+
+### Brand palette — `shambhala_palette_function()`
+
+| Name | Hex | Role |
+|---|---|---|
+| Light Text | <span style="background-color: #2E3C45; color: white; padding: 2px 6px; border-radius: 3px;">`#2E3C45`</span> | Axes / secondary text |
+| Header Text | <span style="background-color: #232D34; color: white; padding: 2px 6px; border-radius: 3px;">`#232D34`</span> | Website headers |
+| Dark Text | <span style="background-color: #101417; color: white; padding: 2px 6px; border-radius: 3px;">`#101417`</span> | Primary text / dark ink |
+| Grid | <span style="background-color: #DCE0E3; color: black; padding: 2px 6px; border-radius: 3px;">`#DCE0E3`</span> | Gridlines / neutral grey |
+| Green | <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;">`#5AA678`</span> | Brand green (chart fills) |
+| Crimson | <span style="background-color: #D16471; color: white; padding: 2px 6px; border-radius: 3px;">`#D16471`</span> | Brand crimson |
+| Yellow | <span style="background-color: #F1C95B; color: black; padding: 2px 6px; border-radius: 3px;">`#F1C95B`</span> | Brand yellow |
+| Blue | <span style="background-color: #587AA7; color: white; padding: 2px 6px; border-radius: 3px;">`#587AA7`</span> | Brand blue |
+
+Used directly in `how_engaged_are_they.qmd` and `membership.qmd`; underpins every
+derived palette below.
+
+### Categorical — `mrr_pal_categorical(n)`
+
+| Call | Hexes |
+|---|---|
+| `mrr_pal_categorical()` (default 4) | <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;">`#5AA678`</span> <span style="background-color: #587AA7; color: white; padding: 2px 6px; border-radius: 3px;">`#587AA7`</span> <span style="background-color: #D16471; color: white; padding: 2px 6px; border-radius: 3px;">`#D16471`</span> <span style="background-color: #F1C95B; color: black; padding: 2px 6px; border-radius: 3px;">`#F1C95B`</span> |
+| `mrr_pal_categorical(3)` | <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;">`#5AA678`</span> <span style="background-color: #587AA7; color: white; padding: 2px 6px; border-radius: 3px;">`#587AA7`</span> <span style="background-color: #D16471; color: white; padding: 2px 6px; border-radius: 3px;">`#D16471`</span> |
+
+Used in `centre_participation.qmd`, `centre_resources.qmd`
+(`bar_fill <- mrr_pal_categorical()[2]`), and the participation-mode map in
+`how_engaged_are_they.qmd`.
+
+### Stoplight — `mrr_pal_stoplight(n, labels)` → `$fill` + `$ink`
+
+| Call | `$fill` | `$ink` |
+|---|---|---|
+| `mrr_pal_stoplight(n = 3)` | <span style="background-color: #C25B60; color: white; padding: 2px 6px; border-radius: 3px;">`#C25B60`</span> <span style="background-color: #ECB552; color: black; padding: 2px 6px; border-radius: 3px;">`#ECB552`</span> <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;">`#5AA678`</span> | white, `#101417`, `#101417` |
+| `mrr_pal_stoplight(n = 4)` | <span style="background-color: #C25B60; color: white; padding: 2px 6px; border-radius: 3px;">`#C25B60`</span> <span style="background-color: #E8A24A; color: black; padding: 2px 6px; border-radius: 3px;">`#E8A24A`</span> <span style="background-color: #F1C95B; color: black; padding: 2px 6px; border-radius: 3px;">`#F1C95B`</span> <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;">`#5AA678`</span> | white, `#101417`, `#101417`, `#101417` |
+
+The single most-used palette (**14 calls** across 6 pages). The paired `$ink` gives
+contrast-safe label colors, so segment-label contrast is no longer hand-tuned. Callers:
+`centre_connections.qmd`, `centre_participation.qmd`, `centre_size_experience.qmd`,
+`centre_resources.qmd`, `what_do_they_value_and_need.qmd`.
+
+### Stoplight constants — `mrr_stoplight_constants()`
+
+| Name | Hex |
+|---|---|
+| red | <span style="background-color: #C25B60; color: white; padding: 2px 6px; border-radius: 3px;">`#C25B60`</span> |
+| orange | <span style="background-color: #E8A24A; color: black; padding: 2px 6px; border-radius: 3px;">`#E8A24A`</span> |
+| amber | <span style="background-color: #F1C95B; color: black; padding: 2px 6px; border-radius: 3px;">`#F1C95B`</span> |
+| lightgreen | <span style="background-color: #A5B769; color: black; padding: 2px 6px; border-radius: 3px;">`#A5B769`</span> |
+| green | <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;">`#5AA678`</span> |
+| grey | <span style="background-color: #DCE0E3; color: black; padding: 2px 6px; border-radius: 3px;">`#DCE0E3`</span> |
+
+For pages needing named stoplight tiers beyond a simple n-step ramp (e.g. an
+"Other/grey" residual). Used via `stoplight_constants <- mrr_stoplight_constants()` in
+`centre_participation.qmd`, `centre_connections.qmd`, `centre_size_experience.qmd`, and
+`centre_resources.qmd`.
+
+### Sequential — `mrr_pal_sequential(anchor, n)`
+
+| Call | Hexes |
+|---|---|
+| `mrr_pal_sequential("Green", 4)` | <span style="background-color: #DEEDE4; color: black; padding: 2px 6px; border-radius: 3px;">`#DEEDE4`</span> <span style="background-color: #B2D5C0; color: black; padding: 2px 6px; border-radius: 3px;">`#B2D5C0`</span> <span style="background-color: #86BD9C; color: black; padding: 2px 6px; border-radius: 3px;">`#86BD9C`</span> <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;">`#5AA678`</span> |
+| `mrr_pal_sequential("Green", 3)` | 3-step green ramp |
+| `mrr_pal_sequential("#401F09", 4)` | <span style="background-color: #D8D2CD; color: black; padding: 2px 6px; border-radius: 3px;">`#D8D2CD`</span> <span style="background-color: #A5968C; color: black; padding: 2px 6px; border-radius: 3px;">`#A5968C`</span> <span style="background-color: #725A4A; color: white; padding: 2px 6px; border-radius: 3px;">`#725A4A`</span> <span style="background-color: #401F09; color: white; padding: 2px 6px; border-radius: 3px;">`#401F09`</span> (brown ramp) |
+
+Callers: `centre_size_experience.qmd`, `centre_profile.qmd` (brown ramp),
+`leadership_and_service_roles.qmd` (Yes/Maybe from a 3-step green).
+
+### Contrast ink — `stoplight_ink(fills)`
+
+Returns per-fill label colors (white / dark ink) for whatever fills you pass. This is
+the standard way bar labels get their color — **~30 call sites** across
+`membership.qmd`, `leadership_and_service_roles.qmd`, `enrollment_overview.qmd`,
+`how_engaged_are_they.qmd`, `centre_profile.qmd`, and the centre survey pages (typically
+`color = stoplight_ink(dark_bar_green)`).
+
+### Color steps — `mrr_color_steps(total, index)`
+
+| Call | Output |
+|---|---|
+| `mrr_color_steps(5, 4)` (`green_step_2`) | <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;">`#5AA678`</span> <span style="background-color: #7CB594; color: black; padding: 2px 6px; border-radius: 3px;">`#7CB594`</span> <span style="background-color: #9FC4B1; color: black; padding: 2px 6px; border-radius: 3px;">`#9FC4B1`</span> <span style="background-color: #C2D4CD; color: black; padding: 2px 6px; border-radius: 3px;">`#C2D4CD`</span> |
+| `mrr_color_steps(5, 5)` (`green_step_5`) | 5-step green ramp ending <span style="background-color: #C2D4CD; color: black; padding: 2px 6px; border-radius: 3px;">`#C2D4CD`</span> |
+
+---
+
+## Constants in `shared_code_26.R`
+
+These are defined once in shared code and referenced across pages. The three background
+tints are the most-referenced colors in the whole project — they fill nearly every
+ggiraph panel.
+
+| Constant | Definition | Value | Uses |
+|---|---|---|---|
+| `dark_bar_green` | `shambhala_palette_function()[["Green"]]` | <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;">`#5AA678`</span> | **63** |
+| `member_background_tint` | literal | <span style="background-color: #FEF7F4; color: black; padding: 2px 6px; border: 1px solid #ccc; border-radius: 3px;">`#FEF7F4`</span> pale peach | **112** |
+| `sdb_background_tint` | literal | <span style="background-color: #F4F4F4; color: black; padding: 2px 6px; border: 1px solid #ccc; border-radius: 3px;">`#F4F4F4`</span> light grey | **66** |
+| `centre_background_tint` | literal | <span style="background-color: #F4FFF5; color: black; padding: 2px 6px; border: 1px solid #ccc; border-radius: 3px;">`#F4FFF5`</span> pale mint | **41** |
+| `green_step_2` | `mrr_color_steps(5, 4)` | green ramp | **13** |
+| `green_step_5` | `mrr_color_steps(5, 5)` | green ramp | **1** |
+| `membership_colors` | `shambhala_palette_function()[c("Yellow","Green","Blue")]`, named Non member / Member / Past member | <span style="background-color: #F1C95B; color: black; padding: 2px 6px; border-radius: 3px;">`#F1C95B`</span> <span style="background-color: #5AA678; color: white; padding: 2px 6px; border-radius: 3px;">`#5AA678`</span> <span style="background-color: #587AA7; color: white; padding: 2px 6px; border-radius: 3px;">`#587AA7`</span> | **2** |
+| `css_default_hover` | `girafe_css_bicolor("yellow", "red")` | yellow / red | ggiraph hover — wired into `set_girafe_defaults()`, applies globally |
+
+`css_default_hover` is wired into `set_girafe_defaults()`, so it applies to every
+ggiraph plot in the project without any by-name call in a page.
+
+---
+
+## Remaining bare hexes
+
+Only three bare hex literals exist in the code base, and each is intentional. Nothing
+else should introduce a fourth.
+
+| File:Line | Hex | Context | Assessment |
+|---|---|---|---|
+| `centre_profile.qmd:750` | <span style="background-color: #401F09; color: white; padding: 2px 6px; border-radius: 3px;">`#401F09`</span> | `mrr_pal_sequential("#401F09", 4)` brown-ramp anchor | Intentional seed for a non-brand brown ramp |
+| `what_do_they_value_and_need.qmd:755, 1016` | <span style="background-color: #f5f0e8; color: black; padding: 2px 6px; border: 1px solid #ccc; border-radius: 3px;">`#f5f0e8`</span> | `gt` `cell_fill()` (pale tan table shading) | Table-only accent; not a chart color |
+
+---
+
+## Quick diagnostic
+
+To check a page for palette compliance, grep it:
+
+```{.bash}
+# Should be 0 (bare hexes) — the only sanctioned exceptions are the three above:
+grep -nE '#[0-9A-Fa-f]{6}' page.qmd
+
+# Should be > 0 on any page that draws charts:
+grep -c "shambhala_palette_function\|mrr_pal_\|dark_bar_green\|_background_tint" page.qmd
+```
+
+A page with bare hexes outside the sanctioned three, or one that draws charts without
+touching the palette functions, is not conforming — regardless of whether it renders.

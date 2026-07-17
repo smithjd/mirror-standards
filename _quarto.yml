@@ -48,6 +48,8 @@ website:
             href: quarto-file-standards.qmd
           - text: Admin Page Standards
             href: admin-page-standards.qmd
+          - text: Color Standards
+            href: color-standards.qmd
           - text: Writing Up Survey Results
             href: writing-up-survey-results.qmd
       - section: "Newsroom Data Reporting Standards"
