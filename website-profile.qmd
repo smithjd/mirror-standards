@@ -27,7 +27,6 @@ library(tidyverse)
 library(lubridate)
 library(ourmirror)
 library(patchwork)
-source("R/shared_resources.R")
 ```
 
 
